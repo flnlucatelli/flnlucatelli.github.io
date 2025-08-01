@@ -1,193 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<title>
-		</title>
-		<style type="text/css">
-			body { line-height:110%; font-family:Calibri; font-size:10.5pt }
-			h1, h2, h3, h4, h5, h6, p { margin:0pt 0pt 6pt }
-			li { margin-top:0pt; margin-bottom:6pt }
-			h1 { margin-top:20pt; margin-bottom:2pt; page-break-inside:avoid; page-break-after:avoid; line-height:normal; border-bottom:0.75pt solid #4472c4; padding-bottom:1pt; font-family:'Calibri Light'; font-size:18pt; font-weight:normal; color:#2f5496 }
-			h2 { margin-top:8pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:normal; font-family:'Calibri Light'; font-size:14pt; font-weight:normal; color:#2f5496 }
-			h3 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:normal; font-family:'Calibri Light'; font-size:13pt; font-weight:normal; color:#404040 }
-			h4 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:110%; font-family:'Calibri Light'; font-size:12pt; font-weight:normal }
-			h5 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:110%; font-family:'Calibri Light'; font-size:11pt; font-weight:normal; font-style:italic }
-			h6 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:110%; font-family:'Calibri Light'; font-size:10.5pt; font-weight:normal; color:#595959 }
-			.Heading7 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:110%; font-family:'Calibri Light'; font-size:10.5pt; font-weight:normal; font-style:italic; color:#595959 }
-			.Heading8 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:110%; font-family:'Calibri Light'; font-size:10.5pt; font-weight:normal; font-variant:small-caps; color:#595959 }
-			.Heading9 { margin-top:4pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; font:italic small-caps normal 10.5pt/110% 'Calibri Light'; color:#595959 }
-			.BalloonText { margin-bottom:0pt; line-height:normal; font-family:'Segoe UI'; font-size:9pt }
-			.Caption { margin-bottom:6pt; line-height:normal; font-size:10pt; font-weight:bold; color:#404040 }
-			.Footer { margin-bottom:0pt; line-height:normal; font-size:10.5pt }
-			.Header { margin-bottom:0pt; line-height:normal; font-size:10.5pt }
-			.IntenseQuote { margin:5pt 43.2pt 12pt; text-align:center; line-height:110%; font-family:'Calibri Light'; font-size:14pt; color:#4472c4 }
-			.ListParagraph { margin-left:36pt; margin-bottom:6pt; line-height:110%; font-size:10.5pt }
-			.NoSpacing { margin-bottom:0pt; line-height:normal; font-size:10.5pt }
-			.Quote { margin:12pt 43.2pt; text-align:center; line-height:105%; font-size:10.5pt; font-style:italic }
-			.Subtitle { margin-bottom:12pt; line-height:normal; font-family:'Calibri Light'; font-size:15pt; color:#404040 }
-			.TOCHeading { margin-top:20pt; margin-bottom:2pt; page-break-inside:avoid; page-break-after:avoid; line-height:normal; border-bottom:0.75pt solid #4472c4; padding-bottom:1pt; font-family:'Calibri Light'; font-size:18pt; color:#2f5496 }
-			.Title { margin-bottom:0pt; line-height:normal; font-family:'Calibri Light'; font-size:40pt; letter-spacing:-0.35pt; color:#2f5496 }
-			span.BookTitle { font-weight:bold; font-variant:small-caps }
-			span.CitaoCarter { font-style:italic }
-			span.CitaoIntensaCarter { font-family:'Calibri Light'; font-size:14pt; color:#4472c4 }
-			span.Emphasis { font-style:italic }
-			span.Hyperlink { text-decoration:underline; color:#0563c1 }
-			span.IntenseEmphasis { font-weight:bold; font-style:italic }
-			span.IntenseReference { font-weight:bold; font-variant:small-caps; text-decoration:underline }
-			span.Strong { font-weight:bold }
-			span.SubtleEmphasis { font-style:italic; color:#595959 }
-			span.SubtleReference { font-variant:small-caps; color:#404040 }
-			span.SubttuloCarter { font-family:'Calibri Light'; font-size:15pt; color:#404040 }
-			span.TextodebaloCarter { font-family:'Segoe UI'; font-size:9pt }
-			span.Ttulo1Carter { font-family:'Calibri Light'; font-size:18pt; color:#2f5496 }
-			span.Ttulo2Carter { font-family:'Calibri Light'; font-size:14pt; color:#2f5496 }
-			span.Ttulo3Carter { font-family:'Calibri Light'; font-size:13pt; color:#404040 }
-			span.Ttulo4Carter { font-family:'Calibri Light'; font-size:12pt }
-			span.Ttulo5Carter { font-family:'Calibri Light'; font-size:11pt; font-style:italic }
-			span.Ttulo6Carter { font-family:'Calibri Light'; color:#595959 }
-			span.Ttulo7Carter { font-family:'Calibri Light'; font-style:italic; color:#595959 }
-			span.Ttulo8Carter { font-family:'Calibri Light'; font-variant:small-caps; color:#595959 }
-			span.Ttulo9Carter { font-family:'Calibri Light'; font-style:italic; font-variant:small-caps; color:#595959 }
-			span.TtuloCarter { font-family:'Calibri Light'; font-size:40pt; letter-spacing:-0.35pt; color:#2f5496 }
-			span.UnresolvedMention { color:#808080; background-color:#e6e6e6 }
-		</style>
-	</head>
-	<body>
-		<div>
-			<h1>
-				<a name="_Hlk41113657"></a><a name="_Hlk41116274"></a><a name="_Hlk41112256"></a><a name="_Hlk41112427">FERNANDO LUCATELLI NUNES</a>
-			</h1>
-			<p>
-				<a href="PhD_in_Mathematics.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">Ph.D. in Mathematics</span></a>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<img src="Foto.png" width="170" height="171" alt="" style="margin-right:42.55pt; margin-left:42.55pt; float:left" /><span style="font-family:'Calibri Light'">My research contributions have revolved around the </span><a name="_Hlk41112521"><span style="font-family:'Calibri Light'">theory and applications of low and higher dimensional categorical structures, mostly with a viewpoint from two and three-dimensional universal algebra. </span></a>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">Currently, I am studying Computer Sciences at </span><a href="https://www.uu.nl/en" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">Utrecht University</span></a><span style="font-family:'Calibri Light'">, under the supervision of Dr. Matthijs Vákár. My main interests in Computer Sciences have revolved around Types and Programming Languages.</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p class="ListParagraph" style="margin-bottom:0pt; text-indent:-18pt; line-height:110%; font-size:11pt">
-				<strong><em><span style="font-family:'Calibri Light'; "><span style="font-family:Wingdings; font-weight:normal; font-style:normal"></span></em></strong></span><span style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><a href="Research.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; font-weight:bold; font-style:italic">Research</span></a>
-			</p>
-			<p class="ListParagraph" style="margin-bottom:0pt; text-indent:-18pt; line-height:110%; font-size:11pt">
-				<strong><em><span style="font-family:'Calibri Light'; "><span style="font-family:Wingdings; font-weight:normal; font-style:normal"></span></em></strong></span><span style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><a href="Talks.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; font-weight:bold; font-style:italic">Talks</span></a>
-			</p>
-			<p class="ListParagraph" style="margin-bottom:0pt; text-indent:-18pt; line-height:110%; font-size:11pt">
-				<span style="font-family:Wingdings; font-size:10.5pt"></span><span style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><a href="Academic_Positions.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; font-weight:bold; font-style:italic">Academic positions/stays</span></a><strong><em><u><span style="font-family:'Calibri Light'; "> </span></u></em></strong>
-			</p>
-			<p class="ListParagraph" style="margin-bottom:0pt; text-indent:-18pt; line-height:110%; font-size:11pt">
-				<strong><em><span style="font-family:'Calibri Light'; "><span style="font-family:Wingdings; font-weight:normal; font-style:normal"></span></em></strong></span><span style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><a href="Organization_of_seminars_events.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; font-weight:bold; font-style:italic">Organization of seminars/events</span></a>
-			</p>
-			<p class="ListParagraph" style="margin-bottom:0pt; text-indent:-18pt; line-height:110%; font-size:11pt">
-				<strong><em><span style="font-family:'Calibri Light'; "><span style="font-family:Wingdings; font-weight:normal; font-style:normal"></span></em></strong></span><span style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; font-weight:bold; font-style:italic">Mathematical Genealogy</span></a>
-			</p>
-			<p class="ListParagraph" style="text-indent:-18pt; line-height:110%; font-size:11pt">
-				<strong><em><span style="font-family:'Calibri Light'; "><span style="font-family:Wingdings; font-weight:normal; font-style:normal"></span></em></strong></span><span style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><a href="Further_Information.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; font-weight:bold; font-style:italic">Further information</span></a>
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p style="margin-bottom:8pt; line-height:107%">
-				<strong><span style="font-family:'Calibri Light'; ">Papers:</span></strong>
-			</p>
-			<p>
-				<u><span style="font-family:'Calibri Light'; ">Published articles:</span></u>
-			</p>
-			<ul type="disc" style="margin:0pt; padding-left:0pt">
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. </span><a href="https://link.springer.com/article/10.1007/s10485-018-9541-3" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">Pseudoalgebras and non-canonical isomorphisms.</span></a><span style="font-family:'Calibri Light'"> Applied Categorical Structures,</span><span style="font-family:'Calibri Light'; color:#222222; background-color:#ffffff"> </span><span style="font-family:'Calibri Light'">v. 27, n 1, pp 55-63. 2019. (</span><a href="https://arxiv.org/abs/1711.02051" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">arXiv</span></a><span style="font-family:'Calibri Light'">)</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando.</span><span style="font-family:'Calibri Light'">&#xa0; </span><a href="http://cgasa.sbu.ac.ir/article_50747.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">On lifting of biadjoints and lax algebras</span></a><span style="font-family:'Calibri Light'">. Categories and General Algebraic Structures with Applications, v. 9, n. 1, </span><span style="font-family:'Calibri Light'; color:#222222; background-color:#ffffff">pp 29-58.</span><span style="font-family:'Calibri Light'"> 2018. (</span><a href="https://arxiv.org/abs/1607.03087" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">arXiv</span></a><span style="font-family:'Calibri Light'">)</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando.</span><span style="font-family:'Calibri Light'">&#xa0; </span><a href="http://www.tac.mta.ca/tac/volumes/33/15/33-15abs.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">Pseudo-Kan Extensions and Descent Theory</span></a><span style="font-family:'Calibri Light'">. </span><em><span style="font-family:'Calibri Light'; color:#222222; background-color:#ffffff">Theory and Applications of Categories</span></em><span style="font-family:'Calibri Light'; color:#222222; background-color:#ffffff">, v. 33, no. 15, pp 390-444. 2018. (</span><a href="https://arxiv.org/abs/1606.04999" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'; background-color:#ffffff">arXiv</span></a><span style="font-family:'Calibri Light'; color:#222222; background-color:#ffffff">)</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. </span><a href="http://www.tac.mta.ca/tac/volumes/31/9/31-09abs.html" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">On biadjoint triangles</span></a><span style="font-family:'Calibri Light'">. </span><em><span style="font-family:'Calibri Light'; ">Theory and Applications of Categories</span></em><span style="font-family:'Calibri Light'">, v. 31, n. 9, p. 217-256. 2016. (</span><a href="https://arxiv.org/abs/1606.05009" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">arXiv</span></a><span style="font-family:'Calibri Light'">)</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:8pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. </span><a href="https://rmu.sbm.org.br/wp-content/uploads/sites/27/2018/03/n48_n49_Notas_de_aula02.pdf" style="text-decoration:none"><span class="Hyperlink" style="font-family:'Calibri Light'">Espaços não reversíveis</span></a><span style="font-family:'Calibri Light'">. </span><em><span style="font-family:'Calibri Light'; ">Revista Matemática Universitária</span></em><span style="font-family:'Calibri Light'">, v. 48, n. 49, p. 22-26. 2012.</span>
-				</li>
-			</ul>
-			<p>
-				<u><span style="font-family:'Calibri Light'; ">Submitted/under revision: </span></u>
-			</p>
-			<ul type="disc" style="margin:0pt; padding-left:0pt">
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando.</span><span style="font-family:'Calibri Light'">&#xa0; </span><span style="font-family:'Calibri Light'">Freely generated n-categories, coinserters and presentations of low dimensional categories. arXiv:1704.04474. 2017.</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. Semantic Factorization and Descent. arXiv:1902.01225. 2019.</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:0pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. Descent Data and Absolute Kan Extensions. arXiv:1906.00517. 2019.</span>
-				</li>
-				<li class="ListParagraph" style="margin-left:27.83pt; margin-bottom:8pt; line-height:107%; padding-left:8.17pt; font-family:serif">
-					<span style="font-family:'Calibri Light'">Clementino, Maria Manuel </span><em><span style="font-family:'Calibri Light'; ">and </span></em><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. Lax comma 2-categories and admissible 2-functors. arXiv:2002.03132. 2020.</span>
-				</li>
-			</ul>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p style="margin-bottom:0pt; line-height:normal">
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p>
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<p>
-				<span style="font-family:'Calibri Light'">&#xa0;</span>
-			</p>
-			<div style="clear:both">
-				<p class="Footer" style="text-align:center">
-					&#xa0;
-				</p>
-				<p class="Footer" style="text-align:center">
-					&#xa0;
-				</p>
-				<p class="Footer">
-					&#xa0;
-				</p>
-			</div>
-		</div>
-	</body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title></title>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 20px 0;
+        line-height: 150%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        color: #333333;
+        background-color: #f9f9f9;
+    }
+    body > div {
+        max-width: 750px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border: 1px solid #cccccc;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+        margin-top: 20pt;
+        margin-bottom: 10pt;
+        line-height: normal;
+        border-bottom: 0.75pt solid #4472c4;
+        padding-bottom: 1pt;
+        font-family: Arial, sans-serif;
+        font-size: 24pt;
+        font-weight: normal;
+        color: #2f5496;
+        text-align: center;
+    }
+    h2 {
+        font-size: 18pt;
+        font-family: Arial, sans-serif;
+        color: #2f5496;
+        margin-bottom: 4pt;
+    }
+    h3 {
+        font-size: 14pt;
+        font-family: Arial, sans-serif;
+        color: #404040;
+        margin-bottom: 2pt;
+    }
+    p {
+        margin-bottom: 12pt;
+    }
+    img {
+        float: left;
+        margin: 0 20px 20px 20px !important;
+        border: 2px solid #cccccc;
+        border-radius: 50%;
+    }
+    .ListParagraph {
+        margin-left: 0 !important;
+        text-indent: 0 !important;
+        position: relative;
+        padding-left: 20px;
+        line-height: 110%;
+        font-size: 11pt;
+    }
+    .ListParagraph::before {
+        content: "•";
+        color: #2f5496;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    span.Hyperlink {
+        text-decoration: none;
+        color: #2f5496;
+    }
+    a:hover {
+        text-decoration: underline !important;
+    }
+</style>
+</head>
+<body>
+<div>
+    <h1><a name="_Hlk41113657"></a><a name="_Hlk41112256"></a><a name="_Hlk41116274"></a><a name="_Hlk41112427">FERNANDO LUCATELLI NUNES</a></h1>
+    <p>
+        <a href="PhD_in_Mathematics.html"><span class="Hyperlink">Ph.D. in Mathematics</span></a> &nbsp;&nbsp;&nbsp;
+        <a href="PhD_in_Computer_Science.html"><span class="Hyperlink">Ph.D. in Computer Science</span></a>
+    </p>
+    <p><img src="Foto.png" width="171" height="172" alt="" />
+    I am a researcher in Pure Mathematics and Computer Science. My work in mathematics centers on the theory and applications of low- and higher-dimensional categorical structures, often developed from the perspective of two- and three-dimensional universal algebra. In computer science, I focus on programming language semantics and formal methods, guided by the understanding that mathematical structure can ground the design of practical and reliable tools for real-world problems.     </p>
+<p>
+I am deeply committed to advancing the theoretical foundations of categorical structures and applying these insights extensively within mathematics and computer science. My research is guided by concepts that span disciplinary boundaries, providing fundamental and unifying perspectives. I explore a diverse array of topics by carefully balancing theoretical rigor with practical applicability. My objective is to deepen foundational understanding in pure mathematics and theoretical computer science, while simultaneously translating robust theory into practice and evaluating its effectiveness in the development of principled, implementable solutions that advance computer science and software engineering.
+    </p>
+<p>
+I am always open to conversations and collaborations, especially with prospective PhD students and researchers who share an interest in categorical structures, formal methods, programming language theory, or any theme that resonates with my interests. If any of this speaks to you, feel free to get in touch.
+</p>
+</div>
+<div>
+    <p class="ListParagraph"><a href="Research.html"><span class="Hyperlink"><strong><em>Research</em></strong></span></a></p>
+    <p class="ListParagraph"><a href="Talks.html"><span class="Hyperlink"><strong><em>Talks</em></strong></span></a></p>
+    <p class="ListParagraph"><a href="Academic_Positions.html"><span class="Hyperlink"><strong><em>Academic positions/stays</em></strong></span></a></p>
+    <p class="ListParagraph"><a href="Organization_of_seminars_events.html"><span class="Hyperlink"><strong><em>Organization of seminars/events</em></strong></span></a></p>
+    <p class="ListParagraph"><a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539"><span class="Hyperlink"><strong><em>Mathematical Genealogy</em></strong></span></a></p>
+    <p class="ListParagraph"><a href="Further_Information.html"><span class="Hyperlink"><strong><em>Further information</em></strong></span></a></p>
+</div>
+</div>
+<h2>Published Articles</h2><ul><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Prezado, Rui; Vákár, Matthijs. <a href="https://ems.press/journals/pm/articles/14297990"><span style="text-decoration:none">Free Extensivity via Distributivity</span></a>. <em>Portugaliae Mathematica</em>, 82(1–2): 177–204. 2025. (<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Vákár, Matthijs. <a href="https://doi.org/10.1017/S0960129523000376"><span style="text-decoration:none">Automatic Differentiation for ML‑Family Languages: Correctness via Logical Relations</span></a>. <em>Mathematical Structures in Computer Science</em>, 34(8): 747–806. 2024. (<a href="https://doi.org/10.1017/S0960129523000376">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Prezado, Rui; Lucatelli Nunes, Fernando. <a href="https://doi.org/10.1007/s10485-024-09872-0"><span style="text-decoration:none">Generalized Multicategories: Change‑of‑Base, Embedding, and Descent</span></a>. <em>Applied Categorical Structures</em>, 32(6): 35. 2024. (<a href="https://doi.org/10.1007/s10485-024-09872-0">DOI</a>; <a href="https://arxiv.org/abs/2309.08084">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Clementino, Maria Manuel; Lucatelli Nunes, Fernando; Prezado, Rui. <a href="http://www.tac.mta.ca/tac/volumes/41/16/41-16abs.html"><span style="text-decoration:none">Lax Comma Categories: Cartesian Closedness, Extensivity, Topologicity, and Descent</span></a>. <em>Theory and Applications of Categories</em>, 41(16): 516–530. 2024. (<a href="https://arxiv.org/abs/2405.03773">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Vákár, Matthijs. <a href="https://doi.org/10.1017/S0960129523000108"><span style="text-decoration:none">CHAD for Expressive Total Languages</span></a>. <em>Mathematical Structures in Computer Science</em>, 33(4–5): 311–426. 2023. (<a href="https://doi.org/10.1017/S0960129523000108">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Prezado, Rui; Lucatelli Nunes, Fernando. <a href="https://doi.org/10.1007/s10485-022-09658-x"><span style="text-decoration:none">Descent for Internal Multicategory Functors</span></a>. <em>Applied Categorical Structures</em>, 31(1): 11. 2023. (<a href="https://doi.org/10.1007/s10485-022-09658-x">DOI</a>; <a href="https://arxiv.org/abs/2112.10072">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Prezado, Rui; Sousa, Lurdes. <a href="https://www.bbms.be/en/papers/bbms-30-1-130/"><span style="text-decoration:none">Cauchy Completeness, Lax Epimorphisms and Effective Descent for Split Fibrations</span></a>. <em>BBMS – Simon Stevin</em>, 30(1): 130–139. 2023. (<a href="https://arxiv.org/abs/2210.12021">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Clementino, Maria Manuel; Lucatelli Nunes, Fernando. <a href="https://doi.org/10.2989/16073606.2022.2145114"><span style="text-decoration:none">Lax Comma Categories of Ordered Sets</span></a>. <em>Quaestiones Mathematicae</em>, 46(sup1): 145–159. 2023. (<a href="https://doi.org/10.2989/16073606.2022.2145114">DOI</a>; <a href="https://arxiv.org/abs/2212.13541">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Sousa, Lurdes. <a href="https://doi.org/10.1016/j.jpaa.2022.107174"><span style="text-decoration:none">On Lax Epimorphisms and the Associated Factorization</span></a>. <em>Journal of Pure and Applied Algebra</em>, 226(12): 107174. 2022. (<a href="https://doi.org/10.1016/j.jpaa.2022.107174">DOI</a>; <a href="https://arxiv.org/abs/2109.09836">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="https://doi.org/10.1007/s10485-021-09614-5"><span style="text-decoration:none">Semantic Factorization and Descent</span></a>. <em>Applied Categorical Structures</em>, 30: 1393–1433. 2022. (<a href="https://doi.org/10.1007/s10485-021-09614-5">DOI</a>; <a href="https://arxiv.org/abs/1902.01225">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="http://www.tac.mta.ca/tac/volumes/37/17/37-17abs.html"><span style="text-decoration:none">Descent Data and Absolute Kan Extensions</span></a>. <em>Theory and Applications of Categories</em>, 37: 530–561. 2021. (<a href="https://arxiv.org/abs/1906.00517">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="https://link.springer.com/article/10.1007/s10485-018-9541-3"><span style="text-decoration:none">Pseudoalgebras and non‑canonical isomorphisms</span></a>. <em>Applied Categorical Structures</em>, 27(1): 55–63. 2019. (<a href="https://doi.org/10.1007/s10485-018-9541-3">DOI</a>; <a href="https://arxiv.org/abs/1711.02051">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="http://www.tac.mta.ca/tac/volumes/33/15/33-15abs.html"><span style="text-decoration:none">Pseudo‑Kan Extensions and Descent Theory</span></a>. <em>Theory and Applications of Categories</em>, 33(15): 390–444. 2018. (<a href="https://arxiv.org/abs/1606.04999">arXiv</a>)</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="http://cgasa.sbu.ac.ir/article_50747.html"><span style="text-decoration:none">On lifting of biadjoints and lax algebras</span></a>. <em>CGASA</em>, 9(1): 29–58. 2018. (<a href="https://arxiv.org/abs/1607.03087">arXiv</a>)</span></li></ul><h2>Submitted / Under Review</h2><ul><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Plotkin, Gordon; Vákár, Matthijs. <a href="https://arxiv.org/abs/2505.15002"><span style="text-decoration:none">Unraveling the iterative CHAD</span></a>. Preprint. arXiv:2505.15002. 2025.</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Vákár, Matthijs. <a href="https://arxiv.org/abs/2405.07724"><span style="text-decoration:none">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</span></a>. Preprint. arXiv:2405.07724. 2024.</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Vákár, Matthijs. <a href="https://arxiv.org/abs/2403.10447"><span style="text-decoration:none">Free Doubly‑Infinitary Distributive Categories are Cartesian Closed</span></a>. Preprint. arXiv:2403.10447. 2024.</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Prezado, Rui. <a href="https://arxiv.org/abs/2410.22876"><span style="text-decoration:none">Functors Preserving Effective Descent Morphisms</span></a>. Preprint. arXiv:2410.22876. 2024.</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando; Vákár, Matthijs. <a href="https://arxiv.org/abs/2210.08530"><span style="text-decoration:none">Logical Relations for Partial Features and AD Correctness</span></a>. Preprint. arXiv:2210.08530. 2022.</span></li><li><span style="font-family:'Calibri Light'">Clementino, Maria Manuel; Lucatelli Nunes, Fernando. <a href="https://arxiv.org/abs/2002.03132"><span style="text-decoration:none">Lax comma 2‑categories and admissible 2‑functors</span></a>. Preprint. arXiv:2002.03132. 2020.</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="https://arxiv.org/abs/1704.04474"><span style="text-decoration:none">Freely generated n-categories, coinserters and presentations of low dimensional categories</span></a>. Preprint. arXiv:1704.04474. 2017.</span></li><li><span style="font-family:'Calibri Light'">Lucatelli Nunes, Fernando. <a href="https://arxiv.org/abs/1802.01767"><span style="text-decoration:none">Pseudomonads and Descent (PhD Thesis Chapter)</span></a>. Preprint. arXiv:1802.01767. 2017.</span></li></ul></div>
+</body>
 </html>
