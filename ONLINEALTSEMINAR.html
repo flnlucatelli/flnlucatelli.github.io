@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CMUC — Online ALT Seminar</title>
+  <meta name="description" content="Online version of the Algebra, Logic and Topology Seminar at CMUC (Centre for Mathematics, University of Coimbra)." />
+  <style>
+    :root{
+      --bg:#ffffff; --text:#1b1f23; --muted:#4b5563; --border:#e5e7eb;
+      --accent:#0a6cff; --panel:#f9fafb; --chip:#eef2f7;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand img{height:56px;width:auto}
+    .nav a{color:var(--text);opacity:.9;padding:8px 10px;border-radius:10px}
+    .nav a:hover{background:var(--chip)}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid-3{grid-template-columns:2fr 1fr}.grid-2{grid-template-columns:1fr 1fr}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px}
+    .card h2{margin:0 0 8px 0;font-size:1.2rem}
+    .card h3{margin:0 0 6px 0;font-size:1.05rem}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--muted);font-size:.9rem}
+    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+    .btn.secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px dashed var(--accent)}
+    .muted{color:var(--muted)}
+    .list{display:grid;gap:14px}
+    .talk{padding:14px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .talk .meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+    .talk .title{font-weight:700;margin:6px 0}
+    .kicker{font-size:.85rem;color:var(--muted);letter-spacing:.2px;text-transform:uppercase}
+    .footer{margin:30px 0 70px;color:var(--muted)}
+    .hr{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:22px 0}
+    .tag{padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand" aria-label="CMUC Online Seminar">
+        <a href="https://cmuc.mat.uc.pt/rdonweb/" target="_blank" rel="noopener">
+          <img src="https://images.openai.com/thumbnails/url/mAcVJnicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw72CEqMKHVLN3ByTvfJcPL21i11TA1NLMoyznY1DzPUzUouiHQJNUvJsjTNqSow1S2KLIr0M_FxMvJUKwYAq50oIQ" alt="CMUC Logo" />
+        </a>
+        <div>Online ALT Seminar</div>
+      </div>
+      <nav class="row" aria-label="Sections">
+        <a href="#upcoming">Upcoming</a>
+        <a href="ONLINEALTSEMINARP.html#archive">Archive</a>
+        <a href="#info">Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid grid-3" id="upcoming">
+      <div class="card" id="up-next-card">
+        <div class="kicker">Upcoming talks</div>
+        <h2 id="up-next-title">To be announced</h2>
+        <div class="muted" id="up-next-speaker"></div>
+        <div class="row" style="margin:10px 0">
+          <span class="pill" id="up-next-when">—</span>
+          <span class="pill" id="up-next-time-local" title="Shown in your local timezone">Local time: —</span>
+          <span class="pill" id="up-next-tz">Base TZ: Europe/Lisbon</span>
+          <span class="pill" id="up-next-series">Online · Google Meet</span>
+        </div>
+        <p id="up-next-abstract" class="muted" style="line-height:1.5"></p>
+        <div class="row">
+          <a class="btn" id="join-link" href="#" target="_blank" rel="noopener" aria-disabled="true">Join on Google Meet</a>
+          <button class="btn secondary" id="add-ics" disabled>Add to Calendar</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>About</h3>
+        <p class="muted">This is the <strong>online version</strong> of the <em>Algebra, Logic and Topology Seminar</em> from the Centre for Mathematics, University of Coimbra (CMUC).</p>
+        <div class="hr"></div>
+        <div class="row">
+          <a class="btn ghost" href="https://cmuc.mat.uc.pt/rdonweb/researchgroups/ppresearchgroupinfo.do?groupID=7&menu=researchgroups" target="_blank" rel="noopener">Research group info</a>
+          <a class="btn ghost" href="https://www.mat.uc.pt/~categ/" target="_blank" rel="noopener">Coimbra Category Theory Group</a>
+          <span class="tag">Base timezone: <span class="mono">Europe/Lisbon</span></span>
+        </div>
+        <div class="hr"></div>
+        <div>
+          <div class="kicker">More seminars:</div>
+          <ul>
+            <li><a href="https://cmuc.mat.uc.pt/rdonweb/event/pplistseminar.do?themeId=&groupId=7" target="_blank" rel="noopener">ALT seminars on CMUC</a></li>
+            <li><a href="https://www.mat.uc.pt/~categ/seminars/" target="_blank" rel="noopener">Category Theory Group seminars</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" id="subscribe">
+        <h3>Subscribe</h3>
+        <p class="muted">Request membership in the mailing list to receive announcements.</p>
+        <div class="row">
+          <a class="btn secondary" id="group-link" href="https://groups.google.com/g/alt-coimbra-seminars" target="_blank" rel="noopener">Google Group</a>
+          <a class="btn" id="email-link" href="#" aria-disabled="true">Email the organizer</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="card" id="info" style="margin-top:18px">
+      <h2>Practical information</h2>
+      <ul>
+        <li><strong>Organizer:</strong> <a href="https://flnlucatelli.github.io/" target="_blank" rel="noopener">Fernando Lucatelli Nunes</a></li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      CMUC — Centre for Mathematics, University of Coimbra. <br/>
+      Maintained by <a href="https://flnlucatelli.github.io/" target="_blank" rel="noopener">Fernando Lucatelli Nunes</a>.
+    </div>
+  </main>
+</body>
+</html>
