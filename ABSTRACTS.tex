@@ -1,0 +1,136 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+
+\setlist[itemize]{leftmargin=1.2em}
+\setlist[enumerate]{leftmargin=1.2em}
+
+\newcommand{\Title}[1]{\section*{#1}\vspace{-0.25em}\hrule\vspace{0.8em}}
+\newcommand{\Field}[2]{\textbf{#1:}~#2\par}
+\newcommand{\Affil}[1]{\textit{#1}\par}
+\newcommand{\Abstract}{\vspace{0.6em}\textbf{Abstract.}~}
+\newcommand{\TalkBlockSep}{\vspace{1.25em}\hrule\vspace{1.25em}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE Category Theory Seminar — Abstracts}\\[0.25em]
+  {\large University of Coimbra}\\[0.5em]
+  \today
+\end{center}
+
+\TalkBlockSep
+
+% === Talk 1: Walter Tholen ===
+\Title{Norms for vectors, linear operators and morphisms of categories, and Cauchy convergence for them}
+
+\Field{Speaker}{Walter Tholen}
+\Affil{York University, Canada}
+
+\Field{Date \& Time}{May 20, 2025 — 4{:}00\,PM (Coimbra time)}
+
+\Abstract
+In this talk we explore Lawvere’s notion of normed category through the lens of easily understood small and large example categories.
+Cauchy convergence of sequences in such categories is presented as a natural extension of familiar concepts taught in Calculus and Functional Analysis, but has broader impact, also because we allow norms to have values in an arbitrary quantale, rather than just in the real numbers.
+Our concept fits with the notion of weighted colimit of enriched category theory. There is therefore a natural notion of Cauchy cocompletion of a normed category, the existence proof for which draws on general results from that theory.
+As an application, Banach’s Fixed Point Theorem is extended almost verbatim from metric spaces to normed categories, and it then adds to the large array of results in functorial fixed point theory as studied predominantly by computer scientists.
+
+\medskip
+\textit{(Based on joint work with M.\,M. Clementino and D. Hofmann.)}
+
+\TalkBlockSep
+
+% === Talk 2: Tim Van der Linden ===
+\Title{Self-dual aspects of semi-abelian categories}
+
+\Field{Speaker}{Tim Van der Linden}
+\Affil{Universit\'e catholique de Louvain and Vrije Universiteit Brussel, Belgium}
+
+\Field{Date \& Time}{May 20, 2025 (Tuesday) — 3{:}00\,PM (Coimbra time)}
+\Field{Place}{Microsoft Teams}
+
+\Abstract
+The aim of this talk is to introduce di-exact categories~[3], which are defined
+by a simple axiom system capturing self-dual aspects of the context of Janelidze--Marki--Tholen
+semi-abelian categories~[2, 1]. A Borceux--Bourn homological category~[1] is Barr-exact if and
+only if it is di-exact. We explain that classical diagram lemmas such as the Snake Lemma hold
+in di-exact categories, and give an overview of examples and related contexts.
+
+\medskip
+\textbf{References}
+\begin{enumerate}[label={[\arabic*]}]
+  \item F.~Borceux and D.~Bourn, \emph{Mal'cev, protomodular, homological and semi-abelian categories}, Math.\ Appl., vol.~566, Kluwer Acad.\ Publ., 2004.
+  \item G.~Janelidze, L.~Marki and W.~Tholen, Semi-abelian categories, \emph{Journal of Pure and Applied Algebra} \textbf{168} (2002), no.~2, 367--386.
+  \item G.~Peschke and T.~Van der Linden, A Homological View of Categorical Algebra, \href{https://arxiv.org/abs/2404.15896}{arXiv:2404.15896}.
+\end{enumerate}
+
+\TalkBlockSep
+
+% === Talk 3: Jean-Simon Pacaud Lemay ===
+\Title{Drazin Inverses in (Dagger) Categories}
+
+\Field{Speaker}{Jean-Simon Pacaud Lemay}
+\Affil{Macquarie University, Australia}
+
+\Field{Date \& Time}{August 19, 2025 (Tuesday) — 11{:}00\,AM (Coimbra time)}
+\Field{Place}{Microsoft Teams}
+
+\Abstract
+Drazin inverses are a special kind of generalized inverse that have been extensively studied and have many applications in ring theory, semigroup theory, and matrix theory.
+Drazin inverses can also be defined for endomorphisms in any category. A natural question is whether one can extend the notion of Drazin inverse to arbitrary maps---not just endomorphisms.
+It turns out that this is natural to do in dagger categories. This talk explores Drazin inverses from a categorical perspective, their relation to idempotent splitting, eventual image duality, and introduces \emph{dagger Drazin inverses}. These are connected to Moore--Penrose inverses.
+
+\medskip
+\textbf{References}
+\begin{itemize}
+  \item Based on joint work with Robin Cockett and Priyaa Varshinee Srinivasan:
+  \item \href{https://arxiv.org/abs/2402.18226}{arXiv:2402.18226}
+  \item \href{https://arxiv.org/abs/2502.05306}{arXiv:2502.05306}
+\end{itemize}
+
+\TalkBlockSep
+
+% === Talk 4: Anna Laura Suarez ===
+\Title{A general approach to pointfree $T_0$ spaces}
+
+\Field{Speaker}{Anna Laura Suarez}
+\Affil{University of Western Cape, South Africa}
+
+\Field{Date \& Time}{August 19, 2025 (Tuesday) — 12{:}00\,PM (Coimbra time)}
+\Field{Place}{Google Meet}
+
+\Abstract
+The classical dual adjunction between frames and spaces, given by the functors
+$O\colon \mathbf{Top} \to \mathbf{Frm}$ and $\mathrm{pt}\colon \mathbf{Frm} \to \mathbf{Top}$, restricts to a dual equivalence between sober spaces
+and spatial frames. Another pointfree approach to the study of spaces is the so-called TD
+duality, a similar dual adjunction where the fixpoints are the TD spaces. The two dualities are
+incompatible in that the two spectrum functors are different. Recently, a pointfree approach
+to spaces whose fixpoints are all $T_0$ spaces was introduced. The approach is inspired by Raney
+duality. In this setting, we study the category of Raney extensions and show that we have a dual
+adjunction extending $(O,\mathrm{pt})$ and capturing all $T_0$ spaces. By suitably restricting on objects we
+recover both the classical and the TD duality. Other pointfree notions of $T_0$ spaces are given
+by strictly zero-dimensional biframes and McKinsey--Tarski algebras. Aiming to understand
+the relationship between these three different settings, we introduce and study an abstract
+notion of pointfree $T_0$ space. We study the situation where we have a suitable forgetful functor
+$U \colon \mathcal{C} \to \mathbf{Frm}$ and a dual adjunction $O_{\mathcal C}\colon \mathbf{Top} \to \mathcal C$ and $\mathrm{pt}_{\mathcal C}\colon \mathcal C \to \mathbf{Top}$, whose fixpoints are the
+$T_0$ spaces and which is, in a sense that will be made precise, compatible with the adjunction
+$(O,\mathrm{pt})$ between frames and spaces. By studying the fibers of $U$, we are able to study various
+aspects of $T_0$ spaces abstractly. In all pointfree notions of $T_0$ spaces mentioned above, the
+pointfree sober spaces are the top elements of the fibers, and the TD ones are the bottom
+elements.
+
+\end{document}
