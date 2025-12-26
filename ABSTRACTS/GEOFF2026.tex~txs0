@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+\usepackage{mathrsfs}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=blue,
+	citecolor=black
+}
+
+\setlist[itemize]{leftmargin=1.2em}
+\setlist[enumerate]{leftmargin=1.2em}
+
+\newcommand{\Title}[1]{\section*{#1}\vspace{-0.25em}\hrule\vspace{0.8em}}
+\newcommand{\Field}[2]{\textbf{#1:}~#2\par}
+\newcommand{\Affil}[1]{\textit{#1}\par}
+\newcommand{\Abstract}{\vspace{0.6em}\textbf{Abstract.}~}
+
+\begin{document}
+	
+	\begin{center}
+		{\LARGE Online Algebra, Logic, and Topology Seminar}\\[0.25em]
+		{\large Category Theory Seminar — Abstract}\\[0.5em]
+		December 02nd, 2025
+	\end{center}
+	
+	\vspace{1.25em}\hrule\vspace{1.25em}
+	
+	\Title{$ N $-fold groupoids and $ n $-groupoids in regular Mal'tsev categories}
+	
+	\Field{Speaker}{Nadja Egner}
+	\Affil{\hspace{1.15cm}Universit\'{e} catholique de Louvain, Belgium}
+	
+	\noindent \Field{Date \& Time}{December 02nd, 2025 (Tuesday) — 4{:}00\,PM (Coimbra time)}
+	\noindent \Field{Place}{Google Meet}
+	
+	\Abstract
+	The category $ 2\textrm{-}\mathrm{Grpd}(\mathscr{C}) $ of internal $ 2 $-groupoids in a regular Mal’tsev category $ \mathscr{C} $ with finite colimits is a Birkhoff subcategory of the category $ \mathrm{Grpd}^2(\mathscr{C}) $ of internal double groupoids in $ \mathscr{C} $, and the left adjoint of the inclusion functor of $ 2\textrm{-}\mathrm{Grpd}(\mathscr{C}) $ into $ \mathrm{Grpd}^2(\mathscr{C}) $ allows for an easy explicit descripton [4]. Using this one can show that also the category $ n\textrm{-}\mathrm{Grpd}(\mathscr{C}) $ of internal $ n $-groupoids in $ \mathscr{C} $ [1] is a Birkhoff subcategory of the category $ \mathrm{Grpd}^n(\mathscr{C}) $ of internal $ n $-fold groupoids in $ \mathscr{C} $. Since $ n\textrm{-}\mathrm{Grpd}(\mathscr{C}) $ is also coreflective in $ \mathrm{Grpd}^n(\mathscr{C}) $ (as soon as $ \mathscr{C} $ is finitely complete), the result in [4] that $ \mathrm{Grpd}^n(\mathscr{C}) $ is action representable [2] implies that also $ n\textrm{-}\mathrm{Grpd}(\mathscr{C}) $ is action representable whenever $\mathscr{C}$ is a semi-abelian algebraically coherent category with normalizers that is action representable.
+	
+	\phantom{x}
+	
+	\noindent [1] D. Bourn, \textit{La tour de fibrations exactes des n-catégories}, Cah. Topol. Géom. Différ. Catég. 
+	25 :4 (1984), 327-351. 
+	
+	\vspace{1mm}
+	\noindent [2] F. Borceux, G. Janelidze and G.M. Kelly, \textit{Internal object actions}, Comm. Math. Univ. Carolin. 46:2 (2005), 235-255.
+	
+	\vspace{1mm}
+	\noindent [3] N. Egner and M. Gran, \textit{Double groupoids and 2-groupoids in regular Mal'tsev categories}, App. Categ. Structures 33:27 (2025).
+	
+	\vspace{1mm}
+	\noindent [4] M. Gran and J.R.A. Gray, \textit{Action representability of the category of internal groupoids}, Theory Appl. Categ. 37:1 (2021), 1-13.
+\end{document}
