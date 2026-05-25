@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fernando Lucatelli Nunes — Some Projects and Collaborations</title>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12pt;
+        color: var(--text);
+        background: var(--background);
+    }
+
+    .page {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    header,
+    nav,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+
+    .subtitle a {
+        color: var(--blue);
+    }
+
+    nav {
+        padding: 11px 16px;
+        margin-bottom: 18px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
+    }
+
+    nav a {
+        margin: 0 7px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
+    h2 {
+        margin: 0 0 18px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+        color: var(--blue);
+    }
+
+    h3 {
+        margin: 0 0 5px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12.8pt;
+        color: var(--blue-dark);
+    }
+
+    p {
+        margin: 0 0 12pt 0;
+    }
+
+    a {
+        color: var(--blue);
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    .project-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .project {
+        padding: 18px 0 19px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .project:first-child {
+        padding-top: 0;
+    }
+
+    .project:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .project-meta {
+        margin: 0 0 7px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.45;
+        color: var(--muted);
+    }
+
+    .project-meta strong {
+        color: var(--text);
+    }
+
+    .project-lines {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.85pt;
+        line-height: 1.5;
+    }
+
+    .project-lines li {
+        margin: 3px 0;
+    }
+
+    .label {
+        color: var(--muted);
+        font-weight: bold;
+    }
+
+    .tags {
+        margin: 8px 0 0 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.2pt;
+        color: var(--muted);
+    }
+
+    .tags span + span::before {
+        content: " · ";
+        color: #9aa6b8;
+    }
+
+    .note {
+        margin-top: 24px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    @media (max-width: 720px) {
+        body {
+            padding: 18px 10px;
+        }
+
+        header,
+        main {
+            padding: 22px 20px;
+        }
+
+        h1 {
+            font-size: 21pt;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <h1>FERNANDO LUCATELLI NUNES</h1>
+        <p class="subtitle">
+            Assistant Professor, Department of Mathematics, University of Coimbra<br />
+            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
+        </p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="Research.html">Research</a>
+        <a href="students.html">Ph.D. students</a>
+        <a href="Talks.html">Selected talks</a>
+        <a href="Academic_Positions.html">Academic positions/stays</a>
+        <a href="Organization_of_seminars_events.html">Seminars/events</a>
+        <a href="Further_Information.html">Further information</a>
+    </nav>
+
+    <main>
+        <section aria-label="Some projects and collaborations">
+            <h2>Some Projects and Collaborations</h2>
+
+            <ul class="project-list">
+                <li class="project">
+                    <h3>Formalised reasoning about expectations</h3>
+                    <p class="project-meta">
+                        <strong>ERC Starting Grant FoRECAST</strong> — <em>Formalised Reasoning about Expectations: Composable, Automated, Speedy, Trustworthy</em>.
+                        PI / grant holder: <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">Role:</span> contributor to the formal-methods and semantic side of the project.</li>
+                        <li><span class="label">Supervision:</span> co-supervision of <a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm</a> with <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
+                    </ul>
+                    <p class="tags"><span>computer science</span><span>formal methods</span><span>probabilistic programming</span><span>automatic differentiation</span></p>
+                </li>
+
+                <li class="project">
+                    <h3>Grothendieck descent theory, fibrations, and factorizations</h3>
+                    <p class="project-meta">
+                        <strong>Fields Research Fellowship</strong>, Fields Institute for Research in Mathematical Sciences, Canada, 2023.
+                        PI: Fernando Lucatelli Nunes.
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">Collaboration:</span> <a href="https://www.yorku.ca/science/profiles/faculty/walter-tholen/">Walter Tholen</a>.</li>
+                        <li><span class="label">Focus:</span> descent theory, fibrations, monads, and categorical factorization phenomena.</li>
+                    </ul>
+                    <p class="tags"><span>pure mathematics</span><span>descent theory</span><span>fibrations</span><span>factorizations</span></p>
+                </li>
+
+                <li class="project">
+                    <h3>Grothendieck descent, Galois theory, and presentations of categorical structures</h3>
+                    <p class="project-meta">
+                        <strong>Oberwolfach Leibniz Fellowship</strong>, Mathematisches Forschungsinstitut Oberwolfach, Germany, 2022.
+                        PI: Fernando Lucatelli Nunes.
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">Collaborators:</span> <a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino</a>, <a href="https://prezado.github.io/">Rui Prezado</a>, <a href="https://cmuc.mat.uc.pt/rdonweb/person/ppgeral.do?idpessoa=15">Lurdes Sousa</a>, <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
+                        <li><span class="label">Focus:</span> Grothendieck descent theory, categorical Galois theory, and presentations of categorical structures.</li>
+                    </ul>
+                    <p class="tags"><span>pure mathematics</span><span>Galois theory</span><span>presentations</span><span>categorical structures</span></p>
+                </li>
+
+                <li class="project">
+                    <h3>Higher-order monad-based programming and reasoning</h3>
+                    <p class="project-meta">
+                        <strong>DFG Project HOMBRe</strong> — <em>Higher-Order Monad-based Programming and Reasoning</em>.
+                        PI / grant holder: <a href="https://sergey-goncharov.org/">Sergey Goncharov</a>.
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">Context:</span> collaboration with <a href="https://sergey-goncharov.org/">Sergey Goncharov</a> began during my postdoctoral fellowship at the University of Birmingham under HOMBRe.</li>
+                        <li><span class="label">Status:</span> ongoing collaboration, with the intention of contributing further to the project’s research directions.</li>
+                    </ul>
+                    <p class="tags"><span>computer science</span><span>monads</span><span>higher-order programming</span><span>semantics</span></p>
+                </li>
+
+                <li class="project">
+                    <h3>Doctoral supervision and funded Ph.D. projects</h3>
+                    <p class="project-meta">
+                        Doctoral projects in mathematics and computer science, supported through institutional and competitive funding schemes.
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">Students:</span> see <a href="students.html">Ph.D. students</a>.</li>
+                    </ul>
+                    <p class="tags"><span>supervision</span><span>doctoral funding</span><span>research community</span></p>
+                </li>
+            </ul>
+
+            <p class="note">
+                For a fuller record of publications, appointments, talks, teaching, supervision, and academic service, please see my <a href="CV.pdf">Curriculum Vitae</a>.
+            </p>
+        </section>
+    </main>
+</div>
+</body>
+</html>
+

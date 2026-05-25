@@ -1,116 +1,292 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<title></title>
-<style type="text/css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fernando Lucatelli Nunes</title>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+        --card: #fbfcfe;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         margin: 0;
-        padding: 20px 0;
-        line-height: 150%;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding: 34px 16px;
+        line-height: 1.56;
+        font-family: Georgia, "Times New Roman", Times, serif;
         font-size: 12pt;
-        color: #333333;
-        background-color: #f9f9f9;
+        color: var(--text);
+        background: var(--background);
     }
-    body > div {
-        max-width: 750px;
+
+    .page {
+        max-width: 920px;
         margin: 0 auto;
-        background-color: #ffffff;
-        padding: 20px;
-        border: 1px solid #cccccc;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    h1 {
-        margin-top: 20pt;
-        margin-bottom: 10pt;
-        line-height: normal;
-        border-bottom: 0.75pt solid #4472c4;
-        padding-bottom: 1pt;
-        font-family: Arial, sans-serif;
-        font-size: 24pt;
-        font-weight: normal;
-        color: #2f5496;
+
+    header,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
         text-align: center;
+        margin-bottom: 18px;
     }
-    h2 {
-        font-size: 18pt;
-        font-family: Arial, sans-serif;
-        color: #2f5496;
-        margin-bottom: 4pt;
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
     }
-    h3 {
-        font-size: 14pt;
-        font-family: Arial, sans-serif;
-        color: #404040;
-        margin-bottom: 2pt;
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
     }
+
+    .subtitle a {
+        color: var(--blue);
+    }
+
+    main {
+        padding: 34px 40px 36px 40px;
+    }
+
     p {
-        margin-bottom: 12pt;
+        margin: 0 0 12pt 0;
     }
-    img {
-        float: left;
-        margin: 0 20px 20px 20px !important;
-        border: 2px solid #cccccc;
-        border-radius: 50%;
-    }
-    .ListParagraph {
-        margin-left: 0 !important;
-        text-indent: 0 !important;
-        position: relative;
-        padding-left: 20px;
-        line-height: 110%;
-        font-size: 11pt;
-    }
-    .ListParagraph::before {
-        content: "•";
-        color: #2f5496;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-    span.Hyperlink {
+
+    a {
+        color: var(--blue);
         text-decoration: none;
-        color: #2f5496;
     }
-    a:hover {
-        text-decoration: underline !important;
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    .intro {
+        overflow: auto;
+        margin-bottom: 30px;
+    }
+
+    .portrait {
+        float: left;
+        width: 168px;
+        height: 168px;
+        object-fit: cover;
+        margin: 2px 24px 16px 0;
+        border: 1px solid #c9d2df;
+        border-radius: 50%;
+        padding: 3px;
+        background: #ffffff;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+
+    .intro p:last-child {
+        margin-bottom: 0;
+    }
+
+    .profile-line {
+        margin-bottom: 12pt;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.2pt;
+        color: var(--muted);
+    }
+
+    .section-links {
+        clear: both;
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-light);
+    }
+
+    .link-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .link-card {
+        display: block;
+        min-height: 82px;
+        padding: 14px 15px 13px 15px;
+        border: 1px solid var(--border-light);
+        border-radius: 5px;
+        background: var(--card);
+        font-family: Arial, Helvetica, sans-serif;
+        transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .link-card:hover,
+    .link-card:focus {
+        background: #f7fafd;
+        border-color: #cbd6e5;
+        text-decoration: none;
+        transform: translateY(-1px);
+    }
+
+    .link-card strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--blue-dark);
+        font-size: 11.45pt;
+        font-weight: bold;
+    }
+
+    .link-card span {
+        display: block;
+        color: var(--muted);
+        font-size: 10.25pt;
+        line-height: 1.42;
+    }
+
+    .small-note {
+        margin: 20px 0 0 0;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    @media (max-width: 720px) {
+        body {
+            padding: 18px 10px;
+        }
+
+        header,
+        main {
+            padding: 22px 20px;
+        }
+
+        h1 {
+            font-size: 21pt;
+        }
+
+        .portrait {
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .link-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 </head>
 <body>
-<div>
-    <h1><a name="_Hlk41113657"></a><a name="_Hlk41112256"></a><a name="_Hlk41116274"></a><a name="_Hlk41112427">FERNANDO LUCATELLI NUNES</a></h1>
-    <p>
-        <a href="PhD_in_Mathematics.html"><span class="Hyperlink">Ph.D. in Mathematics</span></a> &nbsp;&nbsp;&nbsp;
-        <a href="PhD_in_Computer_Science.html"><span class="Hyperlink">Ph.D. in Computer Science</span></a>
-    </p>
+<div class="page">
+    <header>
+        <h1>FERNANDO LUCATELLI NUNES</h1>
+        <p class="subtitle">
+            Assistant Professor, Department of Mathematics, University of Coimbra<br />
+            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
+        </p>
+    </header>
 
-<p>
-<img src="Foto.png" width="189" height="190" alt="" />
-I am particularly interested in work that combines conceptual depth with tangible impact.
-</p>
+    <main>
+        <section class="intro" aria-label="Introduction">
+            <img class="portrait" src="Foto.png" width="178" height="178" alt="Fernando Lucatelli Nunes" />
 
-<p>
-I work on the theory and applications of low- and higher-dimensional generalized categorical structures. My research is driven both by foundational questions in pure mathematics and by challenges arising in computer science, especially in the semantics, implementation, and engineering of modern programming languages and software systems. For me, putting theory into practice is not an afterthought, but a disciplined way of developing solutions whose relevance endures.
-</p>
+            <div class="intro-text">
+                <p class="profile-line">
+                           I work in pure mathematics and computer science, with a focus on low- and higher-dimensional generalized categorical structures.
+                    My research is driven both by foundational questions in category theory and by problems arising in programming language semantics, formal methods, and the design and implementation of modern programming languages.
+                </p>
 
-<p>
-I welcome discussions and collaborations, especially with prospective PhD students and researchers interested in categorical structures, programming language theory, formal methods, or closely related areas. 
-If this resonates with you, please feel free to <a href="mailto:flnlucatelli@gmail.com">get in touch</a>.
-</p>
+                <p class="profile-line">
+                    A recurring aim of my work is to develop mathematical structures that are conceptually robust and technically useful.
+                    Putting theory into practice is not an afterthought, but part of the discipline of building solutions whose relevance endures.
+                </p>
+            </div>
+        </section>
 
-</div>
-<div>
-    <p class="ListParagraph"><a href="Research.html"><span class="Hyperlink"><strong><em>Research</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Talks.html"><span class="Hyperlink"><strong><em>Selected Talks</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Academic_Positions.html"><span class="Hyperlink"><strong><em>Academic positions/stays</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539"><span class="Hyperlink"><strong><em>Mathematical Genealogy</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Further_Information.html"><span class="Hyperlink"><strong><em>Further information</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Organization_of_seminars_events.html"><span class="Hyperlink"><strong><em>Organization of seminars/events</em></strong></span></a> : <a href="ONLINEALTSEMINARP.html"><span class="Hyperlink"><strong><em>Online Algebra, Logic and Topology Seminar</em></strong></p>
+        <section class="section-links" aria-label="Main website sections">
+            <div class="link-grid">
+                <a class="link-card" href="Research.html">
+                    <strong>Research</strong>
+                    <span>Research statement, publications, preprints, and related writings.</span>
+                </a>
+
+                <a class="link-card" href="Some_projects.html">
+                    <strong>Some projects and collaborations</strong>
+                    <span>Selected collaborations, funded environments, and supervision-related projects.</span>
+                </a>
+
+                <a class="link-card" href="students.html">
+                    <strong>Ph.D. students</strong>
+                    <span>Current and former doctoral supervision.</span>
+                </a>
+
+                <a class="link-card" href="Talks.html">
+                    <strong>Selected talks</strong>
+                    <span>Invited, plenary, seminar, and workshop talks.</span>
+                </a>
+
+                <a class="link-card" href="Academic_Positions.html">
+                    <strong>Academic positions and stays</strong>
+                    <span>Appointments, affiliations, visits, and doctoral appointments.</span>
+                </a>
+
+                <a class="link-card" href="Organization_of_seminars_events.html">
+                    <strong>Organization of seminars and events</strong>
+                    <span>Seminar organization and academic community-building activities.</span>
+                </a>
+
+                <a class="link-card" href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539">
+                    <strong>Mathematical genealogy</strong>
+                    <span>Academic genealogy through the Mathematics Genealogy Project.</span>
+                </a>
+
+                <a class="link-card" href="Further_Information.html">
+                    <strong>Further information</strong>
+                    <span>External profiles, selected links, and additional academic information.</span>
+                </a>
+            </div>
+
+            <p class="small-note">
+                I welcome discussions and collaborations with researchers and prospective Ph.D. students interested in categorical structures, programming language theory, formal methods, software technology, or closely related areas.
+                Please feel free to <a href="mailto:flnlucatelli@gmail.com">get in touch</a>.
+            </p>
+        </section>
+    </main>
 </div>
 </body>
 </html>

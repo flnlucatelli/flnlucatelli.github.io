@@ -1,164 +1,338 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<title></title>
-<style type="text/css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fernando Lucatelli Nunes — Selected Talks</title>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         margin: 0;
-        padding: 20px 0;
-        line-height: 150%;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
         font-size: 12pt;
-        color: #333333;
-        background-color: #f9f9f9;
+        color: var(--text);
+        background: var(--background);
     }
-    body > div {
-        max-width: 750px;
+
+    .page {
+        max-width: 900px;
         margin: 0 auto;
-        background-color: #ffffff;
-        padding: 20px;
-        border: 1px solid #cccccc;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    h1 {
-        margin-top: 20pt;
-        margin-bottom: 10pt;
-        line-height: normal;
-        border-bottom: 0.75pt solid #4472c4;
-        padding-bottom: 1pt;
-        font-family: Arial, sans-serif;
-        font-size: 24pt;
-        font-weight: normal;
-        color: #2f5496;
+
+    header,
+    nav,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
         text-align: center;
+        margin-bottom: 16px;
     }
-    h2 {
-        font-size: 18pt;
-        font-family: Arial, sans-serif;
-        color: #2f5496;
-        margin-bottom: 4pt;
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
     }
-    h3 {
-        font-size: 14pt;
-        font-family: Arial, sans-serif;
-        color: #404040;
-        margin-bottom: 2pt;
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
     }
-    p {
-        margin-bottom: 12pt;
+
+    .subtitle a {
+        color: var(--blue);
     }
-    img {
-        float: left;
-        margin: 0 20px 20px 20px !important;
-        border: 2px solid #cccccc;
-        border-radius: 50%;
+
+    nav {
+        padding: 11px 16px;
+        margin-bottom: 18px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
     }
-    .ListParagraph {
-        margin-left: 0 !important;
-        text-indent: 0 !important;
-        position: relative;
-        padding-left: 20px;
-        line-height: 110%;
-        font-size: 11pt;
-    }
-    .ListParagraph::before {
-        content: "•";
-        color: #2f5496;
+
+    nav a {
+        margin: 0 7px;
+        white-space: nowrap;
         font-weight: bold;
-        position: absolute;
-        left: 0;
     }
-    span.Hyperlink {
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
+    section {
+        margin-bottom: 36px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        margin: 0 0 18px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+        color: var(--blue);
+    }
+
+    h3 {
+        margin: 0 0 14px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13.1pt;
+        color: var(--blue-dark);
+    }
+
+    p {
+        margin: 0 0 12pt 0;
+    }
+
+    a {
+        color: var(--blue);
         text-decoration: none;
-        color: #2f5496;
     }
-    a:hover {
-        text-decoration: underline !important;
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    .talk-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .talk {
+        padding: 12px 0 13px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .talk:first-child {
+        padding-top: 0;
+    }
+
+    .talk:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .talk-title {
+        display: block;
+        margin-bottom: 3px;
+        font-weight: bold;
+        color: var(--blue-dark);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.1pt;
+        line-height: 1.4;
+    }
+
+    .talk-meta {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.65pt;
+        line-height: 1.45;
+        color: var(--muted);
+    }
+
+    .talk-meta strong {
+        color: var(--text);
+        font-weight: bold;
+    }
+
+    .year {
+        white-space: nowrap;
+        color: var(--muted);
+    }
+
+    .note {
+        margin-top: 24px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    @media (max-width: 720px) {
+        body {
+            padding: 18px 10px;
+        }
+
+        header,
+        main {
+            padding: 22px 20px;
+        }
+
+        h1 {
+            font-size: 21pt;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
     }
 </style>
 </head>
-
 <body>
+<div class="page">
+    <header>
+        <h1>FERNANDO LUCATELLI NUNES</h1>
+        <p class="subtitle">
+            Assistant Professor, Department of Mathematics, University of Coimbra<br />
+            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
+        </p>
+    </header>
 
-<div>
-    <h1><a name="_Hlk41113657"></a><a name="_Hlk41112256"></a><a name="_Hlk41116274"></a><a name="_Hlk41112427">FERNANDO LUCATELLI NUNES</a></h1>
-    <p>
-        <a href="PhD_in_Mathematics.html"><span class="Hyperlink">Ph.D. in Mathematics</span></a> &nbsp;&nbsp;&nbsp;
-        <a href="PhD_in_Computer_Science.html"><span class="Hyperlink">Ph.D. in Computer Science</span></a>
-    </p>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="Research.html">Research</a>
+        <a href="students.html">Ph.D. students</a>
+        <a href="Some_projects.html">Projects/collaborations</a>
+        <a href="Academic_Positions.html">Academic positions/stays</a>
+        <a href="Organization_of_seminars_events.html">Seminars/events</a>
+        <a href="Further_Information.html">Further information</a>
+    </nav>
 
+    <main>
+        <section aria-label="Selected talks">
+            <h2>Selected Talks</h2>
 
+            <section aria-label="Selected invited and plenary lectures">
+                <h3>Selected invited and plenary lectures</h3>
+                <ul class="talk-list">
+                    <li class="talk">
+                        <span class="talk-title">CatAlg 2026</span>
+                        <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://sites.google.com/view/catalg2026/">CatAlg 2026</a>, UniMont, Milan, Italy <span class="year">(2026)</span>. <em>To be held in July 2026.</em></span>
+                    </li>
 
+                    <li class="talk">
+                        <span class="talk-title">2nd Joint Meeting Brazil–Italy in Mathematics</span>
+                        <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://umi.dm.unibo.it/jm-ita-bra-2026/">University of Messina</a>, Italy <span class="year">(2026)</span>. <em>To be held in September 2026.</em></span>
+                    </li>
 
-<h2>Selected Talks</h2>
-<h3>Seminars</h3>
-<p><em>All talks were 1-hour research seminars.</em></p>
-<ul>
-<li><strong>University of Birmingham</strong>, UK, 2026 — <em>Biadjoint Triangles and Coherence</em></li>
-<li><strong>IMPA</strong>, Brazil, 2025 — <em>Biadjoint Triangles and Coherence</em></li>
-<li><strong>University of Cape Town</strong>, South Africa, 2025 — <em>Two-dimensional monad theory, pseudodistributive laws, and doubly-infinitary distributive and extensive categories as pseudoalgebras</em></li>
-<li><strong>Stellenbosch University</strong>, South Africa, 2025 — <em>Two-dimensional monad theory, and free extensive completions</em></li>
-<li><strong>University of Cape Town</strong>, South Africa, 2025 — <em>Bifibrations, Spans, and the Bénabou-Roubaud Theorem</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2024 — <em>Unraveling the iterative CHAD</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2022 — <em>Descent for Split Fibrations</em></li>
-<li><strong>Utrecht University</strong>, Netherlands, 2021 — <em>Automatic differentiation of expressive total functional languages</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2019 — <em>On monadicity and descent</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2019 — <em>Functorial Semantics and Descent II</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2018 — <em>Functorial Semantics and Descent</em>, 
-<li><strong>University of Coimbra</strong>, Portugal, 2018 — <em>Biadjoint Triangles and Applications</em>, 
-<li><strong>University of Coimbra</strong>, Portugal, 2018 — <em>Towards semi left exactness and Janelidze-Galois within the lax idempotent context</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2016 — <em>The deficiency of categories</em>, 
-<li><strong>University of Coimbra</strong>, Portugal, 2016 — <em>Biadjoint triangles, descent and coherence</em></li>
-<li><strong>Universidade do Porto</strong>, Portugal, 2016 — <em>Kan construction of adjunctions</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2016 — <em>Homotopy Excision</em></li>
-<li><strong>University of Coimbra</strong>, Portugal, 2013 — <em>Every prespectrum represents a homology theory</em></li>
-<li><strong>Universidade de Brasília</strong>, Brazil, 2010 — <em>Topological Dynamics and Applications in Number Theory</em>, 
-<li><strong>Universidade de Brasília</strong>, Brazil, 2010 — <em>Dynamical Proof of the Van der Waerden Theorem</em></li>
-</ul>
-<h3>Special Talks</h3>
-<ul>
-<li><strong>Plenary Talk</strong>, International Conference on Category Theory, University of Azores, 2018<br/><em>Aspects of Descent via Bilimits</em></li>
-<li><strong>Invited Talk</strong>, New Challenges in Programming Language Semantics, Lorentz Center, Leiden, Netherlands, 2022<br/><em>Categorical Approach to Semantic Logical Relations (for partial features and recursive types)</em></li>
-</ul>
-<h3>Conference Presentations</h3>
-<ul>
-<li><strong>109th Peripatetic Seminar on Sheaves and Logic</strong>, Leiden University, Netherlands, 2024<br/><em>The semantic lax descent factorization of a functor</em></li>
-<li><strong>International Conference on Category Theory</strong>, University of Santiago de Compostela, Spain, 2024<br/><em>Doubly-infinitary distributive categories</em></li>
-<li><strong>SUMTOPO 2024</strong>, University of Coimbra, Portugal, 2024<br/><em>Homomorphic reverse differentiation for partial features</em></li>
-<li><strong>38th Summer Conference on Topology and its Applications</strong>, University of Coimbra, Portugal, 2024<br/><em>Free distributive and extensive categories</em></li>
-<li><strong>XIV Portuguese Category Seminar</strong>, University of Coimbra, Portugal, 2023<br/><em>Freely generated bicartesian categories and exponentials</em></li>
-<li><strong>International Conference on Category Theory</strong>, UCLouvain, Belgium, 2023<br/><em>Spanning the tale of “Monades et descente”</em></li>
-<li><strong>XIII Portuguese Category Seminar</strong>, University of Coimbra, Portugal, 2022<br/><em>CHAD: elementary categorical aspects of automatic differentiation</em></li>
-<li><strong>8th European Congress of Mathematics</strong>, University of Primorska, Slovenia, 2021<br/><em>Eilenberg-Moore, Kleisli and descent factorizations</em></li>
-<li><strong>XII Portuguese Category Seminar</strong>, University of Coimbra, Portugal, 2019<br/><em>Lax comma 2-categories</em></li>
-<li><strong>International Conference on Category Theory</strong>, University of Edinburgh, Scotland, 2019<br/><em>Descent and Monadicity</em></li>
-<li><strong>Categorical Structures in Algebra, Topology and Logic</strong>, Stellenbosch University, South Africa, 2019<br/><em>Eilenberg-Moore, Kleisli and descent factorization</em></li>
-<li><strong>103rd Peripatetic Seminar on Sheaves and Logic</strong>, Masaryk University, Brno, Czech Republic, 2018<br/><em>Biadjoint Triangles and Applications</em></li>
-<li><strong>102nd Peripatetic Seminar on Sheaves and Logic</strong>, Universidade de Santiago de Compostela, Spain, 2018<br/><em>Non-canonical isomorphisms</em></li>
-<li><strong>5th Workshop on Categorical Methods in Non-Abelian Algebra</strong>, UCLouvain, Belgium, 2017<br/><em>Biadjoint Triangles</em></li>
-<li><strong>XI Portuguese Category Seminar</strong>, University of Coimbra, Portugal, 2017<br/><em>Freely generated n-categories and coinserters</em></li>
-<li><strong>4th Workshop on Categorical Methods in Non-Abelian Algebra</strong>, University of Coimbra, Portugal, 2016<br/><em>Bilimits Commutativity and Descent</em></li>
-<li><strong>International Conference on Category Theory</strong>, University of Aveiro, Portugal, 2015<br/><em>Kan extensions and descent theory</em></li>
-</ul>
-<h3>Workshop Presentations</h3>
-<ul>
-<li><strong>LAFI 2024 – Tenth Workshop on Languages for Inference at POPL</strong>, London, UK<br/><em>Homomorphic Reverse Differentiation of Iteration</em></li>
-</ul>
-<p>📄 For more details and the complete list of academic activities, please refer to my <a href="CV.pdf" target="_blank">full Curriculum Vitae</a>.</p>
+                    <li class="talk">
+                        <span class="talk-title">A Generalization of the Eilenberg–Moore Factorization</span>
+                        <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://progetto-itaca.github.io/fests/fest26.html">Itaca Fest 2026</a>, Italy <span class="year">(2026)</span>.</span>
+                    </li>
+
+                    <li class="talk">
+                        <span class="talk-title">A Categorical Approach to Semantic Logical Relations for Partial Features and Recursive Types</span>
+                        <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://www.lorentzcenter.nl/new-challenges-in-programming-language-semantics.html">New Challenges in Programming Language Semantics</a>, Lorentz Center, Leiden, The Netherlands <span class="year">(2022)</span>.</span>
+                    </li>
+
+                    <li class="talk">
+                        <span class="talk-title">Aspects of Descent via Bilimits</span>
+                        <span class="talk-meta"><strong>Plenary lecture</strong>, <a href="https://www.mat.uc.pt/~ct2018/">International Conference on Category Theory 2018</a>, University of the Azores, Portugal <span class="year">(2018)</span>.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-label="Selected invited or refereed talks">
+                <h3>Selected invited and/or refereed talks</h3>
+                <ul class="talk-list">
+                    <li class="talk"><span class="talk-title">The semantic lax descent factorization of a functor</span><span class="talk-meta">109th Peripatetic Seminar on Sheaves and Logic, Leiden University, The Netherlands <span class="year">(2024)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Doubly-infinitary distributive categories</span><span class="talk-meta">International Conference in Category Theory 2024, University of Santiago de Compostela, Spain <span class="year">(2024)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Homomorphic reverse differentiation for partial features</span><span class="talk-meta">SUMTOPO 2024, Topology and Logic in Computer Science, University of Coimbra, Portugal <span class="year">(2024)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Free distributive and extensive categories</span><span class="talk-meta">38th Summer Conference on Topology and its Applications, University of Coimbra, Portugal <span class="year">(2024)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Freely generated bicartesian categories and exponentials</span><span class="talk-meta">XIV Portuguese Category Seminar, University of Coimbra, Portugal <span class="year">(2023)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Spanning the tale of “Monades et descente”</span><span class="talk-meta">International Conference in Category Theory 2023, Université catholique de Louvain, Belgium <span class="year">(2023)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">CHAD: elementary categorical aspects of automatic differentiation</span><span class="talk-meta">XIII Portuguese Category Seminar, University of Coimbra, Portugal <span class="year">(2022)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Eilenberg–Moore, Kleisli and descent factorizations</span><span class="talk-meta">8th European Congress of Mathematics, University of Primorska, Slovenia <span class="year">(2021)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Lax comma 2-categories</span><span class="talk-meta">XII Portuguese Category Seminar, University of Coimbra, Portugal <span class="year">(2019)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Descent and Monadicity</span><span class="talk-meta">International Conference on Category Theory 2019, University of Edinburgh, Scotland <span class="year">(2019)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Eilenberg–Moore, Kleisli and descent factorization</span><span class="talk-meta">Categorical Structures in Algebra, Topology and Logic, Stellenbosch University, South Africa <span class="year">(2019)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Biadjoint Triangles and Applications</span><span class="talk-meta">103rd Peripatetic Seminar on Sheaves and Logic, Masaryk University, Brno, Czech Republic <span class="year">(2018)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Non-canonical isomorphisms</span><span class="talk-meta">102nd Peripatetic Seminar on Sheaves and Logic, Universidade de Santiago de Compostela, Spain <span class="year">(2018)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Biadjoint Triangles</span><span class="talk-meta">5th Workshop on Categorical Methods in Non-Abelian Algebra, Université catholique de Louvain, Belgium <span class="year">(2017)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Freely generated n-categories and coinserters</span><span class="talk-meta">XI Portuguese Category Seminar, University of Coimbra, Portugal <span class="year">(2017)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Bilimits Commutativity and Descent</span><span class="talk-meta">4th Workshop on Categorical Methods in Non-Abelian Algebra, University of Coimbra, Portugal <span class="year">(2016)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Kan extensions and descent theory</span><span class="talk-meta">International Conference on Category Theory 2015, University of Aveiro, Portugal <span class="year">(2015)</span>.</span></li>
+                </ul>
+            </section>
+
+            <section aria-label="Invited one-hour seminar talks">
+                <h3>Invited one-hour seminar talks</h3>
+                <ul class="talk-list">
+                    <li class="talk"><span class="talk-title">Eilenberg–Moore, Kleisli, and Descent Factorizations</span><span class="talk-meta">Theory of Computation Seminar, University of Birmingham, UK <span class="year">(2026)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Biadjoint Triangles and Coherence</span><span class="talk-meta">Algebra Seminar, IMPA, Brazil <span class="year">(2025)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Bifibrations, Spans, and the Bénabou–Roubaud Theorem</span><span class="talk-meta">Category Theory Seminar, University of Cape Town, South Africa <span class="year">(2025)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Two-dimensional monad theory, pseudodistributive laws, and doubly-infinitary distributive and extensive categories as pseudoalgebras</span><span class="talk-meta">Category Theory Seminar, Stellenbosch University, South Africa <span class="year">(2025)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Two-dimensional monad theory, and free extensive completions</span><span class="talk-meta">Category Theory Seminar, University of Cape Town, South Africa <span class="year">(2025)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Unraveling the iterative CHAD</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2024)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Descent for Split Fibrations</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2022)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Automatic differentiation of expressive total functional languages</span><span class="talk-meta">Software Technology Group Seminar, Utrecht University, Netherlands <span class="year">(2021)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">On monadicity and descent</span><span class="talk-meta">Seminar of the Category Theory Group, University of Coimbra, Portugal <span class="year">(2019)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Functorial Semantics and Descent II</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2019)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Functorial Semantics and Descent</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2018)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Biadjoint Triangles and Applications</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2018)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Towards semi left exactness and Janelidze–Galois within the lax idempotent context</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2018)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">The deficiency of categories</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2016)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Biadjoint triangles, descent and coherence</span><span class="talk-meta">Algebra, Logic and Topology Seminar, University of Coimbra, Portugal <span class="year">(2015)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Kan construction of adjunctions</span><span class="talk-meta">Research Seminar Program, Universidade do Porto, Portugal <span class="year">(2016)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Homotopy Excision</span><span class="talk-meta">Research Seminar Program, University of Coimbra, Portugal <span class="year">(2016)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Every prespectrum represents a homology theory</span><span class="talk-meta">Joint Ph.D. Program UC–UP Seminar, University of Coimbra, Portugal <span class="year">(2013)</span>.</span></li>
+                    <li class="talk"><span class="talk-title">Topological Dynamics and Applications in Number Theory</span><span class="talk-meta">Math Seminar, Universidade de Brasília, Brazil <span class="year">(2010)</span>; in Portuguese.</span></li>
+                    <li class="talk"><span class="talk-title">Dynamical Proof of the Van der Waerden Theorem</span><span class="talk-meta">Math Seminar, Universidade de Brasília, Brazil <span class="year">(2010)</span>; in Portuguese.</span></li>
+                </ul>
+            </section>
+
+            <section aria-label="Workshop talks">
+                <h3>Workshop talks</h3>
+                <ul class="talk-list">
+                    <li class="talk">
+                        <span class="talk-title">Homomorphic Reverse Differentiation of Iteration</span>
+                        <span class="talk-meta">LAFI 2024 — Tenth Workshop on Languages for Inference at POPL, London, UK <span class="year">(2024)</span>.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <p class="note">
+                For the complete record of talks and academic activities, please see my <a href="CV.pdf">Curriculum Vitae</a>.
+            </p>
+        </section>
+    </main>
 </div>
-<div>
-<p class="ListParagraph"><a href="index.html"><span class="Hyperlink"><strong><em>Home</em></strong></span></a></p>
-<p class="ListParagraph"><a href="Research.html"><span class="Hyperlink"><strong><em>Research</em></strong></span></a></p>
-<p class="ListParagraph"><a href="Academic_Positions.html"><span class="Hyperlink"><strong><em>Academic positions/stays</em></strong></span></a></p>
-<p class="ListParagraph"><a href="Organization_of_seminars_events.html"><span class="Hyperlink"><strong><em>Organization of seminars/events</em></strong></span></a></p>
-<p class="ListParagraph"><a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539"><span class="Hyperlink"><strong><em>Mathematical Genealogy</em></strong></span></a></p>
-<p class="ListParagraph"><a href="Further_Information.html"><span class="Hyperlink"><strong><em>Further information</em></strong></span></a></p>
-</div>
-
-
 </body>
 </html>

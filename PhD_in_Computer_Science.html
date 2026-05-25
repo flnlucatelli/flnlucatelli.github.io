@@ -1,118 +1,372 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<title></title>
-<style type="text/css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fernando Lucatelli Nunes — Ph.D. in Computer Science</title>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
         margin: 0;
-        padding: 20px 0;
-        line-height: 150%;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
         font-size: 12pt;
-        color: #333333;
-        background-color: #f9f9f9;
+        color: var(--text);
+        background: var(--background);
     }
-    body > div {
-        max-width: 750px;
+
+    .page {
+        max-width: 860px;
         margin: 0 auto;
-        background-color: #ffffff;
-        padding: 20px;
-        border: 1px solid #cccccc;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    h1 {
-        margin-top: 20pt;
-        margin-bottom: 10pt;
-        line-height: normal;
-        border-bottom: 0.75pt solid #4472c4;
-        padding-bottom: 1pt;
-        font-family: Arial, sans-serif;
-        font-size: 24pt;
-        font-weight: normal;
-        color: #2f5496;
+
+    header,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
         text-align: center;
+        margin-bottom: 18px;
     }
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+
+    .subtitle a { color: var(--blue); }
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
     h2 {
+        margin: 0 0 16px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 18pt;
-        font-family: Arial, sans-serif;
-        color: #2f5496;
-        margin-bottom: 4pt;
+        font-weight: normal;
+        color: var(--blue);
     }
-    h3 {
-        font-size: 14pt;
-        font-family: Arial, sans-serif;
-        color: #404040;
-        margin-bottom: 2pt;
-    }
-    p {
-        margin-bottom: 12pt;
-    }
-    img {
-        float: left;
-        margin: 0 20px 20px 20px !important;
-        border: 2px solid #cccccc;
-        border-radius: 50%;
-    }
-    .ListParagraph {
-        margin-left: 0 !important;
-        text-indent: 0 !important;
-        position: relative;
-        padding-left: 20px;
-        line-height: 110%;
-        font-size: 11pt;
-    }
-    .ListParagraph::before {
-        content: "•";
-        color: #2f5496;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-    span.Hyperlink {
+
+    p { margin: 0 0 12pt 0; }
+
+    a {
+        color: var(--blue);
         text-decoration: none;
-        color: #2f5496;
     }
-    a:hover {
-        text-decoration: underline !important;
+
+    a:hover,
+    a:focus { text-decoration: underline; }
+
+    section {
+        margin-bottom: 34px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    .thesis-block {
+        margin-bottom: 28px;
+    }
+
+    .thesis-title {
+        margin: 0 0 4px 0;
+        font-size: 15pt;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--blue-dark);
+        font-weight: bold;
+    }
+
+    .thesis-meta {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--muted);
+        font-size: 11pt;
+        line-height: 1.55;
+    }
+
+    .info-list {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--border-light);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.9pt;
+    }
+
+    .info-list li {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 20px;
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .label {
+        color: var(--muted);
+        font-weight: bold;
+    }
+
+    .themes {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--muted);
+        font-size: 10.9pt;
+        line-height: 1.75;
+    }
+
+    .publication-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .publication-list li {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .publication-list li:last-child {
+        border-bottom: none;
+    }
+
+    .authors {
+        color: var(--text);
+    }
+
+    .pub-title {
+        font-weight: bold;
+    }
+
+    .venue {
+        color: var(--text);
+    }
+
+    .meta,
+    .links {
+        color: var(--muted);
+    }
+
+    .note {
+        margin-top: 18px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    .nav {
+        margin-top: 30px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-light);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
+    }
+
+    .nav a {
+        margin: 0 8px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 720px) {
+        body { padding: 18px 10px; }
+        header, main { padding: 22px 20px; }
+        h1 { font-size: 21pt; }
+
+        .info-list li {
+            grid-template-columns: 1fr;
+            gap: 2px;
+        }
+
+        .nav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
     }
 </style>
 </head>
 <body>
-<div>
-    <h1><a name="_Hlk41113657"></a><a name="_Hlk41112256"></a><a name="_Hlk41116274"></a><a name="_Hlk41112427">FERNANDO LUCATELLI NUNES</a></h1>
-    <p>
-        <a href="PhD_in_Mathematics.html"><span class="Hyperlink">Ph.D. in Mathematics</span></a> &nbsp;&nbsp;&nbsp;
-        <a href="PhD_in_Computer_Science.html"><span class="Hyperlink">Ph.D. in Computer Science</span></a>
-    </p>
+<div class="page">
+    <header>
+        <h1>FERNANDO LUCATELLI NUNES</h1>
+        <p class="subtitle">
+            Assistant Professor, Department of Mathematics, University of Coimbra<br />
+            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
+        </p>
+    </header>
 
+    <main>
+        <section aria-label="Ph.D. in Computer Science">
+            <h2>Ph.D. in Computer Science</h2>
 
+            <div class="thesis-block">
+                <p class="thesis-title"><em>Freely Generated Categorical Structures and Automatic Differentiation</em></p>
+                <p class="thesis-meta">
+                    Utrecht University, Department of Information and Computing Sciences.
+                    Thesis submitted; degree to be awarded in 2026.
+                </p>
 
-<div style="margin-top: 30px; padding: 20px; border: 1px solid #cccccc; border-radius: 10px; background-color: #f0f4fa;">
-    <h2 style="color: #2f5496; border-bottom: 1px solid #aac6e3; padding-bottom: 5px;">Ph.D. in Computer Science</h2>
-    <p><strong>Institution:</strong> <span style="color: #333;">Utrecht University, Netherlands</span></p>
-    <p><strong>Thesis submitted; defense scheduled for April 2026</strong></p>
-    <p><strong>Thesis:</strong> <em>Freely generated categorical structures and automatic differentiation</em></p>
-    <p><strong>Supervisors:</strong> Professor <a href="https://www.uu.nl/staff/GKKeller">Gabriele Keller</a> and  Assistant Professor <a href="https://scholar.google.com/citations?user=aN1dMvMAAAAJ&hl=en">Matthijs Vákár</a></p>
-<p><strong>PhD Examination Committee:</strong>  Professor <a href="https://www.uu.nl/staff/IMoerdijk">Ieke Moerdijk</a>, Professor <a href="https://www.cs.ru.nl/B.Jacobs/">Bart Jacobs</a>, Professor <a href="https://www.cs.ox.ac.uk/people/samuel.staton/main.html">Sam Staton</a>, Professor <a href="https://cspages.ucalgary.ca/~robin/">Robin Cocket</a>, and Professor  <a href="https://cs.appstate.edu/johannp/">Patricia Johann</a> </p>
-<p><strong>Keywords:</strong> <span style="color: #333;">
-        Programming language semantics, automatic differentiation, software correctness, program transformations,
-        categorical semantics, logical relations, type systems, dependent types, algebraic effects
-    </span></p>
-    <p><strong>Period:</strong> <span style="color: #333;">November 2020 – November 2025</span></p>
-</div>
+                <ul class="info-list">
+                    <li>
+                        <span class="label">Period</span>
+                        <span>November 2020 – November 2025</span>
+                    </li>
 
-</div>
-<div>
-    <p class="ListParagraph"><a href="Research.html"><span class="Hyperlink"><strong><em>Research</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Talks.html"><span class="Hyperlink"><strong><em>Talks</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Academic_Positions.html"><span class="Hyperlink"><strong><em>Academic positions/stays</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Organization_of_seminars_events.html"><span class="Hyperlink"><strong><em>Organization of seminars/events</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539"><span class="Hyperlink"><strong><em>Mathematical Genealogy</em></strong></span></a></p>
-    <p class="ListParagraph"><a href="Further_Information.html"><span class="Hyperlink"><strong><em>Further information</em></strong></span></a></p>
+                    <li>
+                        <span class="label">Supervisors</span>
+                        <span>
+                            Professor <a href="https://www.uu.nl/staff/GKKeller">Gabriele Keller</a>
+                            and Dr. <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="label">Committee</span>
+                        <span>
+                            <a href="https://www.uu.nl/staff/IMoerdijk">Ieke Moerdijk</a>,
+                            <a href="https://www.cs.ru.nl/B.Jacobs/">Bart Jacobs</a>,
+                            <a href="https://www.cs.ox.ac.uk/people/samuel.staton/main.html">Sam Staton</a>,
+                            <a href="https://cspages.ucalgary.ca/~robin/">Robin Cockett</a>,
+                            and <a href="https://cs.appstate.edu/johannp/">Patricia Johann</a>.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section aria-label="Main themes">
+            <h2>Main themes</h2>
+            <p class="themes">
+                Programming language semantics; categorical semantics; automatic differentiation; CHAD;
+                dual-numbers automatic differentiation; logical relations; program transformations;
+                recursion and iteration; type systems; dependent types; algebraic effects; Grothendieck constructions.
+            </p>
+        </section>
+
+        <section aria-label="Publications related to the Ph.D.">
+            <h2>Publications related to the Ph.D.</h2>
+
+            <ul class="publication-list">
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <a class="pub-title" href="http://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a>.
+                    <span class="venue"><em>Theory and Applications of Categories</em>, 44, 1153–1217, 2025.</span>
+                    <span class="meta">65 pages.</span>
+                    <span class="links">(<a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Prezado, R.; Vákár, M.</span>
+                    <a class="pub-title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a>.
+                    <span class="venue"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025.</span>
+                    <span class="meta">28 pages.</span>
+                    <span class="links">(<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
+                    <a class="pub-title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a>.
+                    <span class="venue">Accepted for publication in <em>Mathematical Structures in Computer Science</em>.</span>
+                    <span class="meta">arXiv:2505.15002, 2025, 57 pages.</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <a class="pub-title" href="https://arxiv.org/abs/2403.10447">Free doubly-infinitary distributive categories are cartesian closed</a>.
+                    <span class="venue">Accepted for publication in <em>Applied Categorical Structures</em>.</span>
+                    <span class="meta">arXiv:2403.10447, 2024, 16 pages.</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <a class="pub-title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a>.
+                    <span class="venue"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024.</span>
+                    <span class="meta">60 pages.</span>
+                    <span class="links">(<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
+                    <a class="pub-title" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration">Homomorphic reverse differentiation of iteration</a>.
+                    <span class="venue">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, 2024.</span>
+                    <span class="meta">2 pages.</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <a class="pub-title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a>.
+                    <span class="venue"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023.</span>
+                    <span class="meta">116 pages.</span>
+                    <span class="links">(<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span>
+                </li>
+
+                <li>
+                    <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <a class="pub-title" href="https://arxiv.org/abs/2210.08530">Logical relations for partial features and automatic differentiation correctness</a>.
+                    <span class="venue">Oberwolfach Preprints, OWP-2023-09, 2023.</span>
+                    <span class="meta">arXiv:2210.08530, 2022, 21 pages.</span>
+                </li>
+            </ul>
+
+<p class="note">
+    The publications listed above are closely connected with the research programme developed during my Ph.D. in Computer Science. 
+</p>
+        </section>
+
+        <nav class="nav" aria-label="Main website sections">
+            <a href="index.html">Home</a>
+            <a href="Research.html">Research</a>
+            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+            <a href="Talks.html">Selected talks</a>
+            <a href="Academic_Positions.html">Academic positions and stays</a>
+            <a href="Further_Information.html">Further information</a>
+        </nav>
+    </main>
 </div>
 </body>
 </html>

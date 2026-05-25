@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fernando Lucatelli Nunes — Further Information</title>
+<title>Fernando Lucatelli Nunes — Ph.D. Students</title>
 <style>
     :root {
         --blue: #2f5496;
@@ -93,6 +93,14 @@
         padding: 34px 42px 36px 42px;
     }
 
+    section {
+        margin-bottom: 34px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
     h2 {
         margin: 0 0 18px 0;
         padding-bottom: 7px;
@@ -104,9 +112,9 @@
     }
 
     h3 {
-        margin: 0 0 8px 0;
+        margin: 0 0 5px 0;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 12.6pt;
+        font-size: 12.8pt;
         color: var(--blue-dark);
     }
 
@@ -124,28 +132,50 @@
         text-decoration: underline;
     }
 
-    .link-sections {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px 34px;
-    }
-
-    .link-section {
-        padding-bottom: 16px;
-        border-bottom: 1px solid var(--border-light);
-    }
-
-    .link-list {
+    .student-list {
         list-style: none;
         margin: 0;
         padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 10.9pt;
-        line-height: 1.55;
     }
 
-    .link-list li {
-        margin: 5px 0;
+    .student {
+        padding: 18px 0 19px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .student:first-child {
+        padding-top: 0;
+    }
+
+    .student:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .student-meta {
+        margin: 0 0 7px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.45;
+        color: var(--muted);
+    }
+
+    .student-lines {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.85pt;
+        line-height: 1.5;
+    }
+
+    .student-lines li {
+        margin: 3px 0;
+    }
+
+    .label {
+        color: var(--muted);
+        font-weight: bold;
     }
 
     .note {
@@ -178,11 +208,6 @@
             display: inline-block;
             margin: 2px 6px;
         }
-
-        .link-sections {
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
     }
 </style>
 </head>
@@ -201,57 +226,64 @@
     <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="Research.html">Research</a>
-        <a href="students.html">Ph.D. students</a>
         <a href="Some_projects.html">Projects/collaborations</a>
         <a href="Talks.html">Selected talks</a>
         <a href="Academic_Positions.html">Academic positions/stays</a>
         <a href="Organization_of_seminars_events.html">Seminars/events</a>
+        <a href="Further_Information.html">Further information</a>
     </nav>
 
     <main>
-        <section aria-label="Further information">
-            <h2>Further Information</h2>
+        <section id="current-students" aria-label="Current Ph.D. students">
+            <h2>Current Ph.D. Students</h2>
 
-            <div class="link-sections">
-                <section class="link-section" aria-label="Publication and citation profiles">
-                    <h3>Publication and citation profiles</h3>
-                    <ul class="link-list">
-                        <li><a href="https://arxiv.org/a/lucatellinunes_f_1.html">arXiv author page</a></li>
-                        <li><a href="https://scholar.google.fr/citations?user=QoW_v8QAAAAJ&amp;hl=pt-BR">Google Scholar</a></li>
-                        <li><a href="http://www.ams.org/mathscinet/MRAuthorID/1158728">MathSciNet</a></li>
-                        <li><a href="https://zbmath.org/authors/lucatelli-nunes.fernando">zbMATH</a></li>
-                        <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57188838707">Scopus</a></li>
+            <ul class="student-list">
+                <li class="student">
+                    <h3>Néot Choserot</h3>
+                    <p class="student-meta">
+                        University of Coimbra, UC|UP Joint Ph.D. Programme in Mathematics, 2025–present.
+                    </p>
+                    <ul class="student-lines">
+                        <li><span class="label">Project:</span> Aspects of Two-Dimensional Universal Algebra.</li>
+                        <li><span class="label">Funding:</span> Centre for Mathematics, University of Coimbra.</li>
                     </ul>
-                </section>
+                </li>
 
-                <section class="link-section" aria-label="Research groups">
-                    <h3>Research groups</h3>
-                    <ul class="link-list">
-                        <li><a href="https://cmuc.mat.uc.pt/rdonweb">Centre for Mathematics, University of Coimbra</a></li>
-                        <li><a href="http://www.mat.uc.pt/~categ/">Categories at Coimbra</a></li>
-                        <li><a href="https://www.uu.nl/en/research/software-systems/software-technology">Software Technology Group, Utrecht University</a></li>
-                        <li><a href="https://www.birmingham.ac.uk/research/centres-institutes/research-in-computer-science">Theory of Computation, University of Birmingham</a></li>
+                <li class="student">
+                    <h3>Diogo Simm</h3>
+                    <p class="student-meta">
+                        Utrecht University, Department of Information and Computing Sciences, 2026–present.
+                    </p>
+                    <ul class="student-lines">
+                        <li><span class="label">Project:</span> Programming language semantics, probabilistic programming, domain-specific languages, and automatic differentiation.</li>
+                        <li><span class="label">Co-supervisor:</span> Dr. Matthijs Vákár.</li>
+                        <li><span class="label">Funding:</span> ERC Starting Grant <em>FoRECAST</em>.</li>
                     </ul>
-                </section>
+                </li>
+            </ul>
+        </section>
 
-                <section class="link-section" aria-label="Seminar">
-                    <h3>Seminar</h3>
-                    <ul class="link-list">
-                        <li><a href="ONLINEALTSEMINAR.html">Online Algebra, Logic and Topology Seminar</a></li>
-                    </ul>
-                </section>
+        <section id="former-students" aria-label="Former Ph.D. students">
+            <h2>Former Ph.D. Student</h2>
 
-                <section class="link-section" aria-label="Curriculum Vitae and contact">
-                    <h3>CV and contact</h3>
-                    <ul class="link-list">
-                        <li><a href="CV.pdf">Curriculum Vitae</a></li>
-                        <li><a href="mailto:flnlucatelli@gmail.com">flnlucatelli@gmail.com</a></li>
+            <ul class="student-list">
+                <li class="student">
+                    <h3>Rui Rodrigues de Abreu Fernandes Prezado</h3>
+                    <p class="student-meta">
+                        University of Coimbra, UC|UP Joint Ph.D. Programme in Mathematics, 2020–2024.
+                    </p>
+                    <ul class="student-lines">
+                        <li><span class="label">Thesis:</span> <em>Some Aspects of Descent Theory and Applications</em>.</li>
+                        <li><span class="label">Area:</span> Generalised multicategories and Grothendieck descent theory.</li>
+                        <li><span class="label">Co-supervisor:</span> Prof. Maria Manuel Clementino.</li>
+                        <li><span class="label">Funding:</span> FCT — Fundação para a Ciência e a Tecnologia.</li>
+                        <li><span class="label">Outcome:</span> Ph.D. awarded <em>summa cum laude</em>, January 2024.</li>
                     </ul>
-                </section>
-            </div>
+                </li>
+            </ul>
 
             <p class="note">
-                For publications, preprints, supervision, talks, appointments, and projects, please use the dedicated pages linked above.
+                Prospective Ph.D. students interested in categorical structures, programming language semantics, formal methods, software technology, or closely related areas are welcome to <a href="mailto:flnlucatelli@gmail.com">get in touch</a>.
             </p>
         </section>
     </main>
