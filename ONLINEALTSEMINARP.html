@@ -3,152 +3,291 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CMUC — Online ALT Seminar</title>
-  <meta name="description" content="Online version of the Algebra, Logic and Topology Seminar at CMUC (Centre for Mathematics, University of Coimbra)." />
+  <title>CMUC — Past Online ALT Seminars</title>
+  <meta name="description" content="Past talks of the Online Algebra, Logic and Topology Seminar at CMUC, Centre for Mathematics, University of Coimbra." />
   <style>
     :root{
-      --bg:#ffffff; --text:#1b1f23; --muted:#4b5563; --border:#e5e7eb;
-      --accent:#0a6cff; --panel:#f9fafb; --chip:#eef2f7;
+      --bg:#f6f8fb;
+      --text:#111827;
+      --muted:#5f6b7a;
+      --border:#dfe5ee;
+      --border-strong:#c8d1dd;
+      --accent:#0a58d6;
+      --accent-dark:#083f9e;
+      --panel:#ffffff;
+      --chip:#eef3fa;
+      --shadow:0 18px 45px rgba(15,23,42,.08), 0 2px 8px rgba(15,23,42,.06);
+      --shadow-soft:0 8px 24px rgba(15,23,42,.06);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand img{height:56px;width:auto}
-    .nav a{color:var(--text);opacity:.9;padding:8px 10px;border-radius:10px}
-    .nav a:hover{background:var(--chip)}
-    .grid{display:grid;gap:18px}
+    html{scroll-behavior:smooth}
+    html,body{
+      margin:0;
+      background:radial-gradient(circle at top left, #eaf2ff 0, transparent 34rem), var(--bg);
+      color:var(--text);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    header{
+      background:rgba(255,255,255,.92);
+      border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:saturate(180%) blur(14px);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 24px}
+    .brand{display:flex;align-items:center;gap:14px;font-weight:850;letter-spacing:.2px;color:var(--text)}
+    .brand img{height:58px;width:auto;display:block}
+    .brand-title{display:grid;line-height:1.15}
+    .brand-title span:first-child{font-size:1.05rem}
+    .brand-title span:last-child{font-size:.82rem;color:var(--muted);font-weight:650}
+    .nav-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .nav a.nav-item{
+      color:var(--text);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:750;
+      transition:background .2s ease, border-color .2s ease, transform .15s ease;
+    }
+    .nav a.nav-item:hover{background:var(--chip);border-color:var(--border);transform:translateY(-1px);text-decoration:none}
+    .nav a.active{background:#fff;border-color:var(--border-strong);box-shadow:0 1px 0 rgba(15,23,42,.04)}
+    .hero{
+      margin:30px 0 18px;
+      padding:34px;
+      border:1px solid var(--border);
+      border-radius:26px;
+      background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,251,255,.92));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;
+      right:-90px;top:-90px;
+      border-radius:999px;
+      background:rgba(10,88,214,.08);
+    }
+    .hero-content{position:relative;z-index:1;max-width:820px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--accent-dark);
+      background:#eaf2ff;
+      border:1px solid #d3e3ff;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    h1{font-size:clamp(2rem,4vw,3.15rem);line-height:1.08;margin:16px 0 12px;letter-spacing:-.045em}
+    h2{font-size:1.35rem;margin:0 0 14px;font-weight:850;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 10px;font-weight:850;letter-spacing:-.01em}
+    p{margin:0 0 14px}.lead{font-size:1.08rem;color:var(--muted);max-width:760px}
+    .grid{display:grid;gap:18px}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}
     @media(min-width:900px){.grid-3{grid-template-columns:2fr 1fr}.grid-2{grid-template-columns:1fr 1fr}}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px}
-    .card h2{margin:0 0 8px 0;font-size:1.2rem}
-    .card h3{margin:0 0 6px 0;font-size:1.05rem}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--muted);font-size:.9rem}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+    }
     .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
-    .btn.secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
-    .btn.ghost{background:transparent;color:var(--accent);border:1px dashed var(--accent)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      background:var(--accent);color:#fff;border:1px solid var(--accent);
+      border-radius:999px;padding:9px 13px;font-weight:800;cursor:pointer;
+      box-shadow:0 3px 12px rgba(10,88,214,.16);
+      transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+      text-decoration:none;
+      font-size:.92rem;
+    }
+    .btn:hover{transform:translateY(-1px);text-decoration:none;box-shadow:0 8px 18px rgba(10,88,214,.22);background:var(--accent-dark)}
+    .btn.secondary{background:#fff;color:var(--text);border-color:var(--border-strong);box-shadow:none}
+    .btn.secondary:hover{background:#f7f9fc;color:var(--text);box-shadow:none}
+    .btn.ghost{background:transparent;color:var(--accent);border-color:#b8cff8;box-shadow:none}
     .muted{color:var(--muted)}
     .list{display:grid;gap:14px}
-    .talk{padding:14px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .talk .meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
-    .talk .title{font-weight:700;margin:6px 0}
-    .kicker{font-size:.85rem;color:var(--muted);letter-spacing:.2px;text-transform:uppercase}
-    .footer{margin:30px 0 70px;color:var(--muted)}
-    .hr{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:22px 0}
-    .tag{padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+    .talk{
+      padding:17px 18px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 1px 0 rgba(15,23,42,.04);
+      transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    .talk:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 8px 22px rgba(15,23,42,.06)}
+    .talk .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.93rem;font-weight:650}
+    .talk .title{font-weight:850;margin:7px 0 2px;font-size:1.05rem;letter-spacing:-.01em}
+    .talk-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .kicker{font-size:.78rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:850;margin-bottom:8px}
+    .notice{border-style:dashed;background:#fbfdff}
+    .footer{
+      margin:40px 0 70px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      padding-top:16px;
+      font-size:.95rem;
+    }
+    .hr{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:20px 0}
+    ul.clean{padding-left:18px;margin:0} ul.clean li{margin:6px 0}
+    @media(max-width:700px){.nav{align-items:flex-start;flex-direction:column}.hero{padding:24px}.container{padding:18px}.brand img{height:50px}}
+
   </style>
 </head>
 <body>
+
   <header>
     <div class="nav container">
-      <div class="brand" aria-label="CMUC Online Seminar">
-        <a href="https://cmuc.mat.uc.pt/rdonweb/" target="_blank" rel="noopener">
-          <img src="https://images.openai.com/thumbnails/url/mAcVJnicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw72CEqMKHVLN3ByTvfJcPL21i11TA1NLMoyznY1DzPUzUouiHQJNUvJsjTNqSow1S2KLIr0M_FxMvJUKwYAq50oIQ" alt="CMUC Logo" />
-        </a>
-        <div>Online ALT Seminar</div>
-      </div>
-      <nav class="row" aria-label="Sections">
-        <a href="ONLINEALTSEMINAR.html">Upcoming</a>
+      <a class="brand" aria-label="CMUC Online Seminar" href="https://cmuc.mat.uc.pt/rdonweb/" target="_blank" rel="noopener">
+        <img src="CMUC.jpg" alt="CMUC logo" />
+        <span class="brand-title"><span>Online ALT Seminar</span><span>Algebra, Logic and Topology · CMUC</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a class="nav-item" href="ONLINEALTSEMINAR.html">Upcoming</a>
+        <a class="nav-item active" href="ONLINEALTSEMINARP.html">Past seminars</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">Archive</span>
+        <h1>Past Online ALT Seminars</h1>
+        <p class="lead">Archive of online talks associated with the Algebra, Logic and Topology Seminar at CMUC.</p>
+      </div>
+    </section>
 
-
-
-    <section class="card" id="archive" style="margin-top:18px">
-      <h2>Past online ALT seminars</h2>
+    <section class="card" id="archive">
+      <div class="kicker">Past seminars</div>
+      <h2>Talks</h2>
       <div class="list" id="past-list">
-     <div class="talk">
+        <article class="talk">
+          <div class="meta">May 4th, 2026 — 10:00 (Europe/Lisbon) — Google Meet</div>
+          <div class="title">Nerves of T-categories and powerful T-functors</div>
+          <div class="muted">Soichiro Fujii — National Institute of Informatics, Japan</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/SOI2026.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">May 4th, 2026 — 11:00 (Europe/Lisbon) — Google Meet</div>
+          <div class="title">Coinductive reasoning for parametrized functors and monads</div>
+          <div class="muted">Zeinab Galal — Research Institute for Mathematical Sciences, Kyoto University, Japan</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/ZEINAB2026.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+            <a href="SLIDES/ZEINAB2026.pdf" target="_blank" rel="noopener" class="btn secondary">Slides (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
           <div class="meta">March 17th, 2026 — 15:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">Dual presentations of locales</div>
-          <div class="muted">Graham Manuell — Stellenbosch University </div>
-          <p><a href="ABSTRACTS/GRAHAM2026.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
-     <div class="talk">
+          <div class="muted">Graham Manuell — Stellenbosch University</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/GRAHAM2026.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
           <div class="meta">January 13th, 2026 — 15:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">On the commuting tensor product of symmetric multicategories and their bimodules</div>
-          <div class="muted">Nicola Gambino — University of Manchester, UK </div>
-          <p><a href="ABSTRACTS/GAMBINO2026.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
-         <div class="talk">
+          <div class="muted">Nicola Gambino — University of Manchester, UK</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/GAMBINO2026.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
           <div class="meta">January 13th, 2026 — 16:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">Ehresmann connections in a tangent category</div>
           <div class="muted">Geoffrey Cruttwell — Mount Allison University, Canada</div>
-          <p><a href="ABSTRACTS/Geoff2026.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
-      </div>
-       <div class="talk">
-          <div class="meta">December 02nd, 2025 — 15:00 (Europe/Lisbon) — Google Meet</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/Geoff2026.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">December 2nd, 2025 — 15:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">Categorical and metric density</div>
-          <div class="muted">Tom Leinster — The University of Edinburgh, Scotland </div>
-          <p><a href="ABSTRACTS/LEINSTER2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
-         <div class="talk">
-          <div class="meta">December 02nd, 2025 — 16:00 (Europe/Lisbon) — Google Meet</div>
+          <div class="muted">Tom Leinster — The University of Edinburgh, Scotland</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/LEINSTER2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">December 2nd, 2025 — 16:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">N-fold groupoids and n-groupoids in regular Mal’tsev categories</div>
           <div class="muted">Nadja Egner — UCLouvain, Belgium</div>
-          <p><a href="ABSTRACTS/NADJA2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
-     <div class="talk">
-          <div class="meta">October 07th, 2025 — 15:00 (Europe/Lisbon) — Google Meet</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/NADJA2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">October 7th, 2025 — 15:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">When are exact categories co-exact?</div>
           <div class="muted">James Gray — Stellenbosch University, South Africa</div>
-          <p><a href="ABSTRACTS/JAMES2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a>  <a href="SLIDES/GrayS2025.pdf" target="_blank" class="btn secondary">Slides (PDF)</a> </p> 
-        </div>
-       <div class="talk">
-          <div class="meta">October 07th, 2025 — 16:00 (Europe/Lisbon) — Google Meet</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/JAMES2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+            <a href="SLIDES/GrayS2025.pdf" target="_blank" rel="noopener" class="btn secondary">Slides (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">October 7th, 2025 — 16:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">Noncommutative Poisson structure and invariants of matrices</div>
           <div class="muted">Xabier García-Martínez — Universidade de Santiago de Compostela, Spain</div>
-          <p><a href="ABSTRACTS\XABIER2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a>  <a href="SLIDES/XabierS2025.pdf" target="_blank" class="btn secondary">Slides (PDF)</a> </p>
- </p>
-        </div>
-        <div class="talk">
-          <div class="meta">August 19th, 2025 — 11:00 (Europe/Lisbon) — Google meet</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/XABIER2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+            <a href="SLIDES/XabierS2025.pdf" target="_blank" rel="noopener" class="btn secondary">Slides (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">August 19th, 2025 — 11:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">Drazin Inverses in (Dagger) Categories</div>
           <div class="muted">JS Lemay — Macquarie University, Australia</div>
-          <p><a href="ABSTRACTS/JEAN2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a>  <a href="SLIDES/JEANS2025.pdf" target="_blank" class="btn secondary">Slides (PDF)</a> </p>
-        </div>
-        <div class="talk">
-          <div class="meta">August 19th, 2025 — 12:00 (Europe/Lisbon) — Google meet</div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/JEAN2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+            <a href="SLIDES/JEANS2025.pdf" target="_blank" rel="noopener" class="btn secondary">Slides (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
+          <div class="meta">August 19th, 2025 — 12:00 (Europe/Lisbon) — Google Meet</div>
           <div class="title">A general approach to pointfree T0 spaces</div>
           <div class="muted">Anna Laura Suarez — University of the Western Cape, South Africa</div>
-          <p><a href="ABSTRACTS/LAURA2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a>  <a href="SLIDES/LAURASS2025.pdf" target="_blank" class="btn secondary">Slides (PDF)</a> </p>
-        </div>
-
-
-
-
-        <div class="talk">
+          <div class="talk-actions">
+            <a href="ABSTRACTS/LAURA2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+            <a href="SLIDES/LAURASS2025.pdf" target="_blank" rel="noopener" class="btn secondary">Slides (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
           <div class="meta">May 20th, 2025 — 15:00 (Europe/Lisbon) — Microsoft Teams</div>
           <div class="title">Self-dual aspects of semi-abelian categories</div>
           <div class="muted">Tim Van der Linden — Université catholique de Louvain &amp; Vrije Universiteit Brussel, Belgium</div>
-          <p><a href="ABSTRACTS/Tim2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
-
-        <div class="talk">
+          <div class="talk-actions">
+            <a href="ABSTRACTS/Tim2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
+        <article class="talk">
           <div class="meta">May 20th, 2025 — 16:00 (Europe/Lisbon) — Microsoft Teams</div>
           <div class="title">Norms for vectors, linear operators and morphisms of categories, and Cauchy convergence for them</div>
           <div class="muted">Walter Tholen — York University, Canada</div>
-          <p><a href="ABSTRACTS/Walter2025.pdf" target="_blank" class="btn secondary">Abstract (PDF)</a></p>
-        </div>
+          <div class="talk-actions">
+            <a href="ABSTRACTS/Walter2025.pdf" target="_blank" rel="noopener" class="btn secondary">Abstract (PDF)</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="card" id="info" style="margin-top:18px">
-      <ul>
-        <li><strong>Organizer:</strong> <a href="https://flnlucatelli.github.io/" target="_blank" rel="noopener">Fernando Lucatelli Nunes</a></li>
-      </ul>
+      <div class="kicker">Contact</div>
+      <p><strong>Organizer:</strong> <a href="https://flnlucatelli.github.io/" target="_blank" rel="noopener">Fernando Lucatelli Nunes</a></p>
     </section>
 
     <div class="footer">
- <a href="https://cmuc.mat.uc.pt/rdonweb/" target="_blank" rel="noopener">CMUC</a> — Centre for Mathematics, University of Coimbra. <br/>
+      <a href="https://cmuc.mat.uc.pt/rdonweb/" target="_blank" rel="noopener">CMUC</a> — Centre for Mathematics, University of Coimbra.<br />
       Maintained by <a href="https://flnlucatelli.github.io/" target="_blank" rel="noopener">Fernando Lucatelli Nunes</a>.
     </div>
   </main>
