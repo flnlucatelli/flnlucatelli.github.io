@@ -67,10 +67,20 @@
         color: var(--muted);
     }
 
-    .subtitle a { color: var(--blue); }
+    .subtitle a {
+        color: var(--blue);
+    }
 
     main {
         padding: 34px 42px 36px 42px;
+    }
+
+    section {
+        margin-bottom: 34px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
     }
 
     h2 {
@@ -83,7 +93,9 @@
         color: var(--blue);
     }
 
-    p { margin: 0 0 12pt 0; }
+    p {
+        margin: 0 0 12pt 0;
+    }
 
     a {
         color: var(--blue);
@@ -91,18 +103,8 @@
     }
 
     a:hover,
-    a:focus { text-decoration: underline; }
-
-    section {
-        margin-bottom: 34px;
-    }
-
-    section:last-child {
-        margin-bottom: 0;
-    }
-
-    .thesis-block {
-        margin-bottom: 28px;
+    a:focus {
+        text-decoration: underline;
     }
 
     .thesis-title {
@@ -158,7 +160,7 @@
     }
 
     .publication-list li {
-        padding: 13px 0;
+        padding: 13px 0 14px 0;
         border-bottom: 1px solid var(--border-light);
     }
 
@@ -166,21 +168,32 @@
         border-bottom: none;
     }
 
-    .authors {
-        color: var(--text);
-    }
-
     .pub-title {
+        display: block;
+        margin-bottom: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.2pt;
         font-weight: bold;
+        line-height: 1.38;
+        color: var(--blue-dark);
     }
 
-    .venue {
+    .authors {
+        display: block;
+        margin-bottom: 2px;
+        font-size: 11pt;
         color: var(--text);
     }
 
-    .meta,
-    .links {
+    .details {
+        display: block;
+        font-size: 10.65pt;
+        line-height: 1.45;
         color: var(--muted);
+    }
+
+    .details em {
+        color: var(--text);
     }
 
     .note {
@@ -244,39 +257,37 @@
         <section aria-label="Ph.D. in Computer Science">
             <h2>Ph.D. in Computer Science</h2>
 
-            <div class="thesis-block">
-                <p class="thesis-title"><em>Freely Generated Categorical Structures and Automatic Differentiation</em></p>
-                <p class="thesis-meta">
-                    Utrecht University, Department of Information and Computing Sciences.
-                    Thesis submitted; degree to be awarded in 2026.
-                </p>
+            <p class="thesis-title"><em>Freely Generated Categorical Structures and Automatic Differentiation</em></p>
+            <p class="thesis-meta">
+                Utrecht University, Department of Information and Computing Sciences.
+                Thesis submitted; degree to be awarded in 2026.
+            </p>
 
-                <ul class="info-list">
-                    <li>
-                        <span class="label">Period</span>
-                        <span>November 2020 – November 2025</span>
-                    </li>
+            <ul class="info-list">
+                <li>
+                    <span class="label">Period</span>
+                    <span>November 2020 – November 2025</span>
+                </li>
 
-                    <li>
-                        <span class="label">Supervisors</span>
-                        <span>
-                            Professor <a href="https://www.uu.nl/staff/GKKeller">Gabriele Keller</a>
-                            and Dr. <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
-                        </span>
-                    </li>
+                <li>
+                    <span class="label">Supervisors</span>
+                    <span>
+                        Professor <a href="https://www.uu.nl/staff/GKKeller">Gabriele Keller</a>
+                        and Dr. <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
+                    </span>
+                </li>
 
-                    <li>
-                        <span class="label">Committee</span>
-                        <span>
-                            <a href="https://www.uu.nl/staff/IMoerdijk">Ieke Moerdijk</a>,
-                            <a href="https://www.cs.ru.nl/B.Jacobs/">Bart Jacobs</a>,
-                            <a href="https://www.cs.ox.ac.uk/people/samuel.staton/main.html">Sam Staton</a>,
-                            <a href="https://cspages.ucalgary.ca/~robin/">Robin Cockett</a>,
-                            and <a href="https://cs.appstate.edu/johannp/">Patricia Johann</a>.
-                        </span>
-                    </li>
-                </ul>
-            </div>
+                <li>
+                    <span class="label">Committee</span>
+                    <span>
+                        <a href="https://www.uu.nl/staff/IMoerdijk">Ieke Moerdijk</a>,
+                        <a href="https://www.cs.ru.nl/B.Jacobs/">Bart Jacobs</a>,
+                        <a href="https://www.cs.ox.ac.uk/people/samuel.staton/main.html">Sam Staton</a>,
+                        <a href="https://cspages.ucalgary.ca/~robin/">Robin Cockett</a>,
+                        and <a href="https://cs.appstate.edu/johannp/">Patricia Johann</a>.
+                    </span>
+                </li>
+            </ul>
         </section>
 
         <section aria-label="Main themes">
@@ -293,69 +304,57 @@
 
             <ul class="publication-list">
                 <li>
+                    <a class="pub-title" href="http://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a>
                     <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <a class="pub-title" href="http://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a>.
-                    <span class="venue"><em>Theory and Applications of Categories</em>, 44, 1153–1217, 2025.</span>
-                    <span class="meta">65 pages.</span>
-                    <span class="links">(<a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span>
+                    <span class="details"><em>Theory and Applications of Categories</em>, 44, 1153–1217, 2025. 65 pages. (<a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a>
                     <span class="authors">Lucatelli Nunes, F.; Prezado, R.; Vákár, M.</span>
-                    <a class="pub-title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a>.
-                    <span class="venue"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025.</span>
-                    <span class="meta">28 pages.</span>
-                    <span class="links">(<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span>
+                    <span class="details"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025. 28 pages. (<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a>
                     <span class="authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
-                    <a class="pub-title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a>.
-                    <span class="venue">Accepted for publication in <em>Mathematical Structures in Computer Science</em>.</span>
-                    <span class="meta">arXiv:2505.15002, 2025, 57 pages.</span>
+                    <span class="details">Accepted for publication in <em>Mathematical Structures in Computer Science</em>. arXiv:2505.15002, 2025, 57 pages.</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://arxiv.org/abs/2403.10447">Free doubly-infinitary distributive categories are cartesian closed</a>
                     <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <a class="pub-title" href="https://arxiv.org/abs/2403.10447">Free doubly-infinitary distributive categories are cartesian closed</a>.
-                    <span class="venue">Accepted for publication in <em>Applied Categorical Structures</em>.</span>
-                    <span class="meta">arXiv:2403.10447, 2024, 16 pages.</span>
+                    <span class="details">Accepted for publication in <em>Applied Categorical Structures</em>. arXiv:2403.10447, 2024, 16 pages.</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a>
                     <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <a class="pub-title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a>.
-                    <span class="venue"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024.</span>
-                    <span class="meta">60 pages.</span>
-                    <span class="links">(<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span>
+                    <span class="details"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024. 60 pages. (<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration">Homomorphic reverse differentiation of iteration</a>
                     <span class="authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
-                    <a class="pub-title" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration">Homomorphic reverse differentiation of iteration</a>.
-                    <span class="venue">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, 2024.</span>
-                    <span class="meta">2 pages.</span>
+                    <span class="details">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, 2024. 2 pages.</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a>
                     <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <a class="pub-title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a>.
-                    <span class="venue"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023.</span>
-                    <span class="meta">116 pages.</span>
-                    <span class="links">(<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span>
+                    <span class="details"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023. 116 pages. (<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span>
                 </li>
 
                 <li>
+                    <a class="pub-title" href="https://arxiv.org/abs/2210.08530">Logical relations for partial features and automatic differentiation correctness</a>
                     <span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <a class="pub-title" href="https://arxiv.org/abs/2210.08530">Logical relations for partial features and automatic differentiation correctness</a>.
-                    <span class="venue">Oberwolfach Preprints, OWP-2023-09, 2023.</span>
-                    <span class="meta">arXiv:2210.08530, 2022, 21 pages.</span>
+                    <span class="details">Oberwolfach Preprints, OWP-2023-09, 2023. arXiv:2210.08530, 2022, 21 pages.</span>
                 </li>
             </ul>
 
-<p class="note">
-    The publications listed above are closely connected with the research programme developed during my Ph.D. in Computer Science. 
-</p>
+            <p class="note">
+                The publications listed above arose from my Ph.D. work in Computer Science.
+            </p>
         </section>
 
         <nav class="nav" aria-label="Main website sections">
@@ -370,3 +369,4 @@
 </div>
 </body>
 </html>
+
