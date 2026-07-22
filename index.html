@@ -1,288 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fernando Lucatelli Nunes</title>
-<style>
-    :root {
-        --blue: #2f5496;
-        --blue-dark: #243f70;
-        --blue-light: #eef3fa;
-        --text: #2f2f2f;
-        --muted: #666666;
-        --border: #d9e0ea;
-        --border-light: #edf1f6;
-        --background: #f5f7fa;
-        --white: #ffffff;
-        --card: #fbfcfe;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-        padding: 34px 16px;
-        line-height: 1.56;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        font-size: 12pt;
-        color: var(--text);
-        background: var(--background);
-    }
-
-    .page {
-        max-width: 920px;
-        margin: 0 auto;
-    }
-
-    header,
-    main {
-        background: var(--white);
-        border: 1px solid var(--border);
-        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
-        border-radius: 6px;
-    }
-
-    header {
-        padding: 30px 36px 25px 36px;
-        text-align: center;
-        margin-bottom: 18px;
-    }
-
-    h1 {
-        margin: 0 0 11px 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #4472c4;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 25pt;
-        font-weight: normal;
-        letter-spacing: 0.5px;
-        color: var(--blue);
-    }
-
-    .subtitle {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 11.4pt;
-        line-height: 1.65;
-        color: var(--muted);
-    }
-
-    .subtitle a {
-        color: var(--blue);
-    }
-
-    main {
-        padding: 36px 42px 38px 42px;
-    }
-
-    p {
-        margin: 0 0 12pt 0;
-    }
-
-    a {
-        color: var(--blue);
-        text-decoration: none;
-    }
-
-    a:hover,
-    a:focus {
-        text-decoration: underline;
-    }
-
-    .intro {
-        display: grid;
-        grid-template-columns: 158px 1fr;
-        gap: 26px;
-        align-items: start;
-        margin-bottom: 30px;
-    }
-
-    .portrait {
-        width: 158px;
-        height: 158px;
-        object-fit: cover;
-        border: 1px solid #c9d2df;
-        border-radius: 50%;
-        padding: 3px;
-        background: #ffffff;
-    }
-
-    .research-summary {
-        margin: 0;
-        font-size: 12.25pt;
-        line-height: 1.6;
-        color: var(--text);
-    }
-
-    .research-summary strong {
-        color: var(--blue-dark);
-        font-weight: normal;
-    }
-
-    .section-links {
-        margin-top: 26px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border-light);
-    }
-
-    .link-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 12px;
-    }
-
-    .link-card {
-        display: block;
-        min-height: 76px;
-        padding: 13px 15px 12px 15px;
-        border: 1px solid var(--border-light);
-        border-radius: 5px;
-        background: var(--card);
-        font-family: Arial, Helvetica, sans-serif;
-        transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .link-card:hover,
-    .link-card:focus {
-        background: #f7fafd;
-        border-color: #cbd6e5;
-        text-decoration: none;
-        transform: translateY(-1px);
-    }
-
-    .link-card strong {
-        display: block;
-        margin-bottom: 3px;
-        color: var(--blue-dark);
-        font-size: 11.35pt;
-        font-weight: bold;
-    }
-
-    .link-card span {
-        display: block;
-        color: var(--muted);
-        font-size: 10.15pt;
-        line-height: 1.4;
-    }
-
-    .small-note {
-        margin: 21px 0 0 0;
-        padding: 11px 13px;
-        border-left: 3px solid #4472c4;
-        background: var(--blue-light);
-        border-radius: 4px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 10.65pt;
-        line-height: 1.5;
-        color: #454545;
-    }
-
-    @media (max-width: 720px) {
-        body {
-            padding: 18px 10px;
-        }
-
-        header,
-        main {
-            padding: 22px 20px;
-        }
-
-        h1 {
-            font-size: 21pt;
-        }
-
-        .intro {
-            grid-template-columns: 1fr;
-            gap: 18px;
-        }
-
-        .portrait {
-            margin: 0 auto;
-        }
-
-        .link-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .research-summary {
-            font-size: 12pt;
-        }
-    }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fernando Lucatelli Nunes</title>
+  <meta name="description" content="Fernando Lucatelli Nunes — pure mathematics, computer science, category theory, programming language semantics, and formal methods." />
+  <meta name="theme-color" content="#10243d" />
+  <link rel="icon" href="favicon.svg" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-<div class="page">
-    <header>
-        <h1>FERNANDO LUCATELLI NUNES</h1>
-        <p class="subtitle">
-            Assistant Professor, Department of Mathematics, University of Coimbra<br />
-            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
-        </p>
-    </header>
+  <a class="skip-link" href="#content">Skip to main content</a>
 
-    <main>
-        <section class="intro" aria-label="Introduction">
-            <img class="portrait" src="Foto.png" width="158" height="158" alt="Fernando Lucatelli Nunes" />
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Fernando Lucatelli Nunes, home">
+        <span class="brand-mark">FLN</span>
+        <span>Fernando Lucatelli Nunes</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="Research.html">Research</a>
+        <a href="Some_projects.html">Projects</a>
+        <a href="students.html">Ph.D. students</a>
+        <a href="Talks.html">Talks</a>
+        <a href="Further_Information.html">Further information</a>
+        <a class="contact-link protected-email" href="Further_Information.html#contact" data-local="fln" data-domain="uc.pt">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-            <p class="research-summary">
-                I work in <strong>pure mathematics and computer science</strong>, with a focus on the theory and applications of low- and higher-dimensional generalized categorical structures. My research is driven both by foundational questions in category theory and by problems arising in programming language semantics, formal methods, and the design and implementation of modern programming languages.
-            </p>
-        </section>
+  <main id="content">
+    <section class="profile-intro" aria-labelledby="profile-title">
+      <aside class="portrait-column" aria-label="Profile">
+        <img class="profile-photo" src="Foto1.png" alt="Fernando Lucatelli Nunes" width="146" height="146" />
+      </aside>
 
-        <section class="section-links" aria-label="Main website sections">
-            <div class="link-grid">
-                <a class="link-card" href="Research.html">
-                    <strong>Research</strong>
-                    <span>Research statement, publications, preprints, and related writings.</span>
-                </a>
+      <div class="intro-copy">
+        <h1 id="profile-title">Fernando Lucatelli Nunes</h1>
+        <div class="credentials" aria-label="Doctoral degrees">
+          <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+          <span aria-hidden="true">·</span>
+          <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
+        </div>
+        <p class="research-summary">I work in <strong>pure mathematics and computer science</strong>, with a focus on the theory and applications of low- and higher-dimensional generalized categorical structures. My research is driven both by foundational questions in category theory and by problems arising in programming language semantics, formal methods, and the design and implementation of modern programming languages.</p>
+      </div>
+    </section>
 
-                <a class="link-card" href="Some_projects.html">
-                    <strong>Projects and collaborations</strong>
-                    <span>Selected collaborations, funded environments, and supervision-related projects.</span>
-                </a>
+    <section class="directory-section" aria-labelledby="directory-title">
+      <header class="section-heading">
+        <h2 id="directory-title">Website sections</h2>
+      </header>
+      <div class="directory-grid">
+        <a class="directory-item" href="Research.html"><span><strong>Research</strong><small>Research statement, publications, preprints, and related writings.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="Some_projects.html"><span><strong>Projects and collaborations</strong><small>Selected collaborations, funded environments, and supervision-related projects.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="students.html"><span><strong>Ph.D. students</strong><small>Current and former doctoral supervision.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="Talks.html"><span><strong>Selected talks</strong><small>Invited, plenary, seminar, and workshop talks.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="Academic_Positions.html"><span><strong>Academic positions and stays</strong><small>Appointments, affiliations, visits, and doctoral appointments.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="Organization_of_seminars_events.html"><span><strong>Seminars and events</strong><small>Seminar organization and academic community-building activities.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539"><span><strong>Mathematical genealogy</strong><small>Academic genealogy through the Mathematics Genealogy Project.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="directory-item" href="Further_Information.html"><span><strong>Further information</strong><small>External profiles, selected links, CV, and contact.</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
 
-                <a class="link-card" href="students.html">
-                    <strong>Ph.D. students</strong>
-                    <span>Current and former doctoral supervision.</span>
-                </a>
+    <section class="collaboration-note" aria-label="Collaboration and contact">
+      <p>I welcome discussions and collaborations with researchers and prospective Ph.D. students interested in categorical structures, programming language theory, formal methods, software technology, or closely related areas.</p>
+      <a class="text-link protected-email" href="Further_Information.html#contact" data-local="fln" data-domain="uc.pt">Get in touch <span aria-hidden="true">↗</span></a>
+      <small>fln [at] uc [dot] pt</small>
+    </section>
+  </main>
 
-                <a class="link-card" href="Talks.html">
-                    <strong>Selected talks</strong>
-                    <span>Invited, plenary, seminar, and workshop talks.</span>
-                </a>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>Fernando Lucatelli Nunes</strong><span>University of Coimbra</span></div>
+      <nav aria-label="Footer navigation">
+        <a href="Research.html">Research</a>
+        <a href="Further_Information.html">Further information</a>
+        <a class="protected-email" href="Further_Information.html#contact" data-local="fln" data-domain="uc.pt">Contact</a>
+      </nav>
+    </div>
+  </footer>
 
-                <a class="link-card" href="Academic_Positions.html">
-                    <strong>Academic positions and stays</strong>
-                    <span>Appointments, affiliations, visits, and doctoral appointments.</span>
-                </a>
-
-                <a class="link-card" href="Organization_of_seminars_events.html">
-                    <strong>Seminars and events</strong>
-                    <span>Seminar organization and academic community-building activities.</span>
-                </a>
-
-                <a class="link-card" href="https://www.genealogy.math.ndsu.nodak.edu/id.php?id=228539">
-                    <strong>Mathematical genealogy</strong>
-                    <span>Academic genealogy through the Mathematics Genealogy Project.</span>
-                </a>
-
-                <a class="link-card" href="Further_Information.html">
-                    <strong>Further information</strong>
-                    <span>External profiles, selected links, CV, and contact.</span>
-                </a>
-            </div>
-
-            <p class="small-note">
-                I welcome discussions and collaborations with researchers and prospective Ph.D. students interested in categorical structures, programming language theory, formal methods, software technology, or closely related areas.
-                Please feel free to <a href="mailto:flnlucatelli@gmail.com">get in touch</a>.
-            </p>
-        </section>
-    </main>
-</div>
+  <script>
+  document.querySelectorAll(".protected-email").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "mailto:" + link.dataset.local + "@" + link.dataset.domain;
+      });
+  });
+  </script>
 </body>
 </html>

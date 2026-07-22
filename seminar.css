@@ -1,0 +1,35 @@
+:root { --navy:#15324a; --deep:#0c2235; --teal:#176b68; --soft:#e8f0ee; --paper:#f6f5f1; --white:#fff; --muted:#647382; --line:#d9dfdf; --serif:Iowan Old Style,Baskerville,"Times New Roman",serif; --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+* { box-sizing: border-box !important; }
+body { margin: 0 !important; background: var(--paper) !important; color: var(--navy) !important; font: 15px/1.7 var(--sans) !important; }
+a { color: var(--teal) !important; text-underline-offset: 3px; }
+.container { width: min(100% - 38px, 1040px) !important; max-width: 1040px !important; }
+header { position: sticky !important; top: 0; z-index: 30; border: 0 !important; border-top: 4px solid var(--teal) !important; border-bottom: 1px solid var(--line) !important; background: rgba(255,255,255,.97) !important; box-shadow: 0 7px 20px rgba(21,50,74,.05) !important; }
+header .nav { min-height: 68px !important; padding: 8px 0 !important; }
+.brand { gap: 12px !important; color: var(--navy) !important; text-decoration: none !important; }
+.brand img { width: 65px !important; height: auto !important; mix-blend-mode: multiply; }
+.brand-title span:first-child { color: var(--navy) !important; font: 700 17px var(--serif) !important; }
+.brand-title span:last-child { color: var(--muted) !important; font-size: 9px !important; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+.nav-links { gap: 4px !important; }
+.nav-item { padding: 7px 11px !important; border-radius: 3px !important; color: var(--navy) !important; font-size: 11px !important; font-weight: 750; }
+.nav-item:hover, .nav-item.active { background: var(--soft) !important; color: var(--teal) !important; }
+.hero { margin: 0 !important; padding: clamp(55px, 7vw, 82px) 0 !important; border: 0 !important; background: var(--navy) !important; color: var(--white) !important; }
+.hero .kicker, .hero .eyebrow { margin: 0 0 12px !important; padding: 0 !important; border: 0 !important; background: transparent !important; color: #8bc1bd !important; font-size: 10px !important; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.hero h1 { max-width: 760px; margin: 0 !important; color: var(--white) !important; font: 500 clamp(40px, 6vw, 63px)/1.03 var(--serif) !important; letter-spacing: -.035em; }
+.hero .lead { max-width: 690px; margin: 20px 0 0 !important; color: #c9d4db !important; font: clamp(17px, 2vw, 21px)/1.55 var(--serif) !important; }
+main.container { padding: 58px 0 72px !important; }
+h2 { margin: 0 0 24px !important; color: var(--navy) !important; font: 500 clamp(30px, 4vw, 40px) var(--serif) !important; letter-spacing: -.025em; }
+h3 { color: var(--navy) !important; font: 20px var(--serif) !important; }
+.grid { gap: 12px !important; }
+.card { padding: 24px !important; border: 1px solid var(--line) !important; border-radius: 4px !important; background: var(--white) !important; box-shadow: none !important; }
+.card.notice { border-left: 3px solid var(--teal) !important; background: var(--soft) !important; }
+.talk { margin: 0 !important; padding: 23px 0 !important; border-bottom: 1px solid var(--line) !important; }
+.talk:first-child { padding-top: 0 !important; }
+.talk-title, .talk .title { color: var(--navy) !important; font: 650 20px/1.3 var(--serif) !important; }
+.talk-meta, .meta, .muted { color: var(--muted) !important; font-size: 12px !important; }
+.talk-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.btn { min-height: 34px !important; padding: 7px 11px !important; border: 1px solid var(--navy) !important; border-radius: 3px !important; background: var(--navy) !important; color: var(--white) !important; font-size: 9px !important; font-weight: 800 !important; letter-spacing: .045em; text-decoration: none !important; text-transform: uppercase; }
+.btn.secondary, .btn.ghost { background: transparent !important; color: var(--navy) !important; }
+.btn.secondary:hover, .btn.ghost:hover { background: var(--soft) !important; color: var(--teal) !important; }
+.footer { margin: 0 !important; padding: 34px 0 !important; border: 0 !important; background: var(--deep) !important; color: #bcc9d0 !important; }
+.footer a { color: var(--white) !important; }
+@media (max-width: 680px) { .container { width: min(100% - 24px, 1040px) !important; } header .nav { align-items: flex-start !important; flex-direction: column !important; } .nav-links { width: 100%; overflow-x: auto; } .nav-item { white-space: nowrap; } }

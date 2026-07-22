@@ -169,14 +169,17 @@
         }
     }
 </style>
+<link rel="stylesheet" href="site.css" />
+<meta name="theme-color" content="#10243d" />
 </head>
 <body>
 <div class="page">
     <header>
-        <h1>FERNANDO LUCATELLI NUNES</h1>
+        <h1>Fernando Lucatelli Nunes</h1>
         <p class="subtitle">
-            Assistant Professor, Department of Mathematics, University of Coimbra<br />
-            <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
+            
+            <span class="identity">Category theory · semantics · formal methods</span><br />
+<a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
             &nbsp;&nbsp;&nbsp;
             <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
         </p>
@@ -202,7 +205,7 @@
                     <ul class="link-list">
                         <li><a href="https://arxiv.org/a/lucatellinunes_f_1.html">arXiv author page</a></li>
                         <li><a href="https://scholar.google.fr/citations?user=QoW_v8QAAAAJ&amp;hl=pt-BR">Google Scholar</a></li>
-                        <li><a href="http://www.ams.org/mathscinet/MRAuthorID/1158728">MathSciNet</a></li>
+                        <li><a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1158728">MathSciNet</a></li>
                         <li><a href="https://zbmath.org/authors/lucatelli-nunes.fernando">zbMATH</a></li>
                         <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57188838707">Scopus</a></li>
                     </ul>
@@ -212,14 +215,14 @@
                     <h3>Current research groups</h3>
                     <ul class="link-list">
                         <li><a href="https://cmuc.mat.uc.pt/rdonweb">Centre for Mathematics, University of Coimbra</a></li>
-                        <li><a href="http://www.mat.uc.pt/~categ/">Categories at Coimbra</a></li>
+                        <li><a href="https://www.mat.uc.pt/~categ/">Categories at Coimbra</a></li>
                     </ul>
                 </section>
 
                 <section class="link-section" aria-label="Previous research groups">
                     <h3>Previous research groups</h3>
                     <ul class="link-list">
-                        <li><a href="https://www.uu.nl/en/research/software-systems/software-technology">Software Technology Group, Utrecht University</a></li>
+                        <li><a href="https://www.uu.nl/en/research/software/software-technology">Software Technology Group, Utrecht University</a></li>
                         <li><a href="https://www.birmingham.ac.uk/research/centres-institutes/research-in-computer-science">Theory of Computation, University of Birmingham</a></li>
                     </ul>
                 </section>
@@ -239,10 +242,24 @@
                     </ul>
                 </section>
 
+                <section class="link-section" id="contact" aria-label="Contact">
+                    <h3>Contact</h3>
+                    <p><a class="protected-email" href="#contact" data-local="fln" data-domain="uc.pt">Contact by email</a></p>
+                    <p class="email-note">University of Coimbra: fln [at] uc [dot] pt</p>
+                </section>
+
 
             </div>
         </section>
     </main>
 </div>
+<script>
+document.querySelectorAll(".protected-email").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "mailto:" + link.dataset.local + "@" + link.dataset.domain;
+    });
+});
+</script>
 </body>
 </html>
