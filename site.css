@@ -27,6 +27,7 @@ body { margin: 0 !important; padding: 0 20px 64px !important; border-top: 4px so
 .page > nav::before, .page > .nav::before, body > .nav::before { content: "FLN"; display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px; margin-right: 7px; border: 1px solid var(--navy); border-radius: 50%; color: var(--navy); font: 10px var(--serif); letter-spacing: .05em; }
 .page > nav a, .page > .nav a, body > .nav a { display: inline-flex !important; align-items: center; min-height: 34px; margin: 0 !important; padding: 0 10px !important; border-radius: 3px; color: var(--navy) !important; font: 700 10.5px var(--sans) !important; text-decoration: none !important; white-space: nowrap; }
 .page > nav a:hover, .page > .nav a:hover, body > .nav a:hover { background: var(--teal-light); color: var(--teal) !important; }
+.page > nav a[aria-current="page"], .page > .nav a[aria-current="page"], body > .nav a[aria-current="page"] { background: var(--navy); color: var(--white) !important; }
 
 .page > main, body > div:not(.page):last-of-type { margin: 0 auto !important; padding: clamp(34px, 5vw, 58px) clamp(24px, 6vw, 68px) !important; border: 1px solid var(--line) !important; border-radius: 5px !important; background: var(--white) !important; box-shadow: 0 12px 32px rgba(21,50,74,.055) !important; }
 section { margin-bottom: 42px !important; }

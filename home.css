@@ -31,9 +31,9 @@ a:focus-visible { outline: 3px solid rgba(23, 107, 104, .3); outline-offset: 4px
 .primary-nav .contact-link { padding: 7px 12px; border: 1px solid var(--line); border-radius: 3px; }
 .primary-nav .contact-link:hover { border-color: var(--teal); background: var(--teal-light); }
 
-.profile-intro { display: grid; grid-template-columns: 178px minmax(0, 1fr); gap: clamp(40px, 7vw, 82px); align-items: center; padding: clamp(68px, 9vw, 106px) 0 clamp(62px, 8vw, 90px); }
-.portrait-column { display: flex; flex-direction: column; align-items: center; margin: 0; padding-right: 32px; border-right: 1px solid var(--line); text-align: center; }
-.profile-photo { display: block; width: 146px; height: 146px; border: 4px solid var(--white); border-radius: 50%; box-shadow: 0 8px 23px rgba(21,50,74,.08); object-fit: cover; }
+.profile-intro { display: grid; grid-template-columns: 142px minmax(0, 1fr); gap: clamp(34px, 6vw, 68px); align-items: center; padding: clamp(68px, 9vw, 106px) 0 clamp(62px, 8vw, 90px); }
+.portrait-column { display: flex; flex-direction: column; align-items: center; margin: 0; padding-right: 26px; border-right: 1px solid var(--line); text-align: center; }
+.profile-photo { display: block; width: 112px; height: 112px; border: 3px solid var(--white); border-radius: 50%; box-shadow: 0 7px 18px rgba(21,50,74,.08); object-fit: cover; }
 .portrait-column p { margin: 15px -10px 0; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .045em; }
 .intro-copy { max-width: 790px; }
 .intro-copy h1 { margin: 0; color: var(--navy); font: 500 clamp(48px, 6.3vw, 72px)/1 var(--serif); letter-spacing: -.04em; }
@@ -42,6 +42,8 @@ a:focus-visible { outline: 3px solid rgba(23, 107, 104, .3); outline-offset: 4px
 .credentials a:hover { color: var(--teal); }
 .research-summary { max-width: 780px; margin: 31px 0 0; color: #405363; font: clamp(19px, 2vw, 23px)/1.57 var(--serif); }
 .research-summary strong { color: var(--navy); font-weight: 650; }
+.research-summary p { margin: 0; }
+.research-summary p + p { margin-top: 18px; }
 
 .directory-section { padding: 58px 0 78px; border-top: 1px solid var(--line); }
 .section-heading { margin: 0 0 26px; }
@@ -72,18 +74,21 @@ a:focus-visible { outline: 3px solid rgba(23, 107, 104, .3); outline-offset: 4px
 @media (max-width: 920px) {
   .topbar-inner { align-items: flex-start; flex-direction: column; padding: 15px 0; }
   .primary-nav { width: 100%; padding-bottom: 2px; }
-  .profile-intro { grid-template-columns: 148px minmax(0, 1fr); gap: 38px; }
+  .profile-intro { grid-template-columns: 126px minmax(0, 1fr); gap: 34px; }
   .portrait-column { padding-right: 28px; }
-  .profile-photo { width: 124px; height: 124px; }
+  .profile-photo { width: 104px; height: 104px; }
 }
 
 @media (max-width: 650px) {
   .topbar-inner, .profile-intro, .directory-section, .collaboration-note, .footer-inner { width: min(100% - 30px, 1080px); }
+  .topbar-inner { gap: 10px; padding: 12px 0; }
   .brand > span:last-child { display: none; }
-  .primary-nav { gap: 19px; }
-  .profile-intro { grid-template-columns: 1fr; gap: 28px; padding: 50px 0 56px; }
+  .primary-nav { flex-wrap: wrap; gap: 2px 17px; overflow: visible; font-size: 10.5px; }
+  .primary-nav a { padding: 4px 0; }
+  .primary-nav .contact-link { padding: 4px 9px; }
+  .profile-intro { grid-template-columns: 1fr; gap: 24px; padding: 38px 0 50px; }
   .portrait-column { align-items: flex-start; padding: 0; border: 0; text-align: left; }
-  .profile-photo { width: 112px; height: 112px; }
+  .profile-photo { width: 92px; height: 92px; }
   .portrait-column p { margin: 12px 0 0; }
   .intro-copy h1 { font-size: 46px; }
   .research-summary { font-size: 19px; }
