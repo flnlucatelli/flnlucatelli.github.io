@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fernando Lucatelli Nunes | Research Projects and Collaborations</title>
-<meta name="description" content="Independent research programme, fellowships, funded projects, and collaborations in category theory and the foundations of programming languages." />
+<title>Fernando Lucatelli Nunes | Research Leadership and Collaborative Contributions</title>
+<meta name="description" content="An independently directed research programme, projects led as principal investigator, and substantial contributions to externally funded collaborations." />
 <style>
     :root {
         --blue: #2f5496;
@@ -220,18 +220,97 @@
     }
 </style>
 <link rel="stylesheet" href="site.css" />
+<style>
+    .page-intro {
+        margin-bottom: 48px !important;
+    }
+
+    .page-intro .lead {
+        margin-bottom: 0 !important;
+    }
+
+    .project-index {
+        margin: 23px 0 0 !important;
+    }
+
+    .project-section {
+        margin-bottom: 58px !important;
+        scroll-margin-top: 72px;
+    }
+
+    .project-section:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .section-kicker {
+        margin: 0 0 8px !important;
+        color: var(--teal) !important;
+        font: 800 10px/1.4 var(--sans) !important;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+    }
+
+    .project-section-title {
+        margin: 0 0 12px !important;
+        color: var(--navy) !important;
+        font: 500 clamp(25px, 3.3vw, 34px)/1.18 var(--serif) !important;
+        letter-spacing: -.02em;
+    }
+
+    .section-intro {
+        max-width: 800px;
+        margin: 0 0 24px !important;
+        color: #405363 !important;
+        font: 16px/1.7 var(--sans) !important;
+    }
+
+    .project-section .project-list {
+        border-top: 1px solid var(--line);
+    }
+
+    .project-section .project:first-child {
+        padding-top: 20px !important;
+    }
+
+    .project-title {
+        margin: 0 0 6px !important;
+        color: var(--navy) !important;
+        font: 650 20px/1.32 var(--serif) !important;
+    }
+
+    .project-role {
+        display: block;
+        margin-top: 4px;
+        color: var(--text);
+    }
+
+    @media (max-width: 720px) {
+        .page-intro {
+            margin-bottom: 40px !important;
+        }
+
+        .project-section {
+            margin-bottom: 46px !important;
+        }
+
+        .section-intro {
+            font-size: 15px !important;
+        }
+    }
+</style>
 <meta name="theme-color" content="#10243d" />
+<link rel="icon" href="favicon.svg" />
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to main content</a>
 <div class="page">
     <header>
         <h1>Fernando Lucatelli Nunes</h1>
         <p class="subtitle">
             
-            <span class="identity">Theory and applications of low- and higher-dimensional generalised categorical structures</span><br />
 <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science</a>
+            <span class="degree-separator" aria-hidden="true">·</span>
+            <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science (to be awarded in 2026)</a>
         </p>
     </header>
 
@@ -246,17 +325,29 @@
         <a href="Further_Information.html">Further information</a>
     </nav>
 
-    <main>
-        <section aria-label="Research projects and collaborations">
-            <h2>Research Projects and Collaborations</h2>
+    <main id="content">
+        <section class="page-intro" aria-labelledby="projects-title">
+            <h2 id="projects-title">Research Leadership and Collaborative Contributions</h2>
 
-            <p class="lead">My projects belong to a single research programme built around the sustained interaction between theory and practice. I study foundational questions about low- and higher-dimensional generalised categorical structures, and I use those foundations in programming language semantics, formal methods, and software technology. Problems from expressive languages, program transformation, and implementation shape new mathematical questions. The resulting structures are studied for their intrinsic content and used to provide semantic principles, correctness proofs, and reliable constructions.</p>
+            <p class="lead">My research activity combines an independently directed programme with substantial contributions to externally funded collaborations. The sections below distinguish research leadership from participation in projects led by others, while stating my role and contribution in each case.</p>
+
+            <nav class="quick-links project-index" aria-label="Project categories">
+                <a href="#research-leadership">Research leadership</a>
+                <a href="#collaborative-contributions">Collaborative contributions</a>
+            </nav>
+        </section>
+
+        <section class="project-section" id="research-leadership" aria-labelledby="research-leadership-title">
+            <p class="section-kicker">Research leadership</p>
+            <h3 class="project-section-title" id="research-leadership-title">Independent Research Programme and Projects Led as Principal Investigator</h3>
+            <p class="section-intro">This section comprises my independently directed research programme and the fellowship-supported projects for which I served as principal investigator.</p>
 
             <ul class="project-list">
                 <li class="project">
-                    <h3>Freely generated categorical structures for programming language semantics</h3>
+                    <h4 class="project-title">Freely generated categorical structures for programming language semantics</h4>
                     <p class="project-meta">
                         <strong>Current independent research programme.</strong>
+                        <span class="project-role"><span class="label">Research leadership:</span> conceived and led by Fernando Lucatelli Nunes.</span>
                     </p>
                     <ul class="project-lines">
                         <li><span class="label">Foundations:</span> programming languages, considered up to their equational theories, as freely generated or presented categorical structures grounded in two-dimensional universal algebra.</li>
@@ -266,60 +357,10 @@
                 </li>
 
                 <li class="project">
-                    <h3>Formalised reasoning about expectations</h3>
-                    <p class="project-meta">
-                        <strong><a href="https://cordis.europa.eu/project/id/101164093">ERC Starting Grant FoRECAST, grant 101164093</a>:</strong> <em>Formalised Reasoning about Expectations: Composable, Automated, Speedy, Trustworthy</em>. Project period: 2025 to 2030.
-                        Principal investigator: <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
-                    </p>
-                    <ul class="project-lines">
-                        <li><span class="label">Role:</span> research collaborator and doctoral co-supervisor.</li>
-                        <li><span class="label">Research:</span> categorical foundations for probabilistic and differentiable programming, including reverse-mode automatic differentiation for variants and effectful languages.</li>
-                        <li><span class="label">Supervision:</span> co-supervision of <a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm</a> with <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
-                    </ul>
-                    <p class="tags"><span>computer science</span><span>formal methods</span><span>probabilistic programming</span><span>automatic differentiation</span></p>
-                </li>
-
-                <li class="project">
-                    <h3>Higher-order monad-based programming and reasoning</h3>
-                    <p class="project-meta">
-                        <strong>DFG Project HOMBRe:</strong> <em>Higher-Order Monad-based Programming and Reasoning</em>.
-                        Principal investigator: <a href="https://sergey-goncharov.org/">Sergey Goncharov</a>.
-                    </p>
-                    <ul class="project-lines">
-                        <li><span class="label">Role:</span> Research Fellow from January to March 2026; research collaboration continues.</li>
-                        <li><span class="label">Research:</span> semantics of higher-order programming, computational effects, iteration, recursion, guarded traces, and categorical methods for verification.</li>
-                    </ul>
-                    <p class="tags"><span>computer science</span><span>monads</span><span>higher-order programming</span><span>verification</span></p>
-                </li>
-
-                <li class="project">
-                    <h3>Correct expressive differential programming</h3>
-                    <p class="project-meta">
-                        <strong>NWO Veni Grant VI.Veni.202.124:</strong> <em>Correct Expressive Differential Programming: Laying the Mathematical Foundations for Tomorrow's Machine Learning</em>. Project period: 2021 to 2024. Principal investigator: <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
-                    </p>
-                    <ul class="project-lines">
-                        <li><span class="label">Contribution:</span> led the work on iterative CHAD and established correctness results for automatic differentiation with partial features and recursive types.</li>
-                    </ul>
-                    <p class="tags"><span>automatic differentiation</span><span>recursion</span><span>logical relations</span><span>software correctness</span></p>
-                </li>
-
-                <li class="project">
-                    <h3>Semantically correct automatic differentiation</h3>
-                    <p class="project-meta">
-                        <strong><a href="https://cordis.europa.eu/project/id/895827">Marie Skłodowska-Curie Individual Fellowship SemanDiff, grant 895827</a>:</strong> <em>Semantically Correct Automatic Differentiation</em>. Project period: 2020 to 2022. Fellow: <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
-                    </p>
-                    <ul class="project-lines">
-                        <li><span class="label">Contribution:</span> developed correct extensions of automatic-differentiation transformations, including CHAD, to expressive total languages.</li>
-                        <li><span class="label">Outputs:</span> joint work on CHAD for expressive total languages and automatic differentiation for ML-family languages.</li>
-                    </ul>
-                    <p class="tags"><span>Marie Skłodowska-Curie</span><span>categorical semantics</span><span>functional programming</span><span>program transformations</span></p>
-                </li>
-
-                <li class="project">
-                    <h3>Grothendieck descent theory, fibrations, and factorizations</h3>
+                    <h4 class="project-title">Grothendieck descent theory, fibrations, and factorizations</h4>
                     <p class="project-meta">
                         <strong>Fields Research Fellowship</strong>, Fields Institute for Research in Mathematical Sciences, Canada, 2023.
-                        Principal investigator: Fernando Lucatelli Nunes.
+                        <span class="project-role"><span class="label">Role:</span> Fellowship holder and Principal Investigator.</span>
                     </p>
                     <ul class="project-lines">
                         <li><span class="label">Collaboration:</span> <a href="https://www.yorku.ca/science/profiles/faculty/walter-tholen/">Walter Tholen</a>.</li>
@@ -329,33 +370,65 @@
                 </li>
 
                 <li class="project">
-                    <h3>Grothendieck descent, Galois theory, and presentations of categorical structures</h3>
+                    <h4 class="project-title">Grothendieck descent, Galois theory, and presentations of categorical structures</h4>
                     <p class="project-meta">
                         <strong>Oberwolfach Leibniz Fellowship</strong>, Mathematisches Forschungsinstitut Oberwolfach, Germany, 2022.
-                        Principal investigator: Fernando Lucatelli Nunes.
+                        <span class="project-role"><span class="label">Role:</span> Fellowship holder and Principal Investigator.</span>
                     </p>
                     <ul class="project-lines">
-                        <li><span class="label">Collaborators:</span> Maria Manuel Clementino, <a href="https://prezado.github.io/">Rui Prezado</a>, Lurdes Sousa, <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
+                        <li><span class="label">Collaborators:</span> Maria Manuel Clementino, <a href="https://prezado.github.io/">Rui Prezado</a>, Lurdes Sousa, and <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
                         <li><span class="label">Focus:</span> effective descent, categorical Galois theory, and presentations by coinserters and computads.</li>
                     </ul>
                     <p class="tags"><span>pure mathematics</span><span>Galois theory</span><span>presentations</span><span>categorical structures</span></p>
                 </li>
+            </ul>
+        </section>
 
+        <section class="project-section" id="collaborative-contributions" aria-labelledby="collaborative-contributions-title">
+            <p class="section-kicker">Collaborative contributions</p>
+            <h3 class="project-section-title" id="collaborative-contributions-title">Substantial Contributions to Projects Led by Other Researchers</h3>
+            <p class="section-intro">The externally funded projects below were led by, or awarded to, the researcher named in each entry. My contributions range from research fellowship and doctoral co-supervision to leading specific research strands and developing core results.</p>
+
+            <ul class="project-list">
                 <li class="project">
-                    <h3>Nonlinear analysis and applications</h3>
+                    <h4 class="project-title">Formalised reasoning about expectations</h4>
                     <p class="project-meta">
-                        <strong>CNPq group project</strong>, 2011.
+                        <strong><a href="https://cordis.europa.eu/project/id/101164093">ERC Starting Grant FoRECAST, grant 101164093</a>:</strong> <em>Formalised Reasoning about Expectations: Composable, Automated, Speedy, Trustworthy</em>. Project period: 2025 to 2030.
+                        <span class="project-role"><span class="label">Principal Investigator:</span> <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</span>
                     </p>
                     <ul class="project-lines">
-                        <li><span class="label">Research:</span> undergraduate project on topological dynamics and applications to number theory, leading to two research monographs.</li>
+                        <li><span class="label">My role:</span> research collaborator and doctoral co-supervisor.</li>
+                        <li><span class="label">My research contribution:</span> categorical foundations for probabilistic and differentiable programming, including reverse-mode automatic differentiation for variants and effectful languages.</li>
+                        <li><span class="label">Supervision:</span> co-supervision of <a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm</a> with <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
                     </ul>
-                    <p class="tags"><span>dynamical systems</span><span>topology</span><span>number theory</span></p>
+                    <p class="tags"><span>computer science</span><span>formal methods</span><span>probabilistic programming</span><span>automatic differentiation</span></p>
                 </li>
-            </ul>
 
+                <li class="project">
+                    <h4 class="project-title">Higher-order monad-based programming and reasoning</h4>
+                    <p class="project-meta">
+                        <strong>DFG Project HOMBRe:</strong> <em>Higher-Order Monad-based Programming and Reasoning</em>.
+                        <span class="project-role"><span class="label">Principal Investigator:</span> <a href="https://sergey-goncharov.org/">Sergey Goncharov</a>.</span>
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">My role:</span> Research Fellow; the appointment concluded in March 2026.</li>
+                </li>
+
+                <li class="project">
+                    <h4 class="project-title">Correct expressive differential programming</h4>
+                    <p class="project-meta">
+                        <strong>NWO Veni Grant VI.Veni.202.124:</strong> <em>Correct Expressive Differential Programming: Laying the Mathematical Foundations for Tomorrow's Machine Learning</em>. Project period: 2021 to 2024.
+                        <span class="project-role"><span class="label">Principal Investigator:</span> <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</span>
+                    </p>
+                    <ul class="project-lines">
+                        <li><span class="label">My contribution:</span> led the research on iterative CHAD and established correctness results for automatic differentiation with partial features and recursive types.</li>
+                    </ul>
+                    <p class="tags"><span>automatic differentiation</span><span>recursion</span><span>logical relations</span><span>software correctness</span></p>
+                </li>
+
+            </ul>
         </section>
     </main>
 </div>
 </body>
 </html>
-
