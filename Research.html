@@ -266,10 +266,171 @@
         text-decoration: none;
     }
 
+    .publication-browser {
+        margin-top: 24px;
+        padding: 21px 23px 18px;
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--teal, #176b68);
+        border-radius: 6px;
+        background: linear-gradient(135deg, #fbfdfc 0%, #f4f8f7 100%);
+    }
+
+    .publication-browser h3 {
+        margin: 0 0 5px 0 !important;
+        color: var(--navy, var(--blue-dark)) !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 12.5pt !important;
+    }
+
+    .publication-browser > p {
+        margin: 0;
+        color: var(--muted);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.6pt;
+        line-height: 1.55;
+    }
+
+    .filter-group {
+        min-width: 0;
+        margin: 18px 0 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .filter-group legend {
+        margin: 0 0 8px;
+        padding: 0;
+        color: var(--navy, var(--blue-dark));
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9.2pt;
+        font-weight: bold;
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+    }
+
+    .filter-options {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+        gap: 10px;
+    }
+
+    .venue-select {
+        width: 100%;
+        min-height: 42px;
+        padding: 8px 38px 8px 11px;
+        border: 1px solid rgba(23, 107, 104, 0.26);
+        border-radius: 4px;
+        background: var(--white);
+        color: var(--navy, #15324a);
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        line-height: 1.35;
+        transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+
+    .venue-select:hover {
+        border-color: var(--teal, #176b68);
+        background: var(--teal-light, #e8f0ee);
+    }
+
+    .venue-select:focus-visible {
+        outline: 3px solid rgba(23, 107, 104, 0.24);
+        outline-offset: 2px;
+    }
+
+    .filter-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 15px;
+        padding-top: 13px;
+        border-top: 1px solid var(--border-light);
+    }
+
+    .filter-status {
+        flex: 1 1 auto;
+        min-height: 1.4em;
+        margin: 0 !important;
+        color: var(--muted) !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 9.5pt !important;
+    }
+
+    .clear-filters {
+        flex: 0 0 auto;
+        min-height: 34px;
+        padding: 6px 11px;
+        border: 1px solid rgba(21, 50, 74, 0.2);
+        border-radius: 4px;
+        background: var(--white);
+        color: var(--navy, #15324a);
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9pt;
+        font-weight: bold;
+    }
+
+    .clear-filters:hover,
+    .clear-filters:focus-visible {
+        border-color: var(--navy, #15324a);
+        background: #f4f6f7;
+    }
+
+    .clear-filters:disabled {
+        cursor: default;
+        opacity: 0.48;
+    }
+
+    .featured-publications {
+        padding: 25px 27px 10px !important;
+        border: 1px solid rgba(23, 107, 104, 0.2);
+        border-left: 3px solid var(--teal, #176b68);
+        border-radius: 5px;
+        background: #fbfdfc;
+    }
+
+    .section-intro {
+        margin: -9px 0 18px !important;
+        color: var(--muted) !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 10.5pt !important;
+        line-height: 1.55;
+    }
+
+    .publication-item[hidden],
+    .publication-section[hidden] {
+        display: none !important;
+    }
+
     @media (max-width: 720px) {
         body { padding: 18px 10px; }
         header, main { padding: 22px 20px; }
         h1 { font-size: 21pt; }
+
+        .publication-browser {
+            padding: 18px 16px 16px;
+        }
+
+        .filter-options {
+            grid-template-columns: 1fr;
+        }
+
+        .filter-footer {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .clear-filters {
+            width: 100%;
+            min-height: 44px;
+        }
+
+        .featured-publications {
+            padding: 21px 17px 7px !important;
+        }
 
         .topnav a {
             display: inline-block;
@@ -287,7 +448,7 @@
     <header>
         <h1>Fernando Lucatelli Nunes</h1>
         <p class="subtitle">
-            
+
 <a href="PhD_in_Mathematics.html">Ph.D. in Mathematics</a>
             <span class="degree-separator" aria-hidden="true">·</span>
             <a href="PhD_in_Computer_Science.html">Ph.D. in Computer Science (to be awarded in 2026)</a>
@@ -306,7 +467,7 @@
     </nav>
 
     <main id="content">
-        
+
 <section aria-label="Research programme">
   <h2>Research Programme</h2>
   <div class="research-lead">
@@ -318,166 +479,95 @@
     <p>These directions form a single research programme in which problems from computer science and software engineering shape the mathematics from the outset. The resulting theory is developed both as mathematics in its own right and as a foundation for semantic models, correctness principles, and reliable methods for designing and implementing programming languages, program transformations, and software systems.</p>
   </div>
             <nav class="quick-links" aria-label="Research page sections">
+                <a href="#preprints">Selected preprints</a>
                 <a href="#selected-publications">Journal publications</a>
-                <a href="#accepted-publications">Accepted</a>
-                <a href="#preprints">Preprints</a>
                 <a href="#other-publications">Other publications</a>
                 <a href="#monographs">Monographs</a>
             </nav>
+
+            <div class="publication-browser" aria-labelledby="publication-browser-title">
+                <h3 id="publication-browser-title">Browse by publication venue</h3>
+                <p id="venue-filter-description">Filter the record by the venue in which a work appeared or has been formally accepted. Submitted manuscripts remain under preprints until they have an accepted publication venue.</p>
+
+                <fieldset class="filter-group">
+                    <legend>Venue or publication form</legend>
+                    <div class="filter-options">
+                        <select class="venue-select" name="publication-setting" aria-label="Publication venue or form" aria-describedby="venue-filter-description">
+                            <option value="all">All entries (31)</option>
+                            <optgroup label="Recurring journal venues">
+                                <option value="tac">Theory and Applications of Categories (6)</option>
+                                <option value="acs">Applied Categorical Structures (4)</option>
+                                <option value="mscs">Mathematical Structures in Computer Science (2)</option>
+                            </optgroup>
+                            <optgroup label="Further journal and periodical venues">
+                                <option value="bbms">Bulletin of the Belgian Mathematical Society Simon Stevin (1)</option>
+                                <option value="cgasa">Categories and General Algebraic Structures with Applications (1)</option>
+                                <option value="jpaa">Journal of Pure and Applied Algebra (1)</option>
+                                <option value="portugaliae-mathematica">Portugaliae Mathematica (1)</option>
+                                <option value="quaestiones-mathematicae">Quaestiones Mathematicae (1)</option>
+                                <option value="revista-matematica-universitaria">Revista Matemática Universitária (1)</option>
+                            </optgroup>
+                            <optgroup label="Workshops and report series">
+                                <option value="lafi">LAFI workshop (1)</option>
+                                <option value="oberwolfach-preprints">Oberwolfach Preprints (1)</option>
+                            </optgroup>
+                            <optgroup label="Works without a journal or workshop venue">
+                                <option value="current-manuscript">Preprints and submitted manuscripts (7)</option>
+                                <option value="doctoral-thesis">Doctoral theses (2)</option>
+                                <option value="academic-monograph">Undergraduate and graduate monographs (2)</option>
+                            </optgroup>
+                        </select>
+                        <button class="clear-filters" type="button" disabled>Reset</button>
+                    </div>
+                </fieldset>
+
+                <div class="filter-footer">
+                    <p class="filter-status" aria-live="polite" aria-atomic="true">Showing all 31 entries.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="selected-publications">
-            <h2>Refereed journal publications</h2>
-            <ul class="publication-list">
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 44(35), 1153–1217, 2025.</span> <span class="meta">65 journal pages.</span> <span class="pub-links">(<a href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Journal</a>; <a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Prezado, R.; Vákár, M.</span>
-                    <span class="pub-details"><span class="venue"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025.</span> <span class="meta">28 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-024-09775-y">Generalized multicategories: change-of-base, embedding, and descent</a></span>
-                    <span class="pub-authors">Prezado, R.; Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 32, article 35, 2024.</span> <span class="meta">89 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-024-09775-y">DOI</a>; <a href="https://arxiv.org/abs/2309.08084">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/40/6/40-06abs.html">Lax comma 2-categories and admissible 2-functors</a></span>
-                    <span class="pub-authors">Clementino, M. M.; Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 40(6), 180–226, 2024.</span> <span class="meta">47 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/re3rk47b">DOI</a>; <a href="https://arxiv.org/abs/2002.03132">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/41/16/41-16abs.html">Lax comma categories: cartesian closedness, extensivity, topologicity, and descent</a></span>
-                    <span class="pub-authors">Clementino, M. M.; Lucatelli Nunes, F.; Prezado, R.</span>
-                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 41(16), 516–530, 2024.</span> <span class="meta">15 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/hq30qvlv">DOI</a>; <a href="https://arxiv.org/abs/2405.03773">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <span class="pub-details"><span class="venue"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024.</span> <span class="meta">60 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-022-09706-9">Descent for internal multicategory functors</a></span>
-                    <span class="pub-authors">Prezado, R.; Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 31, article 11, 2023.</span> <span class="meta">18 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-022-09706-9">DOI</a>; <a href="https://arxiv.org/abs/2112.10072">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.2989/16073606.2023.2247729">Lax comma categories of ordered sets</a></span>
-                    <span class="pub-authors">Clementino, M. M.; Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Quaestiones Mathematicae</em>, 46, supplement 1, 145–159, 2023.</span> <span class="meta">15 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.2989/16073606.2023.2247729">DOI</a>; <a href="https://arxiv.org/abs/2212.13541">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <span class="pub-details"><span class="venue"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023.</span> <span class="meta">116 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.bbms.be/en/papers/bbms-30-1-130/">Cauchy completeness, lax epimorphisms and effective descent for split fibrations</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Prezado, R.; Sousa, L.</span>
-                    <span class="pub-details"><span class="venue"><em>Bulletin of the Belgian Mathematical Society Simon Stevin</em>, 30(1), 130–139, 2023.</span> <span class="meta">10 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.36045/j.bbms.221021">DOI</a>; <a href="https://arxiv.org/abs/2210.12021">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-022-09694-w">Semantic factorization and descent</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 30(6), 1393–1433, 2022.</span> <span class="meta">41 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-022-09694-w">DOI</a>; <a href="https://arxiv.org/abs/1902.01225">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1016/j.jpaa.2022.107126">On lax epimorphisms and the associated factorization</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Sousa, L.</span>
-                    <span class="pub-details"><span class="venue"><em>Journal of Pure and Applied Algebra</em>, 226(12), article 107126, 2022.</span> <span class="meta">27 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1016/j.jpaa.2022.107126">DOI</a>; <a href="https://arxiv.org/abs/2109.09836">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/37/18/37-18.pdf">Descent data and absolute Kan extensions</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 37(18), 530–561, 2021.</span> <span class="meta">32 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/qlyd0ci1">DOI</a>; <a href="https://arxiv.org/abs/1906.00517">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://link.springer.com/article/10.1007/s10485-018-9541-3">Pseudoalgebras and non-canonical isomorphisms</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 27(1), 55–63, 2019.</span> <span class="meta">9 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-018-9541-3">DOI</a>; <a href="https://arxiv.org/abs/1711.02051">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://cgasa.sbu.ac.ir/article_50747.html">On lifting of biadjoints and lax algebras</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Categories and General Algebraic Structures with Applications</em>, 9(1), 29–58, 2018.</span> <span class="meta">30 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.29252/cgasa.9.1.29">DOI</a>; <a href="https://arxiv.org/abs/1607.03087">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/33/15/33-15abs.html">Pseudo-Kan extensions and descent theory</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 33(15), 390–444, 2018.</span> <span class="meta">55 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/ncck98gb">DOI</a>; <a href="https://arxiv.org/abs/1606.04999">arXiv</a>)</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/31/9/31-09.pdf">On biadjoint triangles</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.</span>
-                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 31(9), 217–256, 2016.</span> <span class="meta">40 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/gx19p4tk">DOI</a>; <a href="https://arxiv.org/abs/1606.05009">arXiv</a>)</span></span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="accepted-publications">
-            <h2>Accepted for publication</h2>
-            <ul class="publication-list">
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
-                    <span class="pub-details"><span class="venue">Accepted for publication in <em>Mathematical Structures in Computer Science</em>.</span> <span class="meta">arXiv:2505.15002, 2025, 58 pages.</span></span>
-                </li>
-
-                <li>
-                    <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2403.10447">Free doubly-infinitary distributive categories are cartesian closed</a></span>
-                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
-                    <span class="pub-details"><span class="venue">Accepted for publication in <em>Applied Categorical Structures</em>.</span> <span class="meta">arXiv:2403.10447, 2024; revised 2026, 32 pages.</span></span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="preprints">
+        <section id="preprints" class="publication-section featured-publications">
             <h2>Selected preprints</h2>
+            <p class="section-intro">Current work selected to represent the principal active strands of the research programme.</p>
             <ul class="publication-list">
-                <li>
+                <li class="publication-item" data-venue="current-manuscript">
                     <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2607.27541">From Grothendieck cofibrations to factorization systems: a formal 2-monadic account</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.; Tholen, W.</span>
                     <span class="pub-details"><span class="meta">arXiv:2607.27541, 2026, 46 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="current-manuscript">
                     <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2607.14453">Simply typed reverse-mode automatic differentiation with variants: denotational correctness via idempotent completion</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.; Simm, D.; Vákár, M.</span>
                     <span class="pub-details"><span class="meta">arXiv:2607.14453, 2026, 55 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="current-manuscript">
                     <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2607.13935">Backpropagation for effectful languages I: finite probability and discrete output algebraic effects</a></span>
                     <span class="pub-authors">Simm, D.; Lucatelli Nunes, F.; Vákár, M.</span>
                     <span class="pub-details"><span class="venue">Submitted to POPL 2027.</span> <span class="meta">arXiv:2607.13935, 2026, 71 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="current-manuscript">
+                    <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
+                    <span class="pub-details"><span class="venue">Manuscript under revision.</span> <span class="meta">arXiv:2505.15002, 2025, 58 pages.</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="current-manuscript">
+                    <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2403.10447">Free doubly-infinitary distributive categories are cartesian closed</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <span class="pub-details"><span class="meta">arXiv:2403.10447, 2024; revised 2026, 32 pages.</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="current-manuscript">
                     <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2410.22876">Functors preserving effective descent morphisms</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.; Prezado, R.</span>
                     <span class="pub-details"><span class="meta">arXiv:2410.22876, 2024, 17 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="current-manuscript">
                     <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/1704.04474">Freely generated n-categories, coinserters and presentations of low dimensional categories</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.</span>
                     <span class="pub-details"><span class="meta">arXiv:1704.04474, 2017; fully revised 2026, 76 pages.</span></span>
@@ -485,34 +575,141 @@
             </ul>
         </section>
 
-        <section id="other-publications">
+        <section id="selected-publications" class="publication-section">
+            <h2>Refereed journal publications</h2>
+            <ul class="publication-list">
+                <li class="publication-item" data-venue="tac">
+                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 44(35), 1153–1217, 2025.</span> <span class="meta">65 journal pages.</span> <span class="pub-links">(<a href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Journal</a>; <a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="portugaliae-mathematica">
+                    <span class="pub-title-line"><a class="title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Prezado, R.; Vákár, M.</span>
+                    <span class="pub-details"><span class="venue"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025.</span> <span class="meta">28 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="acs">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-024-09775-y">Generalized multicategories: change-of-base, embedding, and descent</a></span>
+                    <span class="pub-authors">Prezado, R.; Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 32, article 35, 2024.</span> <span class="meta">89 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-024-09775-y">DOI</a>; <a href="https://arxiv.org/abs/2309.08084">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="tac">
+                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/40/6/40-06abs.html">Lax comma 2-categories and admissible 2-functors</a></span>
+                    <span class="pub-authors">Clementino, M. M.; Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 40(6), 180–226, 2024.</span> <span class="meta">47 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/re3rk47b">DOI</a>; <a href="https://arxiv.org/abs/2002.03132">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="tac">
+                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/41/16/41-16abs.html">Lax comma categories: cartesian closedness, extensivity, topologicity, and descent</a></span>
+                    <span class="pub-authors">Clementino, M. M.; Lucatelli Nunes, F.; Prezado, R.</span>
+                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 41(16), 516–530, 2024.</span> <span class="meta">15 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/hq30qvlv">DOI</a>; <a href="https://arxiv.org/abs/2405.03773">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="mscs">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <span class="pub-details"><span class="venue"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024.</span> <span class="meta">60 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="acs">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-022-09706-9">Descent for internal multicategory functors</a></span>
+                    <span class="pub-authors">Prezado, R.; Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 31, article 11, 2023.</span> <span class="meta">18 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-022-09706-9">DOI</a>; <a href="https://arxiv.org/abs/2112.10072">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="quaestiones-mathematicae">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.2989/16073606.2023.2247729">Lax comma categories of ordered sets</a></span>
+                    <span class="pub-authors">Clementino, M. M.; Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Quaestiones Mathematicae</em>, 46, supplement 1, 145–159, 2023.</span> <span class="meta">15 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.2989/16073606.2023.2247729">DOI</a>; <a href="https://arxiv.org/abs/2212.13541">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="mscs">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
+                    <span class="pub-details"><span class="venue"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023.</span> <span class="meta">116 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="bbms">
+                    <span class="pub-title-line"><a class="title" href="https://www.bbms.be/en/papers/bbms-30-1-130/">Cauchy completeness, lax epimorphisms and effective descent for split fibrations</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Prezado, R.; Sousa, L.</span>
+                    <span class="pub-details"><span class="venue"><em>Bulletin of the Belgian Mathematical Society Simon Stevin</em>, 30(1), 130–139, 2023.</span> <span class="meta">10 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.36045/j.bbms.221021">DOI</a>; <a href="https://arxiv.org/abs/2210.12021">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="acs">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-022-09694-w">Semantic factorization and descent</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 30(6), 1393–1433, 2022.</span> <span class="meta">41 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-022-09694-w">DOI</a>; <a href="https://arxiv.org/abs/1902.01225">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="jpaa">
+                    <span class="pub-title-line"><a class="title" href="https://doi.org/10.1016/j.jpaa.2022.107126">On lax epimorphisms and the associated factorization</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.; Sousa, L.</span>
+                    <span class="pub-details"><span class="venue"><em>Journal of Pure and Applied Algebra</em>, 226(12), article 107126, 2022.</span> <span class="meta">27 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1016/j.jpaa.2022.107126">DOI</a>; <a href="https://arxiv.org/abs/2109.09836">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="tac">
+                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/37/18/37-18.pdf">Descent data and absolute Kan extensions</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 37(18), 530–561, 2021.</span> <span class="meta">32 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/qlyd0ci1">DOI</a>; <a href="https://arxiv.org/abs/1906.00517">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="acs">
+                    <span class="pub-title-line"><a class="title" href="https://link.springer.com/article/10.1007/s10485-018-9541-3">Pseudoalgebras and non-canonical isomorphisms</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 27(1), 55–63, 2019.</span> <span class="meta">9 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-018-9541-3">DOI</a>; <a href="https://arxiv.org/abs/1711.02051">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="cgasa">
+                    <span class="pub-title-line"><a class="title" href="https://cgasa.sbu.ac.ir/article_50747.html">On lifting of biadjoints and lax algebras</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Categories and General Algebraic Structures with Applications</em>, 9(1), 29–58, 2018.</span> <span class="meta">30 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.29252/cgasa.9.1.29">DOI</a>; <a href="https://arxiv.org/abs/1607.03087">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="tac">
+                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/33/15/33-15abs.html">Pseudo-Kan extensions and descent theory</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 33(15), 390–444, 2018.</span> <span class="meta">55 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/ncck98gb">DOI</a>; <a href="https://arxiv.org/abs/1606.04999">arXiv</a>)</span></span>
+                </li>
+
+                <li class="publication-item" data-venue="tac">
+                    <span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/31/9/31-09.pdf">On biadjoint triangles</a></span>
+                    <span class="pub-authors">Lucatelli Nunes, F.</span>
+                    <span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 31(9), 217–256, 2016.</span> <span class="meta">40 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/gx19p4tk">DOI</a>; <a href="https://arxiv.org/abs/1606.05009">arXiv</a>)</span></span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="other-publications" class="publication-section">
             <h2>Other publications</h2>
             <ul class="publication-list">
-                <li>
+                <li class="publication-item" data-venue="lafi">
                     <span class="pub-title-line"><a class="title" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration">Homomorphic reverse differentiation of iteration</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
                     <span class="pub-details"><span class="venue">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, 2024.</span> <span class="meta">2 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="oberwolfach-preprints">
                     <span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2210.08530">Logical relations for partial features and automatic differentiation correctness</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.; Vákár, M.</span>
                     <span class="pub-details"><span class="venue">Oberwolfach Preprints, OWP-2023-09, 2023.</span> <span class="meta">arXiv:2210.08530, 2022, 25 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.14760/OWP-2023-09">DOI</a>)</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="doctoral-thesis">
                     <span class="pub-title-line"><span class="title">Freely generated categorical structures and automatic differentiation</span></span>
                     <span class="pub-authors">Lucatelli Nunes, F.</span>
                     <span class="pub-details"><span class="venue">Computer Science Ph.D. thesis, Utrecht University; approved, with the degree to be awarded in 2026.</span> <span class="meta">380 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="doctoral-thesis">
                     <span class="pub-title-line"><a class="title" href="https://hdl.handle.net/10316/43360">Pseudomonads and descent</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.</span>
                     <span class="pub-details"><span class="venue">Mathematics Ph.D. thesis, 2017; degree awarded 2018.</span> <span class="meta">209 pages. <a href="https://arxiv.org/abs/1802.01767">Chapter 1 on arXiv</a>.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="revista-matematica-universitaria">
                     <span class="pub-title-line"><a class="title" href="ESPACOSNONREVERSIBLE.pdf">Espaços não reversíveis</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.</span>
                     <span class="pub-details"><span class="venue"><em>Revista Matemática Universitária</em>, 48–49, 22–26, 2012.</span> <span class="meta">5 pages.</span></span>
@@ -520,16 +717,16 @@
             </ul>
         </section>
 
-        <section id="monographs">
+        <section id="monographs" class="publication-section">
             <h2>Undergraduate and graduate monographs</h2>
             <ul class="publication-list">
-                <li>
+                <li class="publication-item" data-venue="academic-monograph">
                     <span class="pub-title-line"><span class="title">Basic concepts of topology for topological dynamics</span></span>
                     <span class="pub-authors">Lucatelli Nunes, F.</span>
                     <span class="pub-details"><span class="meta">in Portuguese, 2009, 116 pages.</span></span>
                 </li>
 
-                <li>
+                <li class="publication-item" data-venue="academic-monograph">
                     <span class="pub-title-line"><a class="title" href="livro2.pdf">Basic topological dynamics and basic applications to number theory</a></span>
                     <span class="pub-authors">Lucatelli Nunes, F.</span>
                     <span class="pub-details"><span class="meta">in Portuguese, 2009, 57 pages.</span></span>
@@ -539,5 +736,52 @@
         </section>
     </main>
 </div>
+<script>
+(() => {
+    const venueSelect = document.querySelector('select[name="publication-setting"]');
+    const publicationItems = Array.from(document.querySelectorAll('.publication-item'));
+    const publicationSections = Array.from(document.querySelectorAll('.publication-section'));
+    const status = document.querySelector('.filter-status');
+    const clearFilters = document.querySelector('.clear-filters');
+
+    if (!venueSelect || !publicationItems.length || !status || !clearFilters) return;
+
+    const selectedLabel = () => venueSelect.options[venueSelect.selectedIndex]?.text.replace(/\s*\(\d+\)$/, '') || '';
+
+    const applyFilters = () => {
+        const setting = venueSelect.value;
+        let visibleCount = 0;
+
+        publicationItems.forEach((item) => {
+            const matchesSetting = setting === 'all' || item.dataset.venue === setting;
+            const visible = matchesSetting;
+            item.hidden = !visible;
+            if (visible) visibleCount += 1;
+        });
+
+        publicationSections.forEach((section) => {
+            section.hidden = !section.querySelector('.publication-item:not([hidden])');
+        });
+
+        if (setting === 'all') {
+            status.textContent = `Showing all ${publicationItems.length} entries.`;
+        } else {
+            const noun = visibleCount === 1 ? 'entry' : 'entries';
+            status.textContent = `Showing ${visibleCount} of ${publicationItems.length} ${noun} · ${selectedLabel()}`;
+        }
+
+        clearFilters.disabled = setting === 'all';
+    };
+
+    venueSelect.addEventListener('change', applyFilters);
+
+    clearFilters.addEventListener('click', () => {
+        venueSelect.value = 'all';
+        applyFilters();
+    });
+
+    applyFilters();
+})();
+</script>
 </body>
 </html>
