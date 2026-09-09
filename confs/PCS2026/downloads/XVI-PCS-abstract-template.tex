@@ -1,0 +1,110 @@
+% XVI Portuguese Category Seminar | Coimbra, 12--14 November 2026
+% Compile with pdfLaTeX (for example in Overleaf or TeX Live).
+% This file is self-contained: no external images or bibliography file.
+% Replace the example metadata, abstract and references below.
+% Email Maria Manuel Clementino at mmc@mat.uc.pt.
+% Subject: PCS-2026 SUBMISSION
+% Paste the completed registration form from the website into your email
+% body and attach this .tex file and its compiled PDF.
+% Abstract deadline: 29 October 2026, 23:59 Coimbra time.
+% Attendance-only registration: 5 November 2026, 23:59 Coimbra time.
+% Decisions will be communicated by 3 November 2026.
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,urlcolor=PCSGold,citecolor=PCSGold,
+            linkcolor=PCSGold,unicode=true]{hyperref}
+\definecolor{PCSGold}{HTML}{926009}
+\definecolor{PCSGray}{HTML}{565A53}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+\setlength{\emergencystretch}{2em}
+\pagestyle{empty}
+
+% ---------------------- YOUR INFORMATION ----------------------
+\newcommand{\talktitle}{Title of the proposed talk}
+\newcommand{\talkauthors}{First Author\textsuperscript{1}}
+\newcommand{\talkaffiliations}{%
+  \textsuperscript{1}Department, University or Institution, Country}
+\newcommand{\talkemail}{author@example.org}
+\newcommand{\talkkeywords}{Category theory; keyword two; keyword three}
+\newcommand{\talksubject}{Theory of Categorical Structures}
+\newcommand{\talkmsc}{18A05} % Optional: leave empty to omit this line.
+
+% Multiple authors: replace the definitions above, for example:
+% \newcommand{\talkauthors}{First Author\textsuperscript{1},
+%                           Second Author\textsuperscript{2}}
+% \newcommand{\talkaffiliations}{%
+%   \textsuperscript{1}First Institution, Country\\
+%   \textsuperscript{2}Second Institution, Country}
+% Give the presenting author's email in \talkemail.
+% Choose the closest subject area from the registration form.
+% MSC2020 is optional; list the primary code first, then secondary codes.
+
+\hypersetup{pdftitle={\talktitle},pdfsubject={XVI Portuguese Category Seminar}}
+
+\begin{document}
+{\small\sffamily\color{PCSGold}
+ XVI PORTUGUESE CATEGORY SEMINAR\hfill COIMBRA 2026\par}
+\vspace{0.2em}
+{\small\sffamily\color{PCSGray}12--14 November 2026\par}
+{\color{PCSGold}\rule{\linewidth}{0.7pt}}
+
+\vspace{1.5em}
+{\LARGE\bfseries \talktitle\par}
+\vspace{0.6em}
+{\large \talkauthors\par}
+\vspace{0.2em}
+{\small\color{PCSGray}\talkaffiliations\par}
+{\small\href{mailto:\talkemail}{\talkemail}\par}
+
+\vspace{1.1em}
+{\large\bfseries Abstract\par}
+
+% ------------------------- YOUR ABSTRACT ----------------------
+Replace this paragraph with your abstract. Introduce the problem and its
+context, state the main result or question, and describe the contribution
+of the proposed talk. The text should be understandable to researchers
+working in neighbouring areas of category theory. Replace or remove all
+example text, keywords, classifications and references before submission.
+
+You may use standard mathematical notation. For example, an adjunction
+between categories $\mathcal{C}$ and $\mathcal{D}$ consists of functors
+$F\colon\mathcal{C}\to\mathcal{D}$ and
+$G\colon\mathcal{D}\to\mathcal{C}$ together with a natural isomorphism
+\[
+  \operatorname{Hom}_{\mathcal{D}}(FX,Y)
+  \cong
+  \operatorname{Hom}_{\mathcal{C}}(X,GY).
+\]
+This sentence illustrates a bibliographic citation~\cite{maclane}.
+Include acknowledgements of joint work or funding here if appropriate.
+
+\vspace{0.7em}
+{\small
+ \textbf{Keywords:} \talkkeywords\par
+ \textbf{Subject area:} \talksubject\par
+ \ifx\talkmsc\empty\else
+   \textbf{MSC2020:} \talkmsc\par
+ \fi
+}
+
+% ------------------------- BIBLIOGRAPHY ------------------------
+% Use \bibitem entries below; cite them in the abstract with \cite{key}.
+% Remove the example reference if it is not relevant to your abstract.
+\renewcommand{\refname}{References}
+\begin{thebibliography}{9}
+\small
+\bibitem{maclane}
+S. Mac Lane, \emph{Categories for the Working Mathematician},
+2nd edition, Graduate Texts in Mathematics \textbf{5}, Springer, 1998.
+\end{thebibliography}
+
+\end{document}
