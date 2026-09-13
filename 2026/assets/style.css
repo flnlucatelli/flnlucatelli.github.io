@@ -74,6 +74,62 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
 .programme-content { padding-block: 2.5rem 4rem; }
 .programme-content h2 { font: 400 2rem/1.2 var(--serif); margin-bottom: 1rem; }
 .back-link { margin-top: 2rem; font-size: 1rem; }
+.city-banner { margin: 1.75rem 0 .25rem; }
+.city-banner img { width: 100%; aspect-ratio: 3 / 1; object-fit: cover; object-position: 50% 58%; }
+.city-banner figcaption { margin-top: .45rem; color: var(--muted); font-size: .875rem; }
+.practical-intro { padding-block: 2.5rem 1.5rem; }
+.eyebrow { margin: 0 0 .5rem; color: var(--gold); font-size: .8125rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.practical-intro h2, .explore-heading h2 { margin-bottom: .75rem; font: 400 clamp(2rem, 4vw, 2.6rem)/1.15 var(--serif); letter-spacing: -.025em; }
+.practical-intro > p:last-child { color: var(--muted); font-size: 1.125rem; }
+.page-nav { padding: .85rem 1rem; background: #fafaf7; gap: .35rem 1.5rem; }
+.arrival-intro { padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+.heading-note { display: block; margin-top: .3rem; color: var(--muted); font-size: .875rem; font-weight: 400; }
+.route-line { color: var(--gold); font-size: .9375rem; }
+.practical-page h3 { margin: 1.5rem 0 .6rem; font: 600 1.125rem/1.35 var(--sans); }
+.practical-page h4 { margin: 1.1rem 0 .4rem; font: 600 1rem/1.4 var(--sans); }
+.practical-page .section > div > h3:first-child { margin-top: 0; }
+.travel-route { padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+.travel-route .eyebrow { margin-bottom: .35rem; }
+.travel-route h3 { margin-top: 0; }
+.travel-steps { margin: .8rem 0 1rem; padding-left: 1.35rem; }
+.travel-steps li { padding-left: .2rem; margin-bottom: .75rem; }
+.travel-steps li::marker { color: var(--gold); font-weight: 600; }
+.resource-links { font-size: .9375rem; color: var(--gold); }
+.travel-note { border-left: 2px solid #b89753; background: #fafaf7; padding: 1rem 1.1rem; margin-top: 1.25rem; }
+.travel-note p { font-size: 1rem; }
+.local-mode { padding-bottom: 1.1rem; margin-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
+.practical-page .local-mode h3 { margin-top: 0; }
+.local-mode:last-of-type { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.venue-address { margin: 1rem 0; padding: 1rem 1.25rem; border: 1px solid var(--line); font-style: normal; line-height: 1.7; }
+.hotel-list { margin-top: 1.4rem; }
+.hotel { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem; padding: 1.2rem 0; border-top: 1px solid var(--line); }
+.hotel > div { min-width: 0; }
+.practical-page .hotel h4 { margin: 0 0 .3rem; font-size: 1.0625rem; }
+.hotel-area, .hotel-address { color: var(--muted); font-size: .875rem; }
+.hotel-address { margin-top: .45rem; }
+.accommodation-option { margin-top: 1.75rem; padding: 1.2rem 1.4rem; background: #fafaf7; border-left: 2px solid #b89753; }
+.practical-page .accommodation-option h3 { margin-top: 0; }
+.explore-section { padding-block: 2.75rem 2rem; border-bottom: 1px solid var(--line); }
+.explore-heading { max-width: 38rem; margin-bottom: 1.75rem; }
+.explore-heading > p:last-child { color: var(--muted); }
+.explore-nav { margin-bottom: 1.75rem; padding-block: .6rem; gap: .3rem 1.5rem; }
+.joanina-feature { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 2rem; padding: 1.75rem; margin-bottom: 2rem; background: #fbf8f1; border-top: 2px solid #b89753; }
+.joanina-feature > div { min-width: 0; }
+.practical-page .joanina-feature h3 { margin-top: 0; font: 400 1.75rem/1.25 var(--serif); }
+.visitor-tips { padding-left: 1.2rem; margin: 1rem 0; }
+.visitor-tips li { margin-bottom: .7rem; }
+.garden-feature { background: #f7f8f2; border-left: 2px solid #7b885d; }
+.city-stories figure { margin: 0; }
+.garden-copy { padding: 1.5rem 2rem 1.75rem; }
+.practical-page .garden-copy h3 { margin-top: 0; font: 400 1.75rem/1.25 var(--serif); }
+.city-stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 2rem; }
+.city-stories > article { min-width: 0; }
+.city-stories img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 58%; }
+.practical-page .city-stories h3 { margin-top: 1rem; font: 400 1.5rem/1.25 var(--serif); }
+.city-stories p { font-size: 1rem; }
+.photo-credit { margin-top: 1.25rem; font-size: .8125rem; }
+.practical-updated { margin-top: 1.25rem; font-size: .875rem; color: var(--muted); }
+.practical-page .back-link { margin-bottom: 2rem; }
 @media (max-width: 700px) {
   .wrap { width: calc(100% - 2.5rem); }
   .masthead { grid-template-columns: 7rem minmax(0, 1fr); gap: 1.5rem; padding-block: 2.5rem 1.75rem; }
@@ -81,6 +137,12 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
   .section { grid-template-columns: 1fr; gap: .85rem; padding-block: 1.5rem; }
   .support { justify-content: flex-start; gap: 1.75rem; }
   .support a { width: 7.5rem; }
+  .city-banner img { aspect-ratio: 2.2 / 1; }
+  .practical-intro { padding-top: 2rem; }
+  .hotel { grid-template-columns: 10rem minmax(0, 1fr); gap: 1rem; }
+  .garden-copy { padding: 1.25rem; }
+  .joanina-feature { grid-template-columns: 1fr; gap: .5rem; padding: 1.25rem; }
+  .city-stories { gap: 1.5rem; }
 }
 @media (max-width: 440px) {
   .masthead { grid-template-columns: 1fr; gap: 1.1rem; padding-top: 1.75rem; }
@@ -91,6 +153,10 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
   .dates dd { font-size: 1.05rem; }
   .organisers { grid-template-columns: 1fr; }
   .email-details > div { gap: .5rem; }
+  .hotel { grid-template-columns: 1fr; gap: .6rem; }
+  .city-stories { grid-template-columns: 1fr; }
+  .page-nav { gap: .35rem 1rem; }
+  .city-banner img { aspect-ratio: 1.8 / 1; }
 }
 @media print {
   body { font-size: 11pt; }
@@ -99,4 +165,11 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
   .masthead { padding-block: 0 1.5rem; }
   .section { padding-block: 1rem; }
   a { text-decoration: none; }
+  .practical-intro, .explore-section { padding-block: 1rem; }
+  .city-banner, .explore-section figure { display: none; }
+  .hotel, .travel-note, .venue-address { break-inside: avoid; }
+  .hotel { grid-template-columns: 10rem minmax(0, 1fr); }
+  .garden-copy { padding: 1rem 0; }
+  .joanina-feature { padding: 1rem 0; background: none; }
+  .accommodation-option, .local-mode { break-inside: avoid; }
 }
