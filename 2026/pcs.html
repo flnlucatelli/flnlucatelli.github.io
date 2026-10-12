@@ -10,6 +10,29 @@
   <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <style id="participants-styles">
+    #participants .participants-table { width: 100%; border-collapse: collapse; text-align: left; }
+    #participants caption { padding: 0 0 1rem; text-align: left; }
+    #participants caption .eyebrow { display: block; margin-bottom: .25rem; }
+    #participants .participants-meta { color: var(--muted); font-size: .9375rem; }
+    #participants thead th { padding: .55rem 0; border-block: 1px solid var(--line); color: var(--muted); font-size: .8125rem; font-weight: 500; letter-spacing: .055em; text-transform: uppercase; }
+    #participants tbody th, #participants tbody td { padding: .7rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+    #participants tr > :first-child { width: 43%; padding-right: 1.5rem; }
+    #participants tbody th { font-size: 1rem; font-weight: 500; }
+    #participants tbody td { color: var(--muted); font-size: .9375rem; line-height: 1.5; }
+    #participants tbody tr:last-child > * { border-bottom: 0; padding-bottom: 0; }
+    #participants tbody tr { break-inside: avoid; }
+    @media (max-width: 540px) {
+      #participants .participants-table, #participants caption, #participants tbody { display: block; }
+      #participants thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+      #participants tbody { border-top: 1px solid var(--line); }
+      #participants tbody tr { display: block; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+      #participants tbody th, #participants tbody td { display: block; width: 100%; padding: 0; border: 0; }
+      #participants tbody tr > :first-child { width: 100%; padding-right: 0; }
+      #participants tbody td { margin-top: .15rem; }
+      #participants tbody tr:last-child { border-bottom: 0; padding-bottom: 0; }
+    }
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -87,7 +110,32 @@ May we publish your name and affiliation? Yes / No</pre>
   </section>
   <section class="section" id="participants" aria-labelledby="participants-title">
     <h2 id="participants-title">Participants</h2>
-    <p class="muted">Names and affiliations will be listed from 8 November.</p>
+    <div>
+      <table class="participants-table">
+        <caption><span class="eyebrow">Provisional list</span><span class="participants-meta"> Alphabetical by surname</span></caption>
+        <thead><tr><th scope="col">Participant</th><th scope="col">Affiliation</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Néot Choserot</th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino</a></th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="https://xabier.garcia.martinez.webs.uvigo.gal/">Xabier García Martínez</a></th><td>CITMAga, Universidade de Santiago de Compostela</td></tr>
+          <tr><th scope="row"><a href="https://www.uclouvain.be/en/people/marino.gran">Marino Gran</a></th><td>UCLouvain (Université catholique de Louvain)</td></tr>
+          <tr><th scope="row"><a href="https://apps.uc.pt/mypage/faculty/uc25818/pt">Gonçalo Gutierres</a></th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="https://sweet.ua.pt/dirk/">Dirk Hofmann</a></th><td>CIDMA, University of Aveiro</td></tr>
+          <tr><th scope="row"><a href="https://flnlucatelli.github.io/">Fernando Lucatelli Nunes</a></th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row">Makar Morozov</th><td>Affiliation to be confirmed</td></tr>
+          <tr><th scope="row"><a href="https://www.math.uni-hamburg.de/en/forschung/bereiche/dm/personen/nickel-jana.html">Jana K. Nickel</a></th><td>Department of Mathematics, University of Hamburg</td></tr>
+          <tr><th scope="row"><a href="https://research.birmingham.ac.uk/en/persons/pouya-partow/">Pouya Partow</a></th><td>School of Computer Science, University of Birmingham</td></tr>
+          <tr><th scope="row"><a href="https://www.cs.ox.ac.uk/people/paolo.perrone/">Paolo Perrone</a></th><td>Department of Computer Science, University of Oxford</td></tr>
+          <tr><th scope="row"><a href="https://www.mat.uc.pt/~picado/">Jorge Picado</a></th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="https://prezado.github.io/">Rui Prezado</a></th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="https://fct.ualg.pt/bio/drodelo">Diana Rodelo</a></th><td>University of Algarve; CIDMA, University of Aveiro</td></tr>
+          <tr><th scope="row">Manuela Sobral</th><td>CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="http://www.estv.ipv.pt/paginaspessoais/sousa/">Lurdes Sousa</a></th><td>Polytechnic Institute of Viseu; CMUC, University of Coimbra</td></tr>
+          <tr><th scope="row"><a href="https://perso.uclouvain.be/tim.vanderlinden/">Tim Van der Linden</a></th><td>F.R.S.–FNRS; UCLouvain; Vrije Universiteit Brussel</td></tr>
+          <tr><th scope="row"><a href="https://sites.google.com/view/norihiro-yamada/">Norihiro Yamada</a></th><td>CMUC, University of Coimbra</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
   <section class="section" id="practical-information" aria-labelledby="practical-title">
     <h2 id="practical-title">Practical Information</h2>
