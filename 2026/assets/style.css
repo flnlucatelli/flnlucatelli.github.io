@@ -173,3 +173,78 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
   .joanina-feature { padding: 1rem 0; background: none; }
   .accommodation-option, .local-mode { break-inside: avoid; }
 }
+
+/* Practical information: section shortcuts. */
+.page-nav.visit-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .65rem;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.visit-nav .visit-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: start;
+  gap: .2rem .5rem;
+  min-width: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: .3rem;
+  background: #fafaf7;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.visit-nav .visit-icon {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--gold);
+}
+.visit-nav .visit-arrow {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.visit-nav .visit-label {
+  grid-column: 1 / -1;
+  margin-top: .45rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.visit-nav .visit-detail {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.4;
+}
+.visit-nav .visit-link:hover,
+.visit-nav .visit-link:focus-visible {
+  background: #fbf6e9;
+  border-color: #b89753;
+}
+.visit-nav .visit-link:hover .visit-arrow,
+.visit-nav .visit-link:focus-visible .visit-arrow { color: var(--gold); }
+.visit-nav .visit-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .page-nav.visit-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 440px) {
+  .page-nav.visit-nav { gap: .5rem; }
+  .visit-nav .visit-link { padding: .85rem; }
+  .visit-nav .visit-label { font-size: .9375rem; }
+  .visit-nav .visit-detail { font-size: .8125rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .visit-nav .visit-link { transition: none; }
+}
+@media print {
+  .page-nav.visit-nav { display: none; }
+}
