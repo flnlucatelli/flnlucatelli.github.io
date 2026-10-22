@@ -97,6 +97,15 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
 .resource-links { font-size: .9375rem; color: var(--gold); }
 .travel-note { border-left: 2px solid #b89753; background: #fafaf7; padding: 1rem 1.1rem; margin-top: 1.25rem; }
 .travel-note p { font-size: 1rem; }
+.dietary-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 .8rem; font-size: .9375rem; line-height: 1.45; }
+.dietary-table caption { text-align: left; font-size: 1.0625rem; font-weight: 600; margin-bottom: .65rem; }
+.dietary-table th, .dietary-table td { text-align: left; vertical-align: top; padding: .7rem .75rem; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.dietary-table thead th { background: #fafaf7; font-weight: 600; border-top: 1px solid var(--line); }
+.dietary-table tbody th { width: 29%; font-weight: 500; }
+@media (max-width: 440px) {
+  .dietary-table th, .dietary-table td { padding: .6rem .45rem; }
+  .dietary-table tbody th { width: 32%; }
+}
 .local-mode { padding-bottom: 1.1rem; margin-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
 .practical-page .local-mode h3 { margin-top: 0; }
 .local-mode:last-of-type { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
