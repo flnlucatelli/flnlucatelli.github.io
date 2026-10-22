@@ -4,9 +4,10 @@ Coimbra, 12–14 November 2026
 To: Maria Manuel Clementino <mmc@mat.uc.pt>
 Subject: PCS-2026 SUBMISSION
 
-Paste the completed form into the email body.
-For a talk, also attach your abstract's .tex source and compiled .pdf.
-Attendance only: no attachments. One email registers you.
+Please send the completed form in the body of your email.
+If you would like to give a talk, attach both the .tex source and the compiled
+.pdf of your abstract to the same email, using the template on the website.
+No attachments are needed if you are registering without a talk.
 
 ----- COPY THE FORM BELOW INTO YOUR EMAIL -----
 
@@ -28,5 +29,6 @@ May we publish your name and affiliation? Yes / No
 
 ----- END OF FORM -----
 
-Registration is free. The optional Saturday lunch is paid by participants.
+Registration is free. The optional Saturday lunch is paid for by participants.
+
 
