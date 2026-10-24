@@ -1,0 +1,51 @@
+/* One quiet, decorative icon vocabulary for navigation and resource actions. */
+.link-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  margin-inline-end: .45em;
+  vertical-align: -.18em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.primary-nav a { display: inline-flex; align-items: center; }
+.primary-nav .link-icon,
+.page > nav .link-icon,
+.page > .nav .link-icon,
+body > nav .link-icon,
+body > .nav .link-icon { margin-inline-end: 6px; }
+.directory-item {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) 12px;
+  gap: 15px;
+  align-items: start;
+}
+.directory-item > .link-icon {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+  color: var(--teal);
+}
+.directory-item > .directory-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.quick-links .link-icon { width: 13px; height: 13px; flex-basis: 13px; }
+.icon-list { list-style: none; padding-left: 0 !important; }
+.icon-list .link-icon { color: var(--teal); }
+.resource .link-icon { width: 14px; height: 14px; flex-basis: 14px; }
+@media (max-width: 650px) {
+  .directory-item { gap: 12px; padding-inline: 19px; }
+  .primary-nav .link-icon { width: 14px; height: 14px; flex-basis: 14px; }
+}
+@media print {
+  .link-icon { display: none; }
+  .directory-item { grid-template-columns: minmax(0, 1fr) 12px; }
+}
