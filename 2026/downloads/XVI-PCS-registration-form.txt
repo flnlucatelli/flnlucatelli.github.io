@@ -14,6 +14,7 @@ No attachments are needed if you are registering without a talk.
 Full name:
 Affiliation:
 Contact email:
+Website (required):
 
 Submitting a talk? Yes / No
 If Yes:
