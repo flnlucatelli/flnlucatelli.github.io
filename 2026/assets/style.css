@@ -257,3 +257,29 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
 @media print {
   .page-nav.visit-nav { display: none; }
 }
+
+/* Restaurant guide: vegan choices, with text labels as well as colour. */
+#lunch .vegan-key { margin: 1.4rem 0 1.1rem; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: .35rem; background: #fafaf7; }
+#lunch .vegan-key-title { margin-bottom: .8rem; font-size: 1rem; font-weight: 600; }
+#lunch .vegan-key ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 0; }
+#lunch .vegan-key li { display: flex; flex-direction: column; align-items: flex-start; gap: .45rem; min-width: 0; font-size: .875rem; line-height: 1.4; }
+#lunch .vegan-key-note { margin-top: .9rem; color: var(--muted); font-size: .875rem; line-height: 1.45; }
+#lunch .vegan-badge { display: inline-flex; align-items: center; gap: .35rem; max-width: 100%; padding: .25rem .55rem; border: 1px solid; border-radius: 1rem; font-size: .75rem; line-height: 1.25; font-weight: 600; letter-spacing: 0; text-transform: none; overflow-wrap: normal; }
+#lunch .vegan-badge::before { content: ""; flex: 0 0 .35rem; width: .35rem; height: .35rem; border-radius: 50%; background: currentColor; }
+#lunch .vegan-badge--full { color: #fff; background: #216543; border-color: #216543; }
+#lunch .vegan-badge--options { color: #145965; background: #e5f2f3; border-color: #a4cdd2; }
+#lunch .vegan-badge--ask { color: #775111; background: #fff2d6; border-color: #dec38d; }
+#lunch .dietary-table tbody th > a { display: block; margin-bottom: .45rem; }
+#lunch .restaurant-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; margin-bottom: .6rem; }
+#lunch .restaurant-heading h3 { margin: 0; }
+@media (max-width: 540px) {
+  #lunch .vegan-key ul { grid-template-columns: 1fr; gap: .7rem; }
+  #lunch .vegan-key li { display: grid; grid-template-columns: 7.25rem minmax(0, 1fr); align-items: center; gap: .75rem; }
+  #lunch .vegan-key li .vegan-badge { justify-self: start; }
+  #lunch .dietary-table tbody th { width: 35%; }
+  #lunch .dietary-table .vegan-badge { font-size: .6875rem; padding: .25rem .4rem; gap: .25rem; }
+}
+@media print {
+  #lunch .vegan-key, #lunch .restaurant-heading { break-inside: avoid; }
+  #lunch .vegan-badge { color: #252821; background: none; border-color: #888; }
+}
