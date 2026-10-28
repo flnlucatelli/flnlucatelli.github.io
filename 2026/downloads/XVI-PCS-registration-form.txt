@@ -9,6 +9,9 @@ If you would like to give a talk, attach both the .tex source and the compiled
 .pdf of your abstract to the same email, using the template on the website.
 No attachments are needed if you are registering without a talk.
 
+For Subject area, enter a subject area that best describes your abstract,
+in your own words. There is no fixed list of subject areas.
+
 ----- COPY THE FORM BELOW INTO YOUR EMAIL -----
 
 Full name:
@@ -31,5 +34,6 @@ May we publish your name and affiliation? Yes / No
 ----- END OF FORM -----
 
 Registration is free. The optional Saturday lunch is paid for by participants.
+
 
 
