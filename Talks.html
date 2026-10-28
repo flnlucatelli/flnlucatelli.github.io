@@ -181,6 +181,23 @@
         color: var(--blue-dark);
     }
 
+    .talk-title .talk-abstract {
+        color: inherit !important;
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+    }
+
+    .talk-title .talk-abstract:hover {
+        text-decoration-thickness: 2px;
+    }
+
+    .talk-link-guide {
+        margin: -9px 0 24px;
+        color: var(--muted);
+        font: 12.5px/1.65 var(--sans, Arial, sans-serif);
+    }
+
     .talk-meta {
         display: block;
         font-family: Arial, Helvetica, sans-serif;
@@ -277,6 +294,7 @@
 
     <main id="content">
         <h2>Selected Talks</h2>
+        <p class="talk-link-guide">Linked talk titles open abstracts; event names link to their websites or archived announcements.</p>
 
         <nav class="quick-links" aria-label="Talk categories">
             <a href="#invited-plenary"><svg class="link-icon" width="15" height="15" aria-hidden="true" focusable="false"><use href="icons.svg#presentation"></use></svg>Invited &amp; plenary</a>
@@ -292,7 +310,7 @@
             <ul class="talk-list">
                 <li class="talk">
                     <div>
-                        <span class="talk-title">Mac Lane strictification in situ</span>
+                        <span class="talk-title"><a class="talk-abstract" href="https://drive.google.com/file/d/1vZaBEUmmGw5644_ObY0GHi6SYvWPq-kr/view?usp=sharing" title="Talk abstract">Mac Lane strictification in situ</a></span>
                         <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://sites.google.com/view/catalg2026/">CatAlg 2026</a>, UNIMONT Campus of the University of Milan, Edolo, Italy, 2 July 2026. Joint work with Paul B. Levy.</span>
                     </div>
                     <span class="year">2026</span>
@@ -300,7 +318,7 @@
 
                 <li class="talk">
                     <div>
-                        <span class="talk-title">Beyond Mac Lane Strictification</span>
+                        <span class="talk-title"><a class="talk-abstract" href="https://umi.dm.unibo.it/jm-ita-bra-2026/wp-content/uploads/2026/07/Book_of_abstracts_SS17.pdf#page=6" title="Talk abstract (PDF)">Beyond Mac Lane Strictification</a></span>
                         <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://umi.dm.unibo.it/jm-ita-bra-2026/">2nd Joint Meeting Brazil–Italy in Mathematics</a>, University of Messina, Messina, Italy. <em>To be held in September 2026.</em></span>
                     </div>
                     <span class="year">2026</span>
@@ -308,7 +326,7 @@
 
                 <li class="talk">
                     <div>
-                        <span class="talk-title">A Generalization of the Eilenberg–Moore Factorization</span>
+                        <span class="talk-title"><a class="talk-abstract" href="https://progetto-itaca.github.io/fests/fest26.html#lucatellinunes" title="Talk abstract">A Generalization of the Eilenberg–Moore Factorization</a></span>
                         <span class="talk-meta"><strong>Invited lecture</strong>, <a href="https://progetto-itaca.github.io/fests/fest26.html">Itaca Fest 2026</a>, Italy.</span>
                     </div>
                     <span class="year">2026</span>
@@ -324,8 +342,8 @@
 
                 <li class="talk">
                     <div>
-                        <span class="talk-title">Aspects of Descent via Bilimits</span>
-                        <span class="talk-meta"><strong>Plenary lecture</strong>, International Conference on Category Theory 2018, University of the Azores, Portugal.</span>
+                        <span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~ct2018/abstracts/lucatelli.pdf" title="Talk abstract (PDF)">Aspects of Descent via Bilimits</a></span>
+                        <span class="talk-meta"><strong>Plenary lecture</strong>, <a href="https://www.mat.uc.pt/~ct2018/index.html">International Conference on Category Theory 2018</a>, University of the Azores, Portugal.</span>
                     </div>
                     <span class="year">2018</span>
                 </li>
@@ -337,23 +355,23 @@
                 <h3>Conference talks</h3>
             </div>
             <ul class="talk-list">
-                <li class="talk"><div><span class="talk-title">The semantic lax descent factorization of a functor</span><span class="talk-meta">109th Peripatetic Seminar on Sheaves and Logic, Leiden University, The Netherlands.</span></div><span class="year">2024</span></li>
-                <li class="talk"><div><span class="talk-title">Doubly-infinitary distributive categories</span><span class="talk-meta">International Conference in Category Theory 2024, University of Santiago de Compostela, Spain.</span></div><span class="year">2024</span></li>
-                <li class="talk"><div><span class="talk-title">Homomorphic reverse differentiation for partial features</span><span class="talk-meta">SUMTOPO 2024, Topology and Logic in Computer Science, Portugal.</span></div><span class="year">2024</span></li>
-                <li class="talk"><div><span class="talk-title">Free distributive and extensive categories</span><span class="talk-meta">38th Summer Conference on Topology and its Applications, Portugal.</span></div><span class="year">2024</span></li>
-                <li class="talk"><div><span class="talk-title">Freely generated bicartesian categories and exponentials</span><span class="talk-meta">XIV Portuguese Category Seminar, Portugal.</span></div><span class="year">2023</span></li>
-                <li class="talk"><div><span class="talk-title">Spanning the tale of “Monades et descente”</span><span class="talk-meta">International Conference in Category Theory 2023, Université catholique de Louvain, Belgium.</span></div><span class="year">2023</span></li>
-                <li class="talk"><div><span class="talk-title">CHAD: elementary categorical aspects of automatic differentiation</span><span class="talk-meta">XIII Portuguese Category Seminar, Portugal.</span></div><span class="year">2022</span></li>
-                <li class="talk"><div><span class="talk-title">Eilenberg–Moore, Kleisli and descent factorizations</span><span class="talk-meta">8th European Congress of Mathematics, University of Primorska, Slovenia.</span></div><span class="year">2021</span></li>
-                <li class="talk"><div><span class="talk-title">Lax comma 2-categories</span><span class="talk-meta">XII Portuguese Category Seminar, Portugal.</span></div><span class="year">2019</span></li>
-                <li class="talk"><div><span class="talk-title">Descent and Monadicity</span><span class="talk-meta">International Conference on Category Theory 2019, University of Edinburgh, Scotland.</span></div><span class="year">2019</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://dutchcats.github.io/PSSL-2024/schedule.html" title="Talk abstract">The semantic lax descent factorization of a functor</a></span><span class="talk-meta"><a href="https://dutchcats.github.io/PSSL-2024/">109th Peripatetic Seminar on Sheaves and Logic</a>, Leiden University, The Netherlands.</span></div><span class="year">2024</span></li>
+                <li class="talk"><div><span class="talk-title">Doubly-infinitary distributive categories</span><span class="talk-meta"><a href="https://citmaga.usc.es/regaca/ct2024/index.html">International Conference in Category Theory 2024</a>, University of Santiago de Compostela, Spain.</span></div><span class="year">2024</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~sumtopo/pdfs/lucatelli_f_5.pdf" title="Talk abstract (PDF)">Homomorphic reverse differentiation for partial features</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~sumtopo/index.html">SUMTOPO 2024, Topology and Logic in Computer Science</a>, Portugal.</span></div><span class="year">2024</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~sumtopo/pdfs/lucatelli_f_4.pdf" title="Talk abstract (PDF)">Free distributive and extensive categories</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~sumtopo/index.html">38th Summer Conference on Topology and its Applications</a>, Portugal.</span></div><span class="year">2024</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~categ/pcs14/program.html" title="Talk abstract">Freely generated bicartesian categories and exponentials</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/pcs14/">XIV Portuguese Category Seminar</a>, Portugal.</span></div><span class="year">2023</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://sites.uclouvain.be/ct2023/img/abstracts.pdf#page=76" title="Talk abstract (PDF)">Spanning the tale of “Monades et descente”</a></span><span class="talk-meta"><a href="https://sites.uclouvain.be/ct2023/">International Conference in Category Theory 2023</a>, Université catholique de Louvain, Belgium.</span></div><span class="year">2023</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~categ/events/abstracts2022/abstractLucatelli.pdf" title="Talk abstract (PDF)">CHAD: elementary categorical aspects of automatic differentiation</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/events/february2022.html">XIII Portuguese Category Seminar</a>, Portugal.</span></div><span class="year">2022</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.hippocampus.si/ISBN/978-961-293-083-7.pdf#page=97" title="Talk abstract (PDF)">Eilenberg–Moore, Kleisli and descent factorizations</a></span><span class="talk-meta"><a href="https://8ecm.eu/">8th European Congress of Mathematics</a>, University of Primorska, Slovenia.</span></div><span class="year">2021</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~categ/events/Abstracts/Lucatelli.pdf" title="Talk abstract (PDF)">Lax comma 2-categories</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/events/september2019.html">XII Portuguese Category Seminar</a>, Portugal.</span></div><span class="year">2019</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://conferences.inf.ed.ac.uk/ct2019/abstracts/5.pdf" title="Talk abstract (PDF)">Descent and Monadicity</a></span><span class="talk-meta"><a href="https://conferences.inf.ed.ac.uk/ct2019/">International Conference on Category Theory 2019</a>, University of Edinburgh, Scotland.</span></div><span class="year">2019</span></li>
                 <li class="talk"><div><span class="talk-title">Eilenberg–Moore, Kleisli and descent factorization</span><span class="talk-meta">Categorical Structures in Algebra, Topology and Logic, Stellenbosch University, South Africa.</span></div><span class="year">2019</span></li>
-                <li class="talk"><div><span class="talk-title">Biadjoint Triangles and Applications</span><span class="talk-meta">103rd Peripatetic Seminar on Sheaves and Logic, Masaryk University, Brno, Czech Republic.</span></div><span class="year">2018</span></li>
-                <li class="talk"><div><span class="talk-title">Non-canonical isomorphisms</span><span class="talk-meta">102nd Peripatetic Seminar on Sheaves and Logic, Universidade de Santiago de Compostela, Spain.</span></div><span class="year">2018</span></li>
-                <li class="talk"><div><span class="talk-title">Biadjoint Triangles</span><span class="talk-meta">5th Workshop on Categorical Methods in Non-Abelian Algebra, Université catholique de Louvain, Belgium.</span></div><span class="year">2017</span></li>
-                <li class="talk"><div><span class="talk-title">Freely generated n-categories and coinserters</span><span class="talk-meta">XI Portuguese Category Seminar, Portugal.</span></div><span class="year">2017</span></li>
-                <li class="talk"><div><span class="talk-title">Bilimits Commutativity and Descent</span><span class="talk-meta">4th Workshop on Categorical Methods in Non-Abelian Algebra, Portugal.</span></div><span class="year">2016</span></li>
-                <li class="talk"><div><span class="talk-title">Kan extensions and descent theory</span><span class="talk-meta">International Conference on Category Theory 2015, University of Aveiro, Portugal.</span></div><span class="year">2015</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://ncatlab.org/nlab/files/abstractPSSL103.pdf#page=2" title="Talk abstract (PDF)">Biadjoint Triangles and Applications</a></span><span class="talk-meta"><a href="https://membership.internetnz.nz/archives/list/categories-list@categories.org.au/thread/NBVVOCTVYF6WX6HW7WUVBTLAFM2UMXXA/" title="Archived organizer announcement">103rd Peripatetic Seminar on Sheaves and Logic</a>, Masaryk University, Brno, Czech Republic.</span></div><span class="year">2018</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://citmaga.usc.es/regaca/pssl102/style/Abstracts.pdf#page=2" title="Talk abstract (PDF)">Non-canonical isomorphisms</a></span><span class="talk-meta"><a href="https://citmaga.usc.es/regaca/pssl102/index.html">102nd Peripatetic Seminar on Sheaves and Logic</a>, Universidade de Santiago de Compostela, Spain.</span></div><span class="year">2018</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~mmc/mcana/Fernando%20Lucatelli.pdf" title="Talk abstract (PDF)">Biadjoint Triangles</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~mmc/mcana/MCANAfifthworkshop.html">5th Workshop on Categorical Methods in Non-Abelian Algebra</a>, Université catholique de Louvain, Belgium.</span></div><span class="year">2017</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~categ/events/abstracts2017/lucatelli_f.pdf" title="Talk abstract (PDF)">Freely generated n-categories and coinserters</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/events/june2017.html">XI Portuguese Category Seminar</a>, Portugal.</span></div><span class="year">2017</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://www.mat.uc.pt/~mmc/mcana/16%20MCANA%20Abstracts.pdf#page=2" title="Talk abstract (PDF)">Bilimits Commutativity and Descent</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~mmc/mcana/MCANAfourthworkshop.html">4th Workshop on Categorical Methods in Non-Abelian Algebra</a>, Portugal.</span></div><span class="year">2016</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://sweet.ua.pt/dirk/ct2015/abstracts/lucatelli_f.pdf" title="Talk abstract (PDF)">Kan extensions and descent theory</a></span><span class="talk-meta"><a href="https://sweet.ua.pt/dirk/ct2015/">International Conference on Category Theory 2015</a>, University of Aveiro, Portugal.</span></div><span class="year">2015</span></li>
             </ul>
         </section>
 
@@ -362,24 +380,24 @@
                 <h3>Invited one-hour seminar talks</h3>
             </div>
             <ul class="talk-list">
-                <li class="talk"><div><span class="talk-title">Eilenberg–Moore, Kleisli, and Descent Factorizations</span><span class="talk-meta">Theory of Computation Seminar, University of Birmingham, UK.</span></div><span class="year">2026</span></li>
-                <li class="talk"><div><span class="talk-title">Biadjoint Triangles and Coherence</span><span class="talk-meta">Algebra Seminar, IMPA, Brazil.</span></div><span class="year">2025</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://researchseminars.org/talk/TheoryCSBham/67/" title="Talk abstract">Eilenberg–Moore, Kleisli, and Descent Factorizations</a></span><span class="talk-meta"><a href="https://researchseminars.org/seminar/TheoryCSBham">Theory of Computation Seminar</a>, University of Birmingham, UK.</span></div><span class="year">2026</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://seminarios.impa.br/visualizar/10231" title="Talk abstract">Biadjoint Triangles and Coherence</a></span><span class="talk-meta"><a href="https://seminarios.impa.br/visualizar/10231">Algebra Seminar</a>, IMPA, Brazil.</span></div><span class="year">2025</span></li>
                 <li class="talk"><div><span class="talk-title">Bifibrations, Spans, and the Bénabou–Roubaud Theorem</span><span class="talk-meta">Category Theory Seminar, University of Cape Town, South Africa.</span></div><span class="year">2025</span></li>
                 <li class="talk"><div><span class="talk-title">Two-dimensional monad theory, pseudodistributive laws, and doubly-infinitary distributive and extensive categories as pseudoalgebras</span><span class="talk-meta">Category Theory Seminar, Stellenbosch University, South Africa.</span></div><span class="year">2025</span></li>
                 <li class="talk"><div><span class="talk-title">Two-dimensional monad theory, and free extensive completions</span><span class="talk-meta">Category Theory Seminar, University of Cape Town, South Africa.</span></div><span class="year">2025</span></li>
-                <li class="talk"><div><span class="talk-title">Unraveling the iterative CHAD</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2024</span></li>
-                <li class="talk"><div><span class="talk-title">Descent for Split Fibrations</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2022</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=2172" title="Talk abstract">Unraveling the iterative CHAD</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2024</span></li>
+                <li class="talk"><div><span class="talk-title">Descent for Split Fibrations</span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2022</span></li>
                 <li class="talk"><div><span class="talk-title">Automatic differentiation of expressive total functional languages</span><span class="talk-meta">Software Technology Group Seminar, Utrecht University, Netherlands.</span></div><span class="year">2021</span></li>
-                <li class="talk"><div><span class="talk-title">On monadicity and descent</span><span class="talk-meta">Category Theory Seminar, Portugal.</span></div><span class="year">2019</span></li>
-                <li class="talk"><div><span class="talk-title">Functorial Semantics and Descent II</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2019</span></li>
-                <li class="talk"><div><span class="talk-title">Functorial Semantics and Descent</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2018</span></li>
-                <li class="talk"><div><span class="talk-title">Biadjoint Triangles and Applications</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2018</span></li>
-                <li class="talk"><div><span class="talk-title">Towards semi left exactness and Janelidze–Galois within the lax idempotent context</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2018</span></li>
-                <li class="talk"><div><span class="talk-title">The deficiency of categories</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2016</span></li>
-                <li class="talk"><div><span class="talk-title">Biadjoint triangles, descent and coherence</span><span class="talk-meta">Algebra, Logic and Topology Seminar, Portugal.</span></div><span class="year">2015</span></li>
-                <li class="talk"><div><span class="talk-title">Kan construction of adjunctions</span><span class="talk-meta">Research Seminar Program, Universidade do Porto, Portugal.</span></div><span class="year">2016</span></li>
-                <li class="talk"><div><span class="talk-title">Homotopy Excision</span><span class="talk-meta">Research Seminar Programme, Portugal.</span></div><span class="year">2016</span></li>
-                <li class="talk"><div><span class="talk-title">Every prespectrum represents a homology theory</span><span class="talk-meta">Joint Ph.D. Programme Seminar, Portugal.</span></div><span class="year">2013</span></li>
+                <li class="talk"><div><span class="talk-title">On monadicity and descent</span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Category Theory Seminar</a>, Portugal.</span></div><span class="year">2019</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1786" title="Talk abstract">Functorial Semantics and Descent II</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2019</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1751" title="Talk abstract">Functorial Semantics and Descent</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2018</span></li>
+                <li class="talk"><div><span class="talk-title">Biadjoint Triangles and Applications</span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2018</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1696" title="Talk abstract">Towards semi left exactness and Janelidze–Galois within the lax idempotent context</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2018</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1535" title="Talk abstract">The deficiency of categories</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2016</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1445" title="Talk abstract">Biadjoint triangles, descent and coherence</a></span><span class="talk-meta"><a href="https://www.mat.uc.pt/~categ/seminars/">Algebra, Logic and Topology Seminar</a>, Portugal.</span></div><span class="year">2015</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPEvent.do?eventID=1020" title="Talk abstract">Kan construction of adjunctions</a></span><span class="talk-meta"><a href="https://sites.google.com/view/rspucupmath20162017/p%C3%A1gina-inicial">Research Seminar Program</a>, Universidade do Porto, Portugal.</span></div><span class="year">2016</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://sites.google.com/view/rspucupphdmath20152016/p%C3%A1gina-inicial" title="Talk abstract">Homotopy Excision</a></span><span class="talk-meta"><a href="https://sites.google.com/view/rspucupphdmath20152016/p%C3%A1gina-inicial">Research Seminar Programme</a>, Portugal.</span></div><span class="year">2016</span></li>
+                <li class="talk"><div><span class="talk-title"><a class="talk-abstract" href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1248" title="Talk abstract">Every prespectrum represents a homology theory</a></span><span class="talk-meta"><a href="https://cmuc.mat.uc.pt/rdonweb/event/showPPSeminar.do?seminarID=1248">Joint Ph.D. Programme Seminar</a>, Portugal.</span></div><span class="year">2013</span></li>
                 <li class="talk"><div><span class="talk-title">Topological Dynamics and Applications in Number Theory</span><span class="talk-meta">Math Seminar, Universidade de Brasília, Brazil; in Portuguese.</span></div><span class="year">2010</span></li>
                 <li class="talk"><div><span class="talk-title">Dynamical Proof of the Van der Waerden Theorem</span><span class="talk-meta">Math Seminar, Universidade de Brasília, Brazil; in Portuguese.</span></div><span class="year">2010</span></li>
             </ul>
@@ -392,8 +410,8 @@
             <ul class="talk-list">
                 <li class="talk">
                     <div>
-                        <span class="talk-title">Homomorphic Reverse Differentiation of Iteration</span>
-                        <span class="talk-meta">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, London, UK.</span>
+                        <span class="talk-title"><a class="talk-abstract" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration" title="Talk abstract">Homomorphic Reverse Differentiation of Iteration</a></span>
+                        <span class="talk-meta"><a href="https://popl24.sigplan.org/home/lafi-2024">LAFI 2024, Tenth Workshop on Languages for Inference at POPL</a>, London, UK.</span>
                     </div>
                     <span class="year">2024</span>
                 </li>
