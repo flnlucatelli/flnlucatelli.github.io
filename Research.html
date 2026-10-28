@@ -165,24 +165,6 @@
         margin: 0;
     }
 
-    .coauthor-note {
-        margin: 0 0 18px;
-        color: var(--muted);
-        font: 12.5px/1.8 var(--sans, Arial, sans-serif);
-    }
-
-    .coauthor-label {
-        margin-right: 5px;
-        font-weight: 600;
-    }
-
-    .coauthor-note a {
-        display: inline-block;
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
-    }
-
     .publication-list li {
         padding: 14px 0 15px 0;
         border-bottom: 1px solid var(--border-light);
@@ -211,6 +193,13 @@
         margin-bottom: 2px;
         font-size: 11pt;
         color: var(--text);
+    }
+
+    .publication-list .pub-authors {
+        margin: 6px 0 4px;
+        color: #465968 !important;
+        font-size: 13px !important;
+        line-height: 1.7 !important;
     }
 
     .pub-details {
@@ -286,121 +275,193 @@
 
     .publication-browser {
         margin-top: 24px;
-        padding: 21px 23px 18px;
-        border: 1px solid var(--border);
+        padding: 27px 28px 0;
+        overflow: hidden;
+        border: 1px solid var(--line, #d9dfdf);
         border-top: 3px solid var(--teal, #176b68);
-        border-radius: 6px;
-        background: linear-gradient(135deg, #fbfdfc 0%, #f4f8f7 100%);
+        border-radius: 5px;
+        background: #fafbf9;
+        font-family: var(--sans, Arial, sans-serif);
+    }
+
+    .browser-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 23px;
     }
 
     .publication-browser h3 {
-        margin: 0 0 5px 0 !important;
-        color: var(--navy, var(--blue-dark)) !important;
-        font-family: Arial, Helvetica, sans-serif !important;
-        font-size: 12.5pt !important;
+        margin: 0 0 7px !important;
+        color: var(--navy, #15324a) !important;
+        font: 500 27px/1.2 var(--serif, Georgia, serif) !important;
+        letter-spacing: -0.02em;
     }
 
-    .publication-browser > p {
+    .browser-description {
+        max-width: 580px;
         margin: 0;
         color: var(--muted);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 10.6pt;
-        line-height: 1.55;
+        font-size: 12.5px;
+        line-height: 1.65;
     }
 
-    .filter-group {
-        min-width: 0;
-        margin: 18px 0 0;
-        padding: 0;
-        border: 0;
-    }
-
-    .filter-group legend {
-        margin: 0 0 8px;
-        padding: 0;
-        color: var(--navy, var(--blue-dark));
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 9.2pt;
-        font-weight: bold;
-        letter-spacing: 0.055em;
+    .catalogue-total {
+        flex: 0 0 auto;
+        display: grid;
+        gap: 3px;
+        padding-left: 23px;
+        border-left: 1px solid var(--line, #d9dfdf);
+        color: var(--muted);
+        text-align: center;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
     }
 
-    .filter-options {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        align-items: end;
-        gap: 10px;
+    .catalogue-total strong {
+        color: var(--navy, #15324a);
+        font: 500 30px/1 var(--serif, Georgia, serif);
+        letter-spacing: -0.02em;
     }
 
-    .venue-select {
+    .publication-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+        gap: 18px;
+    }
+
+    .filter-field { min-width: 0; }
+
+    .filter-field label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--navy, #15324a);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+    }
+
+    .filter-select {
         width: 100%;
-        min-height: 42px;
-        padding: 8px 38px 8px 11px;
-        border: 1px solid rgba(23, 107, 104, 0.26);
+        min-height: 46px;
+        padding: 10px 12px;
+        border: 1px solid #b9c8c9;
         border-radius: 4px;
         background: var(--white);
         color: var(--navy, #15324a);
         cursor: pointer;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 10pt;
-        line-height: 1.35;
-        transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+        font: 13px/1.4 var(--sans, Arial, sans-serif);
+        text-overflow: ellipsis;
     }
 
-    .venue-select:hover {
-        border-color: var(--teal, #176b68);
-        background: var(--teal-light, #e8f0ee);
-    }
+    .filter-select:hover { border-color: var(--teal, #176b68); }
 
-    .venue-select:focus-visible {
-        outline: 3px solid rgba(23, 107, 104, 0.24);
-        outline-offset: 2px;
+    .filter-select:focus-visible,
+    .clear-filters:focus-visible,
+    .coauthor-profiles summary:focus-visible {
+        outline: 3px solid rgba(23, 107, 104, 0.28);
+        outline-offset: 3px;
     }
 
     .filter-footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 14px;
-        margin-top: 15px;
-        padding-top: 13px;
-        border-top: 1px solid var(--border-light);
+        gap: 20px;
+        margin: 16px 0 18px;
     }
 
     .filter-status {
         flex: 1 1 auto;
-        min-height: 1.4em;
         margin: 0 !important;
         color: var(--muted) !important;
-        font-family: Arial, Helvetica, sans-serif !important;
-        font-size: 9.5pt !important;
+        font: 12px/1.65 var(--sans, Arial, sans-serif) !important;
     }
 
     .clear-filters {
         flex: 0 0 auto;
-        min-height: 34px;
-        padding: 6px 11px;
-        border: 1px solid rgba(21, 50, 74, 0.2);
+        min-height: 44px;
+        padding: 8px 13px;
+        border: 1px solid var(--line, #d9dfdf);
         border-radius: 4px;
         background: var(--white);
-        color: var(--navy, #15324a);
+        color: var(--teal, #176b68);
         cursor: pointer;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 9pt;
-        font-weight: bold;
+        font: 600 12px/1.4 var(--sans, Arial, sans-serif);
     }
 
-    .clear-filters:hover,
-    .clear-filters:focus-visible {
-        border-color: var(--navy, #15324a);
-        background: #f4f6f7;
+    .clear-filters:hover:not(:disabled) {
+        border-color: var(--teal, #176b68);
+        background: var(--teal-light, #e8f0ee);
     }
 
     .clear-filters:disabled {
         cursor: default;
-        opacity: 0.48;
+        color: var(--muted);
+        opacity: 0.55;
     }
+
+    .coauthor-profiles {
+        margin: 0 -28px;
+        padding: 0 28px;
+        border-top: 1px solid var(--line, #d9dfdf);
+        background: var(--white);
+    }
+
+    .coauthor-profiles summary {
+        width: fit-content;
+        max-width: 100%;
+        padding: 15px 0;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .coauthor-profiles summary:hover { color: var(--teal, #176b68); }
+
+    .coauthor-profile-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 4px 20px;
+        margin: 0 0 18px;
+        padding: 0;
+        list-style: none;
+    }
+
+    .coauthor-profile-list a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 36px;
+        font-size: 12px;
+        line-height: 1.5;
+        text-decoration: none;
+    }
+
+    .coauthor-profile-list a:hover { text-decoration: underline; }
+    .coauthor-profile-list span { opacity: 0.65; }
+
+    .filter-help {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    .empty-publications {
+        margin: 0 0 42px;
+        padding: 30px;
+        border: 1px dashed var(--line, #d9dfdf);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .empty-publications h3 { margin-top: 0 !important; }
+    .empty-publications p { margin: 0; color: var(--muted); font-size: 13px; }
 
     .featured-publications {
         padding: 25px 27px 10px !important;
@@ -428,13 +489,14 @@
         header, main { padding: 22px 20px; }
         h1 { font-size: 21pt; }
 
-        .publication-browser {
-            padding: 18px 16px 16px;
-        }
-
-        .filter-options {
-            grid-template-columns: 1fr;
-        }
+        .publication-browser { padding: 22px 18px 0; }
+        .publication-controls { grid-template-columns: 1fr; gap: 16px; }
+        .browser-header { gap: 15px; }
+        .publication-browser h3 { font-size: 24px !important; }
+        .catalogue-total { padding-left: 15px; }
+        .coauthor-profiles { margin: 0 -18px; padding: 0 18px; }
+        .coauthor-profile-list { grid-template-columns: 1fr; gap: 0; }
+        .coauthor-profile-list a { min-height: 44px; }
 
         .filter-footer {
             align-items: stretch;
@@ -497,16 +559,6 @@
 
     <p>These directions form a single research programme in which problems from computer science and software engineering shape the mathematics from the outset. The resulting theory is developed both as mathematics in its own right and as a foundation for semantic models, correctness principles, and reliable methods for designing and implementing programming languages, program transformations, and software systems.</p>
   </div>
-            <p class="coauthor-note">
-                <span class="coauthor-label">Coauthors:</span>
-                <a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino</a>;
-                <a href="https://homepages.inf.ed.ac.uk/gdp/">Gordon Plotkin</a>;
-                <a href="https://prezado.github.io/">Rui Prezado</a>;
-                <a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm</a>;
-                <a href="https://cmuc.mat.uc.pt/rdonweb/person/ppgeral.do?idpessoa=15">Lurdes Sousa</a>;
-                <a href="https://www.yorku.ca/science/profiles/faculty/walter-tholen/">Walter Tholen</a>;
-                <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
-            </p>
             <nav class="quick-links" aria-label="Research page sections">
                 <a href="#preprints"><svg class="link-icon" width="15" height="15" aria-hidden="true" focusable="false"><use href="icons.svg#document"></use></svg>Selected preprints</a>
                 <a href="#selected-publications"><svg class="link-icon" width="15" height="15" aria-hidden="true" focusable="false"><use href="icons.svg#book"></use></svg>Journal publications</a>
@@ -516,46 +568,86 @@
             </nav>
 
             <div class="publication-browser" aria-labelledby="publication-browser-title">
-                <h3 id="publication-browser-title">Browse by publication venue</h3>
-                <p id="venue-filter-description">Filter the record by the venue in which a work appeared or has been formally accepted. Submitted manuscripts remain under preprints until they have an accepted publication venue.</p>
+                <div class="browser-header">
+                    <div>
+                        <h3 id="publication-browser-title">Browse publications</h3>
+                        <p id="publication-filter-description" class="browser-description">Explore the work by coauthor, publication venue, or both.</p>
+                    </div>
+                    <div class="catalogue-total"><strong>31</strong><span>Works</span></div>
+                </div>
 
-                <fieldset class="filter-group">
-                    <legend>Venue or publication form</legend>
-                    <div class="filter-options">
-                        <select class="venue-select" name="publication-setting" aria-label="Publication venue or form" aria-describedby="venue-filter-description">
-                            <option value="all">All entries (31)</option>
-                            <optgroup label="Recurring journal venues">
-                                <option value="tac">Theory and Applications of Categories (6)</option>
-                                <option value="acs">Applied Categorical Structures (5)</option>
-                                <option value="mscs">Mathematical Structures in Computer Science (2)</option>
-                            </optgroup>
-                            <optgroup label="Further journal and periodical venues">
-                                <option value="bbms">Bulletin of the Belgian Mathematical Society Simon Stevin (1)</option>
-                                <option value="cgasa">Categories and General Algebraic Structures with Applications (1)</option>
-                                <option value="jpaa">Journal of Pure and Applied Algebra (1)</option>
-                                <option value="portugaliae-mathematica">Portugaliae Mathematica (1)</option>
-                                <option value="quaestiones-mathematicae">Quaestiones Mathematicae (1)</option>
-                                <option value="revista-matematica-universitaria">Revista Matemática Universitária (1)</option>
-                            </optgroup>
-                            <optgroup label="Workshops and report series">
-                                <option value="lafi">LAFI workshop (1)</option>
-                                <option value="oberwolfach-preprints">Oberwolfach Preprints (1)</option>
-                            </optgroup>
-                            <optgroup label="Works without a journal or workshop venue">
-                                <option value="current-manuscript">Preprints and submitted manuscripts (6)</option>
-                                <option value="doctoral-thesis">Doctoral theses (2)</option>
-                                <option value="academic-monograph">Undergraduate and graduate monographs (2)</option>
+                <div class="publication-controls">
+                    <div class="filter-field">
+                        <label for="coauthor-filter">Coauthor</label>
+                        <select id="coauthor-filter" class="filter-select" name="publication-author" aria-describedby="publication-filter-description">
+                            <option value="all">All authors</option>
+                            <option value="solo">Sole-authored works</option>
+                            <optgroup label="Coauthors">
+                                <option value="Maria Manuel Clementino">Maria Manuel Clementino</option>
+                                <option value="Gordon Plotkin">Gordon Plotkin</option>
+                                <option value="Rui Prezado">Rui Prezado</option>
+                                <option value="Diogo Simm">Diogo Simm</option>
+                                <option value="Lurdes Sousa">Lurdes Sousa</option>
+                                <option value="Walter Tholen">Walter Tholen</option>
+                                <option value="Matthijs Vákár">Matthijs Vákár</option>
                             </optgroup>
                         </select>
-                        <button class="clear-filters" type="button" disabled>Reset</button>
                     </div>
-                </fieldset>
+                    <div class="filter-field">
+                        <label for="venue-filter">Venue or publication form</label>
+                        <select id="venue-filter" class="filter-select venue-select" name="publication-setting" aria-describedby="publication-filter-description">
+                            <option value="all">All venues and publication forms</option>
+                            <optgroup label="Recurring journal venues">
+                                <option value="tac">Theory and Applications of Categories</option>
+                                <option value="acs">Applied Categorical Structures</option>
+                                <option value="mscs">Mathematical Structures in Computer Science</option>
+                            </optgroup>
+                            <optgroup label="Further journal and periodical venues">
+                                <option value="bbms">Bulletin of the Belgian Mathematical Society Simon Stevin</option>
+                                <option value="cgasa">Categories and General Algebraic Structures with Applications</option>
+                                <option value="jpaa">Journal of Pure and Applied Algebra</option>
+                                <option value="portugaliae-mathematica">Portugaliae Mathematica</option>
+                                <option value="quaestiones-mathematicae">Quaestiones Mathematicae</option>
+                                <option value="revista-matematica-universitaria">Revista Matemática Universitária</option>
+                            </optgroup>
+                            <optgroup label="Workshops and report series">
+                                <option value="lafi">LAFI workshop</option>
+                                <option value="oberwolfach-preprints">Oberwolfach Preprints</option>
+                            </optgroup>
+                            <optgroup label="Works without a journal or workshop venue">
+                                <option value="current-manuscript">Preprints and submitted manuscripts</option>
+                                <option value="doctoral-thesis">Doctoral theses</option>
+                                <option value="academic-monograph">Undergraduate and graduate monographs</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="filter-footer">
-                    <p class="filter-status" aria-live="polite" aria-atomic="true">Showing all 31 entries.</p>
+                    <p class="filter-status" aria-live="polite" aria-atomic="true">Showing all 31 works.</p>
+                    <button class="clear-filters" type="button" disabled>Reset filters</button>
                 </div>
+                <noscript><p class="filter-help">Enable JavaScript to use the filters. All publications are listed below.</p></noscript>
+
+                <details class="coauthor-profiles">
+                    <summary>Coauthors &amp; academic profiles</summary>
+                    <ul class="coauthor-profile-list">
+                        <li><a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino <span aria-hidden="true">↗</span></a></li>
+                        <li><a href="https://homepages.inf.ed.ac.uk/gdp/">Gordon Plotkin <span aria-hidden="true">↗</span></a></li>
+                        <li><a href="https://prezado.github.io/">Rui Prezado <span aria-hidden="true">↗</span></a></li>
+                        <li><a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm <span aria-hidden="true">↗</span></a></li>
+                        <li><a href="https://cmuc.mat.uc.pt/rdonweb/person/ppgeral.do?idpessoa=15">Lurdes Sousa <span aria-hidden="true">↗</span></a></li>
+                        <li><a href="https://www.yorku.ca/science/profiles/faculty/walter-tholen/">Walter Tholen <span aria-hidden="true">↗</span></a></li>
+                        <li><a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár <span aria-hidden="true">↗</span></a></li>
+                    </ul>
+                </details>
             </div>
         </section>
+
+        <div class="empty-publications" hidden>
+            <h3>No matching publications</h3>
+            <p>Choose a different coauthor or venue, or reset the filters to see all works.</p>
+        </div>
 
         <section id="preprints" class="publication-section featured-publications">
             <h2>Selected preprints</h2>
@@ -769,23 +861,35 @@
 <script>
 (() => {
     const venueSelect = document.querySelector('select[name="publication-setting"]');
+    const authorSelect = document.querySelector('select[name="publication-author"]');
     const publicationItems = Array.from(document.querySelectorAll('.publication-item'));
     const publicationSections = Array.from(document.querySelectorAll('.publication-section'));
     const status = document.querySelector('.filter-status');
     const clearFilters = document.querySelector('.clear-filters');
+    const emptyState = document.querySelector('.empty-publications');
+    const catalogueTotal = document.querySelector('.catalogue-total strong');
 
-    if (!venueSelect || !publicationItems.length || !status || !clearFilters) return;
+    if (!venueSelect || !authorSelect || !publicationItems.length || !status || !clearFilters || !emptyState) return;
 
-    const selectedLabel = () => venueSelect.options[venueSelect.selectedIndex]?.text.replace(/\s*\(\d+\)$/, '') || '';
+    const publications = publicationItems.map((element) => ({
+        element,
+        venue: element.dataset.venue,
+        authors: element.querySelector('.pub-authors').textContent.split(';').map((name) => name.trim())
+    }));
+
+    if (catalogueTotal) catalogueTotal.textContent = publications.length;
 
     const applyFilters = () => {
-        const setting = venueSelect.value;
+        const venue = venueSelect.value;
+        const author = authorSelect.value;
         let visibleCount = 0;
 
-        publicationItems.forEach((item) => {
-            const matchesSetting = setting === 'all' || item.dataset.venue === setting;
-            const visible = matchesSetting;
-            item.hidden = !visible;
+        publications.forEach((publication) => {
+            const matchesVenue = venue === 'all' || publication.venue === venue;
+            const matchesAuthor = author === 'all'
+                || (author === 'solo' ? publication.authors.length === 1 : publication.authors.includes(author));
+            const visible = matchesVenue && matchesAuthor;
+            publication.element.hidden = !visible;
             if (visible) visibleCount += 1;
         });
 
@@ -793,20 +897,26 @@
             section.hidden = !section.querySelector('.publication-item:not([hidden])');
         });
 
-        if (setting === 'all') {
-            status.textContent = `Showing all ${publicationItems.length} entries.`;
-        } else {
-            const noun = visibleCount === 1 ? 'entry' : 'entries';
-            status.textContent = `Showing ${visibleCount} of ${publicationItems.length} ${noun} · ${selectedLabel()}`;
+        const active = venue !== 'all' || author !== 'all';
+        const context = [];
+        if (author === 'solo') context.push('sole-authored');
+        else if (author !== 'all') context.push('with ' + author);
+        if (venue !== 'all') {
+            context.push(venueSelect.options[venueSelect.selectedIndex].text.replace(/\s*\(\d+\)$/, ''));
         }
 
-        clearFilters.disabled = setting === 'all';
+        status.textContent = active
+            ? 'Showing ' + visibleCount + ' of ' + publications.length + ' works · ' + context.join(' · ')
+            : 'Showing all ' + publications.length + ' works.';
+        clearFilters.disabled = !active;
+        emptyState.hidden = visibleCount !== 0;
     };
 
     venueSelect.addEventListener('change', applyFilters);
-
+    authorSelect.addEventListener('change', applyFilters);
     clearFilters.addEventListener('click', () => {
         venueSelect.value = 'all';
+        authorSelect.value = 'all';
         applyFilters();
     });
 
