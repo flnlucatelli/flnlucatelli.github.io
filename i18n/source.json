@@ -38,6 +38,18 @@
     "PhDs.html",
     "Genealogy.html"
   ],
+  "PhDs": [
+    "index.html",
+    "Research.html",
+    "Some_projects.html",
+    "Academic_Positions.html",
+    "students.html",
+    "Further_Information.html",
+    "PhD_in_Mathematics.html",
+    "PhD_in_Computer_Science.html",
+    "PhDs.html",
+    "Genealogy.html"
+  ],
   "Projects": [
     "index.html",
     "Research.html",
@@ -115,13 +127,6 @@
     "Genealogy.html"
   ],
   "I work in computer science and pure mathematics. I develop foundations of computer science, especially in programming language semantics, formal methods, and software technology, with an emphasis on solutions that are correct by construction and suitable for direct implementation. In mathematics, I study the theory and applications of generalised categorical structures, both intrinsically and through their connections with other areas of mathematics. These directions fuse into a single research programme, in which abstract theory and practical problems develop in close dialogue.": [
-    "index.html"
-  ],
-  "Doctoral work": [
-    "index.html",
-    "PhDs.html"
-  ],
-  "Two doctorates, in mathematics and computer science.": [
     "index.html"
   ],
   "Research statement, publications, preprints, and related writings.": [
@@ -841,7 +846,9 @@
     "Academic_Positions.html"
   ],
   "University of Coimbra": [
-    "Academic_Positions.html"
+    "Academic_Positions.html",
+    "PhD_in_Mathematics.html",
+    "PhDs.html"
   ],
   "Utrecht University": [
     "Academic_Positions.html",
@@ -1197,7 +1204,13 @@
     "PhD_in_Mathematics.html",
     "PhDs.html"
   ],
-  "Joint Ph.D. Programme in Mathematics, Portugal. Awarded in Jan/2018,": [
+  "Ph.D. awarded by the": [
+    "PhD_in_Mathematics.html"
+  ],
+  ", Portugal, in January 2018,": [
+    "PhD_in_Mathematics.html"
+  ],
+  ". Joint Ph.D. Programme in Mathematics of the University of Coimbra and the University of Porto.": [
     "PhD_in_Mathematics.html"
   ],
   "Period": [
@@ -1423,7 +1436,7 @@
   "Fernando Lucatelli Nunes | Doctoral work": [
     "PhDs.html"
   ],
-  "PhDs": [
+  "Doctoral work": [
     "PhDs.html"
   ],
   "Mathematics and computer science.": [
@@ -1433,11 +1446,7 @@
     "PhDs.html",
     "Genealogy.html"
   ],
-  "Universities of Coimbra and Porto": [
-    "PhDs.html",
-    "Genealogy.html"
-  ],
-  "Joint Ph.D. Programme in Mathematics": [
+  "Joint Ph.D. Programme in Mathematics (Coimbra–Porto)": [
     "PhDs.html"
   ],
   "Defended": [
@@ -1452,7 +1461,7 @@
   "Summa cum laude": [
     "PhDs.html"
   ],
-  "“Categorical structures through the lens of low- and higher-dimensional monad theory.”": [
+  "“Categorical structures through the lenses of one- and two-dimensional monad theory.”": [
     "PhDs.html"
   ],
   "Explore the doctorate": [
@@ -1476,7 +1485,7 @@
   "Doctoral work in mathematics and computer science: Pseudomonads and Descent, and Freely Generated Categorical Structures and Automatic Differentiation.": [
     "PhDs.html"
   ],
-  "Categorical triangle and pseudoalgebra coherence square on an azulejo-inspired background": [
+  "Abstract composition of paths and surfaces in cobalt blue and ivory, inspired by Portuguese geometric tiles": [
     "PhDs.html"
   ],
   "Cover of Freely Generated Categorical Structures and Automatic Differentiation": [
@@ -1510,6 +1519,9 @@
     "Genealogy.html"
   ],
   "Doctoral supervision": [
+    "Genealogy.html"
+  ],
+  "Universities of Coimbra and Porto": [
     "Genealogy.html"
   ],
   "Computer science": [

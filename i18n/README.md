@@ -31,9 +31,9 @@ based on their browser language. The language menu works without JavaScript.
   Automatic Differentiation*: “theory and practice in computer science should
   inform one another” (initial capitalization adjusted for display).
 - The mathematics epigraph is an editorial adaptation of the author's requested
-  wording, not a verbatim quotation from *Pseudomonads and Descent*. The decorative
-  azulejo image was generated for this site; the category diagrams are separately
-  drawn SVG artwork, so their notation remains precise.
+  wording, not a verbatim quotation from *Pseudomonads and Descent*. The abstract
+  artwork was generated for this site, drawing on paths, surfaces and the geometry
+  of Portuguese tiles. It is an artistic composition rather than a technical diagram.
 - `assets/genealogy/lucatellinunes.pdf` is the supplied Mathematics Genealogy Project
   PDF, unchanged. The display SVG preserves its chart and vector lettering while
   adapting the background and ink colours. The text file is its extracted transcript.

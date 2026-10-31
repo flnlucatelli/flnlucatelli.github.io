@@ -26,7 +26,7 @@ def utility(name,locale,catalog):
     text=lambda s:catalog.get(s,s)
     path=lambda code:('/' if code=='en' else '/'+code+'/')+name
     links=''.join(f'<li><a href="{path(code)}" lang="{code}" hreflang="{code}" data-language="{code}"'+(' aria-current="true"' if code==locale else '')+f'>{label}</a></li>' for code,label in LOCALES.items())
-    return f'''<div class="language-tools"><a class="doctoral-shortcut" href="{'/' if locale=='en' else '/'+locale+'/'}PhDs.html">{text('PhDs')}</a><details class="language-menu"><summary><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><circle cx="10" cy="10" r="7.4" fill="none" stroke="currentColor"/><ellipse cx="10" cy="10" rx="3.3" ry="7.4" fill="none" stroke="currentColor"/><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"/></svg>{text('Languages')} · {LOCALES[locale]}</summary><ul class="language-options">{links}</ul></details></div>'''
+    return f'''<div class="language-tools"><details class="language-menu"><summary><svg viewBox="0 0 20 20" width="13" height="13" aria-hidden="true"><circle cx="10" cy="10" r="7.4" fill="none" stroke="currentColor"/><ellipse cx="10" cy="10" rx="3.3" ry="7.4" fill="none" stroke="currentColor"/><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"/></svg>{text('Languages')} · {LOCALES[locale]}</summary><ul class="language-options">{links}</ul></details></div>'''
 
 def add_chrome(soup,name,locale,catalog):
     for old in soup.select('.language-tools,.translation-origin'):old.decompose()
@@ -56,6 +56,7 @@ def localize(name,locale,catalog):
         key=norm(node)
         if eligible(node) and key in catalog:
             original=str(node); lead=original[:len(original)-len(original.lstrip())]; tail=original[len(original.rstrip()):]
+            if catalog[key].endswith(('’', "'")): tail=''
             node.replace_with(lead+catalog[key]+tail)
     for el in soup.find_all(True):
         for a in ('aria-label','alt','title','placeholder','label'):

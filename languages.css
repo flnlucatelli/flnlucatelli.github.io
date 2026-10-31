@@ -1,6 +1,4 @@
-.language-tools { display: flex; align-items: center; justify-content: space-between; gap: 20px; position: relative; z-index: 40; padding: 9px 0 12px; color: #647382; font: 11px/1.5 Inter, ui-sans-serif, system-ui, sans-serif; }
-.language-tools .doctoral-shortcut { color: #647382 !important; text-decoration: none; letter-spacing: .025em; }
-.language-tools .doctoral-shortcut:hover { color: #176b68 !important; text-decoration: underline; }
+.language-tools { display: flex; align-items: center; justify-content: flex-end; position: relative; z-index: 40; padding: 9px 0 12px; color: #647382; font: 11px/1.5 Inter, ui-sans-serif, system-ui, sans-serif; }
 body > .language-tools { width: min(1080px, calc(100% - 48px)); margin: 0 auto; padding-top: 14px; }
 .language-menu { position: relative; margin-left: auto; }
 .language-menu summary { display: flex; align-items: center; gap: 7px; padding: 6px 0 6px 12px; cursor: pointer; list-style: none; color: #647382; font-weight: 500; }
@@ -18,7 +16,5 @@ body > .language-tools { width: min(1080px, calc(100% - 48px)); margin: 0 auto; 
 body > .translation-origin { width: min(1080px, calc(100% - 48px)); margin-bottom: 28px; }
 .translation-origin a { color: #176b68 !important; text-underline-offset: 3px; }
 .source-language { font: 600 9px/1 system-ui, sans-serif; color: #647382; margin-left: 4px; }
-.doctoral-directory { grid-column: 1 / -1; min-height: 100px; background: #eef2ee; }
-.doctoral-directory .directory-copy { flex: 1; }
 @media (max-width: 650px) { body > .language-tools { width: calc(100% - 30px); } .language-tools { font-size: 10.5px; } }
 @media print { .language-tools { display: none !important; } }
