@@ -38,6 +38,18 @@
     "PhDs.html",
     "Genealogy.html"
   ],
+  "Doctorates": [
+    "index.html",
+    "Research.html",
+    "Some_projects.html",
+    "Academic_Positions.html",
+    "students.html",
+    "Further_Information.html",
+    "PhD_in_Mathematics.html",
+    "PhD_in_Computer_Science.html",
+    "PhDs.html",
+    "Genealogy.html"
+  ],
   "Projects": [
     "index.html",
     "Research.html",
@@ -114,13 +126,6 @@
     "PhDs.html",
     "Genealogy.html"
   ],
-  "Doctorates": [
-    "index.html",
-    "PhD_in_Mathematics.html",
-    "PhD_in_Computer_Science.html",
-    "PhDs.html",
-    "Genealogy.html"
-  ],
   "I work in computer science and pure mathematics. I develop foundations of computer science, especially in programming language semantics, formal methods, and software technology, with an emphasis on solutions that are correct by construction and suitable for direct implementation. In mathematics, I study the theory and applications of generalised categorical structures, both intrinsically and through their connections with other areas of mathematics. These directions fuse into a single research programme, in which abstract theory and practical problems develop in close dialogue.": [
     "index.html"
   ],
@@ -161,6 +166,9 @@
     "Genealogy.html"
   ],
   "Seminars and conferences, including CLASS, an international group for doctoral learning and research exchange.": [
+    "index.html"
+  ],
+  "Mathematics at Coimbra and computer science at Utrecht.": [
     "index.html"
   ],
   "Mathematical genealogy": [
