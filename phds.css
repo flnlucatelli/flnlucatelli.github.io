@@ -1,6 +1,5 @@
 .doctoral-page > main { padding: 42px !important; }
 .doctoral-intro { margin-bottom: 32px !important; }
-.doctoral-eyebrow { margin: 0 0 9px; color: var(--teal); font: 700 10px/1.5 var(--sans); letter-spacing: .17em; text-transform: uppercase; }
 .doctoral-page .doctoral-intro h2 { margin-bottom: 10px !important; padding-bottom: 0 !important; border: 0 !important; font-size: clamp(34px, 5vw, 49px) !important; }
 .doctoral-intro-line { margin: 0; color: var(--muted); font: 17px/1.6 var(--serif); }
 .doctoral-list { display: grid; gap: 28px; }
@@ -47,3 +46,4 @@
   .doctoral-card { break-inside: avoid; }
   .doctoral-page > main { padding: 20px !important; }
 }
+

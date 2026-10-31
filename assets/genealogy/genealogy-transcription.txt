@@ -1,13 +1,13 @@
 Academic Genealogy of Fernando Lucatelli Nunes
-Adapted from the Mathematics Genealogy Project chart to clarify the awarding university and joint doctoral programme.
+Adapted from the Mathematics Genealogy Project chart to identify both doctorates and their awarding universities.
 The Mathematics Genealogy Project is a service of 
 North Dakota State University and the American Mathematical Society
 http://www.mathgenealogy.org
 Fernando Lucatelli Nunes
 2018 Ph.D. in Mathematics
-Awarding university: University of Coimbra
-Joint programme: University of Coimbra and University of Porto
-2026 Ph.D. in Computer Science: Utrecht University
+University of Coimbra
+2026 Ph.D. in Computer Science
+Utrecht University
 Maria Manuel Clementino
 1992 Universidade de Coimbra
 Matthijs Imre László Vákár
@@ -793,3 +793,4 @@ Abu Sahl 'Isa ibn Yahya al-Masihi
    
 Abu Mansur al-Hasan ibn Nuh al-Qumri
    
+

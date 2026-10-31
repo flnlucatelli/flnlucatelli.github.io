@@ -87,7 +87,7 @@ def main():
         for el in soup.select('.language-tools,.translation-origin'):el.decompose()
         for value in strings(soup):
             if name not in sources.setdefault(value,[]):sources[value].append(name)
-    for value in ('Languages','PhDs','Read the original English version'):sources.setdefault(value,['shared interface'])
+    for value in ('Languages','Doctorates','Read the original English version'):sources.setdefault(value,['shared interface'])
     if args.extract:
         (ROOT/'i18n/source.json').write_text(json.dumps(sources,ensure_ascii=False,indent=2)+'\n');print(f'{len(sources)} source strings');return
     missing={}
@@ -108,3 +108,4 @@ def main():
     (ROOT/'i18n/source-hashes.json').write_text(json.dumps(hashes,indent=2)+'\n')
     print(f'Built {len(PAGES)*len(catalogs)} translated pages; {len(PAGES)} canonical English pages retained.')
 if __name__=='__main__':main()
+

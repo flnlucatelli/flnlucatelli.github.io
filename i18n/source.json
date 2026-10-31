@@ -38,18 +38,6 @@
     "PhDs.html",
     "Genealogy.html"
   ],
-  "PhDs": [
-    "index.html",
-    "Research.html",
-    "Some_projects.html",
-    "Academic_Positions.html",
-    "students.html",
-    "Further_Information.html",
-    "PhD_in_Mathematics.html",
-    "PhD_in_Computer_Science.html",
-    "PhDs.html",
-    "Genealogy.html"
-  ],
   "Projects": [
     "index.html",
     "Research.html",
@@ -121,6 +109,13 @@
     "Academic_Positions.html",
     "students.html",
     "Further_Information.html",
+    "PhD_in_Mathematics.html",
+    "PhD_in_Computer_Science.html",
+    "PhDs.html",
+    "Genealogy.html"
+  ],
+  "Doctorates": [
+    "index.html",
     "PhD_in_Mathematics.html",
     "PhD_in_Computer_Science.html",
     "PhDs.html",
@@ -1183,7 +1178,7 @@
   "Doctoral work and genealogy": [
     "Further_Information.html"
   ],
-  "PhDs: Mathematics and Computer Science": [
+  "Doctorates in mathematics and computer science": [
     "Further_Information.html"
   ],
   "Teaching": [
@@ -1206,8 +1201,7 @@
     "PhDs.html"
   ],
   "Ph.D. awarded by the": [
-    "PhD_in_Mathematics.html",
-    "Genealogy.html"
+    "PhD_in_Mathematics.html"
   ],
   ", Portugal, in January 2018,": [
     "PhD_in_Mathematics.html"
@@ -1435,10 +1429,7 @@
   ", 44(35), 1153–1217, 2025. 65 journal pages. (": [
     "PhD_in_Computer_Science.html"
   ],
-  "Fernando Lucatelli Nunes | Doctoral work": [
-    "PhDs.html"
-  ],
-  "Doctoral work": [
+  "Fernando Lucatelli Nunes | Doctorates": [
     "PhDs.html"
   ],
   "Mathematics and computer science.": [
@@ -1523,9 +1514,6 @@
   "Doctoral supervision": [
     "Genealogy.html"
   ],
-  "Joint doctoral programme of the Universities of Coimbra and Porto.": [
-    "Genealogy.html"
-  ],
   "Computer science": [
     "Genealogy.html"
   ],
@@ -1562,7 +1550,7 @@
   "Academic genealogy chart": [
     "Genealogy.html"
   ],
-  "The complete academic genealogy of Fernando Lucatelli Nunes. His Ph.D. in Mathematics was awarded by the University of Coimbra in 2018. His doctoral supervisors are Maria Manuel Clementino, Gabriele Keller and Matthijs Vákár. A text transcription and the genealogy PDF are linked below.": [
+  "The complete academic genealogy of Fernando Lucatelli Nunes. His Ph.D. in Mathematics was awarded by the University of Coimbra in 2018, and his Ph.D. in Computer Science by Utrecht University in 2026. His doctoral supervisors are Maria Manuel Clementino, Gabriele Keller and Matthijs Vákár. A text transcription and the genealogy PDF are linked below.": [
     "Genealogy.html"
   ],
   "Languages": [

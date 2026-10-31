@@ -103,3 +103,7 @@ a:focus-visible { outline: 3px solid rgba(23, 107, 104, .3); outline-offset: 4px
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+.doctoral-overview-link { margin: 10px 0 20px; color: var(--muted); font: 500 11px/1.6 var(--sans); }
+.doctoral-overview-link a { display: inline-flex; align-items: center; gap: 7px; color: inherit; text-decoration: none; }
+.doctoral-overview-link a:hover { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }

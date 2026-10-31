@@ -44,3 +44,6 @@
 @media (max-width: 600px) { .genealogy-supervisors { grid-template-columns: 1fr; gap: 24px; } .genealogy-toolbar { gap: 8px; padding: 9px; } .genealogy-presets button { padding: 6px 9px; font-size: 10px; } .genealogy-tools button { width: 32px; } .genealogy-zoom { min-width: 35px; } .genealogy-tools .genealogy-expand { margin-left: 2px; } .genealogy-page .genealogy-lead { font-size: 18px; } }
 @media print { .genealogy-toolbar { display: none !important; } .genealogy-panel.is-interactive .genealogy-viewport { height: auto; } .genealogy-panel.is-interactive .genealogy-chart { position: static; width: 100%; height: auto; transform: none !important; } .genealogy-caption { display: none; } }
 @media (prefers-reduced-motion: reduce) { .genealogy-toolbar button { transition: none; } }
+
+
+.genealogy-page .genealogy-place strong { color: var(--navy); font-weight: 700; }

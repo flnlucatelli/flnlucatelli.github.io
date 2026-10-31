@@ -44,11 +44,19 @@ based on their browser language. The language menu works without JavaScript.
   Architectural references: [Coimbra's Via Latina](https://europeanheritageawards-archive.eu/laureates-1978-2022/detail/via-latina-coimbra)
   and [Porto's historic buildings](https://www.up.pt/portal/pt/conhecer/cultura-museus-e-patrimonio/edificios-historicos/).
 - `assets/genealogy/lucatellinunes.pdf` is adapted from the supplied Mathematics
-  Genealogy Project chart. The author's entry distinguishes the University of
-  Coimbra as the awarding university for the 2018 mathematics doctorate from the
-  joint Coimbra–Porto doctoral programme. The display SVG and text transcription
-  carry the same clarification; all ancestral entries and supervision connections
+  Genealogy Project chart. The author's entry gives equal prominence to the
+  mathematics doctorate awarded by the University of Coimbra in 2018 and the
+  computer science doctorate awarded by Utrecht University in 2026, without
+  programme details. The display SVG and text transcription carry the same
+  degree information; all ancestral entries and supervision connections
   are retained. These shared chart assets remain in English.
 
 The epigraphs are displayed as independent reflections alongside each doctorate;
 they are not intended as exhaustive descriptions of either thesis.
+
+
+The doctoral overview is labelled “Doctorates” in English, with corresponding
+labels in all five translations. Its existing `PhDs.html` URL is retained.
+The link appears beside the homepage degree information, in its footer, on
+the individual doctorate pages, and in Further information and Genealogy; it
+is deliberately omitted from the main navigation.
