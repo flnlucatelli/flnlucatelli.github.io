@@ -12,11 +12,11 @@
   if (!viewport || !image || !toolbar || !output) return;
   const messages = {
     en: { help: 'Drag to explore. Use + and − to zoom, or pinch on a touch screen. Arrow keys move the chart.', expand: 'Open chart in full screen', collapse: 'Exit full screen' },
-    nl: { help: 'Sleep om de stamboom te verkennen. Zoom met + en − of met twee vingers op een aanraakscherm. Verplaats de kaart met de pijltjestoetsen.', expand: 'Stamboom op volledig scherm openen', collapse: 'Volledig scherm verlaten' },
-    fr: { help: 'Faites glisser pour explorer. Zoomez avec + et − ou avec deux doigts sur un écran tactile. Les flèches du clavier déplacent le schéma.', expand: 'Afficher le schéma en plein écran', collapse: 'Quitter le plein écran' },
-    de: { help: 'Zum Erkunden ziehen. Mit + und − oder zwei Fingern auf einem Touchscreen zoomen. Die Pfeiltasten verschieben die Darstellung.', expand: 'Stammbaum im Vollbild öffnen', collapse: 'Vollbild verlassen' },
-    it: { help: 'Trascina per esplorare. Usa + e − per ingrandire o ridurre, oppure due dita su uno schermo tattile. I tasti freccia spostano il diagramma.', expand: 'Apri il diagramma a schermo intero', collapse: 'Esci dallo schermo intero' },
-    pt: { help: 'Arraste para explorar. Use + e − para ampliar ou reduzir, ou dois dedos num ecrã tátil. As teclas de seta deslocam o diagrama.', expand: 'Abrir o diagrama em ecrã inteiro', collapse: 'Sair do ecrã inteiro' }
+    nl: { help: 'Sleep om de stamboom te verkennen. Zoom met + en − of met twee vingers op een aanraakscherm. Verplaats de stamboom met de pijltjestoetsen.', expand: 'Stamboom op volledig scherm openen', collapse: 'Volledig scherm verlaten' },
+    fr: { help: 'Faites glisser l’arbre pour l’explorer. Utilisez + et − pour zoomer, ou rapprochez et écartez deux doigts sur un écran tactile. Les touches fléchées permettent de déplacer l’arbre.', expand: 'Afficher l’arbre en plein écran', collapse: 'Quitter le plein écran' },
+    de: { help: 'Verschieben Sie den Stammbaum durch Ziehen oder mit den Pfeiltasten. Zoomen Sie mit + und − oder mit zwei Fingern auf einem Touchscreen.', expand: 'Stammbaum im Vollbild öffnen', collapse: 'Vollbild verlassen' },
+    it: { help: 'Trascina per esplorare l’albero. Usa + e − per ingrandire o ridurre, oppure avvicina o allontana due dita sul touchscreen. I tasti freccia spostano l’albero.', expand: 'Apri l’albero a schermo intero', collapse: 'Esci dalla modalità a schermo intero' },
+    pt: { help: 'Arraste para explorar o diagrama. Use + e − para ampliar ou reduzir, ou afaste e aproxime dois dedos num ecrã tátil. As teclas de seta deslocam o diagrama.', expand: 'Abrir o diagrama em ecrã inteiro', collapse: 'Sair do ecrã inteiro' }
   };
   const wording = messages[document.documentElement.lang.split('-')[0]] || messages.en;
   const points = new Map();
@@ -131,3 +131,4 @@
     else render();
   }).observe(viewport);
 })();
+

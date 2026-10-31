@@ -43,7 +43,7 @@ def add_chrome(soup,name,locale,catalog):
     header.insert_after(BeautifulSoup(utility(name,locale,catalog),'html.parser'))
     if locale!='en':
         label=catalog['Read the original English version']
-        note=BeautifulSoup(f'<p class="translation-origin"><a href="/{name}" lang="en" hreflang="en">{label}</a></p>','html.parser')
+        note=BeautifulSoup(f'<p class="translation-origin"><a href="/{name}" hreflang="en">{label}</a></p>','html.parser')
         target=soup.select_one('.page') or soup.body
         if target==soup.body and soup.select_one('body > footer'):soup.select_one('body > footer').insert_before(note)
         else:target.append(note)

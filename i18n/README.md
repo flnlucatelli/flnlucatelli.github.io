@@ -5,6 +5,10 @@ The root HTML pages are the canonical English sources. The ten pages listed in
 Publication titles, proper names and source documents retain their original wording.
 Detailed teaching and event archives remain at their existing URLs.
 In Portuguese, use “ciência da computação” consistently for “computer science”.
+Use idiomatic academic prose in each language rather than literal English
+constructions. Preserve the research claims, technical distinctions and original
+publication titles. Review translated sentence fragments in their complete HTML
+context, and keep static labels aligned with the runtime messages below.
 
 After editing an English page:
 

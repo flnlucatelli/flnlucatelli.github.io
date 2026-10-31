@@ -550,9 +550,9 @@
 <section aria-label="Programme de recherche">
 <h2>Programme de recherche</h2>
 <div class="research-lead">
-<p>En informatique, je développe des fondements qui conduisent directement à des solutions pratiques. Mes travaux récents portent sur la sémantique des langages de programmation, les méthodes formelles et la technologie logicielle. En particulier, je déduis des transformations de programmes à partir de leur structure sémantique, afin qu’elles soient correctes par construction et directement implémentables.</p>
+<p>En informatique, je développe des fondements qui débouchent directement sur des solutions pratiques. Mes travaux récents portent sur la sémantique des langages de programmation, les méthodes formelles et les technologies logicielles. En particulier, je déduis des transformations de programmes à partir de la structure sémantique, afin qu’elles soient correctes par construction et directement implémentables.</p>
 <p>En mathématiques pures, je m’intéresse principalement à la théorie et aux applications des structures catégoriques généralisées de basse dimension et de dimension supérieure. J’en développe les fondements au moyen de l’algèbre universelle en dimensions deux et trois, en étudiant à la fois leur structure intrinsèque et leurs liens avec la topologie algébrique, la géométrie, la logique, la théorie de la démonstration et l’algèbre universelle, ainsi que leurs applications en informatique.</p>
-<p>Ces orientations constituent un même programme de recherche, dans lequel les problèmes issus de l’informatique et du génie logiciel orientent les mathématiques dès le départ. La théorie qui en résulte est développée à la fois pour son intérêt mathématique propre et comme fondement de modèles sémantiques, de principes de correction et de méthodes fiables pour concevoir et implémenter des langages de programmation, des transformations de programmes et des systèmes logiciels.</p>
+<p>Ces orientations constituent un même programme de recherche, dans lequel les problèmes issus de l’informatique et du génie logiciel orientent dès le départ le développement mathématique. La théorie qui en résulte est développée à la fois pour son intérêt mathématique propre et comme fondement de modèles sémantiques, de principes de correction et de méthodes fiables pour concevoir et implémenter des langages de programmation, des transformations de programmes et des systèmes logiciels.</p>
 </div>
 <nav aria-label="Rubriques de la page Recherche" class="quick-links">
 <a href="#preprints"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#document"></use></svg>Sélection de prépublications</a>
@@ -565,7 +565,7 @@
 <div class="browser-header">
 <div>
 <h3 id="publication-browser-title">Parcourir les publications</h3>
-<p class="browser-description" id="publication-filter-description">Explorer les travaux par coauteur, par revue ou support de publication, ou en combinant ces critères.</p>
+<p class="browser-description" id="publication-filter-description">Parcourez les travaux par coauteur ou par support de publication, ou combinez ces deux critères.</p>
 </div>
 <div class="catalogue-total"><strong>31</strong><span>Travaux</span></div>
 </div>
@@ -574,7 +574,7 @@
 <label for="coauthor-filter">Coauteur</label>
 <select aria-describedby="publication-filter-description" class="filter-select" id="coauthor-filter" name="publication-author">
 <option value="all">Tous les auteurs</option>
-<option value="solo">Travaux à auteur unique</option>
+<option value="solo">Travaux sans coauteur</option>
 <optgroup label="Coauteurs">
 <option value="Maria Manuel Clementino">Maria Manuel Clementino</option>
 <option value="Gordon Plotkin">Gordon Plotkin</option>
@@ -590,7 +590,7 @@
 <label for="venue-filter">Revue ou type de publication</label>
 <select aria-describedby="publication-filter-description" class="filter-select venue-select" id="venue-filter" name="publication-setting">
 <option value="all">Toutes les revues et tous les types de publication</option>
-<optgroup label="Principales revues">
+<optgroup label="Revues avec plusieurs publications">
 <option value="tac">Theory and Applications of Categories</option>
 <option value="acs">Applied Categorical Structures</option>
 <option value="mscs">Mathematical Structures in Computer Science</option>
@@ -616,12 +616,12 @@
 </div>
 </div>
 <div class="filter-footer">
-<p aria-atomic="true" aria-live="polite" class="filter-status">Affichage des 31 travaux.</p>
+<p aria-atomic="true" aria-live="polite" class="filter-status">Les 31 travaux sont affichés.</p>
 <button class="clear-filters" disabled="" type="button">Réinitialiser les filtres</button>
 </div>
 <noscript><p class="filter-help">Activez JavaScript pour utiliser les filtres. Toutes les publications figurent ci-dessous.</p></noscript>
 <details class="coauthor-profiles">
-<summary>Coauteurs et profils académiques</summary>
+<summary>Coauteurs et profils scientifiques</summary>
 <ul class="coauthor-profile-list">
 <li><a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino <span aria-hidden="true">↗</span></a></li>
 <li><a href="https://homepages.inf.ed.ac.uk/gdp/">Gordon Plotkin <span aria-hidden="true">↗</span></a></li>
@@ -636,7 +636,7 @@
 </section>
 <div class="empty-publications" hidden="">
 <h3>Aucune publication correspondante</h3>
-<p>Choisissez un autre coauteur ou une autre revue, ou réinitialisez les filtres pour afficher tous les travaux.</p>
+<p>Choisissez un autre coauteur ou un autre support de publication, ou réinitialisez les filtres pour afficher tous les travaux.</p>
 </div>
 <section class="publication-section featured-publications" id="preprints">
 <h2>Sélection de prépublications</h2>
@@ -815,7 +815,7 @@
 </ul>
 </section>
 </main>
-<p class="translation-origin"><a href="/Research.html" hreflang="en" lang="en">Lire la version originale en anglais</a></p></div>
+<p class="translation-origin"><a href="/Research.html" hreflang="en">Lire la version originale en anglais</a></p></div>
 <script>
 (() => {
     const venueSelect = document.querySelector('select[name="publication-setting"]');
