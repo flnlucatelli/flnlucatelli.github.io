@@ -6,7 +6,7 @@
 .genealogy-page .genealogy-links a { text-decoration: none; }
 .genealogy-page .genealogy-links a:hover { text-decoration: underline; }
 .genealogy-page .genealogy-primary { display: inline-flex; align-items: center; gap: 13px; padding: 11px 15px; color: var(--navy) !important; background: #edf2ef; border: 1px solid #d4e1db; border-radius: 3px; }
-.genealogy-page .genealogy-panel { margin: 0 0 36px !important; border: 1px solid #d7dfda; border-radius: 4px; background: #fffdf8; overflow: hidden; }
+.genealogy-page .genealogy-panel { margin: 0 0 36px !important; border: 1px solid #d7dfda; border-radius: 4px; background: #ffffff; overflow: hidden; }
 .genealogy-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 14px; background: #fafaf6; border-bottom: 1px solid #d7dfda; }
 .genealogy-toolbar[hidden] { display: none; }
 .genealogy-presets, .genealogy-tools { display: flex; align-items: center; gap: 4px; }
@@ -18,7 +18,7 @@
 .genealogy-tools .genealogy-expand { margin-left: 8px; }
 .genealogy-toolbar button:focus-visible { outline: 3px solid rgba(23,107,104,.28); outline-offset: 2px; }
 .genealogy-zoom { min-width: 44px; text-align: center; color: #65777d; font: 500 10px/1 var(--sans); font-variant-numeric: tabular-nums; }
-.genealogy-viewport { position: relative; width: 100%; background: #fffdf8; overflow: hidden; }
+.genealogy-viewport { position: relative; width: 100%; background: #ffffff; overflow: hidden; }
 .genealogy-chart { display: block; width: 100%; height: auto; max-width: none; user-select: none; -webkit-user-select: none; }
 .genealogy-panel.is-interactive .genealogy-viewport { height: clamp(410px, 55vw, 550px); cursor: grab; touch-action: none; }
 .genealogy-panel.is-interactive .genealogy-viewport.is-dragging { cursor: grabbing; }
