@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
+  <title>Categorical triangle and pseudoalgebra coherence</title>
+  <style>text { paint-order: stroke; stroke: #f6f2e6; stroke-width: 5px; stroke-linejoin: round; }</style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 4 1 7" fill="none" stroke="#193c65" stroke-width="1.3" stroke-linejoin="round"/></marker>
+  </defs>
+  <g fill="#193c65" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <g font-size="42" font-style="italic">
+      <text x="162" y="224">𝒜</text><text x="438" y="224">ℬ</text><text x="300" y="405">𝒞</text>
+    </g>
+    <g fill="none" stroke="#193c65" stroke-width="2.1" marker-end="url(#arrow)">
+      <path d="M193 210 H405"/>
+      <path d="M175 244 278 367"/>
+      <path d="M423 244 322 367"/>
+    </g>
+    <g font-size="25" font-style="italic">
+      <text x="299" y="194">J</text><text x="207" y="325">V</text><text x="394" y="325">U</text>
+    </g>
+    <text x="300" y="308" font-size="23" font-style="italic">UJ ≅ V</text>
+    <path d="M218 466 H382" fill="none" stroke="#54797b" stroke-width="1" opacity=".6"/>
+    <g font-size="33" font-style="italic">
+      <text x="167" y="550">T²A</text><text x="437" y="550">TA</text>
+      <text x="167" y="727">TA</text><text x="437" y="727">A</text>
+    </g>
+    <g fill="none" stroke="#193c65" stroke-width="2.1" marker-end="url(#arrow)">
+      <path d="M208 539 H395"/>
+      <path d="M167 569 V684"/>
+      <path d="M437 569 V684"/>
+      <path d="M208 715 H400"/>
+    </g>
+    <g font-size="24" font-style="italic">
+      <text x="300" y="521">Ta</text><text x="128" y="636">μ<tspan font-size="15" dy="5">A</tspan></text>
+      <text x="466" y="636">a</text><text x="300" y="749">a</text>
+      <text x="301" y="642" font-size="37">≅</text>
+    </g>
+  </g>
+</svg>

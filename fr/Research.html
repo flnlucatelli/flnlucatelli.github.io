@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fernando Lucatelli Nunes | Recherche</title>
+<meta content="Recherches sur les structures catégoriques généralisées de basse dimension et de dimension supérieure, leurs applications dans différents domaines des mathématiques et les fondements catégoriques des langages de programmation modernes." name="description"/>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12pt;
+        color: var(--text);
+        background: var(--background);
+    }
+
+    .page {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    header,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+
+    .subtitle a { color: var(--blue); }
+
+    .topnav {
+        margin: 0 0 18px 0;
+        padding: 11px 16px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.05);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
+    }
+
+    .topnav a {
+        margin: 0 7px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
+    section {
+        margin-bottom: 36px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        margin: 0 0 16px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+        color: var(--blue);
+    }
+
+    h3 {
+        margin: 28px 0 10px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13.2pt;
+        color: var(--blue-dark);
+    }
+
+    p { margin: 0 0 12pt 0; }
+
+    a {
+        color: var(--blue);
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus { text-decoration: underline; }
+
+    .research-lead {
+        margin-bottom: 18px;
+        padding: 15px 17px;
+        border-left: 4px solid #4472c4;
+        background: #fbfcfe;
+        border-radius: 4px;
+    }
+
+    .research-lead p {
+        margin-bottom: 10pt;
+    }
+
+    .research-lead p:last-child {
+        margin-bottom: 0;
+    }
+
+    .quick-links {
+        margin-top: 17px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border-light);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        color: var(--muted);
+    }
+
+    .quick-links a {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .publication-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .publication-list li {
+        padding: 14px 0 15px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .publication-list li:last-child {
+        border-bottom: none;
+    }
+
+    .pub-title-line {
+        display: block;
+        margin-bottom: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.25pt;
+        line-height: 1.38;
+    }
+
+    .pub-title-line a,
+    .pub-title-line .title {
+        font-weight: bold;
+        color: var(--blue-dark);
+    }
+
+    .pub-authors {
+        display: block;
+        margin-bottom: 2px;
+        font-size: 11pt;
+        color: var(--text);
+    }
+
+    .publication-list .pub-authors {
+        margin: 6px 0 4px;
+        color: #465968 !important;
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+    }
+
+    .pub-details {
+        display: block;
+        font-size: 10.65pt;
+        color: var(--muted);
+        line-height: 1.45;
+    }
+
+    .pub-details em {
+        color: var(--text);
+    }
+
+    .pub-links {
+        white-space: nowrap;
+    }
+
+    .authors {
+        color: var(--text);
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .venue {
+        color: var(--muted);
+    }
+
+    .meta,
+    .links {
+        color: var(--muted);
+    }
+
+    .compact-note {
+        margin-top: 18px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    .section-index {
+        margin: 0 0 24px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.5pt;
+    }
+
+    .section-index a {
+        display: inline-block;
+        padding: 5px 9px;
+        border: 1px solid var(--border-light);
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--blue-dark);
+        font-weight: bold;
+    }
+
+    .section-index a:hover,
+    .section-index a:focus {
+        background: #f7fafd;
+        text-decoration: none;
+    }
+
+    .publication-browser {
+        margin-top: 24px;
+        padding: 27px 28px 0;
+        overflow: hidden;
+        border: 1px solid var(--line, #d9dfdf);
+        border-top: 3px solid var(--teal, #176b68);
+        border-radius: 5px;
+        background: #fafbf9;
+        font-family: var(--sans, Arial, sans-serif);
+    }
+
+    .browser-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 23px;
+    }
+
+    .publication-browser h3 {
+        margin: 0 0 7px !important;
+        color: var(--navy, #15324a) !important;
+        font: 500 27px/1.2 var(--serif, Georgia, serif) !important;
+        letter-spacing: -0.02em;
+    }
+
+    .browser-description {
+        max-width: 580px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 12.5px;
+        line-height: 1.65;
+    }
+
+    .catalogue-total {
+        flex: 0 0 auto;
+        display: grid;
+        gap: 3px;
+        padding-left: 23px;
+        border-left: 1px solid var(--line, #d9dfdf);
+        color: var(--muted);
+        text-align: center;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .catalogue-total strong {
+        color: var(--navy, #15324a);
+        font: 500 30px/1 var(--serif, Georgia, serif);
+        letter-spacing: -0.02em;
+    }
+
+    .publication-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+        gap: 18px;
+    }
+
+    .filter-field { min-width: 0; }
+
+    .filter-field label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--navy, #15324a);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+    }
+
+    .filter-select {
+        width: 100%;
+        min-height: 46px;
+        padding: 10px 12px;
+        border: 1px solid #b9c8c9;
+        border-radius: 4px;
+        background: var(--white);
+        color: var(--navy, #15324a);
+        cursor: pointer;
+        font: 13px/1.4 var(--sans, Arial, sans-serif);
+        text-overflow: ellipsis;
+    }
+
+    .filter-select:hover { border-color: var(--teal, #176b68); }
+
+    .filter-select:focus-visible,
+    .clear-filters:focus-visible,
+    .coauthor-profiles summary:focus-visible {
+        outline: 3px solid rgba(23, 107, 104, 0.28);
+        outline-offset: 3px;
+    }
+
+    .filter-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 16px 0 18px;
+    }
+
+    .filter-status {
+        flex: 1 1 auto;
+        margin: 0 !important;
+        color: var(--muted) !important;
+        font: 12px/1.65 var(--sans, Arial, sans-serif) !important;
+    }
+
+    .clear-filters {
+        flex: 0 0 auto;
+        min-height: 44px;
+        padding: 8px 13px;
+        border: 1px solid var(--line, #d9dfdf);
+        border-radius: 4px;
+        background: var(--white);
+        color: var(--teal, #176b68);
+        cursor: pointer;
+        font: 600 12px/1.4 var(--sans, Arial, sans-serif);
+    }
+
+    .clear-filters:hover:not(:disabled) {
+        border-color: var(--teal, #176b68);
+        background: var(--teal-light, #e8f0ee);
+    }
+
+    .clear-filters:disabled {
+        cursor: default;
+        color: var(--muted);
+        opacity: 0.55;
+    }
+
+    .coauthor-profiles {
+        margin: 0 -28px;
+        padding: 0 28px;
+        border-top: 1px solid var(--line, #d9dfdf);
+        background: var(--white);
+    }
+
+    .coauthor-profiles summary {
+        width: fit-content;
+        max-width: 100%;
+        padding: 15px 0;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .coauthor-profiles summary:hover { color: var(--teal, #176b68); }
+
+    .coauthor-profile-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 4px 20px;
+        margin: 0 0 18px;
+        padding: 0;
+        list-style: none;
+    }
+
+    .coauthor-profile-list a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 36px;
+        font-size: 12px;
+        line-height: 1.5;
+        text-decoration: none;
+    }
+
+    .coauthor-profile-list a:hover { text-decoration: underline; }
+    .coauthor-profile-list span { opacity: 0.65; }
+
+    .filter-help {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    .empty-publications {
+        margin: 0 0 42px;
+        padding: 30px;
+        border: 1px dashed var(--line, #d9dfdf);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .empty-publications h3 { margin-top: 0 !important; }
+    .empty-publications p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .featured-publications {
+        padding: 25px 27px 10px !important;
+        border: 1px solid rgba(23, 107, 104, 0.2);
+        border-left: 3px solid var(--teal, #176b68);
+        border-radius: 5px;
+        background: #fbfdfc;
+    }
+
+    .section-intro {
+        margin: -9px 0 18px !important;
+        color: var(--muted) !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 10.5pt !important;
+        line-height: 1.55;
+    }
+
+    .publication-item[hidden],
+    .publication-section[hidden] {
+        display: none !important;
+    }
+
+    @media (max-width: 720px) {
+        body { padding: 18px 10px; }
+        header, main { padding: 22px 20px; }
+        h1 { font-size: 21pt; }
+
+        .publication-browser { padding: 22px 18px 0; }
+        .publication-controls { grid-template-columns: 1fr; gap: 16px; }
+        .browser-header { gap: 15px; }
+        .publication-browser h3 { font-size: 24px !important; }
+        .catalogue-total { padding-left: 15px; }
+        .coauthor-profiles { margin: 0 -18px; padding: 0 18px; }
+        .coauthor-profile-list { grid-template-columns: 1fr; gap: 0; }
+        .coauthor-profile-list a { min-height: 44px; }
+
+        .filter-footer {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .clear-filters {
+            width: 100%;
+            min-height: 44px;
+        }
+
+        .featured-publications {
+            padding: 21px 17px 7px !important;
+        }
+
+        .topnav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
+    }
+</style>
+<link href="/site.css" rel="stylesheet"/>
+<meta content="#10243d" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link href="/icons.css" rel="stylesheet"/>
+<link href="/languages.css" rel="stylesheet"/><script src="/languages.js"></script><link href="https://flnlucatelli.github.io/Research.html" rel="canonical"/><link href="https://flnlucatelli.github.io/Research.html" hreflang="en" rel="alternate"/><link href="https://flnlucatelli.github.io/nl/Research.html" hreflang="nl" rel="alternate"/><link href="https://flnlucatelli.github.io/fr/Research.html" hreflang="fr" rel="alternate"/><link href="https://flnlucatelli.github.io/de/Research.html" hreflang="de" rel="alternate"/><link href="https://flnlucatelli.github.io/it/Research.html" hreflang="it" rel="alternate"/><link href="https://flnlucatelli.github.io/pt/Research.html" hreflang="pt" rel="alternate"/><link href="https://flnlucatelli.github.io/Research.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#content">Aller au contenu principal</a>
+<div class="page">
+<header>
+<h1>Fernando Lucatelli Nunes</h1>
+<p class="subtitle">
+<a href="/fr/PhD_in_Mathematics.html">Doctorat en mathématiques</a>
+<span aria-hidden="true" class="degree-separator">·</span>
+<a href="/fr/PhD_in_Computer_Science.html">Doctorat en informatique</a>
+</p>
+</header><div class="language-tools"><a class="doctoral-shortcut" href="/fr/PhDs.html">Doctorats</a><details class="language-menu"><summary><svg aria-hidden="true" height="13" viewbox="0 0 20 20" width="13"><circle cx="10" cy="10" fill="none" r="7.4" stroke="currentColor"></circle><ellipse cx="10" cy="10" fill="none" rx="3.3" ry="7.4" stroke="currentColor"></ellipse><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"></path></svg>Langues · Français</summary><ul class="language-options"><li><a data-language="en" href="/Research.html" hreflang="en" lang="en">English</a></li><li><a data-language="nl" href="/nl/Research.html" hreflang="nl" lang="nl">Nederlands</a></li><li><a aria-current="true" data-language="fr" href="/fr/Research.html" hreflang="fr" lang="fr">Français</a></li><li><a data-language="de" href="/de/Research.html" hreflang="de" lang="de">Deutsch</a></li><li><a data-language="it" href="/it/Research.html" hreflang="it" lang="it">Italiano</a></li><li><a data-language="pt" href="/pt/Research.html" hreflang="pt" lang="pt">Português</a></li></ul></details></div>
+<nav aria-label="Navigation principale" class="topnav">
+<a href="/fr/index.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#home"></use></svg>Accueil</a>
+<a aria-current="page" href="/fr/Research.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Recherche</a>
+<a href="/fr/Some_projects.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#network"></use></svg>Projets</a>
+<a href="/fr/students.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#cap"></use></svg>Doctorants</a>
+<a href="/Talks.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#presentation"></use></svg>Exposés<small class="source-language" lang="en">EN</small></a>
+<a href="/fr/Academic_Positions.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#institution"></use></svg>Postes</a>
+<a href="/Organization_of_seminars_events.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#calendar"></use></svg>Séminaires et événements<small class="source-language" lang="en">EN</small></a>
+<a href="/fr/Further_Information.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#info"></use></svg>Informations complémentaires</a>
+</nav>
+<main id="content">
+<section aria-label="Programme de recherche">
+<h2>Programme de recherche</h2>
+<div class="research-lead">
+<p>En informatique, je développe des fondements qui conduisent directement à des solutions pratiques. Mes travaux récents portent sur la sémantique des langages de programmation, les méthodes formelles et la technologie logicielle. En particulier, je déduis des transformations de programmes à partir de leur structure sémantique, afin qu’elles soient correctes par construction et directement implémentables.</p>
+<p>En mathématiques pures, je m’intéresse principalement à la théorie et aux applications des structures catégoriques généralisées de basse dimension et de dimension supérieure. J’en développe les fondements au moyen de l’algèbre universelle en dimensions deux et trois, en étudiant à la fois leur structure intrinsèque et leurs liens avec la topologie algébrique, la géométrie, la logique, la théorie de la démonstration et l’algèbre universelle, ainsi que leurs applications en informatique.</p>
+<p>Ces orientations constituent un même programme de recherche, dans lequel les problèmes issus de l’informatique et du génie logiciel orientent les mathématiques dès le départ. La théorie qui en résulte est développée à la fois pour son intérêt mathématique propre et comme fondement de modèles sémantiques, de principes de correction et de méthodes fiables pour concevoir et implémenter des langages de programmation, des transformations de programmes et des systèmes logiciels.</p>
+</div>
+<nav aria-label="Rubriques de la page Recherche" class="quick-links">
+<a href="#preprints"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#document"></use></svg>Sélection de prépublications</a>
+<a href="#selected-publications"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Articles de revues</a>
+<a href="#other-publications"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#document"></use></svg>Autres publications</a>
+<a href="#monographs"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Monographies</a>
+<a href="https://arxiv.org/a/lucatellinunes_f_1.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#document"></use></svg>Profil arXiv</a>
+</nav>
+<div aria-labelledby="publication-browser-title" class="publication-browser">
+<div class="browser-header">
+<div>
+<h3 id="publication-browser-title">Parcourir les publications</h3>
+<p class="browser-description" id="publication-filter-description">Explorer les travaux par coauteur, par revue ou support de publication, ou en combinant ces critères.</p>
+</div>
+<div class="catalogue-total"><strong>31</strong><span>Travaux</span></div>
+</div>
+<div class="publication-controls">
+<div class="filter-field">
+<label for="coauthor-filter">Coauteur</label>
+<select aria-describedby="publication-filter-description" class="filter-select" id="coauthor-filter" name="publication-author">
+<option value="all">Tous les auteurs</option>
+<option value="solo">Travaux à auteur unique</option>
+<optgroup label="Coauteurs">
+<option value="Maria Manuel Clementino">Maria Manuel Clementino</option>
+<option value="Gordon Plotkin">Gordon Plotkin</option>
+<option value="Rui Prezado">Rui Prezado</option>
+<option value="Diogo Simm">Diogo Simm</option>
+<option value="Lurdes Sousa">Lurdes Sousa</option>
+<option value="Walter Tholen">Walter Tholen</option>
+<option value="Matthijs Vákár">Matthijs Vákár</option>
+</optgroup>
+</select>
+</div>
+<div class="filter-field">
+<label for="venue-filter">Revue ou type de publication</label>
+<select aria-describedby="publication-filter-description" class="filter-select venue-select" id="venue-filter" name="publication-setting">
+<option value="all">Toutes les revues et tous les types de publication</option>
+<optgroup label="Principales revues">
+<option value="tac">Theory and Applications of Categories</option>
+<option value="acs">Applied Categorical Structures</option>
+<option value="mscs">Mathematical Structures in Computer Science</option>
+</optgroup>
+<optgroup label="Autres revues et périodiques">
+<option value="bbms">Bulletin of the Belgian Mathematical Society Simon Stevin</option>
+<option value="cgasa">Categories and General Algebraic Structures with Applications</option>
+<option value="jpaa">Journal of Pure and Applied Algebra</option>
+<option value="portugaliae-mathematica">Portugaliae Mathematica</option>
+<option value="quaestiones-mathematicae">Quaestiones Mathematicae</option>
+<option value="revista-matematica-universitaria">Revista Matemática Universitária</option>
+</optgroup>
+<optgroup label="Ateliers et séries de rapports">
+<option value="lafi">Atelier LAFI</option>
+<option value="oberwolfach-preprints">Oberwolfach Preprints</option>
+</optgroup>
+<optgroup label="Travaux hors revues et ateliers">
+<option value="current-manuscript">Prépublications et manuscrits soumis</option>
+<option value="doctoral-thesis">Thèses de doctorat</option>
+<option value="academic-monograph">Monographies de premier et de deuxième cycle</option>
+</optgroup>
+</select>
+</div>
+</div>
+<div class="filter-footer">
+<p aria-atomic="true" aria-live="polite" class="filter-status">Affichage des 31 travaux.</p>
+<button class="clear-filters" disabled="" type="button">Réinitialiser les filtres</button>
+</div>
+<noscript><p class="filter-help">Activez JavaScript pour utiliser les filtres. Toutes les publications figurent ci-dessous.</p></noscript>
+<details class="coauthor-profiles">
+<summary>Coauteurs et profils académiques</summary>
+<ul class="coauthor-profile-list">
+<li><a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino <span aria-hidden="true">↗</span></a></li>
+<li><a href="https://homepages.inf.ed.ac.uk/gdp/">Gordon Plotkin <span aria-hidden="true">↗</span></a></li>
+<li><a href="https://prezado.github.io/">Rui Prezado <span aria-hidden="true">↗</span></a></li>
+<li><a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm <span aria-hidden="true">↗</span></a></li>
+<li><a href="https://cmuc.mat.uc.pt/rdonweb/person/ppgeral.do?idpessoa=15">Lurdes Sousa <span aria-hidden="true">↗</span></a></li>
+<li><a href="https://www.yorku.ca/science/profiles/faculty/walter-tholen/">Walter Tholen <span aria-hidden="true">↗</span></a></li>
+<li><a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár <span aria-hidden="true">↗</span></a></li>
+</ul>
+</details>
+</div>
+</section>
+<div class="empty-publications" hidden="">
+<h3>Aucune publication correspondante</h3>
+<p>Choisissez un autre coauteur ou une autre revue, ou réinitialisez les filtres pour afficher tous les travaux.</p>
+</div>
+<section class="publication-section featured-publications" id="preprints">
+<h2>Sélection de prépublications</h2>
+<p class="section-intro">Sélection de travaux en cours représentant les principaux axes actuels du programme de recherche. Voir également ma <a href="https://arxiv.org/a/lucatellinunes_f_1.html">page d’auteur arXiv</a>.</p>
+<ul class="publication-list">
+<li class="publication-item" data-venue="current-manuscript">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2607.27541">From Grothendieck cofibrations to factorization systems: a formal 2-monadic account</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Walter Tholen</span>
+<span class="pub-details"><span class="meta">arXiv:2607.27541, 2026, 46 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="current-manuscript">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2607.14453">Simply typed reverse-mode automatic differentiation with variants: denotational correctness via idempotent completion</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Diogo Simm; Matthijs Vákár</span>
+<span class="pub-details"><span class="meta">arXiv:2607.14453, 2026, 55 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="current-manuscript">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2607.13935">Backpropagation for effectful languages I: finite probability and discrete output algebraic effects</a></span>
+<span class="pub-authors">Diogo Simm; Fernando Lucatelli Nunes; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue">Soumis à POPL 2027.</span> <span class="meta">arXiv:2607.13935, 2026, 71 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="current-manuscript">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Gordon Plotkin; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue">Manuscrit en cours de révision.</span> <span class="meta">arXiv:2505.15002, 2025, 58 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="current-manuscript">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2410.22876">Functors preserving effective descent morphisms</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Rui Prezado</span>
+<span class="pub-details"><span class="meta">arXiv:2410.22876, 2024, 17 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="current-manuscript">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/1704.04474">Freely generated n-categories, coinserters and presentations of low dimensional categories</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="meta">arXiv:1704.04474, 2017 ; entièrement révisé en 2026, 76 pages.</span></span>
+</li>
+</ul>
+</section>
+<section class="publication-section" id="selected-publications">
+<h2>Articles de revues à comité de lecture</h2>
+<ul class="publication-list">
+<li class="publication-item" data-venue="acs">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-026-09887-7">Free doubly-infinitary distributive categories are cartesian closed</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 34(5), article 53, 2026.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-026-09887-7">DOI</a>; <a href="https://arxiv.org/abs/2403.10447">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="tac">
+<span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 44(35), 1153–1217, 2025.</span> <span class="meta">65 pages dans la revue.</span> <span class="pub-links">(<a href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Revue</a>; <a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="portugaliae-mathematica">
+<span class="pub-title-line"><a class="title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Rui Prezado; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025.</span> <span class="meta">28 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="acs">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-024-09775-y">Generalized multicategories: change-of-base, embedding, and descent</a></span>
+<span class="pub-authors">Rui Prezado; Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 32, article 35, 2024.</span> <span class="meta">89 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-024-09775-y">DOI</a>; <a href="https://arxiv.org/abs/2309.08084">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="tac">
+<span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/40/6/40-06abs.html">Lax comma 2-categories and admissible 2-functors</a></span>
+<span class="pub-authors">Maria Manuel Clementino; Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 40(6), 180–226, 2024.</span> <span class="meta">47 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/re3rk47b">DOI</a>; <a href="https://arxiv.org/abs/2002.03132">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="tac">
+<span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/41/16/41-16abs.html">Lax comma categories: cartesian closedness, extensivity, topologicity, and descent</a></span>
+<span class="pub-authors">Maria Manuel Clementino; Fernando Lucatelli Nunes; Rui Prezado</span>
+<span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 41(16), 516–530, 2024.</span> <span class="meta">15 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/hq30qvlv">DOI</a>; <a href="https://arxiv.org/abs/2405.03773">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="mscs">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024.</span> <span class="meta">60 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="acs">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-022-09706-9">Descent for internal multicategory functors</a></span>
+<span class="pub-authors">Rui Prezado; Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 31, article 11, 2023.</span> <span class="meta">18 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-022-09706-9">DOI</a>; <a href="https://arxiv.org/abs/2112.10072">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="quaestiones-mathematicae">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.2989/16073606.2023.2247729">Lax comma categories of ordered sets</a></span>
+<span class="pub-authors">Maria Manuel Clementino; Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Quaestiones Mathematicae</em>, 46, supplément 1, 145–159, 2023.</span> <span class="meta">15 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.2989/16073606.2023.2247729">DOI</a>; <a href="https://arxiv.org/abs/2212.13541">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="mscs">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023.</span> <span class="meta">116 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="bbms">
+<span class="pub-title-line"><a class="title" href="https://www.bbms.be/en/papers/bbms-30-1-130/">Cauchy completeness, lax epimorphisms and effective descent for split fibrations</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Rui Prezado; Lurdes Sousa</span>
+<span class="pub-details"><span class="venue"><em>Bulletin of the Belgian Mathematical Society Simon Stevin</em>, 30(1), 130–139, 2023.</span> <span class="meta">10 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.36045/j.bbms.221021">DOI</a>; <a href="https://arxiv.org/abs/2210.12021">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="acs">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1007/s10485-022-09694-w">Semantic factorization and descent</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 30(6), 1393–1433, 2022.</span> <span class="meta">41 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-022-09694-w">DOI</a>; <a href="https://arxiv.org/abs/1902.01225">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="jpaa">
+<span class="pub-title-line"><a class="title" href="https://doi.org/10.1016/j.jpaa.2022.107126">On lax epimorphisms and the associated factorization</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Lurdes Sousa</span>
+<span class="pub-details"><span class="venue"><em>Journal of Pure and Applied Algebra</em>, 226(12), article 107126, 2022.</span> <span class="meta">27 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1016/j.jpaa.2022.107126">DOI</a>; <a href="https://arxiv.org/abs/2109.09836">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="tac">
+<span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/37/18/37-18.pdf">Descent data and absolute Kan extensions</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 37(18), 530–561, 2021.</span> <span class="meta">32 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/qlyd0ci1">DOI</a>; <a href="https://arxiv.org/abs/1906.00517">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="acs">
+<span class="pub-title-line"><a class="title" href="https://link.springer.com/article/10.1007/s10485-018-9541-3">Pseudoalgebras and non-canonical isomorphisms</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Applied Categorical Structures</em>, 27(1), 55–63, 2019.</span> <span class="meta">9 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.1007/s10485-018-9541-3">DOI</a>; <a href="https://arxiv.org/abs/1711.02051">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="cgasa">
+<span class="pub-title-line"><a class="title" href="https://cgasa.sbu.ac.ir/article_50747.html">On lifting of biadjoints and lax algebras</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Categories and General Algebraic Structures with Applications</em>, 9(1), 29–58, 2018.</span> <span class="meta">30 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.29252/cgasa.9.1.29">DOI</a>; <a href="https://arxiv.org/abs/1607.03087">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="tac">
+<span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/33/15/33-15abs.html">Pseudo-Kan extensions and descent theory</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 33(15), 390–444, 2018.</span> <span class="meta">55 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/ncck98gb">DOI</a>; <a href="https://arxiv.org/abs/1606.04999">arXiv</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="tac">
+<span class="pub-title-line"><a class="title" href="https://www.tac.mta.ca/tac/volumes/31/9/31-09.pdf">On biadjoint triangles</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Theory and Applications of Categories</em>, 31(9), 217–256, 2016.</span> <span class="meta">40 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.70930/tac/gx19p4tk">DOI</a>; <a href="https://arxiv.org/abs/1606.05009">arXiv</a>)</span></span>
+</li>
+</ul>
+</section>
+<section class="publication-section" id="other-publications">
+<h2>Autres publications</h2>
+<ul class="publication-list">
+<li class="publication-item" data-venue="lafi">
+<span class="pub-title-line"><a class="title" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration">Homomorphic reverse differentiation of iteration</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Gordon Plotkin; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, 2024.</span> <span class="meta">2 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="oberwolfach-preprints">
+<span class="pub-title-line"><a class="title" href="https://arxiv.org/abs/2210.08530">Logical relations for partial features and automatic differentiation correctness</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes; Matthijs Vákár</span>
+<span class="pub-details"><span class="venue">Oberwolfach Preprints, OWP-2023-09, 2023.</span> <span class="meta">arXiv:2210.08530, 2022, 25 pages.</span> <span class="pub-links">(<a href="https://doi.org/10.14760/OWP-2023-09">DOI</a>)</span></span>
+</li>
+<li class="publication-item" data-venue="doctoral-thesis">
+<span class="pub-title-line"><span class="title">Freely generated categorical structures and automatic differentiation</span></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue">Thèse de doctorat en informatique, Université d’Utrecht ; diplôme décerné le 28 septembre 2026.</span> <span class="meta">380 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="doctoral-thesis">
+<span class="pub-title-line"><a class="title" href="https://hdl.handle.net/10316/43360">Pseudomonads and descent</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue">Thèse de doctorat en mathématiques, 2017 ; diplôme décerné en 2018.</span> <span class="meta">209 pages. <a href="https://arxiv.org/abs/1802.01767">Chapitre 1 sur arXiv</a>.</span></span>
+</li>
+<li class="publication-item" data-venue="revista-matematica-universitaria">
+<span class="pub-title-line"><a class="title" href="/ESPACOSNONREVERSIBLE.pdf">Espaços não reversíveis</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="venue"><em>Revista Matemática Universitária</em>, 48–49, 22–26, 2012.</span> <span class="meta">5 pages.</span></span>
+</li>
+</ul>
+</section>
+<section class="publication-section" id="monographs">
+<h2>Monographies de premier et de deuxième cycle</h2>
+<ul class="publication-list">
+<li class="publication-item" data-venue="academic-monograph">
+<span class="pub-title-line"><span class="title">Basic concepts of topology for topological dynamics</span></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="meta">en portugais, 2009, 116 pages.</span></span>
+</li>
+<li class="publication-item" data-venue="academic-monograph">
+<span class="pub-title-line"><a class="title" href="/livro2.pdf">Basic topological dynamics and basic applications to number theory</a></span>
+<span class="pub-authors">Fernando Lucatelli Nunes</span>
+<span class="pub-details"><span class="meta">en portugais, 2009, 57 pages.</span></span>
+</li>
+</ul>
+</section>
+</main>
+<p class="translation-origin"><a href="/Research.html" hreflang="en" lang="en">Lire la version originale en anglais</a></p></div>
+<script>
+(() => {
+    const venueSelect = document.querySelector('select[name="publication-setting"]');
+    const authorSelect = document.querySelector('select[name="publication-author"]');
+    const publicationItems = Array.from(document.querySelectorAll('.publication-item'));
+    const publicationSections = Array.from(document.querySelectorAll('.publication-section'));
+    const status = document.querySelector('.filter-status');
+    const clearFilters = document.querySelector('.clear-filters');
+    const emptyState = document.querySelector('.empty-publications');
+    const catalogueTotal = document.querySelector('.catalogue-total strong');
+
+    if (!venueSelect || !authorSelect || !publicationItems.length || !status || !clearFilters || !emptyState) return;
+
+    const publications = publicationItems.map((element) => ({
+        element,
+        venue: element.dataset.venue,
+        authors: element.querySelector('.pub-authors').textContent.split(';').map((name) => name.trim())
+    }));
+
+    if (catalogueTotal) catalogueTotal.textContent = publications.length;
+
+    const applyFilters = () => {
+        const venue = venueSelect.value;
+        const author = authorSelect.value;
+        let visibleCount = 0;
+
+        publications.forEach((publication) => {
+            const matchesVenue = venue === 'all' || publication.venue === venue;
+            const matchesAuthor = author === 'all'
+                || (author === 'solo' ? publication.authors.length === 1 : publication.authors.includes(author));
+            const visible = matchesVenue && matchesAuthor;
+            publication.element.hidden = !visible;
+            if (visible) visibleCount += 1;
+        });
+
+        publicationSections.forEach((section) => {
+            section.hidden = !section.querySelector('.publication-item:not([hidden])');
+        });
+
+        const active = venue !== 'all' || author !== 'all';
+        const context = [];
+        if (author === 'solo') context.push(window.siteMessages ? window.siteMessages.solo : 'sole-authored');
+        else if (author !== 'all') context.push((window.siteMessages ? window.siteMessages.with : 'with ') + author);
+        if (venue !== 'all') {
+            context.push(venueSelect.options[venueSelect.selectedIndex].text.replace(/\s*\(\d+\)$/, ''));
+        }
+
+        status.textContent = active
+            ? (window.siteMessages ? window.siteMessages.works(visibleCount, publications.length) : 'Showing ' + visibleCount + ' of ' + publications.length + ' works') + ' · ' + context.join(' · ')
+            : (window.siteMessages ? window.siteMessages.all(publications.length) : 'Showing all ' + publications.length + ' works.');
+        clearFilters.disabled = !active;
+        emptyState.hidden = visibleCount !== 0;
+    };
+
+    venueSelect.addEventListener('change', applyFilters);
+    authorSelect.addEventListener('change', applyFilters);
+    clearFilters.addEventListener('click', () => {
+        venueSelect.value = 'all';
+        authorSelect.value = 'all';
+        applyFilters();
+    });
+
+    applyFilters();
+})();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fernando Lucatelli Nunes | Doktorat in Mathematik</title>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12pt;
+        color: var(--text);
+        background: var(--background);
+    }
+
+    .page {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    header,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+
+    .subtitle a { color: var(--blue); }
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
+    h2 {
+        margin: 0 0 16px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+        color: var(--blue);
+    }
+
+    h3 {
+        margin: 0 0 10px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13pt;
+        color: var(--blue-dark);
+    }
+
+    p { margin: 0 0 12pt 0; }
+
+    a {
+        color: var(--blue);
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus { text-decoration: underline; }
+
+    section {
+        margin-bottom: 34px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    .thesis-block {
+        margin-bottom: 28px;
+    }
+
+    .thesis-title {
+        margin: 0 0 4px 0;
+        font-size: 15pt;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--blue-dark);
+        font-weight: bold;
+    }
+
+    .thesis-meta {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--muted);
+        font-size: 11pt;
+        line-height: 1.55;
+    }
+
+    .info-list {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--border-light);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.9pt;
+    }
+
+    .info-list li {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 20px;
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .label {
+        color: var(--muted);
+        font-weight: bold;
+    }
+
+    .themes {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--muted);
+        font-size: 10.9pt;
+        line-height: 1.75;
+    }
+
+    .publication-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .publication-list li {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .publication-list li:last-child {
+        border-bottom: none;
+    }
+
+    .authors {
+        color: var(--text);
+    }
+
+    .pub-title {
+        font-weight: bold;
+    }
+
+    .venue {
+        color: var(--text);
+    }
+
+    .meta,
+    .links {
+        color: var(--muted);
+    }
+
+    .note {
+        margin-top: 18px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    .nav {
+        margin-top: 30px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-light);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
+    }
+
+    .nav a {
+        margin: 0 8px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 720px) {
+        body { padding: 18px 10px; }
+        header, main { padding: 22px 20px; }
+        h1 { font-size: 21pt; }
+
+        .info-list li {
+            grid-template-columns: 1fr;
+            gap: 2px;
+        }
+
+        .nav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
+    }
+</style>
+<link href="/site.css" rel="stylesheet"/>
+<meta content="#10243d" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link href="/icons.css" rel="stylesheet"/>
+<link href="/languages.css" rel="stylesheet"/><script src="/languages.js"></script><link href="https://flnlucatelli.github.io/PhD_in_Mathematics.html" rel="canonical"/><link href="https://flnlucatelli.github.io/PhD_in_Mathematics.html" hreflang="en" rel="alternate"/><link href="https://flnlucatelli.github.io/nl/PhD_in_Mathematics.html" hreflang="nl" rel="alternate"/><link href="https://flnlucatelli.github.io/fr/PhD_in_Mathematics.html" hreflang="fr" rel="alternate"/><link href="https://flnlucatelli.github.io/de/PhD_in_Mathematics.html" hreflang="de" rel="alternate"/><link href="https://flnlucatelli.github.io/it/PhD_in_Mathematics.html" hreflang="it" rel="alternate"/><link href="https://flnlucatelli.github.io/pt/PhD_in_Mathematics.html" hreflang="pt" rel="alternate"/><link href="https://flnlucatelli.github.io/PhD_in_Mathematics.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#content">Zum Hauptinhalt springen</a>
+<div class="page">
+<header>
+<h1>Fernando Lucatelli Nunes</h1>
+<p class="subtitle">
+<a aria-current="page" href="/de/PhD_in_Mathematics.html">Doktorat in Mathematik</a>
+<span aria-hidden="true" class="degree-separator">·</span>
+<a href="/de/PhD_in_Computer_Science.html">Doktorat in Informatik</a>
+</p>
+</header><div class="language-tools"><a class="doctoral-shortcut" href="/de/PhDs.html">Doktorate</a><details class="language-menu"><summary><svg aria-hidden="true" height="13" viewbox="0 0 20 20" width="13"><circle cx="10" cy="10" fill="none" r="7.4" stroke="currentColor"></circle><ellipse cx="10" cy="10" fill="none" rx="3.3" ry="7.4" stroke="currentColor"></ellipse><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"></path></svg>Sprachen · Deutsch</summary><ul class="language-options"><li><a data-language="en" href="/PhD_in_Mathematics.html" hreflang="en" lang="en">English</a></li><li><a data-language="nl" href="/nl/PhD_in_Mathematics.html" hreflang="nl" lang="nl">Nederlands</a></li><li><a data-language="fr" href="/fr/PhD_in_Mathematics.html" hreflang="fr" lang="fr">Français</a></li><li><a aria-current="true" data-language="de" href="/de/PhD_in_Mathematics.html" hreflang="de" lang="de">Deutsch</a></li><li><a data-language="it" href="/it/PhD_in_Mathematics.html" hreflang="it" lang="it">Italiano</a></li><li><a data-language="pt" href="/pt/PhD_in_Mathematics.html" hreflang="pt" lang="pt">Português</a></li></ul></details></div>
+<nav aria-label="Hauptbereiche der Website" class="nav">
+<a href="/de/index.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#home"></use></svg>Startseite</a>
+<a href="/de/Research.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Forschung</a>
+<a href="/de/Some_projects.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#network"></use></svg>Projekte</a>
+<a href="/de/students.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#cap"></use></svg>Doktorandinnen und Doktoranden</a>
+<a href="/Talks.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#presentation"></use></svg>Vorträge<small class="source-language" lang="en">EN</small></a>
+<a href="/de/Academic_Positions.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#institution"></use></svg>Positionen</a>
+<a href="/Organization_of_seminars_events.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#calendar"></use></svg>Seminare und Veranstaltungen<small class="source-language" lang="en">EN</small></a>
+<a href="/de/Further_Information.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#info"></use></svg>Weitere Informationen</a>
+</nav>
+<main id="content">
+<section aria-label="Doktorat in Mathematik">
+<h2>Doktorat in Mathematik</h2>
+<div class="thesis-block">
+<p class="thesis-title"><em>Pseudomonads and Descent</em></p>
+<p class="thesis-meta">
+                    Gemeinsames Doktoratsprogramm in Mathematik, Portugal. Verliehen im Januar 2018, <em>summa cum laude</em>.
+                </p>
+<ul class="info-list">
+<li>
+<span class="label">Zeitraum</span>
+<span>Oktober 2012 bis September 2017</span>
+</li>
+<li>
+<span class="label">Betreuung</span>
+<span>Prof. <a href="https://www.mat.uc.pt/~mmc/">Maria Manuel Clementino</a></span>
+</li>
+<li>
+<span class="label">Prüfungskommission</span>
+<span>
+<a href="https://www.dpmms.cam.ac.uk/person/jmeh1">Martin Hyland</a>,
+                            <a href="https://scholar.google.com/citations?user=g44eYGAAAAAJ&amp;hl=en">Marco Mackaay</a>,
+                            <a href="https://scholar.google.com/citations?user=xWP2oeUAAAAJ&amp;hl=en">Lurdes Sousa</a> und <a href="https://sigarra.up.pt/fcup/en/func_geral.formview?p_codigo=236402">Peter Beier Gothen</a>.
+                        </span>
+</li>
+<li>
+<span class="label">Links</span>
+<span>
+<a href="https://arxiv.org/abs/1802.01767"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#document"></use></svg>Dissertationsmaterial auf arXiv</a>; TID Portugal: <a href="https://renates2.dgeec.mec.pt/ppsqdet.asp">101570422</a>.
+                        </span>
+</li>
+</ul>
+</div>
+</section>
+<section aria-label="Schwerpunkte">
+<h2>Schwerpunkte</h2>
+<p class="themes">
+<span>Pseudomonaden</span>
+<span>Grothendiecksche Deszenttheorie</span>
+<span>Biadjungierte Dreieckssätze</span>
+<span>Laxe Algebren</span>
+<span>Pseudo-Kan-Erweiterungen</span>
+<span>Frei erzeugte kategorielle Strukturen</span>
+<span>Präsentationen niedrigdimensionaler Kategorien</span>
+<span>Kohärenz</span>
+<span>Zweidimensionale Kategorientheorie</span>
+</p>
+</section>
+<section aria-label="Publikationen im Zusammenhang mit dem Doktorat">
+<h2>Publikationen im Zusammenhang mit dem Doktorat</h2>
+<ul class="publication-list">
+<li>
+<span class="authors">Lucatelli Nunes, F.</span>
+<a class="pub-title" href="https://cgasa.sbu.ac.ir/article_50747.html">On lifting of biadjoints and lax algebras</a>.
+                    <span class="venue"><em>Categories and General Algebraic Structures with Applications</em>, 9(1), 29–58, 2018.</span>
+<span class="meta">30 Seiten.</span>
+<span class="links">(<a href="https://arxiv.org/abs/1607.03087">arXiv</a>)</span>
+</li>
+<li>
+<span class="authors">Lucatelli Nunes, F.</span>
+<a class="pub-title" href="https://www.tac.mta.ca/tac/volumes/33/15/33-15abs.html">Pseudo-Kan extensions and descent theory</a>.
+                    <span class="venue"><em>Theory and Applications of Categories</em>, 33, 390–444, 2018.</span>
+<span class="meta">55 Seiten.</span>
+<span class="links">(<a href="https://arxiv.org/abs/1606.04999">arXiv</a>)</span>
+</li>
+<li>
+<span class="authors">Lucatelli Nunes, F.</span>
+<a class="pub-title" href="https://www.tac.mta.ca/tac/volumes/31/9/31-09.pdf">On biadjoint triangles</a>.
+                    <span class="venue"><em>Theory and Applications of Categories</em>, 31, 217–256, 2016.</span>
+<span class="meta">40 Seiten.</span>
+<span class="links">(<a href="https://arxiv.org/abs/1606.05009">arXiv</a>)</span>
+</li>
+<li>
+<span class="authors">Lucatelli Nunes, F.</span>
+<a class="pub-title" href="https://arxiv.org/abs/1704.04474">Freely generated n-categories, coinserters and presentations of low dimensional categories</a>.
+                    <span class="meta">arXiv:1704.04474, 2017; vollständig überarbeitet 2026, 76 Seiten.</span>
+</li>
+</ul>
+</section>
+</main>
+<p class="translation-origin"><a href="/PhD_in_Mathematics.html" hreflang="en" lang="en">Englische Originalversion lesen</a></p></div>
+</body>
+</html>
+

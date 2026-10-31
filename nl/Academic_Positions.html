@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fernando Lucatelli Nunes | Aanstellingen en affiliaties</title>
+<meta content="Academische aanstellingen, onderzoeksfellowships, gastaanstellingen en onderzoeksaffiliaties van Fernando Lucatelli Nunes." name="description"/>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 30px 0;
+        line-height: 1.55;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        color: #333333;
+        background-color: #f4f6f8;
+    }
+
+    h1 {
+        margin: 0 0 12pt 0;
+        line-height: normal;
+        border-bottom: 1px solid #4472c4;
+        padding-bottom: 8pt;
+        font-family: Arial, sans-serif;
+        font-size: 24pt;
+        font-weight: normal;
+        color: #2f5496;
+        text-align: center;
+        letter-spacing: 0.5px;
+    }
+
+    h2 {
+        font-size: 18pt;
+        font-family: Arial, sans-serif;
+        color: #2f5496;
+        margin-top: 0;
+        margin-bottom: 14pt;
+        border-bottom: 1px solid #d6dce5;
+        padding-bottom: 4pt;
+    }
+
+    h3 {
+        font-size: 14pt;
+        font-family: Arial, sans-serif;
+        color: #404040;
+        margin-top: 22pt;
+        margin-bottom: 8pt;
+    }
+
+    p {
+        margin-bottom: 12pt;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 11.5pt;
+        margin-bottom: 0;
+    }
+
+    .nav {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 11pt;
+        line-height: 1.8;
+    }
+
+    .nav a {
+        margin: 0 8px;
+        white-space: nowrap;
+    }
+
+    a {
+        text-decoration: none;
+        color: #2f5496;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    ul {
+        margin-top: 6pt;
+        margin-bottom: 12pt;
+        padding-left: 22px;
+    }
+
+    li {
+        margin-bottom: 7pt;
+    }
+
+    .year {
+        color: #666666;
+        font-size: 11pt;
+    }
+
+    .institution {
+        color: #333333;
+    }
+
+    .note {
+        margin-top: 18pt;
+        padding: 12px 14px;
+        background-color: #f4f7fb;
+        border-left: 4px solid #4472c4;
+        font-family: Arial, sans-serif;
+        font-size: 11pt;
+    }
+    .appointment-filters {
+        margin: 0 0 30px;
+        padding: 0 0 22px;
+        border-bottom: 1px solid var(--line);
+        font-family: var(--sans);
+    }
+
+    .appointment-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr) minmax(0, 0.8fr) auto;
+        align-items: end;
+        gap: 16px;
+    }
+
+    .filter-field { min-width: 0; }
+    .filter-field label {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .filter-select {
+        width: 100%;
+        min-height: 44px;
+        padding: 9px 11px;
+        border: 1px solid #bcc8cb;
+        border-radius: 3px;
+        background: var(--white);
+        color: var(--navy);
+        cursor: pointer;
+        font: 13px/1.4 var(--sans);
+        text-overflow: ellipsis;
+    }
+    .filter-select:hover { border-color: var(--teal); }
+
+    .filter-select:focus-visible,
+    .clear-filters:focus-visible,
+    .appointment-item a:focus-visible {
+        outline: 3px solid rgba(23, 107, 104, 0.28);
+        outline-offset: 3px;
+    }
+
+    .clear-filters {
+        min-height: 44px;
+        padding: 8px 2px;
+        border: 0;
+        background: transparent;
+        color: var(--teal);
+        cursor: pointer;
+        font: 500 12px/1.4 var(--sans);
+        white-space: nowrap;
+        text-underline-offset: 3px;
+    }
+    .clear-filters:hover:not(:disabled) { text-decoration: underline; }
+    .clear-filters:disabled { color: var(--muted); cursor: default; opacity: 0.55; }
+
+    .filter-status {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font: 12px/1.6 var(--sans);
+    }
+    .filter-status:empty { margin: 0; }
+
+    .cv-note { margin: 32px 0 0; color: var(--muted); font-size: 12px; }
+    .appointment-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 24px; }
+    .appointment-heading strong { color: var(--navy); font: 650 18px/1.4 var(--serif); }
+    .timeline-list .appointment-item .institution { display: block; }
+    .institution a:hover, .institution a:focus-visible { text-decoration: underline; }
+    [hidden] { display: none !important; }
+
+    .empty-appointments { margin: 0 0 28px; padding: 12px 0; font-size: 13px; }
+    .empty-appointments p { margin: 0 0 8px; }
+    .empty-appointments p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 1000px) {
+        .appointment-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .clear-filters { justify-self: start; }
+    }
+
+    @media (max-width: 720px) {
+        .appointment-controls { grid-template-columns: minmax(0, 1fr); gap: 13px; }
+        .clear-filters { justify-self: start; padding: 0; }
+        .appointment-heading { flex-direction: column; gap: 5px; }
+        .timeline-list .appointment-item .institution { margin-top: 8px; }
+    }
+
+    @media print {
+        .appointment-filters { display: none !important; }
+    }
+</style>
+<link href="/site.css" rel="stylesheet"/>
+<meta content="#10243d" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link href="/icons.css" rel="stylesheet"/>
+<link href="/languages.css" rel="stylesheet"/><script src="/languages.js"></script><link href="https://flnlucatelli.github.io/Academic_Positions.html" rel="canonical"/><link href="https://flnlucatelli.github.io/Academic_Positions.html" hreflang="en" rel="alternate"/><link href="https://flnlucatelli.github.io/nl/Academic_Positions.html" hreflang="nl" rel="alternate"/><link href="https://flnlucatelli.github.io/fr/Academic_Positions.html" hreflang="fr" rel="alternate"/><link href="https://flnlucatelli.github.io/de/Academic_Positions.html" hreflang="de" rel="alternate"/><link href="https://flnlucatelli.github.io/it/Academic_Positions.html" hreflang="it" rel="alternate"/><link href="https://flnlucatelli.github.io/pt/Academic_Positions.html" hreflang="pt" rel="alternate"/><link href="https://flnlucatelli.github.io/Academic_Positions.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#content">Naar de hoofdinhoud</a>
+<div class="page">
+<header>
+<h1>Fernando Lucatelli Nunes</h1>
+<p class="subtitle">
+<a href="/nl/PhD_in_Mathematics.html">PhD in de wiskunde</a>
+<span aria-hidden="true" class="degree-separator">·</span>
+<a href="/nl/PhD_in_Computer_Science.html">PhD in de informatica</a>
+</p>
+</header><div class="language-tools"><a class="doctoral-shortcut" href="/nl/PhDs.html">Doctoraten</a><details class="language-menu"><summary><svg aria-hidden="true" height="13" viewbox="0 0 20 20" width="13"><circle cx="10" cy="10" fill="none" r="7.4" stroke="currentColor"></circle><ellipse cx="10" cy="10" fill="none" rx="3.3" ry="7.4" stroke="currentColor"></ellipse><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"></path></svg>Talen · Nederlands</summary><ul class="language-options"><li><a data-language="en" href="/Academic_Positions.html" hreflang="en" lang="en">English</a></li><li><a aria-current="true" data-language="nl" href="/nl/Academic_Positions.html" hreflang="nl" lang="nl">Nederlands</a></li><li><a data-language="fr" href="/fr/Academic_Positions.html" hreflang="fr" lang="fr">Français</a></li><li><a data-language="de" href="/de/Academic_Positions.html" hreflang="de" lang="de">Deutsch</a></li><li><a data-language="it" href="/it/Academic_Positions.html" hreflang="it" lang="it">Italiano</a></li><li><a data-language="pt" href="/pt/Academic_Positions.html" hreflang="pt" lang="pt">Português</a></li></ul></details></div>
+<nav aria-label="Hoofdnavigatie" class="nav">
+<a href="/nl/index.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#home"></use></svg>Startpagina</a>
+<a href="/nl/Research.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Onderzoek</a>
+<a href="/nl/Some_projects.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#network"></use></svg>Projecten</a>
+<a href="/nl/students.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#cap"></use></svg>Promovendi</a>
+<a href="/Talks.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#presentation"></use></svg>Lezingen<small class="source-language" lang="en">EN</small></a>
+<a aria-current="page" href="/nl/Academic_Positions.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#institution"></use></svg>Aanstellingen</a>
+<a href="/Organization_of_seminars_events.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#calendar"></use></svg>Seminars en bijeenkomsten<small class="source-language" lang="en">EN</small></a>
+<a href="/nl/Further_Information.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#info"></use></svg>Meer informatie</a>
+</nav>
+<main id="content">
+<section aria-labelledby="appointments-title">
+<h2 id="appointments-title">Aanstellingen en affiliaties</h2>
+<div aria-label="Aanstellingen en affiliaties filteren" class="appointment-filters" hidden="" role="region">
+<div class="appointment-controls">
+<div class="filter-field">
+<label for="affiliation-filter">Soort aanstelling</label>
+<select aria-controls="appointment-results" class="filter-select" id="affiliation-filter" name="affiliation-type">
+<option value="all">Alle soorten</option>
+<option value="faculty">Aanstellingen als wetenschappelijk staflid</option>
+<option value="postdoctoral">Postdoctorale aanstellingen en fellowships</option>
+<option value="visiting">Gastaanstellingen</option>
+<option value="affiliation">Onderzoeksaffiliaties</option>
+<option value="doctoral">Promotieonderzoek</option>
+</select>
+</div>
+<div class="filter-field">
+<label for="institution-filter">Instelling</label>
+<select aria-controls="appointment-results" class="filter-select" id="institution-filter" name="appointment-institution">
+<option value="all">Alle instellingen</option>
+<option value="fields">Fields Institute</option>
+<option value="impa">IMPA</option>
+<option value="oberwolfach">Mathematisches Forschungsinstitut Oberwolfach</option>
+<option value="stellenbosch">Stellenbosch University</option>
+<option value="uclouvain">UCLouvain</option>
+<option value="birmingham">University of Birmingham</option>
+<option value="cape-town">University of Cape Town</option>
+<option value="coimbra">University of Coimbra</option>
+<option value="utrecht">Universiteit Utrecht</option>
+<option value="york">York University</option>
+</select>
+</div>
+<div class="filter-field">
+<label for="country-filter">Land</label>
+<select aria-controls="appointment-results" class="filter-select" id="country-filter" name="appointment-country">
+<option value="all">Alle landen</option>
+<option value="belgium">België</option>
+<option value="brazil">Brazilië</option>
+<option value="canada">Canada</option>
+<option value="germany">Duitsland</option>
+<option value="netherlands">Nederland</option>
+<option value="portugal">Portugal</option>
+<option value="south-africa">Zuid-Afrika</option>
+<option value="united-kingdom">Verenigd Koninkrijk</option>
+</select>
+</div>
+<button class="clear-filters" disabled="" type="button">Filters wissen</button>
+</div>
+<p aria-atomic="true" aria-live="polite" class="filter-status" role="status"></p>
+</div>
+<div id="appointment-results">
+<div class="empty-appointments" hidden="">
+<p><strong>Geen overeenkomende aanstellingen of affiliaties.</strong></p>
+<p>Wijzig of wis de filters om andere aanstellingen en affiliaties te bekijken.</p>
+</div>
+<section aria-labelledby="academic-appointments" class="appointment-section">
+<h3 id="academic-appointments">Academische aanstellingen</h3>
+<ul class="timeline-list">
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="faculty">
+<div class="appointment-heading"><strong>Universitair docent</strong><span class="year">(2026–heden)</span></div>
+<div class="institution"><a href="https://www.uc.pt/en/fctuc/dmat/">Departement Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a>, Portugal</div>
+</li>
+<li class="appointment-item" data-country="united-kingdom" data-institution="birmingham" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Onderzoeksfellow</strong><span class="year">(2025–maart 2026)</span></div>
+<div class="institution"><a href="https://www.birmingham.ac.uk/about/college-of-engineering-and-physical-sciences/computer-science">School of Computer Science</a>, <a href="https://www.birmingham.ac.uk/">University of Birmingham</a>, Verenigd Koninkrijk</div>
+</li>
+<li class="appointment-item" data-country="netherlands" data-institution="utrecht" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Postdoctoraal onderzoeker</strong><span class="year">(2025)</span></div>
+<div class="institution"><a href="https://www.uu.nl/en/organisation/department-of-information-and-computing-sciences">Departement Informatica</a>, <a href="https://www.uu.nl/en">Universiteit Utrecht</a>, Nederland</div>
+</li>
+<li class="appointment-item" data-country="netherlands" data-institution="utrecht" data-types="doctoral">
+<div class="appointment-heading"><strong>Promovendus</strong><span class="year">(2020–2025)</span></div>
+<div class="institution"><a href="https://www.uu.nl/en/organisation/department-of-information-and-computing-sciences">Departement Informatica</a>, <a href="https://www.uu.nl/en">Universiteit Utrecht</a>, Nederland</div>
+</li>
+<li class="appointment-item" data-country="canada" data-institution="york" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Postdoctoraal onderzoeker</strong><span class="year">(2023)</span></div>
+<div class="institution"><a href="https://www.yorku.ca/science/mathstats/">Departement Wiskunde en Statistiek</a>, <a href="https://www.yorku.ca/">York University</a>, Canada</div>
+</li>
+<li class="appointment-item" data-country="canada" data-institution="fields" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Fields Research Fellow</strong><span class="year">(2023)</span></div>
+<div class="institution"><a href="https://www.fields.utoronto.ca/">Fields Institute for Research in Mathematical Sciences</a>, Canada</div>
+</li>
+<li class="appointment-item" data-country="germany" data-institution="oberwolfach" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Oberwolfach Leibniz Fellow</strong><span class="year">(2022)</span></div>
+<div class="institution"><a href="https://www.mfo.de/">Mathematisches Forschungsinstitut Oberwolfach</a>, Duitsland</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Onderzoeksfellow</strong><span class="year">(2018–2020)</span></div>
+<div class="institution"><a href="https://www.uc.pt/en/fctuc/dmat/">Departement Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a>, Portugal</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="faculty">
+<div class="appointment-heading"><strong>Gastdocent (Assistant Professor)</strong><span class="year">(2018–2019)</span></div>
+<div class="institution"><a href="https://www.uc.pt/en/fctuc/dmat/">Departement Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a>, Portugal</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="postdoctoral">
+<div class="appointment-heading"><strong>Postdoctoraal onderzoeker</strong><span class="year">(2018)</span></div>
+<div class="institution"><a href="https://www.uc.pt/en/">University of Coimbra</a>, Portugal</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="doctoral">
+<div class="appointment-heading"><strong>Promovendus</strong><span class="year">(2012–2018)</span></div>
+<div class="institution"><a href="https://www.uc.pt/en/fctuc/dmat/">Departement Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a>, Portugal</div>
+</li>
+</ul>
+</section>
+<section aria-labelledby="visiting-appointments" class="appointment-section">
+<h3 id="visiting-appointments">Gastaanstellingen</h3>
+<ul class="timeline-list">
+<li class="appointment-item" data-country="netherlands" data-institution="utrecht" data-types="visiting">
+<div class="appointment-heading"><strong>Gastonderzoeker</strong><span class="year">(2026–heden)</span></div>
+<div class="institution"><a href="https://www.uu.nl/en/organisation/department-of-information-and-computing-sciences">Departement Informatica</a>, <a href="https://www.uu.nl/en">Universiteit Utrecht</a>, Nederland</div>
+</li>
+<li class="appointment-item" data-country="brazil" data-institution="impa" data-types="visiting">
+<div class="appointment-heading"><strong>Gastonderzoeker</strong><span class="year">(2025)</span></div>
+<div class="institution"><a href="https://impa.br/">IMPA</a>, Rio de Janeiro, Brazilië</div>
+</li>
+<li class="appointment-item" data-country="belgium" data-institution="uclouvain" data-types="visiting">
+<div class="appointment-heading"><strong>Gastonderzoeker</strong><span class="year">(2018, 2023, 2024, 2025)</span></div>
+<div class="institution"><a href="https://uclouvain.be/en">UCLouvain</a>, België</div>
+</li>
+<li class="appointment-item" data-country="south-africa" data-institution="cape-town" data-types="visiting">
+<div class="appointment-heading"><strong>Gastonderzoeker</strong><span class="year">(2019, 2025)</span></div>
+<div class="institution"><a href="https://www.uct.ac.za/">University of Cape Town</a>, Zuid-Afrika</div>
+</li>
+<li class="appointment-item" data-country="south-africa" data-institution="stellenbosch" data-types="visiting">
+<div class="appointment-heading"><strong>Gastonderzoeker</strong><span class="year">(2019, 2025)</span></div>
+<div class="institution"><a href="https://www.su.ac.za/en">Stellenbosch University</a>, Zuid-Afrika</div>
+</li>
+</ul>
+</section>
+<section aria-labelledby="research-affiliations" class="appointment-section">
+<h3 id="research-affiliations">Onderzoeksaffiliaties</h3>
+<ul class="timeline-list">
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="affiliation">
+<div class="appointment-heading"><strong>Geïntegreerd onderzoeker</strong><span class="year">(2026–heden)</span></div>
+<div class="institution"><a href="https://cmuc.mat.uc.pt/rdonweb/">Centrum voor Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a> (<a href="https://cmuc.mat.uc.pt/rdonweb/">CMUC</a>), Portugal</div>
+</li>
+<li class="appointment-item" data-country="united-kingdom" data-institution="birmingham" data-types="affiliation">
+<div class="appointment-heading"><strong>Onderzoeksfellow</strong><span class="year">(2026)</span></div>
+<div class="institution"><a href="https://www.birmingham.ac.uk/research/centres-institutes/research-in-computer-science/theory-of-computation">Theory of Computation</a>, <a href="https://www.birmingham.ac.uk/about/college-of-engineering-and-physical-sciences/computer-science">School of Computer Science</a>, <a href="https://www.birmingham.ac.uk/">University of Birmingham</a>, Verenigd Koninkrijk</div>
+</li>
+<li class="appointment-item" data-country="netherlands" data-institution="utrecht" data-types="affiliation">
+<div class="appointment-heading"><strong>Onderzoeker in de programmeertaalsemantiek</strong><span class="year">(2020–2026)</span></div>
+<div class="institution"><a href="https://www.uu.nl/en/research/software/software-technology">Software Technology Group</a>, <a href="https://www.uu.nl/en">Universiteit Utrecht</a>, Nederland</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="affiliation">
+<div class="appointment-heading"><strong>Onderzoekspartner</strong><span class="year">(2020–2024)</span></div>
+<div class="institution"><a href="https://cmuc.mat.uc.pt/rdonweb/">Centrum voor Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a> (<a href="https://cmuc.mat.uc.pt/rdonweb/">CMUC</a>), Portugal</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="affiliation">
+<div class="appointment-heading"><strong>Postdoctoraal onderzoeker en onderzoeksfellow</strong><span class="year">(2018–2020)</span></div>
+<div class="institution"><a href="https://cmuc.mat.uc.pt/rdonweb/">Centrum voor Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a> (<a href="https://cmuc.mat.uc.pt/rdonweb/">CMUC</a>), Portugal</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="affiliation">
+<div class="appointment-heading"><strong>Onderzoeker in de zuivere wiskunde</strong><span class="year">(2012–2018)</span></div>
+<div class="institution"><a href="https://cmuc.mat.uc.pt/rdonweb/">Centrum voor Wiskunde</a>, <a href="https://www.uc.pt/en/">University of Coimbra</a> (<a href="https://cmuc.mat.uc.pt/rdonweb/">CMUC</a>), Portugal</div>
+</li>
+<li class="appointment-item" data-country="portugal" data-institution="coimbra" data-types="affiliation">
+<div class="appointment-heading"><strong>Onderzoeker in de categorietheorie</strong><span class="year">(2012–2018)</span></div>
+<div class="institution"><a href="https://www.mat.uc.pt/~categ/">Coimbra School of Category Theory</a>, Portugal</div>
+</li>
+</ul>
+</section>
+</div>
+<p class="cv-note">Zie mijn cv voor de volledige gegevens.</p>
+</section>
+</main>
+<p class="translation-origin"><a href="/Academic_Positions.html" hreflang="en" lang="en">Lees de oorspronkelijke Engelse versie</a></p></div>
+<script>
+(() => {
+    const filters = document.querySelector('.appointment-filters');
+    const typeSelect = document.getElementById('affiliation-filter');
+    const institutionSelect = document.getElementById('institution-filter');
+    const countrySelect = document.getElementById('country-filter');
+    const items = Array.from(document.querySelectorAll('.appointment-item'));
+    const sections = Array.from(document.querySelectorAll('.appointment-section'));
+    const status = document.querySelector('.filter-status');
+    const reset = document.querySelector('.clear-filters');
+    const emptyState = document.querySelector('.empty-appointments');
+
+    if (!filters || !typeSelect || !institutionSelect || !countrySelect || !items.length || !status || !reset || !emptyState) return;
+
+    const entries = items.map(element => ({
+        element,
+        type: element.dataset.types,
+        institution: element.dataset.institution,
+        country: element.dataset.country
+    }));
+
+    const applyFilters = () => {
+        const type = typeSelect.value;
+        const institution = institutionSelect.value;
+        const country = countrySelect.value;
+        let visibleCount = 0;
+
+        entries.forEach(entry => {
+            const visible = (type === 'all' || entry.type === type)
+                && (institution === 'all' || entry.institution === institution)
+                && (country === 'all' || entry.country === country);
+            entry.element.hidden = !visible;
+            if (visible) visibleCount += 1;
+        });
+        sections.forEach(section => {
+            section.hidden = !section.querySelector('.appointment-item:not([hidden])');
+        });
+
+        const active = type !== 'all' || institution !== 'all' || country !== 'all';
+        status.textContent = active
+            ? visibleCount + ' ' + (window.siteMessages ? (visibleCount === 1 ? window.siteMessages.result : window.siteMessages.results) : (visibleCount === 1 ? 'result' : 'results'))
+            : '';
+        reset.disabled = !active;
+        emptyState.hidden = visibleCount !== 0;
+    };
+
+    typeSelect.addEventListener('change', applyFilters);
+    institutionSelect.addEventListener('change', applyFilters);
+    countrySelect.addEventListener('change', applyFilters);
+    reset.addEventListener('click', () => {
+        typeSelect.value = 'all';
+        institutionSelect.value = 'all';
+        countrySelect.value = 'all';
+        applyFilters();
+        typeSelect.focus();
+    });
+    applyFilters();
+    filters.hidden = false;
+})();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fernando Lucatelli Nunes | Doctorat en informatique</title>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12pt;
+        color: var(--text);
+        background: var(--background);
+    }
+
+    .page {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    header,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+
+    .subtitle a {
+        color: var(--blue);
+    }
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
+    section {
+        margin-bottom: 34px;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        margin: 0 0 16px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+        color: var(--blue);
+    }
+
+    p {
+        margin: 0 0 12pt 0;
+    }
+
+    a {
+        color: var(--blue);
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    .thesis-title {
+        margin: 0 0 4px 0;
+        font-size: 15pt;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--blue-dark);
+        font-weight: bold;
+    }
+
+    .thesis-meta {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--muted);
+        font-size: 11pt;
+        line-height: 1.55;
+    }
+
+    .info-list {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--border-light);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.9pt;
+    }
+
+    .info-list li {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 20px;
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .label {
+        color: var(--muted);
+        font-weight: bold;
+    }
+
+    .themes {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--muted);
+        font-size: 10.9pt;
+        line-height: 1.75;
+    }
+
+    .publication-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .publication-list li {
+        padding: 13px 0 14px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .publication-list li:last-child {
+        border-bottom: none;
+    }
+
+    .pub-title {
+        display: block;
+        margin-bottom: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.2pt;
+        font-weight: bold;
+        line-height: 1.38;
+        color: var(--blue-dark);
+    }
+
+    .authors {
+        display: block;
+        margin-bottom: 2px;
+        font-size: 11pt;
+        color: var(--text);
+    }
+
+    .details {
+        display: block;
+        font-size: 10.65pt;
+        line-height: 1.45;
+        color: var(--muted);
+    }
+
+    .details em {
+        color: var(--text);
+    }
+
+    .note {
+        margin-top: 18px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    .nav {
+        margin-top: 30px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-light);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
+    }
+
+    .nav a {
+        margin: 0 8px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 720px) {
+        body { padding: 18px 10px; }
+        header, main { padding: 22px 20px; }
+        h1 { font-size: 21pt; }
+
+        .info-list li {
+            grid-template-columns: 1fr;
+            gap: 2px;
+        }
+
+        .nav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
+    }
+</style>
+<link href="/site.css" rel="stylesheet"/>
+<meta content="#10243d" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link href="/icons.css" rel="stylesheet"/>
+<link href="/languages.css" rel="stylesheet"/><script src="/languages.js"></script><link href="https://flnlucatelli.github.io/PhD_in_Computer_Science.html" rel="canonical"/><link href="https://flnlucatelli.github.io/PhD_in_Computer_Science.html" hreflang="en" rel="alternate"/><link href="https://flnlucatelli.github.io/nl/PhD_in_Computer_Science.html" hreflang="nl" rel="alternate"/><link href="https://flnlucatelli.github.io/fr/PhD_in_Computer_Science.html" hreflang="fr" rel="alternate"/><link href="https://flnlucatelli.github.io/de/PhD_in_Computer_Science.html" hreflang="de" rel="alternate"/><link href="https://flnlucatelli.github.io/it/PhD_in_Computer_Science.html" hreflang="it" rel="alternate"/><link href="https://flnlucatelli.github.io/pt/PhD_in_Computer_Science.html" hreflang="pt" rel="alternate"/><link href="https://flnlucatelli.github.io/PhD_in_Computer_Science.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#content">Aller au contenu principal</a>
+<div class="page">
+<header>
+<h1>Fernando Lucatelli Nunes</h1>
+<p class="subtitle">
+<a href="/fr/PhD_in_Mathematics.html">Doctorat en mathématiques</a>
+<span aria-hidden="true" class="degree-separator">·</span>
+<a aria-current="page" href="/fr/PhD_in_Computer_Science.html">Doctorat en informatique</a>
+</p>
+</header><div class="language-tools"><a class="doctoral-shortcut" href="/fr/PhDs.html">Doctorats</a><details class="language-menu"><summary><svg aria-hidden="true" height="13" viewbox="0 0 20 20" width="13"><circle cx="10" cy="10" fill="none" r="7.4" stroke="currentColor"></circle><ellipse cx="10" cy="10" fill="none" rx="3.3" ry="7.4" stroke="currentColor"></ellipse><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"></path></svg>Langues · Français</summary><ul class="language-options"><li><a data-language="en" href="/PhD_in_Computer_Science.html" hreflang="en" lang="en">English</a></li><li><a data-language="nl" href="/nl/PhD_in_Computer_Science.html" hreflang="nl" lang="nl">Nederlands</a></li><li><a aria-current="true" data-language="fr" href="/fr/PhD_in_Computer_Science.html" hreflang="fr" lang="fr">Français</a></li><li><a data-language="de" href="/de/PhD_in_Computer_Science.html" hreflang="de" lang="de">Deutsch</a></li><li><a data-language="it" href="/it/PhD_in_Computer_Science.html" hreflang="it" lang="it">Italiano</a></li><li><a data-language="pt" href="/pt/PhD_in_Computer_Science.html" hreflang="pt" lang="pt">Português</a></li></ul></details></div>
+<nav aria-label="Rubriques principales du site" class="nav">
+<a href="/fr/index.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#home"></use></svg>Accueil</a>
+<a href="/fr/Research.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Recherche</a>
+<a href="/fr/Some_projects.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#network"></use></svg>Projets</a>
+<a href="/fr/students.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#cap"></use></svg>Doctorants</a>
+<a href="/Talks.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#presentation"></use></svg>Exposés<small class="source-language" lang="en">EN</small></a>
+<a href="/fr/Academic_Positions.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#institution"></use></svg>Postes</a>
+<a href="/Organization_of_seminars_events.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#calendar"></use></svg>Séminaires et événements<small class="source-language" lang="en">EN</small></a>
+<a href="/fr/Further_Information.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#info"></use></svg>Informations complémentaires</a>
+</nav>
+<main id="content">
+<section aria-label="Doctorat en informatique">
+<h2>Doctorat en informatique</h2>
+<div class="thesis-block">
+<p class="thesis-title"><em>Freely Generated Categorical Structures and Automatic Differentiation</em></p>
+<p class="thesis-meta">
+                    Université d’Utrecht, Département des sciences de l’information et de l’informatique. Diplôme décerné en septembre 2026.
+                </p>
+<ul class="info-list">
+<li>
+<span class="label">Période</span>
+<span>De novembre 2020 à novembre 2025</span>
+</li>
+<li>
+<span class="label">Direction de thèse</span>
+<span>
+                            Professeur <a href="https://www.uu.nl/staff/GKKeller">Gabriele Keller</a>
+                            et Dr <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.
+                        </span>
+</li>
+<li>
+<span class="label">Jury</span>
+<span>
+<a href="https://www.uu.nl/staff/IMoerdijk">Ieke Moerdijk</a>,
+                            <a href="https://www.cs.ru.nl/B.Jacobs/">Bart Jacobs</a>,
+                            <a href="https://www.cs.ox.ac.uk/people/samuel.staton/main.html">Sam Staton</a>,
+                            <a href="https://cspages.ucalgary.ca/~robin/">Robin Cockett</a> et <a href="https://cs.appstate.edu/johannp/">Patricia Johann</a>.
+                        </span>
+</li>
+<li>
+<span class="label">Liens</span>
+<span>
+<a href="https://arxiv.org/abs/2609.40046"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#document"></use></svg>Textes de la thèse sur arXiv</a>
+</span>
+</li>
+</ul>
+</div>
+</section>
+<section aria-label="Thèmes principaux">
+<h2>Thèmes principaux</h2>
+<p class="themes">
+<span>Sémantique des langages de programmation</span>
+<span>Sémantique catégorique</span>
+<span>Différentiation automatique</span>
+<span>CHAD</span>
+<span>Différentiation automatique par nombres duaux</span>
+<span>Relations logiques</span>
+<span>Transformations de programmes</span>
+<span>Récursion et itération</span>
+<span>Systèmes de types</span>
+<span>Types dépendants</span>
+<span>Effets algébriques</span>
+<span>Constructions de Grothendieck</span>
+</p>
+</section>
+<section aria-label="Publications liées au doctorat">
+<h2>Publications liées au doctorat</h2>
+<ul class="publication-list">
+<li>
+<a class="pub-title" href="https://doi.org/10.1017/S096012952300018X">CHAD for expressive total languages</a>
+<span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+<span class="details"><em>Mathematical Structures in Computer Science</em>, 33(4–5), 311–426, 2023. 116 pages. (<a href="https://doi.org/10.1017/S096012952300018X">DOI</a>; <a href="https://arxiv.org/abs/2110.00446">arXiv</a>)</span>
+</li>
+<li>
+<a class="pub-title" href="https://popl24.sigplan.org/details/lafi-2024-papers/5/Homomorphic-Reverse-Differentiation-of-Iteration">Homomorphic reverse differentiation of iteration</a>
+<span class="authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
+<span class="details">LAFI 2024, Tenth Workshop on Languages for Inference at POPL, 2024. 2 pages.</span>
+</li>
+<li>
+<a class="pub-title" href="https://arxiv.org/abs/2505.15002">Unraveling the iterative CHAD</a>
+<span class="authors">Lucatelli Nunes, F.; Plotkin, G.; Vákár, M.</span>
+<span class="details">Accepté pour publication dans <em>Mathematical Structures in Computer Science</em>. arXiv:2505.15002, 2025, 58 pages.</span>
+</li>
+<li>
+<a class="pub-title" href="https://arxiv.org/abs/2210.08530">Logical relations for partial features and automatic differentiation correctness</a>
+<span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+<span class="details">Oberwolfach Preprints, OWP-2023-09, 2023. arXiv:2210.08530, 2022, 25 pages.</span>
+</li>
+<li>
+<a class="pub-title" href="https://doi.org/10.1017/S0960129524000215">Automatic differentiation for ML-family languages: correctness via logical relations</a>
+<span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+<span class="details"><em>Mathematical Structures in Computer Science</em>, 34(8), 747–806, 2024. 60 pages. (<a href="https://doi.org/10.1017/S0960129524000215">DOI</a>; <a href="https://arxiv.org/abs/2210.07724">arXiv</a>)</span>
+</li>
+<li>
+<a class="pub-title" href="https://arxiv.org/abs/2403.10447">Free doubly-infinitary distributive categories are cartesian closed</a>
+<span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+<span class="details">Accepté pour publication dans <em>Applied Categorical Structures</em>. arXiv:2403.10447, 2024 ; révisé en 2026, 32 pages.</span>
+</li>
+<li>
+<a class="pub-title" href="https://ems.press/journals/pm/articles/14297990">Free extensivity via distributivity</a>
+<span class="authors">Lucatelli Nunes, F.; Prezado, R.; Vákár, M.</span>
+<span class="details"><em>Portugaliae Mathematica</em>, 82(1–2), 177–204, 2025. 28 pages. (<a href="https://doi.org/10.4171/PM/2129">DOI</a>; <a href="https://arxiv.org/abs/2405.02185">arXiv</a>)</span>
+</li>
+<li>
+<a class="pub-title" href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Monoidal closure of Grothendieck constructions via Σ-tractable monoidal structures and Dialectica formulas</a>
+<span class="authors">Lucatelli Nunes, F.; Vákár, M.</span>
+<span class="details"><em>Theory and Applications of Categories</em>, 44(35), 1153–1217, 2025. 65 pages dans la revue. (<a href="https://www.tac.mta.ca/tac/volumes/44/35/44-35abs.html">Revue</a>; <a href="https://arxiv.org/abs/2405.07724">arXiv</a>)</span>
+</li>
+</ul>
+</section>
+</main>
+<p class="translation-origin"><a href="/PhD_in_Computer_Science.html" hreflang="en" lang="en">Lire la version originale en anglais</a></p></div>
+</body>
+</html>
+

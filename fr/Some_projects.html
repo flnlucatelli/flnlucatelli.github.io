@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fernando Lucatelli Nunes | Direction de recherches et contributions aux collaborations</title>
+<meta content="Un programme de recherche dirigé de manière indépendante, des projets menés en tant que responsable scientifique et des contributions substantielles à des collaborations bénéficiant de financements externes." name="description"/>
+<style>
+    :root {
+        --blue: #2f5496;
+        --blue-dark: #243f70;
+        --blue-light: #eef3fa;
+        --text: #2f2f2f;
+        --muted: #666666;
+        --border: #d9e0ea;
+        --border-light: #edf1f6;
+        --background: #f5f7fa;
+        --white: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 34px 16px;
+        line-height: 1.55;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 12pt;
+        color: var(--text);
+        background: var(--background);
+    }
+
+    .page {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    header,
+    nav,
+    main {
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 9px rgba(20, 36, 64, 0.06);
+        border-radius: 6px;
+    }
+
+    header {
+        padding: 30px 36px 25px 36px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        margin: 0 0 11px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #4472c4;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25pt;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: var(--blue);
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.4pt;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+
+    .subtitle a {
+        color: var(--blue);
+    }
+
+    nav {
+        padding: 11px 16px;
+        margin-bottom: 18px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.8pt;
+        line-height: 1.9;
+    }
+
+    nav a {
+        margin: 0 7px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    main {
+        padding: 34px 42px 36px 42px;
+    }
+
+    h2 {
+        margin: 0 0 18px 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+        color: var(--blue);
+    }
+
+    h3 {
+        margin: 0 0 5px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12.8pt;
+        color: var(--blue-dark);
+    }
+
+    p {
+        margin: 0 0 12pt 0;
+    }
+
+    a {
+        color: var(--blue);
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    .project-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .project {
+        padding: 18px 0 19px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .project:first-child {
+        padding-top: 0;
+    }
+
+    .project:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .project-meta {
+        margin: 0 0 7px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.45;
+        color: var(--muted);
+    }
+
+    .project-meta strong {
+        color: var(--text);
+    }
+
+    .project-lines {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.85pt;
+        line-height: 1.5;
+    }
+
+    .project-lines li {
+        margin: 3px 0;
+    }
+
+    .label {
+        color: var(--muted);
+        font-weight: bold;
+    }
+
+    .tags {
+        margin: 8px 0 0 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.2pt;
+        color: var(--muted);
+    }
+
+    .tags span + span::before {
+        content: " · ";
+        color: #9aa6b8;
+    }
+
+    .note {
+        margin-top: 24px;
+        padding: 11px 13px;
+        border-left: 3px solid #4472c4;
+        background: var(--blue-light);
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10.7pt;
+        line-height: 1.5;
+        color: #454545;
+    }
+
+    @media (max-width: 720px) {
+        body {
+            padding: 18px 10px;
+        }
+
+        header,
+        main {
+            padding: 22px 20px;
+        }
+
+        h1 {
+            font-size: 21pt;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 2px 6px;
+        }
+    }
+</style>
+<link href="/site.css" rel="stylesheet"/>
+<style>
+    .page-intro {
+        margin-bottom: 48px !important;
+    }
+
+    .page-intro .lead {
+        margin-bottom: 0 !important;
+    }
+
+    .project-index {
+        margin: 23px 0 0 !important;
+    }
+
+    .project-section {
+        margin-bottom: 58px !important;
+        scroll-margin-top: 72px;
+    }
+
+    .project-section:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .section-kicker {
+        margin: 0 0 8px !important;
+        color: var(--teal) !important;
+        font: 800 10px/1.4 var(--sans) !important;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+    }
+
+    .project-section-title {
+        margin: 0 0 12px !important;
+        color: var(--navy) !important;
+        font: 500 clamp(25px, 3.3vw, 34px)/1.18 var(--serif) !important;
+        letter-spacing: -.02em;
+    }
+
+    .section-intro {
+        max-width: 800px;
+        margin: 0 0 24px !important;
+        color: #405363 !important;
+        font: 16px/1.7 var(--sans) !important;
+    }
+
+    .project-section .project-list {
+        border-top: 1px solid var(--line);
+    }
+
+    .project-section .project:first-child {
+        padding-top: 20px !important;
+    }
+
+    .project-title {
+        margin: 0 0 6px !important;
+        color: var(--navy) !important;
+        font: 650 20px/1.32 var(--serif) !important;
+    }
+
+    .project-role {
+        display: block;
+        margin-top: 4px;
+        color: var(--text);
+    }
+
+    @media (max-width: 720px) {
+        .page-intro {
+            margin-bottom: 40px !important;
+        }
+
+        .project-section {
+            margin-bottom: 46px !important;
+        }
+
+        .section-intro {
+            font-size: 15px !important;
+        }
+    }
+</style>
+<meta content="#10243d" name="theme-color"/>
+<link href="/favicon.svg" rel="icon"/>
+<link href="/icons.css" rel="stylesheet"/>
+<link href="/languages.css" rel="stylesheet"/><script src="/languages.js"></script><link href="https://flnlucatelli.github.io/Some_projects.html" rel="canonical"/><link href="https://flnlucatelli.github.io/Some_projects.html" hreflang="en" rel="alternate"/><link href="https://flnlucatelli.github.io/nl/Some_projects.html" hreflang="nl" rel="alternate"/><link href="https://flnlucatelli.github.io/fr/Some_projects.html" hreflang="fr" rel="alternate"/><link href="https://flnlucatelli.github.io/de/Some_projects.html" hreflang="de" rel="alternate"/><link href="https://flnlucatelli.github.io/it/Some_projects.html" hreflang="it" rel="alternate"/><link href="https://flnlucatelli.github.io/pt/Some_projects.html" hreflang="pt" rel="alternate"/><link href="https://flnlucatelli.github.io/Some_projects.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#content">Aller au contenu principal</a>
+<div class="page">
+<header>
+<h1>Fernando Lucatelli Nunes</h1>
+<p class="subtitle">
+<a href="/fr/PhD_in_Mathematics.html">Doctorat en mathématiques</a>
+<span aria-hidden="true" class="degree-separator">·</span>
+<a href="/fr/PhD_in_Computer_Science.html">Doctorat en informatique</a>
+</p>
+</header><div class="language-tools"><a class="doctoral-shortcut" href="/fr/PhDs.html">Doctorats</a><details class="language-menu"><summary><svg aria-hidden="true" height="13" viewbox="0 0 20 20" width="13"><circle cx="10" cy="10" fill="none" r="7.4" stroke="currentColor"></circle><ellipse cx="10" cy="10" fill="none" rx="3.3" ry="7.4" stroke="currentColor"></ellipse><path d="M3 7h14M3 13h14" fill="none" stroke="currentColor"></path></svg>Langues · Français</summary><ul class="language-options"><li><a data-language="en" href="/Some_projects.html" hreflang="en" lang="en">English</a></li><li><a data-language="nl" href="/nl/Some_projects.html" hreflang="nl" lang="nl">Nederlands</a></li><li><a aria-current="true" data-language="fr" href="/fr/Some_projects.html" hreflang="fr" lang="fr">Français</a></li><li><a data-language="de" href="/de/Some_projects.html" hreflang="de" lang="de">Deutsch</a></li><li><a data-language="it" href="/it/Some_projects.html" hreflang="it" lang="it">Italiano</a></li><li><a data-language="pt" href="/pt/Some_projects.html" hreflang="pt" lang="pt">Português</a></li></ul></details></div>
+<nav aria-label="Navigation principale">
+<a href="/fr/index.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#home"></use></svg>Accueil</a>
+<a href="/fr/Research.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Recherche</a>
+<a aria-current="page" href="/fr/Some_projects.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#network"></use></svg>Projets</a>
+<a href="/fr/students.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#cap"></use></svg>Doctorants</a>
+<a href="/Talks.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#presentation"></use></svg>Exposés<small class="source-language" lang="en">EN</small></a>
+<a href="/fr/Academic_Positions.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#institution"></use></svg>Postes</a>
+<a href="/Organization_of_seminars_events.html" hreflang="en"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#calendar"></use></svg>Séminaires et événements<small class="source-language" lang="en">EN</small></a>
+<a href="/fr/Further_Information.html"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#info"></use></svg>Informations complémentaires</a>
+</nav>
+<main id="content">
+<section aria-labelledby="projects-title" class="page-intro">
+<h2 id="projects-title">Direction de recherches et contributions aux collaborations</h2>
+<p class="lead">Mon activité de recherche associe un programme que je dirige de manière indépendante à des contributions substantielles à des collaborations bénéficiant de financements externes. Les rubriques ci-dessous distinguent la direction de recherches de la participation à des projets dirigés par d’autres, en précisant dans chaque cas mon rôle et ma contribution.</p>
+<nav aria-label="Catégories de projets" class="quick-links project-index">
+<a href="#research-leadership"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#book"></use></svg>Direction de recherches</a>
+<a href="#collaborative-contributions"><svg aria-hidden="true" class="link-icon" focusable="false" height="15" width="15"><use href="/icons.svg#network"></use></svg>Contributions aux collaborations</a>
+</nav>
+</section>
+<section aria-labelledby="research-leadership-title" class="project-section" id="research-leadership">
+<p class="section-kicker">Direction de recherches</p>
+<h3 class="project-section-title" id="research-leadership-title">Projets dirigés en tant que responsable scientifique</h3>
+<p class="section-intro">Cette rubrique présente le programme de recherche que je dirige de manière indépendante et les projets financés par des bourses dont j’ai été le responsable scientifique.</p>
+<ul class="project-list">
+<li class="project">
+<h4 class="project-title">Structures catégoriques librement engendrées pour la sémantique des langages de programmation</h4>
+<p class="project-meta">
+<strong>Programme de recherche actuel.</strong>
+<span class="project-role"><span class="label">Direction scientifique :</span> Fernando Lucatelli Nunes.</span>
+</p>
+<ul class="project-lines">
+<li><span class="label">Fondements :</span> les langages de programmation, considérés modulo leurs théories équationnelles, comme structures catégoriques librement engendrées ou présentées, fondées sur l’algèbre universelle bidimensionnelle.</li>
+<li><span class="label">Applications :</span> sémantique catégorique et transformations correctes par construction pour les systèmes de types avancés, la récursion, les effets de calcul, la programmation différentiable, la programmation probabiliste, la vérification, l’analyse de programmes et les transformations de compilation, notamment la défonctionnalisation et la conversion des fermetures.</li>
+</ul>
+<p class="tags"><span>théorie des catégories</span><span>langages de programmation</span><span>méthodes formelles</span><span>transformations vérifiées</span></p>
+</li>
+<li class="project">
+<h4 class="project-title">Théorie de la descente de Grothendieck, fibrations et factorisations</h4>
+<p class="project-meta">
+<strong>Fields Research Fellowship</strong>, Fields Institute for Research in Mathematical Sciences, Canada, 2023.
+                        <span class="project-role"><span class="label">Rôle :</span> Titulaire de la bourse et responsable scientifique.</span>
+</p>
+<ul class="project-lines">
+<li><span class="label">Collaboration :</span> <a href="https://www.yorku.ca/science/profiles/faculty/walter-tholen/">Walter Tholen</a>.</li>
+<li><span class="label">Objet :</span> le passage des cofibrations de Grothendieck aux systèmes de factorisation, formulé au moyen de la théorie bidimensionnelle des monades.</li>
+</ul>
+<p class="tags"><span>mathématiques pures</span><span>théorie de la descente</span><span>fibrations</span><span>factorisations</span></p>
+</li>
+<li class="project">
+<h4 class="project-title">Descente de Grothendieck, théorie de Galois et présentations de structures catégoriques</h4>
+<p class="project-meta">
+<strong>Oberwolfach Leibniz Fellowship</strong>, Mathematisches Forschungsinstitut Oberwolfach, Allemagne, 2022.
+                        <span class="project-role"><span class="label">Rôle :</span> Titulaire de la bourse et responsable scientifique.</span>
+</p>
+<ul class="project-lines">
+<li><span class="label">Collaborateurs :</span> Maria Manuel Clementino, <a href="https://prezado.github.io/">Rui Prezado</a>, Lurdes Sousa et <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
+<li><span class="label">Objet :</span> descente effective, théorie de Galois catégorique et présentations par coinserteurs et computades.</li>
+</ul>
+<p class="tags"><span>mathématiques pures</span><span>théorie de Galois</span><span>présentations</span><span>structures catégoriques</span></p>
+</li>
+</ul>
+</section>
+<section aria-labelledby="collaborative-contributions-title" class="project-section" id="collaborative-contributions">
+<p class="section-kicker">Contributions aux collaborations</p>
+<h3 class="project-section-title" id="collaborative-contributions-title">Contributions à des projets dirigés par d’autres chercheurs</h3>
+<p class="section-intro">Les projets bénéficiant de financements externes présentés ci-dessous étaient dirigés par le chercheur indiqué dans chaque notice, ou lui avaient été attribués. </p>
+<ul class="project-list">
+<li class="project">
+<h4 class="project-title">Raisonnement formalisé sur les espérances</h4>
+<p class="project-meta">
+<strong><a href="https://cordis.europa.eu/project/id/101164093">ERC Starting Grant FoRECAST, financement 101164093</a>:</strong> <em>Formalised Reasoning about Expectations: Composable, Automated, Speedy, Trustworthy</em>. Période du projet : de 2025 à 2030.
+                        <span class="project-role"><span class="label">Responsable scientifique :</span> <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</span>
+</p>
+<ul class="project-lines">
+<li><span class="label">Mon rôle :</span> collaborateur scientifique et codirecteur de thèse.</li>
+<li><span class="label">Ma contribution scientifique :</span> fondements catégoriques de la programmation probabiliste et différentiable, notamment la différentiation automatique en mode inverse pour les types variants et les langages avec effets.</li>
+<li><span class="label">Encadrement :</span> codirection de la thèse de <a href="https://www.uu.nl/staff/DLSimmSallesVianna">Diogo Simm</a> avec <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</li>
+</ul>
+<p class="tags"><span>informatique</span><span>méthodes formelles</span><span>programmation probabiliste</span><span>différentiation automatique</span></p>
+</li>
+<li class="project">
+<h4 class="project-title">Programmation et raisonnement d’ordre supérieur fondés sur les monades</h4>
+<p class="project-meta">
+<strong>Projet DFG HOMBRe :</strong> <em>Higher-Order Monad-based Programming and Reasoning</em>.
+                        <span class="project-role"><span class="label">Responsable scientifique :</span> <a href="https://sergey-goncharov.org/">Sergey Goncharov</a>.</span>
+</p>
+<ul class="project-lines">
+<li><span class="label">Mon rôle :</span> Chercheur ; le poste a pris fin en mars 2026.</li>
+</ul></li>
+<li class="project">
+<h4 class="project-title">Programmation différentielle expressive et correcte</h4>
+<p class="project-meta">
+<strong>Financement NWO Veni VI.Veni.202.124 :</strong> <em>Correct Expressive Differential Programming: Laying the Mathematical Foundations for Tomorrow's Machine Learning</em>. Période du projet : de 2021 à 2024.
+                        <span class="project-role"><span class="label">Responsable scientifique :</span> <a href="https://www.uu.nl/staff/MILVakar">Matthijs Vákár</a>.</span>
+</p>
+<ul class="project-lines">
+<li><span class="label">Ma contribution :</span> direction des recherches sur CHAD itératif et établissement de résultats de correction pour la différentiation automatique avec des fonctionnalités partielles et des types récursifs.</li>
+</ul>
+<p class="tags"><span>différentiation automatique</span><span>récursion</span><span>relations logiques</span><span>correction des logiciels</span></p>
+</li>
+</ul>
+</section>
+</main>
+<p class="translation-origin"><a href="/Some_projects.html" hreflang="en" lang="en">Lire la version originale en anglais</a></p></div>
+</body>
+</html>
+
