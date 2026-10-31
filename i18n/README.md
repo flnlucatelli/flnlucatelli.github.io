@@ -4,6 +4,7 @@ The root HTML pages are the canonical English sources. The ten pages listed in
 `pages.json` have Dutch, French, German, Italian and European Portuguese editions.
 Publication titles, proper names and source documents retain their original wording.
 Detailed teaching and event archives remain at their existing URLs.
+In Portuguese, use “ciência da computação” consistently for “computer science”.
 
 After editing an English page:
 
@@ -26,14 +27,22 @@ based on their browser language. The language menu works without JavaScript.
 
 ## Doctoral artwork and genealogy sources
 
-- The computer-science image is the author's supplied thesis cover. Its epigraph
+- The computer-science illustration is inspired by the author's supplied thesis
+  cover, without its typography, and incorporates Utrecht University's Academiegebouw.
+  The architecture reference is the photograph on the university's
+  [visitor information page](https://www.uu.nl/en/organisation/utrecht-university-hall/visitor-information).
+  Its epigraph
   comes from the introduction to *Freely Generated Categorical Structures and
   Automatic Differentiation*: “theory and practice in computer science should
   inform one another” (initial capitalization adjusted for display).
 - The mathematics epigraph is an editorial adaptation of the author's requested
-  wording, not a verbatim quotation from *Pseudomonads and Descent*. The abstract
-  artwork was generated for this site, drawing on paths, surfaces and the geometry
-  of Portuguese tiles. It is an artistic composition rather than a technical diagram.
+  wording, not a verbatim quotation from *Pseudomonads and Descent*. The artwork
+  returns to the original Portuguese azulejo composition, with architectural
+  references to Coimbra and Porto. Unlabelled triangle and coherence-square
+  diagrams are drawn separately as SVG in the clear central area. The illustration
+  contains no equations or letter labels.
+  Architectural references: [Coimbra's Via Latina](https://europeanheritageawards-archive.eu/laureates-1978-2022/detail/via-latina-coimbra)
+  and [Porto's historic buildings](https://www.up.pt/portal/pt/conhecer/cultura-museus-e-patrimonio/edificios-historicos/).
 - `assets/genealogy/lucatellinunes.pdf` is adapted from the supplied Mathematics
   Genealogy Project chart. The author's entry distinguishes the University of
   Coimbra as the awarding university for the 2018 mathematics doctorate from the

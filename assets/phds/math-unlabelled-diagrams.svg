@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
+  <title>Unlabelled categorical triangle and coherence square</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M2 1 10 5 2 9" fill="none" stroke="#234e70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <g fill="none" stroke="#234e70" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M200 210 H398"/>
+    <path d="M195 222 292 355"/>
+    <path d="M405 222 308 355"/>
+    <path d="M283 278 H318"/><path d="M283 286 H318"/>
+    <path d="M200 430 H398"/>
+    <path d="M190 441 V539"/>
+    <path d="M410 441 V539"/>
+    <path d="M200 550 H398"/>
+    <path d="M279 486 H322"/><path d="M279 494 H322"/>
+  </g>
+  <g fill="#faf6e9" stroke="#234e70" stroke-width="2.4">
+    <circle cx="190" cy="210" r="5.5"/><circle cx="410" cy="210" r="5.5"/><circle cx="300" cy="367" r="5.5"/>
+    <circle cx="190" cy="430" r="5.5"/><circle cx="410" cy="430" r="5.5"/>
+    <circle cx="190" cy="550" r="5.5"/><circle cx="410" cy="550" r="5.5"/>
+  </g>
+</svg>
