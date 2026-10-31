@@ -1,26 +1,27 @@
-.doctoral-page > main { padding: 42px !important; }
-.doctoral-intro { margin-bottom: 32px !important; }
-.doctoral-page .doctoral-intro h2 { margin-bottom: 10px !important; padding-bottom: 0 !important; border: 0 !important; font-size: clamp(34px, 5vw, 49px) !important; }
+.doctoral-page > main { padding: 34px 42px !important; }
+.doctoral-intro { margin-bottom: 24px !important; }
+.doctoral-page .doctoral-intro h2 { margin-bottom: 8px !important; padding-bottom: 0 !important; border: 0 !important; font-size: clamp(32px, 4.5vw, 42px) !important; }
 .doctoral-intro-line { margin: 0; color: var(--muted); font: 17px/1.6 var(--serif); }
-.doctoral-list { display: grid; gap: 28px; }
-.doctoral-card { display: grid; grid-template-columns: minmax(220px, 34%) minmax(0, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: 4px; background: #fcfcf9; text-decoration: none !important; transition: border-color .2s ease, box-shadow .2s ease; }
+.doctoral-list { display: grid; gap: 22px; }
+.doctoral-card { display: grid; grid-template-columns: 220px minmax(0, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: 4px; background: #fcfcf9; text-decoration: none !important; transition: border-color .2s ease, box-shadow .2s ease; }
 .doctoral-card:hover { border-color: #91aba9; box-shadow: 0 8px 24px rgba(21,50,74,.07); }
 .doctoral-card:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; }
-.doctoral-art { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; min-width: 0; background: #eceee8; border-right: 1px solid var(--line); }
-.mathematics-art, .computer-science-art { background: #f4efe5; }
-.artwork-frame { position: relative; width: 100%; }
-.doctoral-artwork { display: block; width: 100%; height: auto; }
+.doctoral-art { --artwork-width: 180px; position: relative; display: flex; align-items: center; justify-content: center; min-width: 0; padding: 20px; background: #f7f5ef; border-right: 1px solid var(--line); }
+/* Size the mathematics frame and the CS portrait alike, keeping the overlay aligned. */
+.artwork-frame, .doctoral-art > .doctoral-artwork { width: min(100%, var(--artwork-width)); flex: 0 1 var(--artwork-width); }
+.artwork-frame { position: relative; }
+.doctoral-artwork { display: block; width: 100%; height: auto; object-fit: contain; }
 .mathematical-diagrams { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.doctoral-copy { display: flex; flex-direction: column; padding: 29px 32px 26px; min-width: 0; }
-.doctoral-card-topline { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-bottom: 13px; color: var(--teal); font: 700 10px/1.5 var(--sans); letter-spacing: .11em; text-transform: uppercase; }
-.doctoral-year { color: #728088; font-weight: 500; font-size: 11px; letter-spacing: .06em; }
-.doctoral-page .doctoral-card h3 { margin: 0 0 16px !important; color: var(--navy) !important; font: 500 clamp(27px, 3.1vw, 34px)/1.13 var(--serif) !important; letter-spacing: -.025em; }
+.doctoral-copy { display: flex; flex-direction: column; padding: 24px 28px; min-width: 0; }
+.doctoral-card-topline { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-bottom: 10px; color: var(--teal); font: 700 10px/1.5 var(--sans); letter-spacing: .11em; text-transform: uppercase; }
+.doctoral-year { flex-shrink: 0; color: #728088; font-weight: 500; font-size: 11px; letter-spacing: .06em; }
+.doctoral-page .doctoral-card h3 { margin: 0 0 12px !important; color: var(--navy) !important; font: 500 clamp(27px, 2.6vw, 30px)/1.15 var(--serif) !important; letter-spacing: -.025em; }
 .doctoral-institution { margin: 0 0 3px; color: var(--navy); font: 600 12px/1.6 var(--sans); }
 .doctoral-programme { margin: 0; color: var(--muted); font: 11px/1.6 var(--sans); }
-.doctoral-facts { display: grid; gap: 5px; margin-top: 20px; padding-top: 15px; border-top: 1px solid #e2e5df; }
-.doctoral-facts p { display: grid; grid-template-columns: 79px minmax(0, 1fr); gap: 14px; margin: 0; color: #54656e; font: 11px/1.6 var(--sans); }
+.doctoral-facts { display: grid; gap: 4px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #e2e5df; }
+.doctoral-facts p { display: grid; grid-template-columns: minmax(79px, max-content) minmax(0, 1fr); gap: 14px; margin: 0; color: #54656e; font: 11px/1.6 var(--sans); }
 .doctoral-fact-label { color: #7b868c; }
-.doctoral-epigraph { margin: 24px 0; color: #47665f; font: italic 20px/1.38 var(--serif); max-width: 440px; }
+.doctoral-epigraph { margin: 18px 0; color: #47665f; font: italic 19px/1.4 var(--serif); max-width: 560px; }
 .doctoral-link { display: flex; align-items: center; gap: 15px; margin-top: auto; color: var(--teal); font: 650 11px/1.6 var(--sans); }
 .doctoral-link > span { font-size: 18px; transition: transform .2s ease; }
 .doctoral-card:hover .doctoral-link > span { transform: translate(2px,-2px); }
@@ -28,22 +29,23 @@
 .doctoral-genealogy a { text-decoration: none; }
 .doctoral-genealogy a:hover { text-decoration: underline; }
 @media (max-width: 820px) {
-  .doctoral-page > main { padding: 32px 26px !important; }
-  .doctoral-card { grid-template-columns: minmax(175px, 32%) minmax(0, 1fr); }
+  .doctoral-page > main { padding: 30px 26px !important; }
+  .doctoral-card { grid-template-columns: 180px minmax(0, 1fr); }
+  .doctoral-art { --artwork-width: 150px; padding: 15px; }
   .doctoral-copy { padding: 24px; }
   .doctoral-page .doctoral-card h3 { font-size: 28px !important; }
 }
 @media (max-width: 600px) {
   .doctoral-page > main { padding: 29px 20px !important; }
   .doctoral-card { grid-template-columns: 1fr; }
-  .doctoral-art { border-right: 0; border-bottom: 1px solid var(--line); min-height: 0; }
-  .doctoral-copy { padding: 24px; }
-  .doctoral-page .doctoral-card h3 { font-size: 30px !important; }
-  .doctoral-epigraph { margin: 23px 0; }
+  .doctoral-art { --artwork-width: 140px; padding: 16px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .doctoral-copy { padding: 21px; }
+  .doctoral-page .doctoral-card h3 { font-size: 27px !important; }
+  .doctoral-facts p { grid-template-columns: minmax(0, 86px) minmax(0, 1fr); gap: 10px; }
+  .doctoral-epigraph { font-size: 18px; }
   .doctoral-genealogy { justify-content: flex-start; }
 }
 @media print {
   .doctoral-card { break-inside: avoid; }
   .doctoral-page > main { padding: 20px !important; }
 }
-
