@@ -1,0 +1,3 @@
+Rule(antecedent=A, conclusion=B)
+true
+false

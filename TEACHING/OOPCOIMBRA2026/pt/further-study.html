@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Apontamentos de aprofundamento: Kotlin, object-oriented programming, examples and exercises."><title>Dos objetos aos programas · Fernando Lucatelli Nunes</title><link rel="stylesheet" href="../../assets/teaching.css"><style>
+:root{--paper:#f7f5ef;--ink:#172b3a;--muted:#526574;--teal:#087c77;--line:#d8ded9;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;line-height:1.65}a{color:var(--teal);text-underline-offset:.2em}.fs-header{border-bottom:1px solid var(--line);background:#fffdf8}.fs-header>div{max-width:1200px;margin:auto;display:flex;gap:2rem;justify-content:space-between;padding:1.1rem 2rem;align-items:center}.fs-header nav{display:flex;gap:1.2rem;flex-wrap:wrap}.fs-header a{font-size:.94rem;text-decoration:none}.fs-brand{font-weight:700;color:var(--ink)}.fs-wrap{max-width:1200px;margin:auto;padding:3rem 2rem 5rem}.fs-eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--teal);font-size:.75rem;font-weight:700}.fs-hero{max-width:850px;margin-bottom:2.5rem}.fs-hero h1{font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:clamp(2.5rem,5vw,4rem);line-height:1.12;margin:.6rem 0 1.4rem}.fs-hero p{font-size:1.13rem;color:var(--muted)}.fs-layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:3.2rem}.fs-toc{position:sticky;top:1.5rem;align-self:start;font-size:.92rem}.fs-toc ol{list-style:none;margin:0;padding:0;counter-reset:chapter}.fs-toc li{counter-increment:chapter;margin:.2rem 0}.fs-toc a{display:flex;gap:.8rem;padding:.6rem 0;text-decoration:none;color:var(--muted)}.fs-toc a:before{content:counter(chapter,decimal-leading-zero);color:var(--teal);font-size:.8rem;padding-top:.1rem}.fs-toc a:hover{color:var(--teal)}.fs-article{min-width:0}.fs-chapter{padding-bottom:3.3rem;margin-bottom:3.2rem;border-bottom:1px solid var(--line);scroll-margin-top:2rem}.fs-chapter h2{font-family:"Source Serif 4",Georgia,serif;font-size:2rem;font-weight:500;line-height:1.25;margin:.4rem 0 1rem}.fs-chapter h3{font-size:1rem;margin:1.7rem 0 .5rem}.fs-chapter p{margin:.85rem 0}.fs-related{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--teal)}.fs-intro{font-size:1.08rem}.fs-chapter code{font-family:var(--mono);font-size:.88em;background:#eaece6;padding:.1em .25em;border-radius:3px}.fs-code{background:#142b39;color:#edf3f3;border-radius:9px;overflow:hidden;margin:1.5rem 0}.fs-code-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.65rem 1rem;background:#203a48;font-family:var(--mono);font-size:.75rem;flex-wrap:wrap}.fs-code-head a{color:#b3e2d5}.fs-code pre{margin:0;padding:1.25rem;overflow:auto;tab-size:4;line-height:1.55}.fs-code code{color:inherit;padding:0;background:none;font-size:.82rem}.fs-code-actions{display:flex;gap:.8rem;align-items:center}.fs-copy{font:inherit;border:1px solid #62808b;border-radius:4px;background:none;color:#edf3f3;padding:.25rem .55rem;cursor:pointer}.fs-output{border-left:3px solid var(--teal);background:#eaf0e9;padding:1rem 1.25rem;overflow:auto;white-space:pre-wrap;font-family:var(--mono);font-size:.86rem;line-height:1.6}.fs-exercise{border:1px solid var(--line);background:#fffdf8;border-radius:8px;padding:1.1rem 1.4rem;margin-top:1.5rem}.fs-exercise h3{margin:.1rem 0}.fs-exercise details{margin-top:1rem}.fs-exercise summary{cursor:pointer;color:var(--teal);font-weight:600}.fs-docs{font-size:.84rem;color:var(--muted);margin-top:1rem}.fs-docs a{margin-right:.7rem}.fs-note{font-size:.94rem;border-left:3px solid #b08b56;padding:.4rem 0 .4rem 1rem;margin:1.5rem 0;color:var(--muted)}.fs-model{border:1px solid var(--line);border-radius:9px;padding:1.5rem;background:#fffdf8;margin:1.7rem 0}.fs-model h3{margin:0 0 .5rem}.fs-model select,.fs-model input{font:inherit;border:1px solid #aabcb8;border-radius:5px;background:#fff;color:var(--ink);padding:.45rem;max-width:100%}.fs-model button{font:inherit;padding:.45rem .8rem;border-radius:5px;border:1px solid var(--teal);background:var(--teal);color:white;cursor:pointer}.fs-model button.secondary{background:white;color:var(--teal)}.fs-controls{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center;margin:1rem 0}.fs-model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}.fs-model-card{background:#edf2ed;border-radius:5px;padding:.7rem;font-size:.85rem;overflow-wrap:anywhere}.fs-model-card b{display:block;color:var(--teal);font-family:var(--mono)}.fs-model output{display:block;margin:.6rem 0;color:var(--muted);min-height:1.7em}.fs-meter{height:12px;background:#e1e8e3;border-radius:10px;overflow:hidden}.fs-meter span{display:block;background:var(--teal);height:100%;width:0;transition:width .15s ease}.fs-footer{max-width:1200px;margin:auto;padding:1.5rem 2rem;border-top:1px solid var(--line);font-size:.87rem;color:var(--muted)}.fs-skip{position:absolute;top:-4rem;left:1rem;background:white;padding:.7rem;z-index:10}.fs-skip:focus{top:.5rem}:focus-visible{outline:3px solid #c7984e;outline-offset:4px}@media(max-width:800px){.fs-layout{grid-template-columns:1fr;gap:2rem}.fs-toc{position:static}.fs-toc ol{columns:2;column-gap:1.3rem}.fs-wrap{padding:2rem 1rem}.fs-header>div{padding:1rem;align-items:flex-start;gap:1rem}.fs-header nav{gap:.7rem}.fs-chapter h2{font-size:1.7rem}.fs-model{padding:1rem}}@media(max-width:440px){.fs-toc ol{columns:1}.fs-model-grid{grid-template-columns:1fr}.fs-code-head{font-size:.69rem}.fs-code pre{padding:1rem}.fs-code code{font-size:.74rem}}@media print{.fs-header,.fs-toc,.fs-controls,.fs-code-actions,.fs-model,.fs-skip{display:none}.fs-layout{display:block}.fs-wrap{padding:0}.fs-chapter{break-before:page}.fs-code{background:#fff;color:#000;border:1px solid #aaa}.fs-code-head{background:#eee}.fs-code pre{white-space:pre-wrap}details{display:block}details>*{display:block}}
+</style></head><body><a class="fs-skip" href="#content">Saltar para o conteúdo</a><header class="fs-header"><div><a class="fs-brand" href="../../index.html">Fernando Lucatelli Nunes <span aria-hidden="true">/</span> Teaching</a><nav aria-label="Navigation"><a href="../index.html">Object-Oriented Programming</a><a href="index.html">Diapositivos</a><a href="../en/further-study.html" lang="en" hreflang="en">English</a></nav></div></header><main class="fs-wrap" id="content"><header class="fs-hero"><div class="fs-eyebrow">Kotlin · Apontamentos de aprofundamento</div><h1>Dos objetos aos programas</h1><p>Retomo aqui os conceitos dos diapositivos e desenvolvo-os em pequenos programas completos. O fio condutor é a relação entre os dados de um objeto, as operações que oferece e as condições que deve preservar.</p><div class="fs-note">Execute um ficheiro de cada vez. Antes de executar, antecipe a saída; depois, altere um caso e explique a diferença. Os exemplos são independentes e podem repetir nomes de classes.</div></header><div class="fs-layout"><nav class="fs-toc" aria-label="Percurso"><div class="fs-eyebrow">Percurso</div><ol><li><a href="#copy">Copiar um objeto e separar o seu estado</a></li><li><a href="#choices">Escolher entre enum, object e companion object</a></li><li><a href="#room">Encapsulamento: preservar a capacidade de uma sala</a></li><li><a href="#interfaces">Uma interface, duas formas de apresentar os mesmos dados</a></li><li><a href="#input">Ler um pedido sem confundir ausência, texto e número</a></li><li><a href="#checks">Testar operações e invariantes</a></li><li><a href="#outcomes">Continuação: representar resultados com dados diferentes</a></li></ol></nav><article class="fs-article"><section class="fs-chapter" id="copy"><div class="fs-related">01 / Diapositivos relacionados 37–40</div><h2>Copiar um objeto e separar o seu estado</h2><p class="fs-intro">Uma nova instância pode continuar a partilhar os objetos que guarda. Antes de escolher uma operação de cópia, identifique o estado que deve permanecer comum e o estado que deve evoluir separadamente.</p><div class="fs-code"><div class="fs-code-head"><span>01_Copy.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-1-main" type="button">Copiar</button><a href="../code/pt/extension/01_Copy.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-1-main">data class Group(val names: MutableList&lt;String&gt;)
+
+fun main() {
+    val original = Group(mutableListOf(&quot;Ana&quot;))
+    val shared = original.copy()
+    val separate = original.copy(names = original.names.toMutableList())
+    shared.names.add(&quot;Rui&quot;)
+    separate.names.add(&quot;Eva&quot;)
+    println(original.names)
+    println(shared.names)
+    println(separate.names)
+    println(original === shared)
+    println(original.names === shared.names)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">[Ana, Rui]
+[Ana, Rui]
+[Ana, Eva]
+false
+true</pre><p>A primeira chamada a <code>copy()</code> cria outro <code>Group</code>, mas mantém a referência à lista. A segunda recebe um argumento nomeado, <code>names = ...</code>, que substitui esse componente por uma lista criada com <code>toMutableList()</code>.</p><p><code>MutableList&lt;String&gt;</code> é uma lista modificável de textos; <code>&lt;String&gt;</code> indica o tipo dos elementos. <code>add</code> modifica a lista. As variáveis são <code>val</code>: não podemos reatribuir-lhes outras referências, mas podemos usar as operações de alteração dos objetos referidos.</p><p><code>===</code> compara identidade. As duas últimas linhas mostram que os objetos exteriores são distintos, embora um componente seja partilhado. Aqui, os elementos são textos imutáveis. Para elementos que sejam objetos mutáveis, copiar a lista não copia esses objetos: seria necessário decidir como copiar também cada elemento.</p><div class="fs-model" id="copy-model"><h3>Experimente as referências</h3><p>Este modelo acompanha as listas do exemplo. Escolha o tipo de cópia e acrescente nomes através de shared ou separate.</p><label for="copy-mode">Como construir shared?</label><select id="copy-mode"><option value="shared">copy(): lista partilhada</option><option value="separate">copy(names = …toMutableList()): lista separada</option></select><div class="fs-controls"><label for="copy-name">Nome</label><input id="copy-name" value="Rui" maxlength="30"><button id="add-shared" type="button">Acrescentar a shared</button><button id="add-separate" type="button">Acrescentar a separate</button><button id="reset-copy" class="secondary" type="button">Recomeçar</button></div><div class="fs-model-grid"><div class="fs-model-card"><b>original.names</b><span id="original-list"></span></div><div class="fs-model-card"><b>shared.names</b><span id="shared-list"></span></div><div class="fs-model-card"><b>separate.names</b><span id="separate-list"></span></div></div><output id="copy-status" aria-live="polite"></output></div><div class="fs-exercise"><h3>Exercício</h3><p>Faça com que as três listas evoluam separadamente. Depois de acrescentar Rui e Eva, a lista de original deve continuar a conter apenas Ana.</p><details><summary>Ver resolução</summary><p>Crie uma lista separada também para shared. O restante programa pode manter-se.</p><div class="fs-code"><div class="fs-code-head"><span>01_Copy_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-1-solution" type="button">Copiar</button><a href="../code/pt/extension/01_Copy_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-1-solution">data class Group(val names: MutableList&lt;String&gt;)
+
+fun main() {
+    val original = Group(mutableListOf(&quot;Ana&quot;))
+    val shared = original.copy(names = original.names.toMutableList())
+    val separate = original.copy(names = original.names.toMutableList())
+    shared.names.add(&quot;Rui&quot;)
+    separate.names.add(&quot;Eva&quot;)
+    println(original.names)
+    println(shared.names)
+    println(separate.names)
+    println(original === shared)
+    println(original.names === shared.names)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">[Ana]
+[Ana, Rui]
+[Ana, Eva]
+false
+false</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/data-classes.html" target="_blank" rel="noopener">Data classes ↗</a> <a href="https://kotlinlang.org/docs/collections-overview.html" target="_blank" rel="noopener">Collections ↗</a></p></section><section class="fs-chapter" id="choices"><div class="fs-related">02 / Diapositivos relacionados 43–67</div><h2>Escolher entre enum, object e companion object</h2><p class="fs-intro">Estas construções respondem a necessidades diferentes: alternativas fixas, uma instância partilhada e operações associadas à construção de instâncias. O exemplo reúne as três sem confundir as suas responsabilidades.</p><div class="fs-code"><div class="fs-code-head"><span>02_Construction.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-2-main" type="button">Copiar</button><a href="../code/pt/extension/02_Construction.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-2-main">enum class RoomKind(val seats: Int) {
+    SEMINAR(12), LAB(24)
+}
+
+object BookingRules {
+    const val MAX_MINUTES = 120
+    fun accepts(minutes: Int): Boolean = minutes in 1..MAX_MINUTES
+}
+
+class Booking private constructor(val minutes: Int) {
+    companion object {
+        fun create(minutes: Int): Booking {
+            require(BookingRules.accepts(minutes))
+            return Booking(minutes)
+        }
+    }
+}
+
+fun main() {
+    val first = Booking.create(45)
+    val second = Booking.create(45)
+    println(RoomKind.SEMINAR.seats)
+    println(first.minutes)
+    println(first === second)
+    println(BookingRules.accepts(121))
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">12
+45
+false
+false</pre><p><code>RoomKind</code> admite duas constantes, cada uma com uma capacidade. <code>SEMINAR(12)</code> fornece 12 ao parâmetro <code>seats</code>. O tipo é útil quando as alternativas são conhecidas e fixas.</p><p><code>object BookingRules</code> disponibiliza uma instância partilhada. <code>const val</code> declara uma constante conhecida em compilação; aqui, o limite é um inteiro. <code>in 1..MAX_MINUTES</code> testa um intervalo com ambos os extremos incluídos.</p><p><code>private constructor</code> impede a construção direta a partir do código exterior. <code>Booking.create(45)</code> chama a função do <code>companion object</code>; essa função verifica o argumento e chama o construtor. Cada chamada bem-sucedida cria uma nova reserva. O companion é partilhado; as reservas não são a mesma instância.</p><p>A regra foi escolhida apenas para este exemplo. No projeto, os limites devem resultar do problema que está a modelar.</p><div class="fs-exercise"><h3>Exercício</h3><p>Acrescente uma alternativa AUDITORIUM com 80 lugares e apresente o seu número de lugares. Mantenha as restantes linhas da saída.</p><details><summary>Ver resolução</summary><p>Acrescente a constante à enumeração e consulte a sua propriedade seats.</p><div class="fs-code"><div class="fs-code-head"><span>02_Construction_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-2-solution" type="button">Copiar</button><a href="../code/pt/extension/02_Construction_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-2-solution">enum class RoomKind(val seats: Int) {
+    SEMINAR(12), LAB(24), AUDITORIUM(80)
+}
+
+object BookingRules {
+    const val MAX_MINUTES = 120
+    fun accepts(minutes: Int): Boolean = minutes in 1..MAX_MINUTES
+}
+
+class Booking private constructor(val minutes: Int) {
+    companion object {
+        fun create(minutes: Int): Booking {
+            require(BookingRules.accepts(minutes))
+            return Booking(minutes)
+        }
+    }
+}
+
+fun main() {
+    val first = Booking.create(45)
+    val second = Booking.create(45)
+    println(RoomKind.AUDITORIUM.seats)
+    println(RoomKind.SEMINAR.seats)
+    println(first.minutes)
+    println(first === second)
+    println(BookingRules.accepts(121))
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">80
+12
+45
+false
+false</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/enum-classes.html" target="_blank" rel="noopener">Enum classes ↗</a> <a href="https://kotlinlang.org/docs/object-declarations.html" target="_blank" rel="noopener">Object declarations ↗</a></p></section><section class="fs-chapter" id="room"><div class="fs-related">03 / Diapositivos relacionados 12–28</div><h2>Encapsulamento: preservar a capacidade de uma sala</h2><p class="fs-intro">Neste modelo, uma reserva ocupa um número de lugares numa sala. Não modelamos horários nem reservas simultâneas de salas completas. A propriedade central é simples: a ocupação deve permanecer entre zero e a capacidade.</p><div class="fs-code"><div class="fs-code-head"><span>03_Room.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-3-main" type="button">Copiar</button><a href="../code/pt/extension/03_Room.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-3-main">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    println(room.reserve(2))
+    println(room.reserve(2))
+    room.release(1)
+    println(room.occupied)
+    println(room.available)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">true
+false
+1
+2</pre><p><code>init</code> executa durante a construção. <code>require(capacity &gt; 0)</code> rejeita uma capacidade inválida. A capacidade é uma propriedade <code>val</code>; a ocupação é uma propriedade <code>var</code> cujo <code>private set</code> impede alterações a partir de fora da classe.</p><p><code>available</code> tem um getter calculado: cada leitura devolve <code>capacity - occupied</code>. Evitamos guardar um segundo estado que teria de ser atualizado em conjunto com a ocupação.</p><p><code>reserve</code> distingue um argumento inválido, rejeitado por <code>require</code>, de um pedido positivo que não cabe, comunicado por <code>false</code>. A comparação ocorre antes da alteração. Em caso de sucesso, <code>occupied += places</code> soma os lugares e <code>return true</code> termina a chamada.</p><p><code>release</code> só aceita um número de lugares entre 1 e a ocupação atual. Assim, uma libertação não pode produzir ocupação negativa. Este modelo pressupõe execução sequencial; a classe não acrescenta sincronização para acesso concorrente.</p><div class="fs-model" id="room-model"><h3>Experimente o estado da sala</h3><p>Modelo sequencial de Room(6). Cada pedido aplica as mesmas verificações do programa.</p><div class="fs-controls"><label for="room-places">Lugares</label><input id="room-places" type="number" value="2" min="1" max="99" step="1"><button id="room-reserve" type="button">Reservar</button><button id="room-release" class="secondary" type="button">Libertar</button><button id="room-reset" class="secondary" type="button">Recomeçar</button></div><div class="fs-meter" role="img" id="room-meter"><span></span></div><p id="room-state"></p><output id="room-status" aria-live="polite"></output></div><div class="fs-exercise"><h3>Exercício</h3><p>Acrescente uma propriedade isFull que indique se a sala está cheia, sem guardar outro Boolean. Mostre o resultado antes e depois de reservar todos os lugares.</p><details><summary>Ver resolução</summary><p>Use um getter para comparar occupied com capacity.</p><div class="fs-code"><div class="fs-code-head"><span>03_Room_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-3-solution" type="button">Copiar</button><a href="../code/pt/extension/03_Room_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-3-solution">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    val isFull: Boolean
+        get() = occupied == capacity
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    println(room.isFull)
+    room.reserve(3)
+    println(room.isFull)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">false
+true</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/properties.html" target="_blank" rel="noopener">Properties ↗</a> <a href="https://kotlinlang.org/docs/exceptions.html" target="_blank" rel="noopener">Exceptions and preconditions ↗</a></p></section><section class="fs-chapter" id="interfaces"><div class="fs-related">04 / Diapositivos relacionados 68–85</div><h2>Uma interface, duas formas de apresentar os mesmos dados</h2><p class="fs-intro">O código que pede um relatório não precisa de decidir como esse relatório é escrito. A interface fixa a operação disponível; cada implementação determina o resultado.</p><div class="fs-code"><div class="fs-code-head"><span>04_Reports.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-4-main" type="button">Copiar</button><a href="../code/pt/extension/04_Reports.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-4-main">data class RoomSummary(val name: String, val available: Int)
+
+interface RoomReport {
+    fun render(room: RoomSummary): String
+}
+
+object CompactReport : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;${room.name}: ${room.available}&quot;
+}
+
+class SentenceReport(val prefix: String) : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;$prefix ${room.name} tem ${room.available} lugares disponíveis.&quot;
+}
+
+fun show(room: RoomSummary, report: RoomReport) {
+    println(report.render(room))
+}
+
+fun main() {
+    val room = RoomSummary(&quot;A1&quot;, 3)
+    show(room, CompactReport)
+    show(room, SentenceReport(&quot;Sala&quot;))
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">A1: 3
+Sala A1 tem 3 lugares disponíveis.</pre><p><code>RoomSummary</code> reúne os dados necessários para o relatório. <code>RoomReport</code> declara uma função que recebe esses dados e devolve uma <code>String</code>. A interface não guarda a ocupação da sala.</p><p>Os dois pontos em <code>: RoomReport</code> indicam implementação da interface. <code>override</code> assinala a implementação da operação declarada. <code>CompactReport</code> não precisa de configuração por instância; <code>SentenceReport</code> guarda um prefixo recebido no construtor.</p><p><code>show</code> recebe o tipo da interface. A mesma chamada <code>report.render(room)</code> executa a implementação do objeto recebido. As expressões <code>${...}</code> inserem valores calculados no texto; <code>$prefix</code> insere o valor da variável.</p><p>A operação devolve texto; a função <code>show</code> apresenta-o. Esta separação permite comparar resultados em testes sem depender da consola.</p><div class="fs-exercise"><h3>Exercício</h3><p>Implemente um relatório CsvReport que devolva A1,3 para os mesmos dados. Acrescente uma chamada a show sem alterar a função show.</p><details><summary>Ver resolução</summary><p>A nova implementação satisfaz o mesmo contrato; show continua a receber RoomReport.</p><div class="fs-code"><div class="fs-code-head"><span>04_Reports_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-4-solution" type="button">Copiar</button><a href="../code/pt/extension/04_Reports_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-4-solution">data class RoomSummary(val name: String, val available: Int)
+
+interface RoomReport {
+    fun render(room: RoomSummary): String
+}
+
+object CompactReport : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;${room.name}: ${room.available}&quot;
+}
+
+class SentenceReport(val prefix: String) : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;$prefix ${room.name} tem ${room.available} lugares disponíveis.&quot;
+}
+
+fun show(room: RoomSummary, report: RoomReport) {
+    println(report.render(room))
+}
+
+object CsvReport : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;${room.name},${room.available}&quot;
+}
+
+fun main() {
+    val room = RoomSummary(&quot;A1&quot;, 3)
+    show(room, CsvReport)
+    show(room, CompactReport)
+    show(room, SentenceReport(&quot;Sala&quot;))
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">A1,3
+A1: 3
+Sala A1 tem 3 lugares disponíveis.</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/interfaces.html" target="_blank" rel="noopener">Interfaces ↗</a></p></section><section class="fs-chapter" id="input"><div class="fs-related">05 / Diapositivos relacionados 86–88</div><h2>Ler um pedido sem confundir ausência, texto e número</h2><p class="fs-intro">A entrada do utilizador começa por ser texto. Converter esse texto e verificar o seu significado são passos diferentes. Uma função pequena permite testar ambos sem depender da leitura da consola.</p><div class="fs-code"><div class="fs-code-head"><span>05_Input.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-5-main" type="button">Copiar</button><a href="../code/pt/extension/05_Input.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-5-main">fun parsePlaces(text: String?): Int? {
+    val places = text?.trim()?.toIntOrNull() ?: return null
+    if (places &lt;= 0) return null
+    return places
+}
+
+fun main() {
+    val inputs: List&lt;String?&gt; = listOf(&quot; 2 &quot;, &quot;two&quot;, &quot;0&quot;, null)
+    for (text in inputs) {
+        val places = parsePlaces(text)
+        println(places ?: &quot;Entrada inválida&quot;)
+    }
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">2
+Entrada inválida
+Entrada inválida
+Entrada inválida</pre><p><code>String?</code> admite texto ou <code>null</code>; <code>Int?</code> admite um inteiro ou <code>null</code>. Neste exemplo, o resultado nulo representa um pedido que não foi possível interpretar como um número positivo de lugares.</p><p><code>?.</code> só chama a operação seguinte quando existe um valor. <code>trim()</code> remove espaços exteriores; <code>toIntOrNull()</code> tenta converter o texto para um <code>Int</code> e devolve <code>null</code> quando a conversão falha, incluindo valores fora do intervalo de <code>Int</code>.</p><p><code>?: return null</code> termina imediatamente a função quando a cadeia anterior produz <code>null</code>. Depois dessa linha, <code>places</code> é um <code>Int</code>. A verificação seguinte trata o significado do número: zero e valores negativos não são pedidos válidos neste modelo.</p><p><code>List&lt;String?&gt;</code> é uma lista cujos elementos podem ser nulos. <code>for (text in inputs)</code> percorre-os. Na apresentação, <code>places ?: "Entrada inválida"</code> escolhe uma mensagem quando falta um resultado.</p><div class="fs-exercise"><h3>Exercício</h3><p>Substitua a lista de exemplos por uma única linha lida com readlnOrNull(). Se o pedido for válido, apresente Pedido: seguido do número; caso contrário, apresente Entrada inválida.</p><details><summary>Ver resolução</summary><p>readlnOrNull() lê uma linha e pode devolver null no fim da entrada. Execute esta variante num ambiente Kotlin/JVM com entrada padrão; fornecendo a linha 2, obtém a saída abaixo.</p><div class="fs-code"><div class="fs-code-head"><span>05_Input_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-5-solution" type="button">Copiar</button><a href="../code/pt/extension/05_Input_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-5-solution">fun parsePlaces(text: String?): Int? {
+    val places = text?.trim()?.toIntOrNull() ?: return null
+    if (places &lt;= 0) return null
+    return places
+}
+
+fun main() {
+    println(&quot;Número de lugares:&quot;)
+    val places = parsePlaces(readlnOrNull())
+    if (places == null) {
+        println(&quot;Entrada inválida&quot;)
+        return
+    }
+    println(&quot;Pedido: $places&quot;)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">Número de lugares:
+Pedido: 2</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/null-safety.html" target="_blank" rel="noopener">Null safety ↗</a> <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.text/to-int-or-null.html" target="_blank" rel="noopener">toIntOrNull ↗</a> <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.io/readln-or-null.html" target="_blank" rel="noopener">readlnOrNull ↗</a></p></section><section class="fs-chapter" id="checks"><div class="fs-related">06 / Diapositivos relacionados 18–28</div><h2>Testar operações e invariantes</h2><p class="fs-intro">Um exemplo de utilização mostra um percurso. Um teste acrescenta uma expectativa explícita sobre o resultado e o estado final. Comecemos pelos limites: sala vazia, sala cheia e pedido recusado.</p><div class="fs-code"><div class="fs-code-head"><span>06_Checks.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-6-main" type="button">Copiar</button><a href="../code/pt/extension/06_Checks.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-6-main">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    check(room.occupied == 0)
+    check(room.reserve(3))
+    check(room.available == 0)
+    check(!room.reserve(1))
+    check(room.occupied == 3)
+    room.release(3)
+    check(room.occupied == 0)
+    check(room.available == 3)
+
+    var rejected = false
+    try {
+        room.reserve(0)
+    } catch (error: IllegalArgumentException) {
+        rejected = true
+    }
+    check(rejected)
+    check(room.occupied == 0)
+    println(&quot;Todas as verificações foram satisfeitas.&quot;)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">Todas as verificações foram satisfeitas.</pre><p>O programa repete a classe Room para poder ser executado isoladamente. <code>check(condition)</code> verifica uma condição e lança <code>IllegalStateException</code> quando ela é falsa. Uma execução bem-sucedida chega à mensagem final.</p><p><code>!</code> inverte um Boolean. <code>check(!room.reserve(1))</code> exige que a reserva falhe quando a sala está cheia. A linha seguinte verifica também que essa falha não alterou a ocupação.</p><p>O bloco <code>try</code> contém uma chamada que deve recusar o argumento zero. <code>catch (error: IllegalArgumentException)</code> trata precisamente essa exceção. A variável <code>rejected</code> permite confirmar que a recusa aconteceu.</p><p>Os testes cobrem percursos escolhidos, não constituem uma prova para todas as execuções. A justificação do invariante acompanha a leitura das operações: construção válida, reserva que não excede os lugares livres e libertação que não excede os lugares ocupados.</p><div class="fs-exercise"><h3>Exercício</h3><p>Acrescente um teste que tente libertar um lugar de uma sala vazia. Verifique que ocorre IllegalArgumentException e que a sala permanece vazia.</p><details><summary>Ver resolução</summary><p>Use uma segunda verificação da exceção, seguida da verificação do estado.</p><div class="fs-code"><div class="fs-code-head"><span>06_Checks_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-6-solution" type="button">Copiar</button><a href="../code/pt/extension/06_Checks_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-6-solution">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    check(room.occupied == 0)
+    check(room.reserve(3))
+    check(room.available == 0)
+    check(!room.reserve(1))
+    check(room.occupied == 3)
+    room.release(3)
+    check(room.occupied == 0)
+    check(room.available == 3)
+
+    var rejected = false
+    try {
+        room.reserve(0)
+    } catch (error: IllegalArgumentException) {
+        rejected = true
+    }
+    check(rejected)
+    check(room.occupied == 0)
+    var invalidRelease = false
+    try {
+        room.release(1)
+    } catch (error: IllegalArgumentException) {
+        invalidRelease = true
+    }
+    check(invalidRelease)
+    check(room.occupied == 0)
+    println(&quot;Todas as verificações foram satisfeitas.&quot;)
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">Todas as verificações foram satisfeitas.</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/exceptions.html" target="_blank" rel="noopener">Preconditions and exceptions ↗</a></p></section><section class="fs-chapter" id="outcomes"><div class="fs-related">07 / Diapositivos relacionados 68–88</div><h2>Continuação: representar resultados com dados diferentes</h2><p class="fs-intro">Um Boolean comunica sucesso ou insucesso. Quando cada resultado precisa de informação diferente, podemos dar um tipo próprio a cada caso e reuni-los numa interface sealed.</p><div class="fs-code"><div class="fs-code-head"><span>07_Outcomes.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-7-main" type="button">Copiar</button><a href="../code/pt/extension/07_Outcomes.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-7-main">sealed interface BookingResult
+
+data class Accepted(val remaining: Int) : BookingResult
+data class Rejected(val reason: String) : BookingResult
+
+fun request(available: Int, wanted: Int): BookingResult {
+    require(available &gt;= 0)
+    require(wanted &gt; 0)
+    return if (wanted &lt;= available) {
+        Accepted(available - wanted)
+    } else {
+        Rejected(&quot;Lugares insuficientes&quot;)
+    }
+}
+
+fun describe(result: BookingResult): String = when (result) {
+    is Accepted -&gt; &quot;Aceite; lugares restantes: ${result.remaining}&quot;
+    is Rejected -&gt; &quot;Recusado: ${result.reason}&quot;
+}
+
+fun main() {
+    println(describe(request(3, 2)))
+    println(describe(request(3, 4)))
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">Aceite; lugares restantes: 1
+Recusado: Lugares insuficientes</pre><p><code>BookingResult</code> é o tipo comum. <code>Accepted</code> guarda os lugares restantes; <code>Rejected</code> guarda uma justificação. As duas classes usam <code>: BookingResult</code> para implementar a interface.</p><p><code>sealed</code> restringe as implementações diretas à mesma unidade de módulo e ao mesmo pacote. Neste ficheiro, os dois casos diretos são data classes, que não podem ser herdadas. O compilador conhece, por isso, as alternativas que o when precisa de tratar.</p><p><code>when (result)</code> é uma expressão: cada ramo fornece uma String. <code>is Accepted</code> testa o tipo e permite consultar <code>result.remaining</code> nesse ramo. O mesmo acontece com <code>Rejected</code> e <code>reason</code>. Como os casos estão cobertos, não é necessário <code>else</code>.</p><p><code>request</code> calcula uma resposta; não altera uma sala. Recebe uma disponibilidade e produz um resultado. Integrar este resultado num objeto mutável exige manter a verificação e a atualização coordenadas, como na classe Room anterior.</p><div class="fs-exercise"><h3>Exercício</h3><p>Acrescente ao resultado Rejected um campo available. Inclua esse valor na mensagem apresentada ao utilizador.</p><details><summary>Ver resolução</summary><p>O novo dado pertence ao caso de recusa. Atualize a construção desse caso e a leitura no ramo correspondente.</p><div class="fs-code"><div class="fs-code-head"><span>07_Outcomes_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-7-solution" type="button">Copiar</button><a href="../code/pt/extension/07_Outcomes_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-7-solution">sealed interface BookingResult
+
+data class Accepted(val remaining: Int) : BookingResult
+data class Rejected(val reason: String, val available: Int) : BookingResult
+
+fun request(available: Int, wanted: Int): BookingResult {
+    require(available &gt;= 0)
+    require(wanted &gt; 0)
+    return if (wanted &lt;= available) {
+        Accepted(available - wanted)
+    } else {
+        Rejected(&quot;Lugares insuficientes&quot;, available)
+    }
+}
+
+fun describe(result: BookingResult): String = when (result) {
+    is Accepted -&gt; &quot;Aceite; lugares restantes: ${result.remaining}&quot;
+    is Rejected -&gt; &quot;Recusado: ${result.reason}; disponíveis: ${result.available}&quot;
+}
+
+fun main() {
+    println(describe(request(3, 2)))
+    println(describe(request(3, 4)))
+}</code></pre></div><h3>Saída esperada</h3><pre class="fs-output">Aceite; lugares restantes: 1
+Recusado: Lugares insuficientes; disponíveis: 3</pre></details></div><p class="fs-docs">Documentação: <a href="https://kotlinlang.org/docs/sealed-classes.html" target="_blank" rel="noopener">Sealed classes and interfaces ↗</a></p></section><p><a href="index.html">← Voltar aos diapositivos</a></p></article></div></main><footer class="fs-footer">Fernando Lucatelli Nunes<br>Programação Orientada a Objetos · Licenciatura em Matemática · Universidade de Coimbra · 2026/2027</footer><script>
+(() => {
+  const pt = document.documentElement.lang === 'pt';
+  document.querySelectorAll('[data-copy]').forEach(button => button.addEventListener('click', async () => {
+    const code = document.getElementById(button.dataset.copy);
+    try { await navigator.clipboard.writeText(code.textContent); button.textContent = pt ? 'Copiado' : 'Copied'; }
+    catch { const selection=window.getSelection(); const range=document.createRange();range.selectNodeContents(code);selection.removeAllRanges();selection.addRange(range);button.textContent=pt?'Selecione e copie':'Select and copy'; }
+    setTimeout(() => {button.textContent = pt ? 'Copiar' : 'Copy';},2200);
+  }));
+  let original,shared,separate;
+  const mode=document.getElementById('copy-mode');
+  function drawCopy(){
+    document.getElementById('original-list').textContent=JSON.stringify(original);
+    document.getElementById('shared-list').textContent=JSON.stringify(shared);
+    document.getElementById('separate-list').textContent=JSON.stringify(separate);
+    document.getElementById('copy-status').textContent='original.names === shared.names → '+(original===shared);
+  }
+  function resetCopy(){original=['Ana'];shared=mode.value==='shared'?original:[...original];separate=[...original];drawCopy();}
+  function addTo(which){const input=document.getElementById('copy-name');const name=input.value.trim();if(!name){input.focus();return;}which.push(name);drawCopy();}
+  document.getElementById('add-shared').addEventListener('click',()=>addTo(shared));
+  document.getElementById('add-separate').addEventListener('click',()=>addTo(separate));
+  document.getElementById('reset-copy').addEventListener('click',resetCopy);mode.addEventListener('change',resetCopy);resetCopy();
+  let occupied=0;const capacity=6;
+  function drawRoom(){document.getElementById('room-state').textContent='capacity = 6 · occupied = '+occupied+' · available = '+(capacity-occupied);const meter=document.getElementById('room-meter');meter.firstElementChild.style.width=(occupied/capacity*100)+'%';meter.setAttribute('aria-label',pt?occupied+' lugares ocupados de 6':occupied+' of 6 places occupied');}
+  function act(release){const input=document.getElementById('room-places');const value=input.valueAsNumber;let message;if(!Number.isInteger(value)||value<=0){message=pt?'Argumento inválido: é necessário um inteiro positivo.':'Invalid argument: a positive integer is required.';}else if(release){if(value>occupied){message=pt?'IllegalArgumentException: não há tantos lugares ocupados.':'IllegalArgumentException: fewer places are occupied.';}else{occupied-=value;message=pt?'Lugares libertados.':'Places released.';}}else if(value>capacity-occupied){message=pt?'false: pedido recusado; o estado não mudou.':'false: request refused; state unchanged.';}else{occupied+=value;message=pt?'true: reserva aceite.':'true: reservation accepted.';}document.getElementById('room-status').textContent=message;drawRoom();}
+  document.getElementById('room-reserve').addEventListener('click',()=>act(false));document.getElementById('room-release').addEventListener('click',()=>act(true));document.getElementById('room-reset').addEventListener('click',()=>{occupied=0;drawRoom();document.getElementById('room-status').textContent=pt?'Sala vazia.':'Room empty.';});drawRoom();
+})();
+</script></body></html>

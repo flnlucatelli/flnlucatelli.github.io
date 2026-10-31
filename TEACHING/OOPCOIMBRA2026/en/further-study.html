@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Further study notes: Kotlin, object-oriented programming, examples and exercises."><title>From objects to programs · Fernando Lucatelli Nunes</title><link rel="stylesheet" href="../../assets/teaching.css"><style>
+:root{--paper:#f7f5ef;--ink:#172b3a;--muted:#526574;--teal:#087c77;--line:#d8ded9;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;line-height:1.65}a{color:var(--teal);text-underline-offset:.2em}.fs-header{border-bottom:1px solid var(--line);background:#fffdf8}.fs-header>div{max-width:1200px;margin:auto;display:flex;gap:2rem;justify-content:space-between;padding:1.1rem 2rem;align-items:center}.fs-header nav{display:flex;gap:1.2rem;flex-wrap:wrap}.fs-header a{font-size:.94rem;text-decoration:none}.fs-brand{font-weight:700;color:var(--ink)}.fs-wrap{max-width:1200px;margin:auto;padding:3rem 2rem 5rem}.fs-eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--teal);font-size:.75rem;font-weight:700}.fs-hero{max-width:850px;margin-bottom:2.5rem}.fs-hero h1{font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:clamp(2.5rem,5vw,4rem);line-height:1.12;margin:.6rem 0 1.4rem}.fs-hero p{font-size:1.13rem;color:var(--muted)}.fs-layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:3.2rem}.fs-toc{position:sticky;top:1.5rem;align-self:start;font-size:.92rem}.fs-toc ol{list-style:none;margin:0;padding:0;counter-reset:chapter}.fs-toc li{counter-increment:chapter;margin:.2rem 0}.fs-toc a{display:flex;gap:.8rem;padding:.6rem 0;text-decoration:none;color:var(--muted)}.fs-toc a:before{content:counter(chapter,decimal-leading-zero);color:var(--teal);font-size:.8rem;padding-top:.1rem}.fs-toc a:hover{color:var(--teal)}.fs-article{min-width:0}.fs-chapter{padding-bottom:3.3rem;margin-bottom:3.2rem;border-bottom:1px solid var(--line);scroll-margin-top:2rem}.fs-chapter h2{font-family:"Source Serif 4",Georgia,serif;font-size:2rem;font-weight:500;line-height:1.25;margin:.4rem 0 1rem}.fs-chapter h3{font-size:1rem;margin:1.7rem 0 .5rem}.fs-chapter p{margin:.85rem 0}.fs-related{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--teal)}.fs-intro{font-size:1.08rem}.fs-chapter code{font-family:var(--mono);font-size:.88em;background:#eaece6;padding:.1em .25em;border-radius:3px}.fs-code{background:#142b39;color:#edf3f3;border-radius:9px;overflow:hidden;margin:1.5rem 0}.fs-code-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.65rem 1rem;background:#203a48;font-family:var(--mono);font-size:.75rem;flex-wrap:wrap}.fs-code-head a{color:#b3e2d5}.fs-code pre{margin:0;padding:1.25rem;overflow:auto;tab-size:4;line-height:1.55}.fs-code code{color:inherit;padding:0;background:none;font-size:.82rem}.fs-code-actions{display:flex;gap:.8rem;align-items:center}.fs-copy{font:inherit;border:1px solid #62808b;border-radius:4px;background:none;color:#edf3f3;padding:.25rem .55rem;cursor:pointer}.fs-output{border-left:3px solid var(--teal);background:#eaf0e9;padding:1rem 1.25rem;overflow:auto;white-space:pre-wrap;font-family:var(--mono);font-size:.86rem;line-height:1.6}.fs-exercise{border:1px solid var(--line);background:#fffdf8;border-radius:8px;padding:1.1rem 1.4rem;margin-top:1.5rem}.fs-exercise h3{margin:.1rem 0}.fs-exercise details{margin-top:1rem}.fs-exercise summary{cursor:pointer;color:var(--teal);font-weight:600}.fs-docs{font-size:.84rem;color:var(--muted);margin-top:1rem}.fs-docs a{margin-right:.7rem}.fs-note{font-size:.94rem;border-left:3px solid #b08b56;padding:.4rem 0 .4rem 1rem;margin:1.5rem 0;color:var(--muted)}.fs-model{border:1px solid var(--line);border-radius:9px;padding:1.5rem;background:#fffdf8;margin:1.7rem 0}.fs-model h3{margin:0 0 .5rem}.fs-model select,.fs-model input{font:inherit;border:1px solid #aabcb8;border-radius:5px;background:#fff;color:var(--ink);padding:.45rem;max-width:100%}.fs-model button{font:inherit;padding:.45rem .8rem;border-radius:5px;border:1px solid var(--teal);background:var(--teal);color:white;cursor:pointer}.fs-model button.secondary{background:white;color:var(--teal)}.fs-controls{display:flex;gap:.65rem;flex-wrap:wrap;align-items:center;margin:1rem 0}.fs-model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}.fs-model-card{background:#edf2ed;border-radius:5px;padding:.7rem;font-size:.85rem;overflow-wrap:anywhere}.fs-model-card b{display:block;color:var(--teal);font-family:var(--mono)}.fs-model output{display:block;margin:.6rem 0;color:var(--muted);min-height:1.7em}.fs-meter{height:12px;background:#e1e8e3;border-radius:10px;overflow:hidden}.fs-meter span{display:block;background:var(--teal);height:100%;width:0;transition:width .15s ease}.fs-footer{max-width:1200px;margin:auto;padding:1.5rem 2rem;border-top:1px solid var(--line);font-size:.87rem;color:var(--muted)}.fs-skip{position:absolute;top:-4rem;left:1rem;background:white;padding:.7rem;z-index:10}.fs-skip:focus{top:.5rem}:focus-visible{outline:3px solid #c7984e;outline-offset:4px}@media(max-width:800px){.fs-layout{grid-template-columns:1fr;gap:2rem}.fs-toc{position:static}.fs-toc ol{columns:2;column-gap:1.3rem}.fs-wrap{padding:2rem 1rem}.fs-header>div{padding:1rem;align-items:flex-start;gap:1rem}.fs-header nav{gap:.7rem}.fs-chapter h2{font-size:1.7rem}.fs-model{padding:1rem}}@media(max-width:440px){.fs-toc ol{columns:1}.fs-model-grid{grid-template-columns:1fr}.fs-code-head{font-size:.69rem}.fs-code pre{padding:1rem}.fs-code code{font-size:.74rem}}@media print{.fs-header,.fs-toc,.fs-controls,.fs-code-actions,.fs-model,.fs-skip{display:none}.fs-layout{display:block}.fs-wrap{padding:0}.fs-chapter{break-before:page}.fs-code{background:#fff;color:#000;border:1px solid #aaa}.fs-code-head{background:#eee}.fs-code pre{white-space:pre-wrap}details{display:block}details>*{display:block}}
+</style></head><body><a class="fs-skip" href="#content">Skip to content</a><header class="fs-header"><div><a class="fs-brand" href="../../index.html">Fernando Lucatelli Nunes <span aria-hidden="true">/</span> Teaching</a><nav aria-label="Navigation"><a href="../index.html">Object-Oriented Programming</a><a href="index.html">Slides</a><a href="../pt/further-study.html" lang="pt" hreflang="pt">Português</a></nav></div></header><main class="fs-wrap" id="content"><header class="fs-hero"><div class="fs-eyebrow">Kotlin · Further study notes</div><h1>From objects to programs</h1><p>These notes revisit the slide material and develop it through small, complete programs. The common thread is the relationship between an object’s data, the operations it offers, and the conditions it should preserve.</p><div class="fs-note">Run one file at a time. Predict the output before running it; then change a case and explain the difference. The examples are independent and may reuse class names.</div></header><div class="fs-layout"><nav class="fs-toc" aria-label="Contents"><div class="fs-eyebrow">Contents</div><ol><li><a href="#copy">Copying an object and separating its state</a></li><li><a href="#choices">Choosing between enum, object and companion object</a></li><li><a href="#room">Encapsulation: preserving a room’s capacity</a></li><li><a href="#interfaces">One interface, two presentations of the same data</a></li><li><a href="#input">Reading a request without confusing absence, text and numbers</a></li><li><a href="#checks">Testing operations and invariants</a></li><li><a href="#outcomes">Further step: representing outcomes with different data</a></li></ol></nav><article class="fs-article"><section class="fs-chapter" id="copy"><div class="fs-related">01 / Related slides 37–40</div><h2>Copying an object and separating its state</h2><p class="fs-intro">A new instance can still share the objects it stores. Before choosing a copying operation, identify the state that should remain shared and the state that should evolve separately.</p><div class="fs-code"><div class="fs-code-head"><span>01_Copy.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-1-main" type="button">Copy</button><a href="../code/en/extension/01_Copy.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-1-main">data class Group(val names: MutableList&lt;String&gt;)
+
+fun main() {
+    val original = Group(mutableListOf(&quot;Ana&quot;))
+    val shared = original.copy()
+    val separate = original.copy(names = original.names.toMutableList())
+    shared.names.add(&quot;Rui&quot;)
+    separate.names.add(&quot;Eva&quot;)
+    println(original.names)
+    println(shared.names)
+    println(separate.names)
+    println(original === shared)
+    println(original.names === shared.names)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">[Ana, Rui]
+[Ana, Rui]
+[Ana, Eva]
+false
+true</pre><p>The first call to <code>copy()</code> creates another <code>Group</code> but retains the list reference. The second supplies a named argument, <code>names = ...</code>, replacing that component with a list created by <code>toMutableList()</code>.</p><p><code>MutableList&lt;String&gt;</code> is a mutable list of strings; <code>&lt;String&gt;</code> specifies the element type. <code>add</code> modifies the list. The variables are <code>val</code>: we cannot reassign them to other references, but we can use the mutation operations offered by the objects they refer to.</p><p><code>===</code> compares identity. The final two lines show that the outer objects differ while one component is shared. The elements here are immutable strings. If the elements were mutable objects, copying the list would not copy those objects: we would need to decide how to copy each element as well.</p><div class="fs-model" id="copy-model"><h3>Explore the references</h3><p>This model follows the example’s lists. Choose the copying operation and add names through shared or separate.</p><label for="copy-mode">How is shared constructed?</label><select id="copy-mode"><option value="shared">copy(): shared list</option><option value="separate">copy(names = …toMutableList()): separate list</option></select><div class="fs-controls"><label for="copy-name">Name</label><input id="copy-name" value="Rui" maxlength="30"><button id="add-shared" type="button">Add to shared</button><button id="add-separate" type="button">Add to separate</button><button id="reset-copy" class="secondary" type="button">Reset</button></div><div class="fs-model-grid"><div class="fs-model-card"><b>original.names</b><span id="original-list"></span></div><div class="fs-model-card"><b>shared.names</b><span id="shared-list"></span></div><div class="fs-model-card"><b>separate.names</b><span id="separate-list"></span></div></div><output id="copy-status" aria-live="polite"></output></div><div class="fs-exercise"><h3>Exercise</h3><p>Make all three lists evolve independently. After adding Rui and Eva, the original list should still contain only Ana.</p><details><summary>Show solution</summary><p>Create a separate list for shared as well. The rest of the program can remain unchanged.</p><div class="fs-code"><div class="fs-code-head"><span>01_Copy_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-1-solution" type="button">Copy</button><a href="../code/en/extension/01_Copy_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-1-solution">data class Group(val names: MutableList&lt;String&gt;)
+
+fun main() {
+    val original = Group(mutableListOf(&quot;Ana&quot;))
+    val shared = original.copy(names = original.names.toMutableList())
+    val separate = original.copy(names = original.names.toMutableList())
+    shared.names.add(&quot;Rui&quot;)
+    separate.names.add(&quot;Eva&quot;)
+    println(original.names)
+    println(shared.names)
+    println(separate.names)
+    println(original === shared)
+    println(original.names === shared.names)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">[Ana]
+[Ana, Rui]
+[Ana, Eva]
+false
+false</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/data-classes.html" target="_blank" rel="noopener">Data classes ↗</a> <a href="https://kotlinlang.org/docs/collections-overview.html" target="_blank" rel="noopener">Collections ↗</a></p></section><section class="fs-chapter" id="choices"><div class="fs-related">02 / Related slides 43–67</div><h2>Choosing between enum, object and companion object</h2><p class="fs-intro">These constructs address different needs: fixed alternatives, one shared instance, and operations associated with creating instances. This example combines all three while keeping their responsibilities distinct.</p><div class="fs-code"><div class="fs-code-head"><span>02_Construction.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-2-main" type="button">Copy</button><a href="../code/en/extension/02_Construction.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-2-main">enum class RoomKind(val seats: Int) {
+    SEMINAR(12), LAB(24)
+}
+
+object BookingRules {
+    const val MAX_MINUTES = 120
+    fun accepts(minutes: Int): Boolean = minutes in 1..MAX_MINUTES
+}
+
+class Booking private constructor(val minutes: Int) {
+    companion object {
+        fun create(minutes: Int): Booking {
+            require(BookingRules.accepts(minutes))
+            return Booking(minutes)
+        }
+    }
+}
+
+fun main() {
+    val first = Booking.create(45)
+    val second = Booking.create(45)
+    println(RoomKind.SEMINAR.seats)
+    println(first.minutes)
+    println(first === second)
+    println(BookingRules.accepts(121))
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">12
+45
+false
+false</pre><p><code>RoomKind</code> has two constants, each with a capacity. <code>SEMINAR(12)</code> supplies 12 to the <code>seats</code> parameter. This type is useful when the alternatives are known and fixed.</p><p><code>object BookingRules</code> provides one shared instance. <code>const val</code> declares a compile-time constant; the limit here is an integer. <code>in 1..MAX_MINUTES</code> tests a range containing both endpoints.</p><p><code>private constructor</code> prevents direct construction from external code. <code>Booking.create(45)</code> calls the function in the <code>companion object</code>; that function validates the argument and invokes the constructor. Each successful call creates a new booking. The companion is shared; the bookings are distinct instances.</p><p>This rule was chosen for the example. In a project, the limits should follow from the problem being modelled.</p><div class="fs-exercise"><h3>Exercise</h3><p>Add an AUDITORIUM alternative with 80 seats and print its seat count. Keep the other output lines.</p><details><summary>Show solution</summary><p>Add the constant to the enumeration and read its seats property.</p><div class="fs-code"><div class="fs-code-head"><span>02_Construction_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-2-solution" type="button">Copy</button><a href="../code/en/extension/02_Construction_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-2-solution">enum class RoomKind(val seats: Int) {
+    SEMINAR(12), LAB(24), AUDITORIUM(80)
+}
+
+object BookingRules {
+    const val MAX_MINUTES = 120
+    fun accepts(minutes: Int): Boolean = minutes in 1..MAX_MINUTES
+}
+
+class Booking private constructor(val minutes: Int) {
+    companion object {
+        fun create(minutes: Int): Booking {
+            require(BookingRules.accepts(minutes))
+            return Booking(minutes)
+        }
+    }
+}
+
+fun main() {
+    val first = Booking.create(45)
+    val second = Booking.create(45)
+    println(RoomKind.AUDITORIUM.seats)
+    println(RoomKind.SEMINAR.seats)
+    println(first.minutes)
+    println(first === second)
+    println(BookingRules.accepts(121))
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">80
+12
+45
+false
+false</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/enum-classes.html" target="_blank" rel="noopener">Enum classes ↗</a> <a href="https://kotlinlang.org/docs/object-declarations.html" target="_blank" rel="noopener">Object declarations ↗</a></p></section><section class="fs-chapter" id="room"><div class="fs-related">03 / Related slides 12–28</div><h2>Encapsulation: preserving a room’s capacity</h2><p class="fs-intro">In this model, a reservation occupies a number of places in a room. We are not modelling timetables or simultaneous bookings of entire rooms. The central property is simple: occupancy must stay between zero and capacity.</p><div class="fs-code"><div class="fs-code-head"><span>03_Room.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-3-main" type="button">Copy</button><a href="../code/en/extension/03_Room.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-3-main">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    println(room.reserve(2))
+    println(room.reserve(2))
+    room.release(1)
+    println(room.occupied)
+    println(room.available)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">true
+false
+1
+2</pre><p><code>init</code> runs during construction. <code>require(capacity &gt; 0)</code> rejects an invalid capacity. Capacity is a <code>val</code> property; occupancy is a <code>var</code> property whose <code>private set</code> prevents changes from outside the class.</p><p><code>available</code> has a computed getter: each read returns <code>capacity - occupied</code>. This avoids storing a second piece of state that would have to be updated together with occupancy.</p><p><code>reserve</code> distinguishes an invalid argument, rejected by <code>require</code>, from a positive request that does not fit, reported by <code>false</code>. The comparison precedes the update. On success, <code>occupied += places</code> adds the places and <code>return true</code> ends the call.</p><p><code>release</code> accepts only a number of places between 1 and the current occupancy. Releasing places therefore cannot produce negative occupancy. This model assumes sequential execution; the class does not add synchronisation for concurrent access.</p><div class="fs-model" id="room-model"><h3>Explore the room’s state</h3><p>A sequential model of Room(6). Every request applies the same checks as the program.</p><div class="fs-controls"><label for="room-places">Places</label><input id="room-places" type="number" value="2" min="1" max="99" step="1"><button id="room-reserve" type="button">Reserve</button><button id="room-release" class="secondary" type="button">Release</button><button id="room-reset" class="secondary" type="button">Reset</button></div><div class="fs-meter" role="img" id="room-meter"><span></span></div><p id="room-state"></p><output id="room-status" aria-live="polite"></output></div><div class="fs-exercise"><h3>Exercise</h3><p>Add an isFull property that reports whether the room is full without storing another Boolean. Print it before and after reserving every place.</p><details><summary>Show solution</summary><p>Use a getter to compare occupied with capacity.</p><div class="fs-code"><div class="fs-code-head"><span>03_Room_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-3-solution" type="button">Copy</button><a href="../code/en/extension/03_Room_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-3-solution">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    val isFull: Boolean
+        get() = occupied == capacity
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    println(room.isFull)
+    room.reserve(3)
+    println(room.isFull)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">false
+true</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/properties.html" target="_blank" rel="noopener">Properties ↗</a> <a href="https://kotlinlang.org/docs/exceptions.html" target="_blank" rel="noopener">Exceptions and preconditions ↗</a></p></section><section class="fs-chapter" id="interfaces"><div class="fs-related">04 / Related slides 68–85</div><h2>One interface, two presentations of the same data</h2><p class="fs-intro">Code that requests a report need not decide how that report is written. The interface fixes the available operation; each implementation determines its result.</p><div class="fs-code"><div class="fs-code-head"><span>04_Reports.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-4-main" type="button">Copy</button><a href="../code/en/extension/04_Reports.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-4-main">data class RoomSummary(val name: String, val available: Int)
+
+interface RoomReport {
+    fun render(room: RoomSummary): String
+}
+
+object CompactReport : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;${room.name}: ${room.available}&quot;
+}
+
+class SentenceReport(val prefix: String) : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;$prefix ${room.name} has ${room.available} places available.&quot;
+}
+
+fun show(room: RoomSummary, report: RoomReport) {
+    println(report.render(room))
+}
+
+fun main() {
+    val room = RoomSummary(&quot;A1&quot;, 3)
+    show(room, CompactReport)
+    show(room, SentenceReport(&quot;Room&quot;))
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">A1: 3
+Room A1 has 3 places available.</pre><p><code>RoomSummary</code> collects the data needed by the report. <code>RoomReport</code> declares a function that receives those data and returns a <code>String</code>. The interface does not store room occupancy.</p><p>The colon in <code>: RoomReport</code> declares implementation of the interface. <code>override</code> marks the implementation of its operation. <code>CompactReport</code> needs no per-instance configuration; <code>SentenceReport</code> stores a prefix supplied to its constructor.</p><p><code>show</code> accepts the interface type. The same call, <code>report.render(room)</code>, executes the implementation of the object received. Expressions <code>${...}</code> insert computed values into a string; <code>$prefix</code> inserts the variable’s value.</p><p>The operation returns text; <code>show</code> displays it. This separation allows tests to compare results without depending on console output.</p><div class="fs-exercise"><h3>Exercise</h3><p>Implement a CsvReport returning A1,3 for the same data. Add a call to show without changing the show function.</p><details><summary>Show solution</summary><p>The new implementation satisfies the same contract; show still accepts RoomReport.</p><div class="fs-code"><div class="fs-code-head"><span>04_Reports_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-4-solution" type="button">Copy</button><a href="../code/en/extension/04_Reports_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-4-solution">data class RoomSummary(val name: String, val available: Int)
+
+interface RoomReport {
+    fun render(room: RoomSummary): String
+}
+
+object CompactReport : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;${room.name}: ${room.available}&quot;
+}
+
+class SentenceReport(val prefix: String) : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;$prefix ${room.name} has ${room.available} places available.&quot;
+}
+
+fun show(room: RoomSummary, report: RoomReport) {
+    println(report.render(room))
+}
+
+object CsvReport : RoomReport {
+    override fun render(room: RoomSummary): String =
+        &quot;${room.name},${room.available}&quot;
+}
+
+fun main() {
+    val room = RoomSummary(&quot;A1&quot;, 3)
+    show(room, CsvReport)
+    show(room, CompactReport)
+    show(room, SentenceReport(&quot;Room&quot;))
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">A1,3
+A1: 3
+Room A1 has 3 places available.</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/interfaces.html" target="_blank" rel="noopener">Interfaces ↗</a></p></section><section class="fs-chapter" id="input"><div class="fs-related">05 / Related slides 86–88</div><h2>Reading a request without confusing absence, text and numbers</h2><p class="fs-intro">User input starts as text. Converting that text and validating its meaning are different steps. A small function lets us test both without depending on console input.</p><div class="fs-code"><div class="fs-code-head"><span>05_Input.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-5-main" type="button">Copy</button><a href="../code/en/extension/05_Input.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-5-main">fun parsePlaces(text: String?): Int? {
+    val places = text?.trim()?.toIntOrNull() ?: return null
+    if (places &lt;= 0) return null
+    return places
+}
+
+fun main() {
+    val inputs: List&lt;String?&gt; = listOf(&quot; 2 &quot;, &quot;two&quot;, &quot;0&quot;, null)
+    for (text in inputs) {
+        val places = parsePlaces(text)
+        println(places ?: &quot;Invalid input&quot;)
+    }
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">2
+Invalid input
+Invalid input
+Invalid input</pre><p><code>String?</code> admits a string or <code>null</code>; <code>Int?</code> admits an integer or <code>null</code>. Here, a null result means that the request could not be interpreted as a positive number of places.</p><p><code>?.</code> calls the next operation only when a value exists. <code>trim()</code> removes surrounding whitespace; <code>toIntOrNull()</code> attempts conversion to <code>Int</code> and returns <code>null</code> on failure, including values outside the range of <code>Int</code>.</p><p><code>?: return null</code> immediately ends the function when the preceding chain produces <code>null</code>. After that line, <code>places</code> is an <code>Int</code>. The next check concerns the number’s meaning: zero and negative values are not valid requests in this model.</p><p><code>List&lt;String?&gt;</code> is a list whose elements may be null. <code>for (text in inputs)</code> visits them. In the output, <code>places ?: "Invalid input"</code> chooses a message when there is no result.</p><div class="fs-exercise"><h3>Exercise</h3><p>Replace the example list with one line read using readlnOrNull(). For a valid request, print Requested: followed by the number; otherwise print Invalid input.</p><details><summary>Show solution</summary><p>readlnOrNull() reads one line and may return null at end of input. Run this variant in a Kotlin/JVM environment with standard input; supplying the line 2 produces the output below.</p><div class="fs-code"><div class="fs-code-head"><span>05_Input_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-5-solution" type="button">Copy</button><a href="../code/en/extension/05_Input_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-5-solution">fun parsePlaces(text: String?): Int? {
+    val places = text?.trim()?.toIntOrNull() ?: return null
+    if (places &lt;= 0) return null
+    return places
+}
+
+fun main() {
+    println(&quot;Number of places:&quot;)
+    val places = parsePlaces(readlnOrNull())
+    if (places == null) {
+        println(&quot;Invalid input&quot;)
+        return
+    }
+    println(&quot;Requested: $places&quot;)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">Number of places:
+Requested: 2</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/null-safety.html" target="_blank" rel="noopener">Null safety ↗</a> <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.text/to-int-or-null.html" target="_blank" rel="noopener">toIntOrNull ↗</a> <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.io/readln-or-null.html" target="_blank" rel="noopener">readlnOrNull ↗</a></p></section><section class="fs-chapter" id="checks"><div class="fs-related">06 / Related slides 18–28</div><h2>Testing operations and invariants</h2><p class="fs-intro">An example demonstrates one path through a program. A test adds an explicit expectation about the result and final state. Start with the boundaries: an empty room, a full room and a rejected request.</p><div class="fs-code"><div class="fs-code-head"><span>06_Checks.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-6-main" type="button">Copy</button><a href="../code/en/extension/06_Checks.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-6-main">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    check(room.occupied == 0)
+    check(room.reserve(3))
+    check(room.available == 0)
+    check(!room.reserve(1))
+    check(room.occupied == 3)
+    room.release(3)
+    check(room.occupied == 0)
+    check(room.available == 3)
+
+    var rejected = false
+    try {
+        room.reserve(0)
+    } catch (error: IllegalArgumentException) {
+        rejected = true
+    }
+    check(rejected)
+    check(room.occupied == 0)
+    println(&quot;All checks passed.&quot;)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">All checks passed.</pre><p>The program repeats the Room class so it can run independently. <code>check(condition)</code> tests a condition and throws <code>IllegalStateException</code> when it is false. A successful run reaches the final message.</p><p><code>!</code> negates a Boolean. <code>check(!room.reserve(1))</code> requires the reservation to fail when the room is full. The next line also verifies that this failure did not change occupancy.</p><p>The <code>try</code> block contains a call that should reject zero as an argument. <code>catch (error: IllegalArgumentException)</code> handles that specific exception. The <code>rejected</code> variable records whether rejection occurred.</p><p>Tests cover selected paths; they do not prove a property for every execution. Justifying the invariant requires reading the operations: valid construction, reservation that does not exceed free places, and release that does not exceed occupied places.</p><div class="fs-exercise"><h3>Exercise</h3><p>Add a test that attempts to release one place from an empty room. Verify that IllegalArgumentException occurs and that the room remains empty.</p><details><summary>Show solution</summary><p>Use a second exception check followed by a state check.</p><div class="fs-code"><div class="fs-code-head"><span>06_Checks_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-6-solution" type="button">Copy</button><a href="../code/en/extension/06_Checks_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-6-solution">class Room(val capacity: Int) {
+    init {
+        require(capacity &gt; 0)
+    }
+    var occupied: Int = 0
+        private set
+    val available: Int
+        get() = capacity - occupied
+
+    fun reserve(places: Int): Boolean {
+        require(places &gt; 0)
+        if (places &gt; available) return false
+        occupied += places
+        return true
+    }
+
+    fun release(places: Int) {
+        require(places in 1..occupied)
+        occupied -= places
+    }
+}
+
+fun main() {
+    val room = Room(3)
+    check(room.occupied == 0)
+    check(room.reserve(3))
+    check(room.available == 0)
+    check(!room.reserve(1))
+    check(room.occupied == 3)
+    room.release(3)
+    check(room.occupied == 0)
+    check(room.available == 3)
+
+    var rejected = false
+    try {
+        room.reserve(0)
+    } catch (error: IllegalArgumentException) {
+        rejected = true
+    }
+    check(rejected)
+    check(room.occupied == 0)
+    var invalidRelease = false
+    try {
+        room.release(1)
+    } catch (error: IllegalArgumentException) {
+        invalidRelease = true
+    }
+    check(invalidRelease)
+    check(room.occupied == 0)
+    println(&quot;All checks passed.&quot;)
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">All checks passed.</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/exceptions.html" target="_blank" rel="noopener">Preconditions and exceptions ↗</a></p></section><section class="fs-chapter" id="outcomes"><div class="fs-related">07 / Related slides 68–88</div><h2>Further step: representing outcomes with different data</h2><p class="fs-intro">A Boolean communicates success or failure. When each outcome needs different information, we can give each case its own type and bring them together through a sealed interface.</p><div class="fs-code"><div class="fs-code-head"><span>07_Outcomes.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-7-main" type="button">Copy</button><a href="../code/en/extension/07_Outcomes.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-7-main">sealed interface BookingResult
+
+data class Accepted(val remaining: Int) : BookingResult
+data class Rejected(val reason: String) : BookingResult
+
+fun request(available: Int, wanted: Int): BookingResult {
+    require(available &gt;= 0)
+    require(wanted &gt; 0)
+    return if (wanted &lt;= available) {
+        Accepted(available - wanted)
+    } else {
+        Rejected(&quot;Not enough places&quot;)
+    }
+}
+
+fun describe(result: BookingResult): String = when (result) {
+    is Accepted -&gt; &quot;Accepted; remaining: ${result.remaining}&quot;
+    is Rejected -&gt; &quot;Rejected: ${result.reason}&quot;
+}
+
+fun main() {
+    println(describe(request(3, 2)))
+    println(describe(request(3, 4)))
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">Accepted; remaining: 1
+Rejected: Not enough places</pre><p><code>BookingResult</code> is the common type. <code>Accepted</code> stores the remaining places; <code>Rejected</code> stores a reason. Both classes use <code>: BookingResult</code> to implement the interface.</p><p><code>sealed</code> restricts direct implementations to the same module and package. In this file, both direct cases are data classes, which cannot be subclassed. The compiler therefore knows the alternatives that the when expression must handle.</p><p><code>when (result)</code> is an expression: each branch provides a String. <code>is Accepted</code> tests the type and allows access to <code>result.remaining</code> in that branch. The same applies to <code>Rejected</code> and <code>reason</code>. Because the cases are covered, no <code>else</code> is needed.</p><p><code>request</code> calculates a response; it does not modify a room. It receives an availability and produces a result. Integrating this result into a mutable object requires coordinating validation and update, as in the earlier Room class.</p><div class="fs-exercise"><h3>Exercise</h3><p>Add an available field to Rejected. Include that value in the message shown to the user.</p><details><summary>Show solution</summary><p>The new datum belongs to the rejection case. Update its construction and the corresponding branch.</p><div class="fs-code"><div class="fs-code-head"><span>07_Outcomes_Solution.kt</span><span class="fs-code-actions"><button class="fs-copy" data-copy="code-7-solution" type="button">Copy</button><a href="../code/en/extension/07_Outcomes_Solution.kt" download>↓ .kt</a><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Playground ↗</a></span></div><pre><code id="code-7-solution">sealed interface BookingResult
+
+data class Accepted(val remaining: Int) : BookingResult
+data class Rejected(val reason: String, val available: Int) : BookingResult
+
+fun request(available: Int, wanted: Int): BookingResult {
+    require(available &gt;= 0)
+    require(wanted &gt; 0)
+    return if (wanted &lt;= available) {
+        Accepted(available - wanted)
+    } else {
+        Rejected(&quot;Not enough places&quot;, available)
+    }
+}
+
+fun describe(result: BookingResult): String = when (result) {
+    is Accepted -&gt; &quot;Accepted; remaining: ${result.remaining}&quot;
+    is Rejected -&gt; &quot;Rejected: ${result.reason}; available: ${result.available}&quot;
+}
+
+fun main() {
+    println(describe(request(3, 2)))
+    println(describe(request(3, 4)))
+}</code></pre></div><h3>Expected output</h3><pre class="fs-output">Accepted; remaining: 1
+Rejected: Not enough places; available: 3</pre></details></div><p class="fs-docs">Documentation: <a href="https://kotlinlang.org/docs/sealed-classes.html" target="_blank" rel="noopener">Sealed classes and interfaces ↗</a></p></section><p><a href="index.html">← Back to slides</a></p></article></div></main><footer class="fs-footer">Fernando Lucatelli Nunes<br>Object-Oriented Programming · BSc Mathematics · University of Coimbra · 2026/2027</footer><script>
+(() => {
+  const pt = document.documentElement.lang === 'pt';
+  document.querySelectorAll('[data-copy]').forEach(button => button.addEventListener('click', async () => {
+    const code = document.getElementById(button.dataset.copy);
+    try { await navigator.clipboard.writeText(code.textContent); button.textContent = pt ? 'Copiado' : 'Copied'; }
+    catch { const selection=window.getSelection(); const range=document.createRange();range.selectNodeContents(code);selection.removeAllRanges();selection.addRange(range);button.textContent=pt?'Selecione e copie':'Select and copy'; }
+    setTimeout(() => {button.textContent = pt ? 'Copiar' : 'Copy';},2200);
+  }));
+  let original,shared,separate;
+  const mode=document.getElementById('copy-mode');
+  function drawCopy(){
+    document.getElementById('original-list').textContent=JSON.stringify(original);
+    document.getElementById('shared-list').textContent=JSON.stringify(shared);
+    document.getElementById('separate-list').textContent=JSON.stringify(separate);
+    document.getElementById('copy-status').textContent='original.names === shared.names → '+(original===shared);
+  }
+  function resetCopy(){original=['Ana'];shared=mode.value==='shared'?original:[...original];separate=[...original];drawCopy();}
+  function addTo(which){const input=document.getElementById('copy-name');const name=input.value.trim();if(!name){input.focus();return;}which.push(name);drawCopy();}
+  document.getElementById('add-shared').addEventListener('click',()=>addTo(shared));
+  document.getElementById('add-separate').addEventListener('click',()=>addTo(separate));
+  document.getElementById('reset-copy').addEventListener('click',resetCopy);mode.addEventListener('change',resetCopy);resetCopy();
+  let occupied=0;const capacity=6;
+  function drawRoom(){document.getElementById('room-state').textContent='capacity = 6 · occupied = '+occupied+' · available = '+(capacity-occupied);const meter=document.getElementById('room-meter');meter.firstElementChild.style.width=(occupied/capacity*100)+'%';meter.setAttribute('aria-label',pt?occupied+' lugares ocupados de 6':occupied+' of 6 places occupied');}
+  function act(release){const input=document.getElementById('room-places');const value=input.valueAsNumber;let message;if(!Number.isInteger(value)||value<=0){message=pt?'Argumento inválido: é necessário um inteiro positivo.':'Invalid argument: a positive integer is required.';}else if(release){if(value>occupied){message=pt?'IllegalArgumentException: não há tantos lugares ocupados.':'IllegalArgumentException: fewer places are occupied.';}else{occupied-=value;message=pt?'Lugares libertados.':'Places released.';}}else if(value>capacity-occupied){message=pt?'false: pedido recusado; o estado não mudou.':'false: request refused; state unchanged.';}else{occupied+=value;message=pt?'true: reserva aceite.':'true: reservation accepted.';}document.getElementById('room-status').textContent=message;drawRoom();}
+  document.getElementById('room-reserve').addEventListener('click',()=>act(false));document.getElementById('room-release').addEventListener('click',()=>act(true));document.getElementById('room-reset').addEventListener('click',()=>{occupied=0;drawRoom();document.getElementById('room-status').textContent=pt?'Sala vazia.':'Room empty.';});drawRoom();
+})();
+</script></body></html>
