@@ -38,18 +38,6 @@
     "PhDs.html",
     "Genealogy.html"
   ],
-  "Doctorates": [
-    "index.html",
-    "Research.html",
-    "Some_projects.html",
-    "Academic_Positions.html",
-    "students.html",
-    "Further_Information.html",
-    "PhD_in_Mathematics.html",
-    "PhD_in_Computer_Science.html",
-    "PhDs.html",
-    "Genealogy.html"
-  ],
   "Projects": [
     "index.html",
     "Research.html",
@@ -167,6 +155,10 @@
   ],
   "Seminars and conferences, including CLASS, an international group for doctoral learning and research exchange.": [
     "index.html"
+  ],
+  "Doctorates": [
+    "index.html",
+    "PhDs.html"
   ],
   "Mathematics at Coimbra and computer science at Utrecht.": [
     "index.html"
@@ -537,6 +529,12 @@
     "Research.html"
   ],
   "in Portuguese, 2009, 57 pages.": [
+    "Research.html"
+  ],
+  "Further information about my doctoral research is available on the": [
+    "Research.html"
+  ],
+  "Doctorates page": [
     "Research.html"
   ],
   "Research on low- and higher-dimensional generalised categorical structures, their applications across mathematics, and categorical foundations for modern programming languages.": [
@@ -1203,6 +1201,10 @@
   ],
   "Fernando Lucatelli Nunes | Ph.D. in Mathematics": [
     "PhD_in_Mathematics.html"
+  ],
+  "Overview of my doctorates": [
+    "PhD_in_Mathematics.html",
+    "PhD_in_Computer_Science.html"
   ],
   "Pseudomonads and Descent": [
     "PhD_in_Mathematics.html",

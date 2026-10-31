@@ -61,7 +61,10 @@ they are not intended as exhaustive descriptions of either thesis.
 
 The doctoral overview is labelled “Doctorates” in English, with corresponding
 labels in all five translations. Its existing `PhDs.html` URL is retained.
-The link uses the same styling as the other main navigation items and has a
-matching card in the homepage directory, beside Mathematical genealogy. It
-also remains in the homepage footer and Further information. There is no
-standalone overview link beneath the homepage degree information.
+The overview is linked from its existing card in the homepage directory,
+beside Mathematical genealogy, and from Further information. It is omitted
+from the main navigation bars and homepage footer. Both individual doctorate
+pages include a small overview link; Research ends with a discreet contextual
+link below the publication sections, independent of the publication filters.
+There is no standalone overview link beneath the homepage degree information.
+These links and their wording are maintained in all five translation catalogs.

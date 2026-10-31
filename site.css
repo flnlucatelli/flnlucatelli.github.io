@@ -102,3 +102,16 @@ a:focus-visible { outline: 3px solid rgba(23,107,104,.28); outline-offset: 3px; 
   .page > nav, .page > .nav, body > .nav { display: none !important; }
   .page > header, .page > main { box-shadow: none !important; }
 }
+
+/* Contextual links to the doctoral overview. */
+.doctoral-overview-link,
+.doctoral-note {
+  color: var(--muted);
+  font: 13px/1.65 var(--sans);
+}
+.doctoral-overview-link { margin: 0 0 20px; }
+.doctoral-note {
+  margin: 28px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
