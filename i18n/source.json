@@ -848,7 +848,8 @@
   "University of Coimbra": [
     "Academic_Positions.html",
     "PhD_in_Mathematics.html",
-    "PhDs.html"
+    "PhDs.html",
+    "Genealogy.html"
   ],
   "Utrecht University": [
     "Academic_Positions.html",
@@ -1205,7 +1206,8 @@
     "PhDs.html"
   ],
   "Ph.D. awarded by the": [
-    "PhD_in_Mathematics.html"
+    "PhD_in_Mathematics.html",
+    "Genealogy.html"
   ],
   ", Portugal, in January 2018,": [
     "PhD_in_Mathematics.html"
@@ -1503,16 +1505,10 @@
   "Mathematics Genealogy Project": [
     "Genealogy.html"
   ],
-  "Open the original PDF": [
-    "Genealogy.html"
-  ],
   "Recent generations": [
     "Genealogy.html"
   ],
   "Full tree": [
-    "Genealogy.html"
-  ],
-  "The complete chart is also available in the original PDF.": [
     "Genealogy.html"
   ],
   "Text transcription": [
@@ -1521,19 +1517,10 @@
   "Doctoral supervision": [
     "Genealogy.html"
   ],
-  "Universities of Coimbra and Porto": [
-    "Genealogy.html"
-  ],
   "Computer science": [
     "Genealogy.html"
   ],
-  "Chart:": [
-    "Genealogy.html"
-  ],
   ", a service of North Dakota State University and the American Mathematical Society.": [
-    "Genealogy.html"
-  ],
-  "Explore the academic genealogy of Fernando Lucatelli Nunes, with the original Mathematics Genealogy Project chart and PDF.": [
     "Genealogy.html"
   ],
   "Explore the genealogy chart": [
@@ -1560,13 +1547,28 @@
   "Academic genealogy chart": [
     "Genealogy.html"
   ],
-  "The complete academic genealogy of Fernando Lucatelli Nunes. His doctoral supervisors are Maria Manuel Clementino, Gabriele Keller and Matthijs Vákár. A text transcription and the original PDF are linked below.": [
-    "Genealogy.html"
-  ],
   "Languages": [
     "shared interface"
   ],
   "Read the original English version": [
     "shared interface"
+  ],
+  "Open the genealogy PDF": [
+    "Genealogy.html"
+  ],
+  "The complete chart is also available in the genealogy PDF.": [
+    "Genealogy.html"
+  ],
+  "Joint doctoral programme of the Universities of Coimbra and Porto.": [
+    "Genealogy.html"
+  ],
+  "Chart adapted from:": [
+    "Genealogy.html"
+  ],
+  "Explore the academic genealogy of Fernando Lucatelli Nunes, with the Mathematics Genealogy Project chart and genealogy PDF.": [
+    "Genealogy.html"
+  ],
+  "The complete academic genealogy of Fernando Lucatelli Nunes. His Ph.D. in Mathematics was awarded by the University of Coimbra in 2018. His doctoral supervisors are Maria Manuel Clementino, Gabriele Keller and Matthijs Vákár. A text transcription and the genealogy PDF are linked below.": [
+    "Genealogy.html"
   ]
 }

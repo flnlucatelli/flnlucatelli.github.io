@@ -34,9 +34,12 @@ based on their browser language. The language menu works without JavaScript.
   wording, not a verbatim quotation from *Pseudomonads and Descent*. The abstract
   artwork was generated for this site, drawing on paths, surfaces and the geometry
   of Portuguese tiles. It is an artistic composition rather than a technical diagram.
-- `assets/genealogy/lucatellinunes.pdf` is the supplied Mathematics Genealogy Project
-  PDF, unchanged. The display SVG preserves its chart and vector lettering while
-  adapting the background and ink colours. The text file is its extracted transcript.
+- `assets/genealogy/lucatellinunes.pdf` is adapted from the supplied Mathematics
+  Genealogy Project chart. The author's entry distinguishes the University of
+  Coimbra as the awarding university for the 2018 mathematics doctorate from the
+  joint Coimbra–Porto doctoral programme. The display SVG and text transcription
+  carry the same clarification; all ancestral entries and supervision connections
+  are retained. These shared chart assets remain in English.
 
 The epigraphs are displayed as independent reflections alongside each doctorate;
 they are not intended as exhaustive descriptions of either thesis.

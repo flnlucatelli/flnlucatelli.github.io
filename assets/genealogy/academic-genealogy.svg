@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="2556" height="2556" viewBox="0 0 2556 2556" role="img" aria-labelledby="chart-title chart-desc" fill="#183047">
-<title id="chart-title">Academic genealogy of Fernando Lucatelli Nunes</title><desc id="chart-desc">A vector reproduction of the supplied Mathematics Genealogy Project chart, retaining every name, institution, date and connection.</desc><defs>
+<title id="chart-title">Academic genealogy of Fernando Lucatelli Nunes</title><desc id="chart-desc">Adapted from the Mathematics Genealogy Project chart. The mathematics doctorate was awarded by the University of Coimbra in 2018 within the joint doctoral programme of the University of Coimbra and the University of Porto. All ancestral names, dates and supervision connections are retained.</desc><defs>
 <path id="font_1_1" d="M.7182617 0H.56103518L.49853517 .16308594H.21240235L.15332031 0H0L.2788086 .7158203H.43164063L.7182617 0M.45214845 .2841797 .35351563 .5488281 .25683595 .2841797H.45214845Z"/>
 <path id="font_1_2" d="M.5239258 .36523438 .38867188 .3408203C.3841146 .36767579 .3737793 .38789878 .35766603 .40148927 .34155274 .41507975 .32063804 .421875 .29492188 .421875 .2607422 .421875 .23347982 .41011048 .21313477 .38658143 .19278972 .36305238 .18261719 .32370506 .18261719 .26853944 .18261719 .2071991 .19295247 .16386922 .21362305 .1385498 .23429363 .11324056 .26204429 .10058594 .296875 .10058594 .32291667 .10058594 .34423829 .10799154 .36083985 .122802738 .3774414 .13761394 .38916017 .16308594 .3959961 .19921875L.5307617 .17578125C.51676437 .11393229 .48990885 .067220058 .4501953 .03564453 .41048179 .0040690104 .35725913-.01171875 .29052735-.01171875 .21468099-.01171875 .1542155 .012207031 .10913086 .060058595 .06404623 .107910159 .041503908 .17415364 .041503908 .25878907 .041503908 .34440104 .0641276 .41105143 .109375 .45874024 .15462239 .506429 .21582031 .53027346 .29296876 .53027346 .35611979 .53027346 .4063314 .5166829 .44360353 .48950196 .48087565 .46232096 .5076497 .42089845 .5239258 .36523438Z"/>
 <path id="font_1_3" d="M.1743164 .35839845 .049804689 .38085938C.063802089 .4316508 .087890628 .46924845 .12207031 .49365235 .15625 .5180664 .20703125 .53027346 .27441407 .53027346 .33561198 .53027346 .3811849 .5230306 .4111328 .5085449 .44108073 .49405924 .4621582 .47566734 .47436524 .45336915 .48657228 .43107096 .49267579 .39013673 .49267579 .3305664L.49121095 .17041016C.49121095 .12483724 .4934082 .09122721 .49780274 .06958008 .50219729 .04793294 .5104167 .024739584 .52246096 0H.38671876C.38313804 .009114583 .3787435 .022623698 .37353517 .040527345 .3712565 .048665365 .3696289 .054036458 .36865235 .056640626 .34521485 .033854169 .32014976 .016764323 .29345704 .0053710939 .2667643-.0060221354 .23828125-.01171875 .20800781-.01171875 .15462239-.01171875 .11254883 .0027058919 .08178711 .031555177 .05102539 .06040446 .03564453 .09687296 .03564453 .1409607 .03564453 .1701355 .04264323 .19614665 .056640626 .21899414 .07063802 .2418518 .09025065 .25935874 .115478519 .2715149 .14070638 .28367106 .17708333 .2942861 .22460938 .30336 .28873698 .3153534 .33317057 .3265381 .35791017 .33691407V.35073854C.35791017 .37740074 .35139976 .39640809 .3383789 .40776063 .32535807 .41912333 .30078126 .4248047 .26464845 .4248047 .24023438 .4248047 .2211914 .41989137 .20751953 .4100647 .19384766 .4002482 .18277996 .38302613 .1743164 .35839845M.35791017 .24707031C.34033204 .24128215 .3125 .23436482 .27441407 .22631836 .23632813 .21828206 .21142578 .21040344 .19970703 .2026825 .18180339 .19013977 .17285156 .17421977 .17285156 .15492249 .17285156 .13594055 .18001302 .119532268 .19433594 .10569763 .20865886 .09187317 .22688802 .08496094 .24902344 .08496094 .27376304 .08496094 .29736329 .09300232 .31982423 .10908508 .33642579 .121302288 .34733073 .13626099 .35253907 .15396118 .35611979 .16553752 .35791017 .18756612 .35791017 .220047V.24707031Z"/>
@@ -313,112 +313,14 @@
 <use data-text="o" xlink:href="#font_2_15" transform="matrix(23.999955,0,0,-23.999955,762.86276,2344.4517)"/>
 <use data-text="r" xlink:href="#font_2_19" transform="matrix(23.999955,0,0,-23.999955,776.2067,2344.4517)"/>
 <use data-text="g" xlink:href="#font_2_16" transform="matrix(23.999955,0,0,-23.999955,784.1987,2344.4517)"/>
-<path stroke-width="1.086269" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#527774" d="M1457.934 2471.332H1574.164V2507.8282H1457.934Z"/>
-<use data-text="F" xlink:href="#font_2_35" transform="matrix(7.821134,0,0,-7.821134,1471.4852,2478.457)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1476.2639,2478.457)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1480.6124,2478.457)"/>
-<use data-text="n" xlink:href="#font_2_13" transform="matrix(7.821134,0,0,-7.821134,1483.2169,2478.457)"/>
-<use data-text="a" xlink:href="#font_2_6" transform="matrix(7.821134,0,0,-7.821134,1487.5654,2478.457)"/>
-<use data-text="n" xlink:href="#font_2_13" transform="matrix(7.821134,0,0,-7.821134,1491.914,2478.457)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1496.2625,2478.457)"/>
-<use data-text="o" xlink:href="#font_2_15" transform="matrix(7.821134,0,0,-7.821134,1500.611,2478.457)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1504.9595,2478.457)"/>
-<use data-text="L" xlink:href="#font_2_36" transform="matrix(7.821134,0,0,-7.821134,1507.1338,2478.457)"/>
-<use data-text="u" xlink:href="#font_2_37" transform="matrix(7.821134,0,0,-7.821134,1511.4823,2478.457)"/>
-<use data-text="c" xlink:href="#font_2_10" transform="matrix(7.821134,0,0,-7.821134,1515.8308,2478.457)"/>
-<use data-text="a" xlink:href="#font_2_6" transform="matrix(7.821134,0,0,-7.821134,1519.7413,2478.457)"/>
-<use data-text="t" xlink:href="#font_2_7" transform="matrix(7.821134,0,0,-7.821134,1524.0899,2478.457)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1526.2642,2478.457)"/>
-<use data-text="l" xlink:href="#font_2_14" transform="matrix(7.821134,0,0,-7.821134,1530.6127,2478.457)"/>
-<use data-text="l" xlink:href="#font_2_14" transform="matrix(7.821134,0,0,-7.821134,1532.349,2478.457)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1534.0853,2478.457)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1535.8217,2478.457)"/>
-<use data-text="N" xlink:href="#font_2_23" transform="matrix(7.821134,0,0,-7.821134,1537.996,2478.457)"/>
-<use data-text="u" xlink:href="#font_2_37" transform="matrix(7.821134,0,0,-7.821134,1543.6428,2478.457)"/>
-<use data-text="n" xlink:href="#font_2_13" transform="matrix(7.821134,0,0,-7.821134,1547.9913,2478.457)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1552.3399,2478.457)"/>
-<use data-text="s" xlink:href="#font_2_11" transform="matrix(7.821134,0,0,-7.821134,1556.6884,2478.457)"/>
-<use data-text="2" xlink:href="#font_2_38" transform="matrix(7.821134,0,0,-7.821134,1466.4844,2487.1473)"/>
-<use data-text="0" xlink:href="#font_2_39" transform="matrix(7.821134,0,0,-7.821134,1470.8329,2487.1473)"/>
-<use data-text="1" xlink:href="#font_2_40" transform="matrix(7.821134,0,0,-7.821134,1475.1814,2487.1473)"/>
-<use data-text="8" xlink:href="#font_2_41" transform="matrix(7.821134,0,0,-7.821134,1479.5299,2487.1473)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1483.8784,2487.1473)"/>
-<use data-text="U" xlink:href="#font_2_27" transform="matrix(7.821134,0,0,-7.821134,1486.0527,2487.1473)"/>
-<use data-text="n" xlink:href="#font_2_13" transform="matrix(7.821134,0,0,-7.821134,1491.6996,2487.1473)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1496.0481,2487.1473)"/>
-<use data-text="v" xlink:href="#font_2_21" transform="matrix(7.821134,0,0,-7.821134,1497.7844,2487.1473)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1501.695,2487.1473)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1506.0435,2487.1473)"/>
-<use data-text="s" xlink:href="#font_2_11" transform="matrix(7.821134,0,0,-7.821134,1508.648,2487.1473)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1512.5585,2487.1473)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1514.2948,2487.1473)"/>
-<use data-text="a" xlink:href="#font_2_6" transform="matrix(7.821134,0,0,-7.821134,1518.6433,2487.1473)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1522.9918,2487.1473)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1527.3403,2487.1473)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1531.6889,2487.1473)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1533.8632,2487.1473)"/>
-<use data-text="o" xlink:href="#font_2_15" transform="matrix(7.821134,0,0,-7.821134,1538.2117,2487.1473)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1542.5602,2487.1473)"/>
-<use data-text="P" xlink:href="#font_2_18" transform="matrix(7.821134,0,0,-7.821134,1544.7345,2487.1473)"/>
-<use data-text="o" xlink:href="#font_2_15" transform="matrix(7.821134,0,0,-7.821134,1549.9512,2487.1473)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1554.2997,2487.1473)"/>
-<use data-text="t" xlink:href="#font_2_7" transform="matrix(7.821134,0,0,-7.821134,1556.9042,2487.1473)"/>
-<use data-text="o" xlink:href="#font_2_15" transform="matrix(7.821134,0,0,-7.821134,1559.0785,2487.1473)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1563.427,2487.1473)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1565.6013,2487.1473)"/>
-<use data-text="2" xlink:href="#font_2_38" transform="matrix(7.821134,0,0,-7.821134,1462.1404,2495.8375)"/>
-<use data-text="0" xlink:href="#font_2_39" transform="matrix(7.821134,0,0,-7.821134,1466.4889,2495.8375)"/>
-<use data-text="1" xlink:href="#font_2_40" transform="matrix(7.821134,0,0,-7.821134,1470.8374,2495.8375)"/>
-<use data-text="8" xlink:href="#font_2_41" transform="matrix(7.821134,0,0,-7.821134,1475.1859,2495.8375)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1479.5344,2495.8375)"/>
-<use data-text="U" xlink:href="#font_2_27" transform="matrix(7.821134,0,0,-7.821134,1481.7088,2495.8375)"/>
-<use data-text="n" xlink:href="#font_2_13" transform="matrix(7.821134,0,0,-7.821134,1487.3556,2495.8375)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1491.7041,2495.8375)"/>
-<use data-text="v" xlink:href="#font_2_21" transform="matrix(7.821134,0,0,-7.821134,1493.4404,2495.8375)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1497.351,2495.8375)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1501.6995,2495.8375)"/>
-<use data-text="s" xlink:href="#font_2_11" transform="matrix(7.821134,0,0,-7.821134,1504.304,2495.8375)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1508.2145,2495.8375)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1509.9508,2495.8375)"/>
-<use data-text="a" xlink:href="#font_2_6" transform="matrix(7.821134,0,0,-7.821134,1514.2993,2495.8375)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1518.6478,2495.8375)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1522.9963,2495.8375)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1527.3449,2495.8375)"/>
-<use data-text="d" xlink:href="#font_2_28" transform="matrix(7.821134,0,0,-7.821134,1529.5192,2495.8375)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1533.8677,2495.8375)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1538.2162,2495.8375)"/>
-<use data-text="C" xlink:href="#font_2_42" transform="matrix(7.821134,0,0,-7.821134,1540.3905,2495.8375)"/>
-<use data-text="o" xlink:href="#font_2_15" transform="matrix(7.821134,0,0,-7.821134,1546.0374,2495.8375)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1550.3859,2495.8375)"/>
-<use data-text="m" xlink:href="#font_2_8" transform="matrix(7.821134,0,0,-7.821134,1552.1222,2495.8375)"/>
-<use data-text="b" xlink:href="#font_2_43" transform="matrix(7.821134,0,0,-7.821134,1558.6372,2495.8375)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1562.9857,2495.8375)"/>
-<use data-text="a" xlink:href="#font_2_6" transform="matrix(7.821134,0,0,-7.821134,1565.5902,2495.8375)"/>
-<use data-text="2" xlink:href="#font_2_38" transform="matrix(7.821134,0,0,-7.821134,1473.2324,2504.5277)"/>
-<use data-text="0" xlink:href="#font_2_39" transform="matrix(7.821134,0,0,-7.821134,1477.5809,2504.5277)"/>
-<use data-text="2" xlink:href="#font_2_38" transform="matrix(7.821134,0,0,-7.821134,1481.9295,2504.5277)"/>
-<use data-text="6" xlink:href="#font_2_44" transform="matrix(7.821134,0,0,-7.821134,1486.278,2504.5277)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1490.6265,2504.5277)"/>
-<use data-text="U" xlink:href="#font_2_27" transform="matrix(7.821134,0,0,-7.821134,1492.8008,2504.5277)"/>
-<use data-text="n" xlink:href="#font_2_13" transform="matrix(7.821134,0,0,-7.821134,1498.4476,2504.5277)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1502.7962,2504.5277)"/>
-<use data-text="v" xlink:href="#font_2_21" transform="matrix(7.821134,0,0,-7.821134,1504.5325,2504.5277)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1508.443,2504.5277)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1512.7915,2504.5277)"/>
-<use data-text="s" xlink:href="#font_2_11" transform="matrix(7.821134,0,0,-7.821134,1515.396,2504.5277)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1519.3065,2504.5277)"/>
-<use data-text="t" xlink:href="#font_2_7" transform="matrix(7.821134,0,0,-7.821134,1521.0429,2504.5277)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1523.2172,2504.5277)"/>
-<use data-text="i" xlink:href="#font_2_9" transform="matrix(7.821134,0,0,-7.821134,1527.5657,2504.5277)"/>
-<use data-text="t" xlink:href="#font_2_7" transform="matrix(7.821134,0,0,-7.821134,1529.302,2504.5277)"/>
-<use data-text=" " xlink:href="#font_2_4" transform="matrix(7.821134,0,0,-7.821134,1531.4763,2504.5277)"/>
-<use data-text="U" xlink:href="#font_2_27" transform="matrix(7.821134,0,0,-7.821134,1533.6506,2504.5277)"/>
-<use data-text="t" xlink:href="#font_2_7" transform="matrix(7.821134,0,0,-7.821134,1539.2975,2504.5277)"/>
-<use data-text="r" xlink:href="#font_2_19" transform="matrix(7.821134,0,0,-7.821134,1541.4718,2504.5277)"/>
-<use data-text="e" xlink:href="#font_2_3" transform="matrix(7.821134,0,0,-7.821134,1544.0763,2504.5277)"/>
-<use data-text="c" xlink:href="#font_2_10" transform="matrix(7.821134,0,0,-7.821134,1548.4248,2504.5277)"/>
-<use data-text="h" xlink:href="#font_2_2" transform="matrix(7.821134,0,0,-7.821134,1552.3353,2504.5277)"/>
-<use data-text="t" xlink:href="#font_2_7" transform="matrix(7.821134,0,0,-7.821134,1556.6838,2504.5277)"/>
+<g id="fernando-doctorates" aria-label="Fernando Lucatelli Nunes: mathematics doctorate awarded by the University of Coimbra in 2018, within the joint Coimbra and Porto programme; computer science doctorate awarded by Utrecht University in 2026.">
+<rect x="1366.049" y="2471.332" width="300" height="68" fill="#fffdf8" stroke="#527774" stroke-width="1.086269"/>
+<text x="1516.049" y="2484.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#183047">Fernando Lucatelli Nunes</text>
+<text x="1516.049" y="2496.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#183047">2018 Ph.D. in Mathematics</text>
+<text x="1516.049" y="2507.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#183047">Awarding university: University of Coimbra</text>
+<text x="1516.049" y="2519.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#183047">Joint programme: University of Coimbra and University of Porto</text>
+<text x="1516.049" y="2532.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#183047">2026 Ph.D. in Computer Science: Utrecht University</text>
+</g>
 <path stroke-width=".217254" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#527774" d="M1363.973 2428.965H1459.563V2445.043H1363.973Z"/>
 <use data-text="M" xlink:href="#font_2_5" transform="matrix(6.517615,0,0,-6.517615,1374.6372,2435.0499)"/>
 <use data-text="a" xlink:href="#font_2_6" transform="matrix(6.517615,0,0,-6.517615,1380.0664,2435.0499)"/>
