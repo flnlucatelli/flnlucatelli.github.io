@@ -33,6 +33,41 @@
       #participants tbody tr:last-child { border-bottom: 0; padding-bottom: 0; }
     }
   </style>
+  <style id="programme-overview-styles">
+    #programme.section { display: block; }
+    #programme .overview-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; }
+    #programme .overview-heading > a { font-size: .9375rem; color: var(--gold); }
+    #programme .overview-intro { margin: .4rem 0 1.2rem; color: var(--muted); font-size: .875rem; }
+    #programme .programme-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    #programme .overview-day { min-width: 0; }
+    #programme .overview-day h3 { margin: 0; padding: .7rem 0 .85rem; border-top: 2px solid #a48746; font: 500 1.3rem/1.25 var(--serif); letter-spacing: -.02em; }
+    #programme .overview-day h3 a { display: block; text-decoration: none; }
+    #programme .overview-day h3 span { display: block; margin-top: .25rem; color: var(--muted); font: 400 .8125rem/1.3 var(--sans); letter-spacing: 0; }
+    #programme .overview-day ol { list-style: none; margin: 0; padding: 0; }
+    #programme .overview-day li { display: grid; grid-template-columns: 5.15rem minmax(0, 1fr); gap: .5rem; align-items: baseline; padding: .55rem 0; border-top: 1px solid var(--line); font-size: .875rem; line-height: 1.4; break-inside: avoid; }
+    #programme .overview-time { color: var(--muted); font-size: .75rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    #programme .overview-talk a { text-decoration: none; }
+    #programme .overview-talk a:hover, #programme .overview-day h3 a:hover { text-decoration: underline; }
+    #programme .overview-break { color: var(--muted); }
+    #programme .overview-photo { background: #f7f1e3; color: #795917; padding-inline: .45rem; }
+    #programme .overview-photo .overview-time { color: inherit; }
+    @media (max-width: 740px) {
+      #programme .programme-overview { grid-template-columns: 1fr; gap: 1.5rem; }
+      #programme .overview-day h3 a { display: flex; align-items: baseline; gap: .75rem; }
+      #programme .overview-day h3 span { margin-top: 0; }
+      #programme .overview-day li { grid-template-columns: 6.4rem minmax(0, 1fr); gap: .75rem; font-size: .9375rem; }
+      #programme .overview-time { font-size: .8125rem; }
+    }
+    @media print {
+      #programme .programme-overview { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
+      #programme .overview-day h3 { font-size: 12pt; }
+      #programme .overview-day h3 a { display: block; }
+      #programme .overview-day h3 span { font-size: 8pt; }
+      #programme .overview-day li { grid-template-columns: 21mm minmax(0, 1fr); gap: 2mm; padding-block: 2mm; font-size: 8pt; }
+      #programme .overview-time { font-size: 7pt; }
+      #programme .overview-heading > a { display: none; }
+    }
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -108,8 +143,43 @@ May we publish your name and affiliation? Yes / No</pre>
     </div>
   </section>
   <section class="section" id="programme" aria-labelledby="programme-title">
-    <h2 id="programme-title">Programme</h2>
-    <p><a href="programme.html">View the full programme <span aria-hidden="true">→</span></a><span class="muted"> · 12–14 November 2026</span></p>
+    <div class="overview-heading"><h2 id="programme-title">Programme</h2><a href="programme.html">Full programme &amp; talk titles <span aria-hidden="true">→</span></a></div>
+    <p class="overview-intro">12–14 November 2026 · All times are local to Coimbra.</p>
+    <div class="programme-overview">
+      <section class="overview-day" aria-labelledby="overview-thursday"><h3 id="overview-thursday"><a href="programme.html#thursday">Thursday<span>12 November</span></a></h3><ol aria-label="Thursday programme">
+          <li class="overview-break"><span class="overview-time"><a href="https://flnlucatelli.github.io/2026/practical-information.html#lunch">Before 14:45</a></span><span><a href="https://flnlucatelli.github.io/2026/practical-information.html#lunch">Lunch</a></span></li>
+          <li class="overview-talk"><span class="overview-time">14:45–15:30</span><span><a href="programme.html#tim-van-der-linden">Tim Van der Linden</a></span></li>
+          <li class="overview-talk"><span class="overview-time">15:30–16:00</span><span><a href="programme.html#abbadini">Marco Abbadini</a></span></li>
+          <li class="overview-break"><span class="overview-time">16:00–16:30</span><span>Coffee break</span></li>
+          <li class="overview-talk"><span class="overview-time">16:30–16:50</span><span><a href="programme.html#idir-maguenine">Idir Maguenine</a></span></li>
+          <li class="overview-talk"><span class="overview-time">16:50–17:10</span><span><a href="programme.html#jana-k-nickel">Jana K. Nickel</a></span></li>
+        </ol></section>
+      <section class="overview-day" aria-labelledby="overview-friday"><h3 id="overview-friday"><a href="programme.html#friday">Friday<span>13 November</span></a></h3><ol aria-label="Friday programme">
+          <li class="overview-talk"><span class="overview-time">09:30–10:15</span><span><a href="programme.html#gran">Marino Gran</a></span></li>
+          <li class="overview-talk"><span class="overview-time">10:15–11:00</span><span><a href="programme.html#diana-rodelo">Diana Rodelo</a></span></li>
+          <li class="overview-break"><span class="overview-time">11:00–11:30</span><span>Coffee break</span></li>
+          <li class="overview-talk"><span class="overview-time">11:30–11:50</span><span><a href="programme.html#david-forsman">David Forsman</a></span></li>
+          <li class="overview-talk"><span class="overview-time">11:50–12:10</span><span><a href="programme.html#david-quiroga-gutierrez">David Quiroga Gutiérrez</a></span></li>
+          <li class="overview-talk"><span class="overview-time">12:10–12:30</span><span><a href="programme.html#pouya-partow">Pouya Partow</a></span></li>
+          <li class="overview-break"><span class="overview-time"><a href="https://flnlucatelli.github.io/2026/practical-information.html#lunch">12:30–14:30</a></span><span><a href="https://flnlucatelli.github.io/2026/practical-information.html#lunch">Lunch</a></span></li>
+          <li class="overview-talk"><span class="overview-time">14:30–15:00</span><span><a href="programme.html#paolo-perrone">Paolo Perrone</a></span></li>
+          <li class="overview-talk"><span class="overview-time">15:00–15:30</span><span><a href="programme.html#rui-soares-barbosa">Rui Soares Barbosa</a></span></li>
+          <li class="overview-talk"><span class="overview-time">15:30–16:00</span><span><a href="programme.html#xarez">João Xarez</a></span></li>
+          <li class="overview-break"><span class="overview-time">16:00–16:30</span><span>Coffee break</span></li>
+          <li class="overview-talk"><span class="overview-time">16:30–16:50</span><span><a href="programme.html#mendez-senra">Luzía Méndez Senra</a></span></li>
+          <li class="overview-talk"><span class="overview-time">16:50–17:10</span><span><a href="programme.html#diogo-simm">Diogo Simm</a></span></li>
+          <li class="overview-photo"><span class="overview-time">17:10</span><span><a href="programme.html#group-photo">Group photo</a></span></li>
+        </ol></section>
+      <section class="overview-day" aria-labelledby="overview-saturday"><h3 id="overview-saturday"><a href="programme.html#saturday">Saturday<span>14 November</span></a></h3><ol aria-label="Saturday programme">
+          <li class="overview-talk"><span class="overview-time">09:30–10:00</span><span><a href="programme.html#norihiro-yamada">Norihiro Yamada</a></span></li>
+          <li class="overview-talk"><span class="overview-time">10:00–10:30</span><span><a href="programme.html#fernando-lucatelli-nunes">Fernando Lucatelli Nunes</a></span></li>
+          <li class="overview-talk"><span class="overview-time">10:30–11:00</span><span><a href="programme.html#rui-prezado">Rui Prezado</a></span></li>
+          <li class="overview-break"><span class="overview-time">11:00–11:30</span><span>Coffee break</span></li>
+          <li class="overview-talk"><span class="overview-time">11:30–12:00</span><span><a href="programme.html#arnaud-duvieusart">Arnaud Duvieusart</a></span></li>
+          <li class="overview-talk"><span class="overview-time">12:00–12:30</span><span><a href="programme.html#maria-manuel-clementino">Maria Manuel Clementino</a></span></li>
+          <li class="overview-break"><span class="overview-time"><a href="programme.html#saturday-lunch">From 12:30</a></span><span><a href="programme.html#saturday-lunch">Lunch</a></span></li>
+        </ol></section>
+    </div>
   </section>
   <section class="section" id="participants" aria-labelledby="participants-title">
     <h2 id="participants-title">Participants</h2>
@@ -191,7 +261,6 @@ May we publish your name and affiliation? Yes / No</pre>
 <footer class="wrap"><span>XVI PCS · Coimbra 2026</span><a href="mailto:mmc@mat.uc.pt">Contact</a></footer>
 </body>
 </html>
-
 
 
 
