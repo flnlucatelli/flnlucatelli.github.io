@@ -31,7 +31,8 @@
 .abstract-body .math.display { display: block; overflow-x: auto; overflow-y: hidden; padding: .6rem .1rem; margin: .6rem 0 1rem; }
 .abstract-body math[display="block"] { margin: 0; }
 .abstract-body math { font-size: .96em; }
-.abstract-body .math.inline { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: -.15em; white-space: nowrap; }
+.abstract-body .math.inline { white-space: nowrap; }
+.abstract-body { overflow-x: auto; }
 .abstract-body .relation-arrow { display: inline-block; width: 1.4em; height: .525em; margin-inline: .18em; vertical-align: .02em; }
 .abstract-meta { margin-top: 1.7rem; padding: 1.2rem 0; border-block: 1px solid var(--line); font: 400 .875rem/1.6 var(--sans); color: var(--muted); }
 .abstract-meta p { margin-bottom: .35rem; }
