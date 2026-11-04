@@ -170,42 +170,8 @@
   .programme-end { padding-bottom: 2rem; font-size: .875rem; }
 }
 @media (prefers-reduced-motion: reduce) { .day-navigation a { transition: none; } }
-@page { size: A4; margin: 15mm; }
-@media print {
-  .programme-page { background: white; font-size: 10pt; }
-  .programme-page .wrap { width: 100%; }
-  .site-header, .day-navigation-shell, .hero-image, .hero-venue-photo, .hero-description, .schedule-tools, .programme-end, .programme-notes, .programme-page footer { display: none; }
-  .programme-hero { display: block; padding: 0 0 5mm; }
-  .hero-copy .eyebrow { font-size: 9pt; margin-bottom: 2mm; }
-  .programme-hero h1 { font-size: 29pt; }
-  .hero-venue { font-size: 9pt; margin-top: 3mm; }
-  .hero-venue h2 { font-size: 13pt; }
-  .hero-copy .hero-venue .eyebrow { font-size: 7pt; }
-  .hero-venue .venue-links { font-size: 9pt; }
-  .hero-venue br { display: none; }
-  .programme-day { display: block; padding: 4mm 0 0; break-before: page; }
-  #thursday { break-before: auto; }
-  .programme-day + .programme-day { border-top: 0; }
-  .day-heading { position: static; display: flex; gap: 4mm; align-items: center; margin-bottom: 4mm; }
-  .day-number { font-size: 36pt; min-width: 13mm; margin: 0; }
-  .day-month { font-size: 7pt; margin-bottom: 1mm; }
-  .day-heading h2 { font-size: 17pt; }
-  .day-session { display: none; }
-  .agenda > li { display: grid; grid-template-columns: 28mm minmax(0, 1fr); gap: 5mm; padding: 2.5mm 0; margin: 0; }
-  .slot-time { display: flex; font-size: 9pt; gap: .18em; padding-top: .4mm; }
-  .slot-time a { display: flex; gap: .18em; }
-  .slot-time time, .time-dash { display: inline; }
-  .time-dash { line-height: inherit; margin: 0; }
-  .time-prefix { font-size: 7pt; }
-  .talk-body h3 { font-size: 12pt; margin-bottom: 1mm; }
-  .talk-title, .talk-title.forthcoming { font-size: 9.5pt; margin-bottom: 1mm; }
-  .affiliation { font-size: 8pt; }
-  .event-body h3, .photo .event-body h3 { font-size: 10pt; }
-  .event-body p { font-size: 8pt; }
-  .agenda > .lunch, .agenda > .photo { padding: 2.5mm 0; margin: 0; background: none; border-left: 0; border-bottom: 1px solid var(--line); }
-  .event-arrow { display: none; }
-  .event-icon { width: 4mm; height: 4mm; flex-basis: 4mm; }
-}
+
+
 
 /* Practical notes remain visible in the printed programme. */
 .programme-info { margin: 0 0 1.5rem 15.3rem; padding: 1.6rem 1.8rem; background: #eeeee6; border-left: 2px solid #ac8a3c; scroll-margin-top: 7rem; }
@@ -216,12 +182,7 @@
 @media (max-width: 1000px) { .programme-info { margin-left: 11.8rem; } }
 @media (max-width: 760px) { .programme-info { margin-left: 0; } }
 @media (max-width: 540px) { .programme-info { padding: 1.3rem; scroll-margin-top: 6rem; } }
-@media print {
-  .programme-info { margin: 5mm 0 0; padding: 3mm 0 0; background: none; border-left: 0; border-top: 1px solid var(--line); break-inside: avoid; }
-  .programme-info .eyebrow { font-size: 7pt; }
-  .programme-info h2 { font-size: 13pt; margin-bottom: 2mm; }
-  .programme-info > p:not(.eyebrow), .programme-info > p.lunch-payment-note { font-size: 9pt; }
-}
+
 
 /* A concise venue introduction above the timetable. */
 .programme-venue { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 2rem; margin: 1.5rem 0 .2rem; padding: 1.2rem 1.5rem; border: 1px solid var(--line); background: #f2f1ea; scroll-margin-top: 7rem; }
@@ -240,9 +201,73 @@
 @media (max-width: 540px) {
   .programme-venue { padding: 1rem; scroll-margin-top: 6rem; }
 }
+
+/* One-page A4 timetable, shared by Print programme and browser printing. */
+@page { size: A4 portrait; margin: 12mm; }
 @media print {
-  .programme-venue { display: block; padding: 3mm 0; margin: 0 0 3mm; border: 0; background: none; break-inside: avoid; }
-  .programme-venue .venue-photo { display: none; }
-  .programme-venue h2 { font-size: 13pt; }
-  .programme-venue p, .programme-venue p.venue-links { font-size: 9pt; }
+  .programme-page {
+    --ink: #111;
+    --muted: #333;
+    --gold: #111;
+    --line: #ccc;
+    display: block;
+    min-height: 0;
+    background: #fff;
+    color: var(--ink);
+    font: 400 9.5pt/1.22 Arial, Helvetica, sans-serif;
+  }
+  .programme-page main { display: block; }
+  .programme-page .wrap { width: 100%; max-width: none; margin: 0; }
+  .site-header, .skip, .day-navigation-shell, .hero-image,
+  .hero-venue-photo, .hero-description, .hero-venue .eyebrow,
+  .hero-venue .venue-links, .print-programme, .programme-end,
+  .programme-notes, .programme-page footer, .affiliation,
+  .day-number, .day-month, .day-session, .event-icon, .event-arrow {
+    display: none !important;
+  }
+  .programme-page a { color: inherit; text-decoration: none; }
+  .programme-page :target { outline: none; }
+  .programme-hero { display: block; padding: 0 0 1.5mm; }
+  .hero-copy { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 1.5mm 3mm; }
+  .hero-copy > .eyebrow { grid-column: 2; grid-row: 1; margin: 0; font-size: 9pt; letter-spacing: .03em; }
+  .programme-hero h1 { grid-column: 1; grid-row: 1; font: 700 17pt/1.1 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+  .hero-venue { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 2mm; margin: 0; font-size: 9pt; line-height: 1.22; }
+  .hero-venue h2 { margin: 0; font: 700 9pt/1.22 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+  .hero-venue p { margin: 0; }
+  .schedule-tools { display: block; padding: 0 0 1mm; font-size: 8pt; }
+  .schedule-tools p { max-width: none; }
+  .programme-day { display: block; padding: 2.5mm 0 0; break-before: auto; }
+  .programme-day + .programme-day { border-top: 0; }
+  .day-heading { position: static; display: block; padding: 0; margin: 0 0 1mm; break-after: avoid; }
+  .day-heading h2 { font: 700 11pt/1.2 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+  .day-heading .sr-only { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip-path: none; white-space: normal; }
+  .agenda { border-top: .75pt solid #333; }
+  .agenda > li,
+  .agenda > .lunch,
+  .agenda > .photo {
+    display: grid;
+    grid-template-columns: 24mm minmax(0, 1fr);
+    gap: 2.5mm;
+    padding: 1mm 0;
+    margin: 0;
+    background: none;
+    border-left: 0;
+    border-bottom: .4pt solid var(--line);
+    break-inside: avoid;
+  }
+  .slot-time, .agenda-event .slot-time { display: flex; flex-wrap: nowrap; align-items: baseline; gap: .15em; padding: 0; font-size: 9pt; line-height: 1.22; color: #111; white-space: nowrap; }
+  .slot-time a { display: inline-flex; flex-wrap: nowrap; gap: .15em; }
+  .slot-time time, .time-dash { display: inline; margin: 0; line-height: inherit; color: inherit; }
+  .time-prefix { display: inline; width: auto; font-size: 8pt; font-weight: 400; letter-spacing: 0; text-transform: none; }
+  .talk-body { display: grid; grid-template-columns: 44mm minmax(0, 1fr); gap: 2.5mm; align-items: baseline; }
+  .talk-body h3 { margin: 0; font: 700 9.5pt/1.22 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+  .talk-title, .talk-title.forthcoming { margin: 0; font-size: 9.5pt; line-height: 1.22; color: #111; overflow-wrap: break-word; }
+  .event-body, .event-body > div { display: block; }
+  .event-body h3, .photo .event-body h3 { display: inline; margin: 0; font: 700 9.5pt/1.22 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+  .event-body p { display: inline; margin: 0 0 0 2mm; font-size: 8pt; line-height: 1.22; }
+  .programme-info { margin: 2.5mm 0 0; padding: 0; background: none; border: 0; break-inside: avoid; line-height: 1.25; }
+  .programme-info .eyebrow { display: none; }
+  .programme-info h2 { display: inline; margin: 0 1mm 0 0; font: 700 8pt/1.25 Arial, Helvetica, sans-serif; letter-spacing: 0; }
+  .programme-info h2::after { content: ':'; }
+  .programme-info > p:not(.eyebrow), .programme-info > p.lunch-payment-note { display: inline; max-width: none; margin: 0; font-size: 8pt; line-height: 1.25; }
 }
