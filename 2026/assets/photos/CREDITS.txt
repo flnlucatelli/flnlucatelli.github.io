@@ -5,3 +5,12 @@ Photographs supplied by the conference organiser for this website.
 Original filenames: 2014-05-09 18.44.31.jpg and 2014-05-09 18.57.46.jpg.
 The image files are unchanged; CSS frames them to fit the page layout.
 No additional reuse licence is asserted for these two photographs.
+
+Department of Mathematics entrance
+----------------------------------
+File: dmuc-entrance.webp
+Source: University of Coimbra, Laboratory for Computational Mathematics.
+Source page: https://www.uc.pt/uid/lcm/article?key=a-b2ba6f28bd
+Original image: https://apps.uc.pt/sites/articles/cover/ac-d4b91ade4b1540cf8e7281415dbb9c11/hr/DMUC.png
+Converted to WebP for the web; the full photograph is displayed without cropping.
+No individual photographer is identified on the source page.

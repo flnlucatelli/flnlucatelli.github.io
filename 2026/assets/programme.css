@@ -217,17 +217,25 @@
 }
 
 /* A concise venue introduction above the timetable. */
-.programme-venue { margin: 1.5rem 0 .2rem; padding: 1.2rem 1.5rem; border: 1px solid var(--line); background: #f2f1ea; scroll-margin-top: 7rem; }
+.programme-venue { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 2rem; margin: 1.5rem 0 .2rem; padding: 1.2rem 1.5rem; border: 1px solid var(--line); background: #f2f1ea; scroll-margin-top: 7rem; }
 .programme-venue .eyebrow { margin-bottom: .3rem; font-size: .6875rem; }
 .programme-venue h2 { margin: 0 0 .45rem; font: 450 1.55rem/1.2 var(--serif); letter-spacing: -.025em; }
 .programme-venue p { font-size: .9375rem; }
 .programme-venue p.venue-links { margin-top: .65rem; font-size: .875rem; color: var(--gold); }
+.venue-photo { margin: 0; min-width: 0; }
+.venue-photo img { display: block; width: 100%; height: auto; }
+.venue-photo figcaption { margin-top: .5rem; color: var(--muted); font-size: .75rem; line-height: 1.4; }
+.venue-photo figcaption a { text-underline-offset: .15em; }
+@media (max-width: 760px) {
+  .programme-venue { grid-template-columns: 1fr; gap: 1.1rem; }
+}
 .programme-info:target, .programme-venue:target { outline: 2px solid var(--gold); outline-offset: 4px; }
 @media (max-width: 540px) {
   .programme-venue { padding: 1rem; scroll-margin-top: 6rem; }
 }
 @media print {
   .programme-venue { display: block; padding: 3mm 0; margin: 0 0 3mm; border: 0; background: none; break-inside: avoid; }
+  .programme-venue .venue-photo { display: none; }
   .programme-venue h2 { font-size: 13pt; }
   .programme-venue p, .programme-venue p.venue-links { font-size: 9pt; }
 }
