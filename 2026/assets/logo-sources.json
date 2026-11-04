@@ -1,0 +1,27 @@
+[
+  {
+    "file": "cmuc-official.svg",
+    "source": "https://www.fct.pt/wp-content/uploads/2022/06/atlas_2022.pdf",
+    "note": "CMUC official logo vector paths extracted from page 45 (printed pages 88\u201389) with original colors. SVG viewBox 0 0 95 43, 26340 bytes."
+  },
+  {
+    "file": "cidma-official.png",
+    "source": "https://cidma.ua.pt/assets/images/logo.png",
+    "note": "Direct current official homepage logo, as referenced by https://cidma.ua.pt/assets/css/main.css. 708x208 RGBA."
+  },
+  {
+    "file": "dmuc-official.png",
+    "source": "https://www.mat.uc.pt/canguru/Arqprovas/2025/provaMini-Escolar_2_25.pdf",
+    "note": "Official compact department mark, lossless extraction with alpha mask, 1848x798 RGBA."
+  },
+  {
+    "file": "fct-official.svg",
+    "source": "https://www.fct.pt/wp-content/uploads/2022/11/2022_Logotipo_FCT_vetorial.zip",
+    "note": "Converted first page of official RGB/2022_FCT_Logo.pdf to SVG retaining original vector paths; trimmed artboard with 20pt margin. Official media page https://www.fct.pt/media/media-e-identidade-de-marca/."
+  },
+  {
+    "file": "republica-portuguesa-official.svg",
+    "source": "https://www.fct.pt/wp-content/uploads/2024/05/RepublicaPortuguesa_2024.zip",
+    "note": "Direct official Digital_RP_4C.svg asset from FCT media package."
+  }
+]

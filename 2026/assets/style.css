@@ -67,7 +67,7 @@ summary:hover { color: var(--gold); }
 .organisers li { min-width: 0; }
 .support { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 2rem; }
 .support a { display: flex; justify-content: center; align-items: center; width: 9rem; height: 4.25rem; }
-.support img { max-height: 4.25rem; object-fit: contain; }
+.support img { width: 100%; max-height: 4.25rem; object-fit: contain; }
 footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1rem 2rem; color: var(--muted); font-size: .9375rem; }
 .programme-page { min-height: 100vh; display: flex; flex-direction: column; }
 .programme-page main { flex: 1; }
@@ -281,4 +281,35 @@ footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1
 @media print {
   #lunch .vegan-key, #lunch .restaurant-heading { break-inside: avoid; }
   #lunch .vegan-badge { color: #252821; background: none; border-color: #888; }
+}
+
+/* Conference support and small-print acknowledgements. */
+.conference-footer { display: block; }
+.footer-row, .footer-links { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; }
+.footer-links { font-size: .875rem; }
+.funding-footnotes { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); }
+.funding-footnotes p { margin-bottom: .45rem; }
+.funding-footnotes small { display: block; font-size: .75rem; line-height: 1.5; }
+.support-page { min-height: 100vh; display: flex; flex-direction: column; }
+.support-content { flex: 1; padding-top: 2.5rem; }
+.support-centres { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5rem; padding-bottom: 2.5rem; }
+.support-centre { display: flex; flex-direction: column; min-width: 0; }
+.centre-logo { display: flex; align-items: center; justify-content: flex-start; height: 6.5rem; margin-bottom: 1.75rem; }
+.centre-logo img { width: 15rem; height: 5rem; max-width: 100%; object-fit: contain; object-position: left center; }
+.support-centre h2 { font: 500 1.8rem/1.2 var(--serif); letter-spacing: -.02em; }
+.centre-name { color: var(--muted); font-size: .9375rem; line-height: 1.4; min-height: 4rem; margin-top: .5rem; }
+.centre-acknowledgement { padding-top: 1.2rem; margin-top: 1rem; border-top: 1px solid var(--line); font-size: .9375rem; line-height: 1.65; }
+.centre-link { margin-top: auto; padding-top: 1.3rem; color: var(--gold); font-size: .9375rem; }
+.support-partners { justify-content: flex-start; gap: 3rem; border-top: 1px solid var(--line); }
+@media (max-width: 620px) {
+  .support-centres { grid-template-columns: 1fr; gap: 2rem; }
+  .support-centre + .support-centre { border-top: 1px solid var(--line); padding-top: 2rem; }
+  .centre-logo { margin-bottom: 1rem; height: 5rem; }
+  .centre-name { min-height: 0; }
+  .support-partners { gap: 1.75rem; }
+  .funding-footnotes { margin-top: 1rem; }
+}
+@media print {
+  .support-centres { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .support-centre { break-inside: avoid; }
 }

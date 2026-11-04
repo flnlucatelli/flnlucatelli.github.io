@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="862" height="560" viewBox="0 0 862 560" role="img" aria-labelledby="title desc">
+  <title id="title">Portuguese Category Seminar</title>
+  <desc id="desc">Three golden objects joined by curved directed arrows.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2=".85" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#f3d993"/>
+      <stop offset=".5" stop-color="#d9ad48"/>
+      <stop offset="1" stop-color="#ad771e"/>
+    </linearGradient>
+    <linearGradient id="arrows" x1="155" y1="90" x2="710" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c89a38"/>
+      <stop offset="1" stop-color="#926512"/>
+    </linearGradient>
+    <marker id="tip" viewBox="0 0 16 16" refX="12" refY="8" markerWidth="2.4" markerHeight="2.4" orient="auto">
+      <path d="M2 2 14 8 2 14 5 8Z" fill="#a57a25"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="url(#arrows)" stroke-width="13" stroke-linecap="round" marker-end="url(#tip)">
+    <path d="M307 167C219 185 160 231 133 263"/>
+    <path d="M272 300C363 278 428 234 416 194"/>
+    <path d="M455 106C588 86 704 146 711 212"/>
+    <path d="M556 385C429 391 306 284 326 184"/>
+    <path d="M260 480C369 541 510 535 586 482"/>
+    <path d="M568 280C453 204 329 211 259 271"/>
+  </g>
+  <g fill="url(#gold)" stroke="#bd9137" stroke-width="2">
+    <circle cx="184" cy="384" r="125"/>
+    <circle cx="381" cy="114" r="78"/>
+    <circle cx="686" cy="366" r="147"/>
+  </g>
+</svg>
