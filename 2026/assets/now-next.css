@@ -42,3 +42,9 @@
   .now-next-current h3 { font-size: 1.5rem; }
 }
 @media print { .now-next { display: none; } }
+
+/* Dedicated live programme page. */
+.now-next-page { min-height: 100vh; display: flex; flex-direction: column; }
+.now-next-page main { flex: 1; }
+.now-next-page .now-next { border-bottom: 0; padding-bottom: 2.5rem; }
+.now-next-page .now-next-footer { justify-content: flex-end; }
