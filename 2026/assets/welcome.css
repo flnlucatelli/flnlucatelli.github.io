@@ -1,0 +1,49 @@
+#registration.welcome-section {
+  display: block;
+  padding-block: 2.5rem 2rem;
+}
+.welcome-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+.welcome-copy { min-width: 0; }
+.welcome-copy h2 {
+  margin: 0 0 1rem;
+  font: 400 clamp(2rem, 4vw, 2.7rem)/1.12 var(--serif);
+  letter-spacing: -.035em;
+}
+.welcome-copy > p:last-child { font-size: 1.0625rem; line-height: 1.65; }
+.welcome-art { margin: 0; }
+.welcome-art img { width: 100%; height: auto; }
+.welcome-venue {
+  margin-top: 1.8rem;
+  padding: 1.35rem 1.5rem;
+  border-left: 2px solid #a48746;
+  background: #faf9f5;
+}
+.welcome-venue h3 {
+  margin: 0 0 .55rem;
+  font: 500 1.4rem/1.25 var(--serif);
+  letter-spacing: -.015em;
+}
+.welcome-venue > p { font-size: 1rem; }
+.welcome-address { color: var(--muted); font-size: .9375rem !important; }
+.welcome-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: .85rem; color: var(--gold); }
+.welcome-links a { font-weight: 500; }
+.welcome-check-in { margin: 1.25rem 0 0; font-size: .9375rem; color: var(--muted); line-height: 1.6; }
+.welcome-check-in strong { color: var(--ink); }
+@media (max-width: 640px) {
+  #registration.welcome-section { padding-block: 1.75rem; }
+  .welcome-intro { grid-template-columns: 1fr; gap: 1rem; }
+  .welcome-art { max-width: 27rem; width: 100%; margin-inline: auto; }
+  .welcome-venue { margin-top: 1.2rem; padding: 1.1rem 1.15rem; }
+}
+@media print {
+  .welcome-section { break-inside: avoid; }
+  .welcome-intro { grid-template-columns: 1fr; }
+  .welcome-art { display: none; }
+  .welcome-venue { padding: .8rem 1rem; background: none; }
+}
+
