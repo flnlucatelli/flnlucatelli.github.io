@@ -179,6 +179,18 @@
 .programme-info h2 { font: 450 1.7rem/1.2 var(--serif); letter-spacing: -.025em; margin-bottom: .8rem; }
 .programme-info > p:not(.eyebrow) { max-width: 39rem; font-size: 1rem; }
 .programme-info > p.lunch-payment-note { font-size: .875rem; color: var(--muted); margin-top: .7rem; }
+.registration-info { background: #f3efe3; }
+.registration-screen { font-size: 1rem; }
+.registration-screen h3 { margin: 1.25rem 0 .65rem; font: 600 1rem/1.4 var(--sans); }
+.registration-directions ol { margin: 0 0 .8rem; padding-left: 1.3rem; }
+.registration-directions li { padding-left: .2rem; margin-bottom: .6rem; }
+.registration-directions li::marker { color: var(--gold); font-weight: 600; }
+.registration-links { font-size: .875rem; color: var(--gold); }
+.registration-payment { margin-top: 1.25rem; padding: 1.1rem 1.25rem; border: 1px solid #d9c99f; background: #fffdf7; }
+.registration-payment h3 { margin: 0 0 .65rem; font-size: 1.0625rem; }
+.registration-payment p { font-size: .9375rem; }
+.registration-help { margin-top: 1rem; font-size: .875rem; color: var(--muted); }
+.programme-info > .registration-print { display: none; }
 @media (max-width: 1000px) { .programme-info { margin-left: 11.8rem; } }
 @media (max-width: 760px) { .programme-info { margin-left: 0; } }
 @media (max-width: 540px) { .programme-info { padding: 1.3rem; scroll-margin-top: 6rem; } }
@@ -270,4 +282,7 @@
   .programme-info h2 { display: inline; margin: 0 1mm 0 0; font: 700 8pt/1.25 Arial, Helvetica, sans-serif; letter-spacing: 0; }
   .programme-info h2::after { content: ':'; }
   .programme-info > p:not(.eyebrow), .programme-info > p.lunch-payment-note { display: inline; max-width: none; margin: 0; font-size: 8pt; line-height: 1.25; }
+  .registration-screen { display: none; }
+  .programme-info > .registration-print { display: inline; }
 }
+
