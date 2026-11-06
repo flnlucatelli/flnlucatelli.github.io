@@ -106,6 +106,7 @@
           link.href = state.untimed.url;
           note.append(link);
           current.append(note);
+          if (state.untimed.detail) current.append(element('p', 'now-next-detail', state.untimed.detail));
         }
       }
       const upcoming = element('div', 'now-next-upcoming');
@@ -163,3 +164,4 @@
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); refreshProgramme(); } });
   window.addEventListener('pageshow', render);
 }());
+
