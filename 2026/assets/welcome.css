@@ -1,4 +1,4 @@
-#registration.welcome-section {
+.section.welcome-section {
   display: block;
   padding-block: 2.5rem 2rem;
 }
@@ -35,7 +35,7 @@
 .welcome-check-in { margin: 1.25rem 0 0; font-size: .9375rem; color: var(--muted); line-height: 1.6; }
 .welcome-check-in strong { color: var(--ink); }
 @media (max-width: 640px) {
-  #registration.welcome-section { padding-block: 1.75rem; }
+  .section.welcome-section { padding-block: 1.75rem; }
   .welcome-intro { grid-template-columns: 1fr; gap: 1rem; }
   .welcome-art { max-width: 27rem; width: 100%; margin-inline: auto; }
   .welcome-venue { margin-top: 1.2rem; padding: 1.1rem 1.15rem; }
@@ -46,4 +46,5 @@
   .welcome-art { display: none; }
   .welcome-venue { padding: .8rem 1rem; background: none; }
 }
+
 
