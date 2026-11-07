@@ -95,11 +95,11 @@
       current.append(element('p', 'now-next-label', state.phase === 'before' ? 'Countdown' : 'Now'));
       let message;
       if (state.phase === 'before') {
-        message = 'The seminar begins on ' + dateFormatter.format(events[0].start) + ' at ' + timeFormatter.format(events[0].start) + ' in Coimbra.';
-        current.append(element('h3', '', 'The seminar begins in'));
+        message = 'The event begins on ' + dateFormatter.format(events[0].start) + ' at ' + timeFormatter.format(events[0].start) + ' in Coimbra.';
+        current.append(element('h3', '', 'The event begins in'));
         const countdown = element('div', 'now-next-start-countdown');
         countdown.setAttribute('role', 'timer');
-        countdown.setAttribute('aria-label', 'Time until the seminar begins');
+        countdown.setAttribute('aria-label', 'Time until the event begins');
         // The timer is readable on demand, without announcing every second.
         countdown.setAttribute('aria-live', 'off');
         for (const unit of ['days', 'hours', 'minutes', 'seconds']) {
@@ -199,5 +199,6 @@
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); refreshProgramme(); } });
   window.addEventListener('pageshow', render);
 }());
+
 
 
