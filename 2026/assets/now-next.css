@@ -21,6 +21,10 @@
 .now-next-progress::-webkit-progress-value { background: #39704c; }
 .now-next-progress::-moz-progress-bar { background: #39704c; }
 .now-next-countdown { color: #46624c; font-size: .8125rem; }
+.now-next-start-countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; margin: 1.4rem 0 1.25rem; }
+.now-next-countdown-part { min-width: 0; text-align: center; padding-block: .6rem; border-block: 1px solid #ded6c3; }
+.now-next-countdown-value { display: block; color: var(--ink); font: 400 clamp(1.65rem, 4vw, 2.6rem)/1.15 var(--sans); font-variant-numeric: tabular-nums; }
+.now-next-countdown-unit { display: block; margin-top: .3rem; color: #795917; font-size: .6875rem; letter-spacing: .04em; text-transform: uppercase; }
 .now-next-upcoming { padding: 1.5rem; min-width: 0; border-left: 1px solid var(--line); }
 .now-next-upcoming ol { margin: 0; padding: 0; list-style: none; }
 .now-next-upcoming li + li { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
@@ -48,3 +52,4 @@
 .now-next-page main { flex: 1; }
 .now-next-page .now-next { border-bottom: 0; padding-bottom: 2.5rem; }
 .now-next-page .now-next-footer { justify-content: flex-end; }
+

@@ -6,6 +6,15 @@
   const dateFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short' });
   const timeFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
   function dayKey(time) { return dayFormatter.format(new Date(time)); }
+  function countdownParts(start, now) {
+    const seconds = Math.max(0, Math.ceil((start - now) / 1000));
+    return {
+      days: Math.floor(seconds / 86400),
+      hours: Math.floor(seconds / 3600) % 24,
+      minutes: Math.floor(seconds / 60) % 60,
+      seconds: seconds % 60
+    };
+  }
   function selectState(events, now) {
     const current = events.find(event => event.start <= now && event.end !== null && now < event.end);
     const upcoming = events.filter(event => event.start > now).slice(0, 2);
@@ -44,7 +53,7 @@
     return events;
   }
   // Export the time logic for boundary checks without starting a browser widget.
-  if (typeof module !== 'undefined' && module.exports) module.exports = { selectState, parseProgramme, dayKey };
+  if (typeof module !== 'undefined' && module.exports) module.exports = { selectState, parseProgramme, dayKey, countdownParts };
   if (typeof document === 'undefined') return;
   const section = document.getElementById('now-next');
   if (!section) return;
@@ -83,9 +92,26 @@
       lastView = signature;
       content.dataset.state = state.phase;
       const current = element('div', 'now-next-current');
-      current.append(element('p', 'now-next-label', 'Now'));
+      current.append(element('p', 'now-next-label', state.phase === 'before' ? 'Countdown' : 'Now'));
       let message;
-      if (state.current) {
+      if (state.phase === 'before') {
+        message = 'The seminar begins on ' + dateFormatter.format(events[0].start) + ' at ' + timeFormatter.format(events[0].start) + ' in Coimbra.';
+        current.append(element('h3', '', 'The seminar begins in'));
+        const countdown = element('div', 'now-next-start-countdown');
+        countdown.setAttribute('role', 'timer');
+        countdown.setAttribute('aria-label', 'Time until the seminar begins');
+        // The timer is readable on demand, without announcing every second.
+        countdown.setAttribute('aria-live', 'off');
+        for (const unit of ['days', 'hours', 'minutes', 'seconds']) {
+          const part = element('div', 'now-next-countdown-part');
+          const value = element('span', 'now-next-countdown-value');
+          value.dataset.countdownUnit = unit;
+          part.append(value, element('span', 'now-next-countdown-unit', unit));
+          countdown.append(part);
+        }
+        current.append(countdown, element('p', 'now-next-meta', dateFormatter.format(events[0].start) + ' · ' + timeFormatter.format(events[0].start) + ' in Coimbra'));
+        current.append(element('p', 'now-next-detail', 'We look forward to welcoming you.'));
+      } else if (state.current) {
         message = state.current.heading;
         current.append(eventHeading(state.current));
         if (state.current.title) current.append(element('p', 'now-next-title', state.current.title));
@@ -96,9 +122,9 @@
         progress.setAttribute('aria-label', 'Scheduled session progress');
         current.append(progress, element('p', 'now-next-countdown'));
       } else {
-        message = state.phase === 'before' ? 'The seminar has not started yet.' : state.phase === 'ended' ? 'The seminar has concluded.' : state.phase === 'talks-ended' ? 'The talks have concluded.' : 'No session is scheduled right now.';
+        message = state.phase === 'ended' ? 'The seminar has concluded.' : state.phase === 'talks-ended' ? 'The talks have concluded.' : 'No session is scheduled right now.';
         current.append(element('h3', '', message));
-        const detail = state.phase === 'before' ? 'We look forward to welcoming you to Coimbra, 12–14 November.' : state.phase === 'ended' ? 'Thank you for joining us in Coimbra.' : state.phase === 'talks-ended' ? 'Thank you for taking part in the XVI Portuguese Category Seminar.' : 'See what is coming up next in the programme.';
+        const detail = state.phase === 'ended' ? 'Thank you for joining us in Coimbra.' : state.phase === 'talks-ended' ? 'Thank you for taking part in the XVI Portuguese Category Seminar.' : 'See what is coming up next in the programme.';
         current.append(element('p', 'now-next-detail', detail));
         if (state.untimed) {
           const note = element('p', 'now-next-detail');
@@ -123,7 +149,14 @@
       content.replaceChildren(current, upcoming);
       content.hidden = false;
       fallback.hidden = true;
-      announcement.textContent = 'Now: ' + message + (state.upcoming[0] ? ' Next: ' + state.upcoming[0].heading + ', ' + eventTime(state.upcoming[0]) + '.' : '');
+      announcement.textContent = (state.phase === 'before' ? '' : 'Now: ') + message + (state.upcoming[0] ? ' Next: ' + state.upcoming[0].heading + ', ' + eventTime(state.upcoming[0]) + '.' : '');
+    }
+    if (state.phase === 'before') {
+      const remaining = countdownParts(events[0].start, now);
+      content.querySelectorAll('[data-countdown-unit]').forEach(node => {
+        const value = String(remaining[node.dataset.countdownUnit]).padStart(2, '0');
+        if (node.textContent !== value) node.textContent = value;
+      });
     }
     if (state.current) {
       const progress = content.querySelector('progress');
@@ -131,10 +164,12 @@
       const minutes = Math.ceil((state.current.end - now) / 60000);
       content.querySelector('.now-next-countdown').textContent = 'Scheduled to finish in ' + minutes + (minutes === 1 ? ' minute' : ' minutes');
     }
-    // Refresh at each minute and exactly at the next scheduled boundary.
+    // Count down each second; once started, keep the live programme's minute cadence.
+    // Always switch at the next scheduled boundary, using the current wall clock.
     const boundaries = events.flatMap(event => [event.start, event.end]).filter(time => time !== null && time > now);
-    const delay = Math.min(60000 - now % 60000, ...boundaries.map(time => time - now));
-    timer = setTimeout(render, Math.max(50, delay));
+    const cadence = state.phase === 'before' ? 1000 : 60000;
+    const delay = Math.min(cadence - now % cadence, ...boundaries.map(time => time - now));
+    timer = setTimeout(render, Math.max(1, delay));
   }
   async function refreshProgramme() {
     if (loading) return;
@@ -164,4 +199,5 @@
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); refreshProgramme(); } });
   window.addEventListener('pageshow', render);
 }());
+
 
