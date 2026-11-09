@@ -53,3 +53,8 @@
 .now-next-page .now-next { border-bottom: 0; padding-bottom: 2.5rem; }
 .now-next-page .now-next-footer { justify-content: flex-end; }
 
+/* A single closing message replaces the live programme after the seminar. */
+.now-next-content[data-state="closed"] { display: flex; align-items: center; justify-content: center; min-height: 14rem; border: 0; background: transparent; }
+.now-next-thanks { max-width: 38em; margin: 0 auto; padding: clamp(2rem, 5vw, 4rem) 0; text-align: center; color: var(--ink); font: 400 clamp(1.4rem, 3vw, 2rem)/1.5 var(--serif); }
+.live-display .now-next-content[data-state="closed"] { border: 0; background: transparent; }
+.live-display .now-next-thanks { font-size: clamp(2rem, 4vmin, 4rem); }

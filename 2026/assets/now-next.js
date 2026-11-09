@@ -2,6 +2,9 @@
 (function () {
   'use strict';
   const zone = 'Europe/Lisbon';
+  // Coimbra is on UTC on 14 November 2026.
+  const closingTime = Date.parse('2026-11-14T16:00:00+00:00');
+  const closingMessage = 'Thank you to all the speakers and participants of the XVI Portuguese Category Seminar; we hope to see you all again at the next edition.';
   const dayFormatter = new Intl.DateTimeFormat('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit' });
   const dateFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short' });
   const timeFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
@@ -81,8 +84,27 @@
   }
   function render() {
     clearTimeout(timer);
-    if (!events.length) return;
     const now = Date.now();
+    // The closing message must work even when the programme cannot be loaded.
+    if (now >= closingTime) {
+      if (lastView !== 'closed') {
+        lastView = 'closed';
+        section.querySelector('.now-next-heading').hidden = true;
+        const footer = section.querySelector('.now-next-footer');
+        if (footer) footer.hidden = true;
+        clock.hidden = true;
+        fallback.hidden = true;
+        content.dataset.state = 'closed';
+        content.replaceChildren(element('p', 'now-next-thanks', closingMessage));
+        content.hidden = false;
+        announcement.textContent = closingMessage;
+      }
+      return;
+    }
+    if (!events.length) {
+      timer = setTimeout(render, Math.min(60000, closingTime - now));
+      return;
+    }
     const state = selectState(events, now);
     const clockText = dateFormatter.format(now) + ' · ' + timeFormatter.format(now) + ' in Coimbra';
     if (clock.textContent !== clockText) clock.textContent = clockText;
@@ -166,12 +188,13 @@
     }
     // Count down each second; once started, keep the live programme's minute cadence.
     // Always switch at the next scheduled boundary, using the current wall clock.
-    const boundaries = events.flatMap(event => [event.start, event.end]).filter(time => time !== null && time > now);
+    const boundaries = [closingTime, ...events.flatMap(event => [event.start, event.end])].filter(time => time !== null && time > now);
     const cadence = state.phase === 'before' ? 1000 : 60000;
     const delay = Math.min(cadence - now % cadence, ...boundaries.map(time => time - now));
     timer = setTimeout(render, Math.max(1, delay));
   }
   async function refreshProgramme() {
+    if (Date.now() >= closingTime) { render(); return; }
     if (loading) return;
     loading = true;
     const controller = new AbortController();
@@ -194,6 +217,7 @@
       loading = false;
     }
   }
+  render();
   refreshProgramme();
   setInterval(() => { if (!document.hidden) refreshProgramme(); }, 300000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); refreshProgramme(); } });
