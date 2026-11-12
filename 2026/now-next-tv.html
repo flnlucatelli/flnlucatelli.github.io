@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>XVI PCS · TV programme</title>
+<style type="text/css">
+html, body { margin:0; padding:0; background:#13232e; color:#f5f2e9; }
+body { font-family:Arial, Helvetica, sans-serif; font-size:24px; line-height:1.25; }
+.screen { width:88%; margin:0 auto; padding:1em 0; }
+.header { width:100%; border-collapse:collapse; border-bottom:1px solid #52616b; }
+.header td { padding:0 0 .75em; vertical-align:top; }
+.brand { font-size:1.3em; font-weight:bold; letter-spacing:.03em; }
+.conference { display:block; margin-top:.25em; font-size:.72em; font-weight:normal; letter-spacing:0; }
+.clock { text-align:right; white-space:nowrap; padding-left:1em !important; }
+.clock-time { display:block; font-size:1.05em; }
+.clock-date { display:block; margin-top:.25em; font-size:.65em; color:#c2cbd0; }
+.session { padding:1em 0 .9em; }
+.next { border-top:1px solid #52616b; padding-bottom:0; }
+.label { margin:0 0 .35em; color:#e6c48c; font-size:.72em; font-weight:bold; letter-spacing:.12em; }
+.time { margin:0 0 .3em; font-size:.85em; color:#c2cbd0; }
+h1, h2 { margin:0; font-weight:bold; line-height:1.12; word-wrap:break-word; }
+h1 { font-size:2.05em; }
+h2 { font-size:1.35em; }
+.title { margin:.4em 0 0; font-size:1.1em; line-height:1.25; word-wrap:break-word; }
+.next .title { font-size:.88em; }
+.detail { margin:.5em 0 0; font-size:.72em; color:#c2cbd0; }
+.no-script { padding:1em; }
+a { color:#e6c48c; }
+</style>
+</head>
+<body>
+<div id="screen" class="screen">
+  <table class="header" role="presentation"><tr>
+    <td class="brand">XVI PCS<span class="conference">Portuguese Category Seminar</span></td>
+    <td class="clock" id="clock"><span id="clock-time" class="clock-time"></span><span id="clock-date" class="clock-date">Coimbra · 12–14 November 2026</span></td>
+  </tr></table>
+  <div class="session" id="now">
+    <p class="label" id="now-label">NOW</p>
+    <p class="time" id="now-time"></p>
+    <h1 id="now-heading">XVI Portuguese Category Seminar</h1>
+    <p class="title" id="now-title"></p>
+    <p class="detail" id="now-detail"></p>
+  </div>
+  <div class="session next" id="next">
+    <p class="label">NEXT</p>
+    <p class="time" id="next-time"></p>
+    <h2 id="next-heading"></h2>
+    <p class="title" id="next-title"></p>
+  </div>
+</div>
+<noscript><p class="no-script">Enable JavaScript for the live programme, or see the <a href="programme.html">full programme</a>.</p></noscript>
+<script type="text/javascript">
+/* Deliberately ES5: no libraries, images, web fonts, fetch, Intl or modern layout.
+   The embedded programme remains usable when background refreshes fail. */
+(function () {
+  var events = [{"start":1794495900000,"end":1794497400000,"heading":"Registration and Saturday\u2019s lunch payment","title":"","detail":"First floor \u00b7 In front of Sala Pedro Nunes"},{"start":1794497400000,"end":1794499200000,"heading":"Marco Abbadini","title":"A topos for \u00e9tale-finite Heyting algebras","detail":"Sala Pedro Nunes"},{"start":1794499200000,"end":1794501000000,"heading":"Coffee break","title":"","detail":"Second floor"},{"start":1794501000000,"end":1794502200000,"heading":"Logan Geenis","title":"\u201c2-nil or not 2-nil, that is the question\u201d: a characterization of two-step nilpotent varieties","detail":"Sala Pedro Nunes"},{"start":1794562200000,"end":1794564900000,"heading":"Marino Gran","title":"A new characterization of arithmetical categories and Pixley's theorem","detail":"Sala Pedro Nunes"},{"start":1794564900000,"end":1794567600000,"heading":"Diana Rodelo","title":"How protomodular is your favourite category?","detail":"Sala Pedro Nunes"},{"start":1794567600000,"end":1794569400000,"heading":"Coffee break","title":"","detail":"Second floor"},{"start":1794569400000,"end":1794570600000,"heading":"David Forsman","title":"On the exactness of categories of internal groups","detail":"Sala Pedro Nunes"},{"start":1794570600000,"end":1794571800000,"heading":"David Quiroga Guti\u00e9rrez","title":"The center of an associative crossed module","detail":"Sala Pedro Nunes"},{"start":1794571800000,"end":1794573000000,"heading":"Pouya Partow","title":"Coalgebraic notions of simulation and bisimulation","detail":"Sala Pedro Nunes"},{"start":1794573000000,"end":1794580200000,"heading":"Lunch Break \u2014 own arrangements","title":"","detail":"Participants must make their own lunch arrangements \u00b7 Places to eat nearby"},{"start":1794580200000,"end":1794582000000,"heading":"Paolo Perrone","title":"Descent in Probability Theory: the first steps downward","detail":"Sala Pedro Nunes"},{"start":1794582000000,"end":1794583800000,"heading":"Rui Soares Barbosa","title":"Sheaf representation of monoidal categories, revisited","detail":"Sala Pedro Nunes"},{"start":1794583800000,"end":1794585600000,"heading":"Jo\u00e3o Xarez","title":"Left Kan extensions and monotone-light factorizations","detail":"Sala Pedro Nunes"},{"start":1794585600000,"end":1794587400000,"heading":"Coffee break","title":"","detail":"Second floor"},{"start":1794587400000,"end":1794588600000,"heading":"Luz\u00eda M\u00e9ndez Senra","title":"Some categorical properties in terms of operads","detail":"Sala Pedro Nunes"},{"start":1794588600000,"end":1794589800000,"heading":"Diogo Simm","title":"Completing completions: the Karoubi envelope of the copower completion","detail":"Sala Pedro Nunes"},{"start":1794648600000,"end":1794650400000,"heading":"Norihiro Yamada","title":"On Graphical Freeness for Graded Linear Categories","detail":"Sala Pedro Nunes"},{"start":1794650400000,"end":1794652200000,"heading":"Fernando Lucatelli Nunes","title":"Exponentials for Free","detail":"Sala Pedro Nunes"},{"start":1794652200000,"end":1794654000000,"heading":"Rui Prezado","title":"Gluings of fundamental groups, via theory of descent","detail":"Sala Pedro Nunes"},{"start":1794654000000,"end":1794655800000,"heading":"Coffee break","title":"","detail":"Second floor"},{"start":1794655800000,"end":1794657600000,"heading":"Arnaud Duvieusart","title":"Ternary semi-direct products in algebraically coherent categories","detail":"Sala Pedro Nunes"},{"start":1794657600000,"end":1794659400000,"heading":"Maria Manuel Clementino","title":"Cartesian closedness of lax comma categories","detail":"Sala Pedro Nunes"},{"start":1794659400000,"end":null,"heading":"Group photo","title":"","detail":"After the final talk of the seminar \u00b7 Lunch follows the group photo"}];
+  var closingTime = Date.UTC(2026, 10, 14, 16, 0, 0);
+  var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var lastView = '', loading = false, fitTimer;
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  // Coimbra is UTC throughout 12–14 November 2026, regardless of the TV timezone.
+  function shortDate(t) {
+    var d = new Date(t);
+    return days[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + months[d.getUTCMonth()];
+  }
+  function time(t) {
+    var d = new Date(t);
+    return pad(d.getUTCHours()) + ':' + pad(d.getUTCMinutes());
+  }
+  function eventTime(e) {
+    return shortDate(e.start) + ' · ' + (e.end === null ? 'from ' : '') + time(e.start) + (e.end === null ? '' : '–' + time(e.end));
+  }
+  function selectState(list, now) {
+    var current = null, next = null, note = null, i, e;
+    for (i = 0; i < list.length; i++) {
+      e = list[i];
+      if (e.start <= now && e.end !== null && now < e.end && !current) current = e;
+      if (e.start > now && !next) next = e;
+      if (e.end === null && e.start <= now && shortDate(e.start) === shortDate(now)) note = e;
+    }
+    return { current:current, next:next, note:note, closed:now >= closingTime };
+  }
+  function parseTime(value) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(Z|[+-]\d{2}:\d{2})$/.exec(value || '');
+    if (!m) return NaN;
+    var result = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]);
+    if (m[7] !== 'Z') result -= (m[7].charAt(0) === '+' ? 1 : -1) * (+m[7].substr(1, 2) * 60 + +m[7].substr(4, 2)) * 60000;
+    return result;
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = { selectState:selectState, parseTime:parseTime, events:events, eventTime:eventTime };
+  if (typeof document === 'undefined') return;
+  function id(name) { return document.getElementById(name); }
+  function text(node, value) {
+    value = value || '';
+    if (node.firstChild && node.childNodes.length === 1 && node.firstChild.nodeValue === value) return;
+    while (node.firstChild) node.removeChild(node.firstChild);
+    if (value) node.appendChild(document.createTextNode(value));
+  }
+  function field(name, value) { var node = id(name); text(node, value); node.style.display = value ? '' : 'none'; }
+  function fit() {
+    var root = document.documentElement, body = document.body;
+    var width = root.clientWidth || window.innerWidth || body.clientWidth || 1280;
+    var height = root.clientHeight || window.innerHeight || body.clientHeight || 720;
+    var size = Math.min(52, Math.floor(width / 32), Math.floor(height / 20));
+    size = Math.max(12, size);
+    body.style.fontSize = size + 'px';
+    // Fit long titles using ordinary pixel dimensions; keep natural scrolling as
+    // a fallback instead of clipping content on unusual displays.
+    while (size > 12 && id('screen').offsetHeight > height - 8) {
+      size--;
+      body.style.fontSize = size + 'px';
+    }
+  }
+  function signature(e) { return e ? [e.start, e.end, e.heading, e.title, e.detail].join('|') : ''; }
+  function render() {
+    var now = new Date().getTime(), state = selectState(events, now);
+    var key = (state.closed ? 'closed' : shortDate(now)) + signature(state.current) + signature(state.next) + signature(state.note);
+    text(id('clock-time'), time(now) + ':' + pad(new Date(now).getUTCSeconds()));
+    text(id('clock-date'), shortDate(now) + ' · Coimbra');
+    if (key === lastView) return;
+    if (state.closed) {
+      id('clock').style.display = 'none';
+      field('now-label', ''); field('now-time', '');
+      text(id('now-heading'), 'Thank you');
+      field('now-title', 'Thank you to all the speakers and participants of the XVI Portuguese Category Seminar; we hope to see you all again at the next edition.');
+      field('now-detail', ''); id('next').style.display = 'none';
+    } else {
+      id('clock').style.display = ''; field('now-label', 'NOW');
+      if (state.current) {
+        field('now-time', eventTime(state.current));
+        text(id('now-heading'), state.current.heading);
+        field('now-title', state.current.title);
+        field('now-detail', state.current.detail);
+      } else {
+        field('now-time', ''); field('now-title', ''); field('now-detail', '');
+        if (now < events[0].start) text(id('now-heading'), 'The seminar begins soon');
+        else if (state.note) {
+          text(id('now-heading'), 'The talks have concluded');
+          field('now-title', state.note.heading);
+          field('now-time', eventTime(state.note));
+          field('now-detail', state.note.detail);
+        } else if (state.next && shortDate(state.next.start) !== shortDate(now)) text(id('now-heading'), 'Today’s sessions have finished');
+        else text(id('now-heading'), state.next ? 'Between sessions' : 'The seminar has concluded');
+      }
+      id('next').style.display = state.next ? '' : 'none';
+      if (state.next) {
+        field('next-time', eventTime(state.next));
+        text(id('next-heading'), state.next.heading);
+        field('next-title', state.next.title);
+      }
+    }
+    fit();
+    lastView = key;
+  }
+  function hasClass(node, name) { return (' ' + node.className + ' ').indexOf(' ' + name + ' ') >= 0; }
+  function byClass(node, name) {
+    var nodes = node.getElementsByTagName('*'), i;
+    for (i = 0; i < nodes.length; i++) if (hasClass(nodes[i], name)) return nodes[i];
+    return null;
+  }
+  function clean(node) {
+    if (!node) return '';
+    function plain(n) {
+      var value = '', child;
+      if (n.nodeType === 3 || n.nodeType === 4) return n.nodeValue;
+      if (n.nodeType === 1 && n.getAttribute('aria-hidden') === 'true') return '';
+      for (child = n.firstChild; child; child = child.nextSibling) value += plain(child);
+      return value;
+    }
+    return plain(node).replace(/\s+/g, ' ').replace(/^\s+|\s+$/g, '');
+  }
+  function parseProgramme(html) {
+    // Only the agenda lists enter the detached DOM: no images, styles or scripts.
+    var re = /<ol\b[^>]*\bclass=["']agenda["'][^>]*>([\s\S]*?)<\/ol>/gi;
+    var match, fragment = '', holder = document.createElement('div'), result = [], rows, i, j, row, spans, times, start, end, heading, body, detail;
+    while ((match = re.exec(html))) fragment += '<ol>' + match[1] + '</ol>';
+    fragment = fragment.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<(img|iframe|object|embed|link|source|video|audio)\b[^>]*>/gi, '');
+    // Older HTML parsers do not reliably preserve HTML5 time elements.
+    fragment = fragment.replace(/<time\b/gi, '<span data-tv-time="1"').replace(/<\/time>/gi, '</span>');
+    holder.innerHTML = fragment;
+    rows = holder.getElementsByTagName('li');
+    for (i = 0; i < rows.length; i++) {
+      row = rows[i]; spans = row.getElementsByTagName('span'); times = [];
+      for (j = 0; j < spans.length; j++) if (spans[j].getAttribute('data-tv-time') === '1') times.push(spans[j]);
+      if (!times.length) continue;
+      start = parseTime(times[0].getAttribute('datetime'));
+      end = times.length > 1 ? parseTime(times[1].getAttribute('datetime')) : null;
+      heading = clean(row.getElementsByTagName('h3')[0]);
+      if (!heading || !isFinite(start) || (end !== null && (!isFinite(end) || end <= start))) return null;
+      body = byClass(row, 'event-body');
+      detail = hasClass(row, 'agenda-talk') ? 'Sala Pedro Nunes' : hasClass(row, 'coffee') ? 'Second floor' : body ? clean(body.getElementsByTagName('p')[0]) : '';
+      result.push({ start:start, end:end, heading:heading, title:clean(byClass(row, 'talk-title')), detail:detail });
+    }
+    result.sort(function (a, b) { return a.start - b.start; });
+    return result.length ? result : null;
+  }
+  function refreshProgramme() {
+    if (loading || new Date().getTime() >= closingTime || typeof XMLHttpRequest === 'undefined') return;
+    var request, timeout, finished = false;
+    function finish() {
+      if (finished) return;
+      finished = true; loading = false; window.clearTimeout(timeout);
+    }
+    try {
+      request = new XMLHttpRequest(); loading = true;
+      request.onreadystatechange = function () {
+        if (finished || request.readyState !== 4) return;
+        try {
+          if (request.status === 200) {
+            var updated = parseProgramme(request.responseText);
+            if (updated) { events = updated; render(); }
+          }
+        } catch (ignore) { /* Keep the most recent usable programme. */ }
+        finish();
+      };
+      request.open('GET', 'programme.html?tv=' + new Date().getTime(), true);
+      timeout = window.setTimeout(function () { finish(); try { request.abort(); } catch (ignore) {} }, 10000);
+      request.send(null);
+    } catch (ignore) { finish(); }
+  }
+  // Independent timers: a slow or unavailable network cannot stop the programme.
+  window.setInterval(render, 1000);
+  window.setInterval(refreshProgramme, 60000);
+  window.onresize = function () { window.clearTimeout(fitTimer); fitTimer = window.setTimeout(fit, 100); };
+  window.onfocus = function () { render(); refreshProgramme(); };
+  window.onpageshow = function () { render(); refreshProgramme(); };
+  window.ononline = refreshProgramme;
+  render(); refreshProgramme();
+}());
+</script>
+</body>
+</html>
