@@ -53,6 +53,11 @@
   document.addEventListener('pointermove', showControls, { passive: true });
   document.addEventListener('pointerdown', showControls, { passive: true });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) keepAwake(); });
+  window.addEventListener('pageshow', keepAwake);
+  window.addEventListener('focus', keepAwake);
+  // A browser may release the lock while the TV remains visible.
+  setInterval(keepAwake, 30000);
   showControls();
   keepAwake();
 }());
+

@@ -8,6 +8,7 @@
   const dayFormatter = new Intl.DateTimeFormat('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit' });
   const dateFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, weekday: 'short', day: 'numeric', month: 'short' });
   const timeFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  const clockFormatter = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' });
   function dayKey(time) { return dayFormatter.format(new Date(time)); }
   function countdownParts(start, now) {
     const seconds = Math.max(0, Math.ceil((start - now) / 1000));
@@ -22,7 +23,8 @@
     const current = events.find(event => event.start <= now && event.end !== null && now < event.end);
     const upcoming = events.filter(event => event.start > now).slice(0, 2);
     // A start time alone is not evidence that an event is still taking place.
-    const untimed = events.filter(event => event.end === null && event.start <= now && dayKey(event.start) === dayKey(now)).at(-1);
+    const untimedEvents = events.filter(event => event.end === null && event.start <= now && dayKey(event.start) === dayKey(now));
+    const untimed = untimedEvents[untimedEvents.length - 1];
     const phase = current ? 'current' : now < events[0].start ? 'before' : upcoming.length ? 'gap' : untimed ? 'talks-ended' : 'ended';
     return { phase, current, upcoming, untimed };
   }
@@ -42,7 +44,8 @@
       const talk = row.classList.contains('agenda-talk');
       const heading = clean(row.querySelector('h3'));
       if (!heading) throw new Error('Missing programme heading');
-      const destination = row.id ? '#' + row.id : row.querySelector('h3 a')?.getAttribute('href') || '#' + row.closest('.programme-day').id;
+      const headingLink = row.querySelector('h3 a');
+      const destination = row.id ? '#' + row.id : (headingLink && headingLink.getAttribute('href')) || '#' + row.closest('.programme-day').id;
       const url = new URL(destination, baseURL);
       if (!['https:', 'http:'].includes(url.protocol)) throw new Error('Invalid programme link');
       return {
@@ -65,7 +68,12 @@
   const fallback = section.querySelector('[data-live-fallback]');
   const announcement = section.querySelector('[data-live-announcement]');
   const programmeURL = new URL('programme.html', document.baseURI);
-  let events = [], lastView = '', timer, loading = false;
+  let events = [], lastView = '', refreshTimer, loading = false;
+  // Avoid replaceChildren(), which is missing from some TV browsers.
+  function replaceContents(parent, ...children) {
+    while (parent.firstChild) parent.removeChild(parent.firstChild);
+    children.forEach(child => parent.appendChild(child));
+  }
   function element(tag, className, value) {
     const node = document.createElement(tag);
     if (className) node.className = className;
@@ -83,35 +91,34 @@
     return heading;
   }
   function render() {
-    clearTimeout(timer);
     const now = Date.now();
     // The closing message must work even when the programme cannot be loaded.
     if (now >= closingTime) {
       if (lastView !== 'closed') {
-        lastView = 'closed';
         section.querySelector('.now-next-heading').hidden = true;
         const footer = section.querySelector('.now-next-footer');
         if (footer) footer.hidden = true;
         clock.hidden = true;
         fallback.hidden = true;
         content.dataset.state = 'closed';
-        content.replaceChildren(element('p', 'now-next-thanks', closingMessage));
+        replaceContents(content, element('p', 'now-next-thanks', closingMessage));
         content.hidden = false;
         announcement.textContent = closingMessage;
+        lastView = 'closed';
       }
       return;
     }
-    if (!events.length) {
-      timer = setTimeout(render, Math.min(60000, closingTime - now));
-      return;
-    }
+    if (!events.length) return;
+    // Restore the live view if the device clock is corrected after showing closing.
+    section.querySelector('.now-next-heading').hidden = false;
+    const footer = section.querySelector('.now-next-footer');
+    if (footer) footer.hidden = false;
     const state = selectState(events, now);
-    const clockText = dateFormatter.format(now) + ' · ' + timeFormatter.format(now) + ' in Coimbra';
+    const clockText = dateFormatter.format(now) + ' · ' + clockFormatter.format(now) + ' in Coimbra';
     if (clock.textContent !== clockText) clock.textContent = clockText;
     clock.hidden = false;
     const signature = JSON.stringify([state.phase, state.current, state.upcoming, state.untimed]);
     if (signature !== lastView) {
-      lastView = signature;
       content.dataset.state = state.phase;
       const current = element('div', 'now-next-current');
       current.append(element('p', 'now-next-label', state.phase === 'before' ? 'Countdown' : 'Now'));
@@ -168,10 +175,11 @@
       });
       if (state.upcoming.length) upcoming.append(list);
       else upcoming.append(element('p', 'now-next-label', 'Next'), element('p', 'now-next-detail', 'No further sessions are scheduled.'));
-      content.replaceChildren(current, upcoming);
+      replaceContents(content, current, upcoming);
       content.hidden = false;
       fallback.hidden = true;
       announcement.textContent = (state.phase === 'before' ? '' : 'Now: ') + message + (state.upcoming[0] ? ' Next: ' + state.upcoming[0].heading + ', ' + eventTime(state.upcoming[0]) + '.' : '');
+      lastView = signature;
     }
     if (state.phase === 'before') {
       const remaining = countdownParts(events[0].start, now);
@@ -186,28 +194,37 @@
       const minutes = Math.ceil((state.current.end - now) / 60000);
       content.querySelector('.now-next-countdown').textContent = 'Scheduled to finish in ' + minutes + (minutes === 1 ? ' minute' : ' minutes');
     }
-    // Count down each second; once started, keep the live programme's minute cadence.
-    // Always switch at the next scheduled boundary, using the current wall clock.
-    const boundaries = [closingTime, ...events.flatMap(event => [event.start, event.end])].filter(time => time !== null && time > now);
-    const cadence = state.phase === 'before' ? 1000 : 60000;
-    const delay = Math.min(cadence - now % cadence, ...boundaries.map(time => time - now));
-    timer = setTimeout(render, Math.max(1, delay));
   }
   async function refreshProgramme() {
     if (Date.now() >= closingTime) { render(); return; }
     if (loading) return;
+    clearTimeout(refreshTimer);
     loading = true;
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    let refreshDelay = 60000;
+    const controller = typeof AbortController === 'function' ? new AbortController() : null;
+    let timeout;
     try {
-      const response = await fetch(programmeURL.href, { cache: 'no-cache', signal: controller.signal });
-      if (!response.ok) throw new Error('Programme request failed');
-      const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
+      // Bound the whole request (including its body) even without AbortController.
+      const request = async () => {
+        const options = { cache: 'no-store' };
+        if (controller) options.signal = controller.signal;
+        const response = await fetch(programmeURL.href, options);
+        if (!response.ok) throw new Error('Programme request failed');
+        return response.text();
+      };
+      const html = await Promise.race([request(), new Promise((resolve, reject) => {
+        timeout = setTimeout(() => {
+          if (controller) controller.abort();
+          reject(new Error('Programme request timed out'));
+        }, 10000);
+      })]);
+      const doc = new DOMParser().parseFromString(html, 'text/html');
       events = parseProgramme(doc, programmeURL.href);
       render();
     } catch (_) {
+      refreshDelay = 15000;
       if (!events.length) {
-        fallback.replaceChildren(document.createTextNode('The live programme is temporarily unavailable. '));
+        replaceContents(fallback, document.createTextNode('The live programme is temporarily unavailable. '));
         const link = element('a', '', 'View the full programme');
         link.href = programmeURL.href;
         fallback.append(link, document.createTextNode('.'));
@@ -215,14 +232,22 @@
     } finally {
       clearTimeout(timeout);
       loading = false;
+      refreshTimer = setTimeout(refreshProgramme, refreshDelay);
     }
   }
+  // One persistent heartbeat for every view, independent of network requests.
+  // Read wall-clock time each tick so sleep, throttling and clock changes cannot
+  // accumulate drift. Never reload the page or interrupt full-screen mode.
+  setInterval(render, 1000);
   render();
   refreshProgramme();
-  setInterval(() => { if (!document.hidden) refreshProgramme(); }, 300000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); refreshProgramme(); } });
-  window.addEventListener('pageshow', render);
+  function resume() { render(); refreshProgramme(); }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) resume(); });
+  window.addEventListener('pageshow', resume);
+  window.addEventListener('focus', resume);
+  window.addEventListener('online', resume);
 }());
+
 
 
 
