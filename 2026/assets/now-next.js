@@ -45,7 +45,9 @@
       const heading = clean(row.querySelector('h3'));
       if (!heading) throw new Error('Missing programme heading');
       const headingLink = row.querySelector('h3 a');
-      const destination = row.id ? '#' + row.id : (headingLink && headingLink.getAttribute('href')) || '#' + row.closest('.programme-day').id;
+      const headingHref = headingLink?.getAttribute('href');
+      const photoHref = row.classList.contains('photo') ? headingHref : null;
+      const destination = photoHref || (row.id ? '#' + row.id : headingHref || '#' + row.closest('.programme-day').id);
       const url = new URL(destination, baseURL);
       if (!['https:', 'http:'].includes(url.protocol)) throw new Error('Invalid programme link');
       return {
