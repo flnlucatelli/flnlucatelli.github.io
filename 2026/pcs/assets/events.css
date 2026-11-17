@@ -1,0 +1,2 @@
+/* Compatibility stylesheet; yearly pages share the site-wide event styles. */
+@import url("../../../events.css");
