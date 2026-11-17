@@ -1,0 +1,6 @@
+.photo-gallery { padding-block: 2rem; }
+.photo-gallery > p { max-width: 46rem; color: var(--muted); }
+.photo-gallery figure { margin: 2rem 0 3rem; }
+.photo-gallery img { display: block; width: 100%; height: auto; }
+.photo-gallery figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; padding-top: .75rem; }
+.photo-gallery figcaption span { color: var(--muted); }
