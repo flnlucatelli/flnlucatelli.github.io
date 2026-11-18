@@ -286,3 +286,6 @@
   .programme-info > .registration-print { display: inline; }
 }
 
+
+.talk-body .talk-slides { margin: .4rem 0 0; font-size: .875rem; }
+.talk-slides a { color: var(--gold); }
